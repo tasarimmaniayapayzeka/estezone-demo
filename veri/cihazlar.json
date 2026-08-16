@@ -1,0 +1,2595 @@
+{
+  "uretim": "estezone kaynak sitesinden çıkarıldı + küratörlü meta ile birleştirildi",
+  "kategoriler": {
+    "epilasyon": {
+      "ad": "Lazer Epilasyon Sistemleri",
+      "kisa": "Lazer Epilasyon",
+      "slug": "lazer-epilasyon",
+      "ozet": "Alexandrite, Diode ve Nd:YAG platformlarında, yüksek seans hacmine dayanacak profesyonel epilasyon sistemleri.",
+      "ikon": "epilasyon"
+    },
+    "cilt": {
+      "ad": "Cilt & Medikal Estetik",
+      "kisa": "Cilt & Medikal",
+      "slug": "cilt-medikal-estetik",
+      "ozet": "Fraksiyonel CO2, pikosaniye, BBL, HIFU ve altın iğne teknolojileriyle leke, doku ve gençleştirme protokolleri.",
+      "ikon": "cilt"
+    },
+    "vucut": {
+      "ad": "Vücut Şekillendirme & Zayıflama",
+      "kisa": "Vücut & Zayıflama",
+      "slug": "vucut-sekillendirme",
+      "ozet": "Soğuk lipoliz, HI-EMT kas uyarımı, radyofrekans ve endolazer ile bölgesel incelme ve kontur protokolleri.",
+      "ikon": "vucut"
+    },
+    "destek": {
+      "ad": "Soğutma & Klinik Aksesuar",
+      "kisa": "Soğutma & Aksesuar",
+      "slug": "sogutma-aksesuar",
+      "ozet": "Uygulama konforunu ve hasta güvenliğini yükselten soğutma sistemleri ile dalga boyuna özel koruyucu ekipman.",
+      "ikon": "destek"
+    }
+  },
+  "cihazlar": [
+    {
+      "slug": "arion-alexandrite-lazer",
+      "ad": "Arion Alexandrite Lazer",
+      "marka": "Arion",
+      "kategori": "epilasyon",
+      "kategoriAd": "Lazer Epilasyon Sistemleri",
+      "rozet": "Tek Yetkili Türkiye Distribütörü",
+      "vitrin": true,
+      "oneCikan": "755 nm Alexandrite",
+      "etiketler": [
+        "Alexandrite",
+        "755 nm",
+        "Vasküler",
+        "Pigmente"
+      ],
+      "hedef": "Yüksek hasta sirkülasyonlu klinik ve medikal estetik merkezleri",
+      "neden": "Tek platformda epilasyon, vasküler ve pigmente lezyon tedavisi; opsiyonel başlıklarla tedavi menüsünü genişletir.",
+      "birlesmeAdayi": null,
+      "ozet": "755 nm dalga boyu ve ayarlanabilen puls süresi ve spot büyüklüğü ile kalın, ince ve cilt tipi 4 e kadar güvenli ve etkili kalıcı lazer epilasyon.",
+      "aciklama": [
+        "755 nm dalga boyu ve ayarlanabilen puls süresi ve spot büyüklüğü ile kalın, ince ve cilt tipi 4 e kadar güvenli ve etkili kalıcı lazer epilasyon.",
+        "Lazer epilasyonda her cilt tipinde altın standart alexandrite lazer, ayarlanabilir atış uzunluğu ve spot büyüklüğü ile esnek ayarlama imkanı sunar. Arion alexandrite lazer opsiyonel scanner özelliği 60×65 ile büyük alan taraması yapar. Ergonomik el aleti ile uygulama kolaylığı.",
+        "Lazer epilasyon uygulamasında lazer atışının hızlı tekrarı sayesinde kısa uygulama süresi.",
+        "Uygulama esnasında kolay spot büyüklüğü ayarı değiştirme, lazer atışında atış süresini ayarlayarak etkin lazer epilasyon uygulaması. Medikal CE sertifikası Amerikan FDA onayı ile Uluslararası sertifikalara sahip Almalaser güvencesi ile güçlü ve hızlı Alexandirte Lazer Cihazı.",
+        "Arion Alexandrite lazerin 755 nm dalga boyu ile melanin yoğun olduğu kalın tüyler ve orta seviyede derinliği olan tüylerde etkili olurken daha ince tüylerde de farklı lazer modları sayesinde etkili uygulamalar yapılmasını sağlar.",
+        "Lazer epilasyonda 755 nm dalga boyu sayesinde uygulamada tüyleri buharlaştırarak uygulama sonrası istemeyen tüyleri yok eder."
+      ],
+      "bolumler": [
+        "Alexandrite Lazer Fonksiyonları",
+        "Bizimle İletişime Geçin"
+      ],
+      "spec": [
+        {
+          "ad": "Lazer Tipi",
+          "deger": "Alexandrite"
+        },
+        {
+          "ad": "Dalgaboyu",
+          "deger": "755nm"
+        },
+        {
+          "ad": "Spot Boyutu (Epilasyon)",
+          "deger": "6/8/10/12/14 mm VEYA 12/14/16 mm"
+        },
+        {
+          "ad": "Spot Boyutu (Pigmente)",
+          "deger": "6/8/10/12 mm"
+        },
+        {
+          "ad": "Spot Boyutu (Vaskuler)",
+          "deger": "3/4/5 mm"
+        },
+        {
+          "ad": "Scanner",
+          "deger": "(OPSİYONEL)"
+        },
+        {
+          "ad": "Scanner Spot Boyutu",
+          "deger": "8/9/10/12 mm"
+        },
+        {
+          "ad": "Scanner Maks. Alan",
+          "deger": "60X65 mm"
+        },
+        {
+          "ad": "Enerji (Epilasyon)",
+          "deger": "40J/cm²"
+        },
+        {
+          "ad": "Enerji (Vaskuler)",
+          "deger": "100 J/cm²"
+        },
+        {
+          "ad": "Pulse Süresi",
+          "deger": "5-140 msn"
+        },
+        {
+          "ad": "Hız",
+          "deger": "5 Hz’e kadar"
+        },
+        {
+          "ad": "Güç Gereksinimleri",
+          "deger": "230 V, 16 A, 50/60 Hz"
+        },
+        {
+          "ad": "Boyutlar (Bxexy)",
+          "deger": "84x35x102 cm"
+        },
+        {
+          "ad": "Uygunluk",
+          "deger": "EC Medical Device Directive (MDD) 93/42/ECC (CE Mark), FDA / US 510k"
+        }
+      ],
+      "ozellikler": [
+        "Arion Alexandrite Lazer",
+        "5 Hz'lik hız ile kısa süren uygulama",
+        "Burst moduyla sayesinde güvenli epilasyon",
+        "Performanslı ve etkili lazer epilasyon uygulaması",
+        "Ayarlanabilir kullanıcı dostu",
+        "Kıl ve cilt tipine otomatik ayarlarlama imkanı",
+        "Kolay ve pratik uygulama.",
+        "Lazer epilasyonda scanner el aleti ile tarama",
+        "Hızlı ve pratik lazer epilasyon uygulaması ile kısa seans süresi",
+        "Küçük spot alanları sayesinde sonradan oluşan lekeleri tedavi etme imkanı"
+      ],
+      "kapak": "202307-arion-alexandrite-lazer-cihazi-001.webp",
+      "gorseller": [
+        "202307-arion-alexandrite-lazer-cihazi-001.webp",
+        "202109-arion-alexandrite-lazer-0001.jpg",
+        "202006-arion-alexandrite-lazer-05.jpg",
+        "202006-arion-alexandrite-lazer-03.jpg"
+      ],
+      "kaynakUrl": "https://estezone.com.tr/arion-alexandrite-lazer/",
+      "eskiKelimeSayisi": 340
+    },
+    {
+      "slug": "light-age-epicare-lpx",
+      "ad": "Light Age Epicare LPX",
+      "marka": "Light Age",
+      "kategori": "epilasyon",
+      "kategoriAd": "Lazer Epilasyon Sistemleri",
+      "rozet": "ABD Üretimi",
+      "vitrin": true,
+      "oneCikan": "100 W Alexandrite",
+      "etiketler": [
+        "Alexandrite",
+        "755 nm",
+        "700 J/cm²",
+        "ABD"
+      ],
+      "hedef": "Referans kalite arayan hastane ve büyük klinikler",
+      "neden": "Long pulse Alexandrite kategorisinin referans platformu; LP ve LPX seçenekleriyle güç ihtiyacına göre ölçeklenir.",
+      "birlesmeAdayi": null,
+      "ozet": "Long pulse Alexandrite Lazer cihazlarından beklenen yüksek düzey talepleri karşılamak için özel olarak tasarlanmış olan Light Age’in Epicare LP ve LPX lazer cihazları, güvenli ve etkin uygulamada en iyiyi hedefleyen kliniklerin ihtiyaçlarını karşılar.",
+      "aciklama": [
+        "Long pulse Alexandrite Lazer cihazlarından beklenen yüksek düzey talepleri karşılamak için özel olarak tasarlanmış olan Light Age’in Epicare LP ve LPX lazer cihazları, güvenli ve etkin uygulamada en iyiyi hedefleyen kliniklerin ihtiyaçlarını karşılar.",
+        "Yüksek hızı ve gelişmiş özellikleriyle hasta sayısı yüksek olan kliniklerin; dayanıklı, kullanımı kolay ve ucuz maliyetli olmasıyla da medi-spa’ların tüm ihtiyaçlarını karşılar.",
+        "EPICARE Long Pulse Alexandrite Lazer cihazları 755 nm dalga boyuna sahip lazer epilasyon sistemlerindendir.",
+        "Epicare Alexandrite Lazer epilasyon cihazı performans, hız ve etkinliği ile yüksek müşteri memnuniyeti ve uygulama başına düşük maliyet sağlar. Hastalara daha kısa ve az seans sürelerinde uygulama yapıldığından elde edilen kazanç artar.",
+        "Epicare Lazer Epilasyon Cihazı, FDA tarafından onaylanmıştır ve geniş bir kitle tarafından en kalıcı epilasyon sonuçlarını sağlayan lazer epilasyon cihazı olarak kabul görmüştür.",
+        "En etkin lazer teknolojisini kalite ve güvenle birleştiren Epicare lazer cihazları gerek yoğun çalışan klinikler, gerek özel muayenehaneler, gerekse güzellik merkezlerindeki bütün ihtiyaçları karşılar."
+      ],
+      "bolumler": [
+        "Alexandrite Lazer Epilasyon Cihazı",
+        "Epicare Alexandrite Lazer Cihazı, Güvenilir Etkin Bir Teknoloji",
+        "Bizimle İletişime Geçin"
+      ],
+      "spec": [
+        {
+          "ad": "Lazer ortamı, Dalga boyu",
+          "deger": "Alexandrite 755 nm · Alexandrite 755 nm"
+        },
+        {
+          "ad": "Atım Süresi",
+          "deger": "Değişken 3-300 ms · Değişken 3-300 ms"
+        },
+        {
+          "ad": "Ortalama Güç",
+          "deger": "65 Watt’a kadar · 100 Watt’a kadar"
+        },
+        {
+          "ad": "Enerji (Maksimum Fluence*)",
+          "deger": "500 J/cm2 ‘ye kadar · 700 J/cm2 ‘ye kadar"
+        },
+        {
+          "ad": "Atım Hızı*",
+          "deger": "3 Hz’ e kadar (12 mm) · 3 Hz’ e kadar (15 mm)"
+        },
+        {
+          "ad": "Spot Alanı**",
+          "deger": "3, 5, 7, 9, 12,15 mm · 3, 5, 7, 9, 12,15,18 mm"
+        }
+      ],
+      "ozellikler": [
+        "Light Age Epicare LPX",
+        "Müşteri veritabanı yönetimi / satın alma kaydı / ağ sür. (seçenek)",
+        "Windows 7/8/10",
+        "Epilasyon √",
+        "Batık kıl uygulamaları √",
+        "Ablatif olmayan cilt yenileme √",
+        "Yüz kılcal damar uygulamaları √",
+        "Bacakta damar uygulamaları √",
+        "Hemanjiyom √",
+        "Melazma √",
+        "Café-au-lait macules √",
+        "Blue nevi √",
+        "Poikiloderma √",
+        "Sebhorrehic keratosis √",
+        "Anjiyomlar (spider veya diğerleri) √",
+        "Hipertrofik skarlar √",
+        "Skin tags √",
+        "Pigmente lezyonlar √",
+        "Melanositik proliferasyonlar √"
+      ],
+      "kapak": "202307-light-age-epicare-lpx-001.webp",
+      "gorseller": [
+        "202307-light-age-epicare-lpx-001.webp",
+        "202109-light-age-epicare-lpx-0001.jpg",
+        "202002-a-one-standard-02.jpg",
+        "202002-a-one-standard-03.jpg",
+        "202002-a-one-standard-04.jpg"
+      ],
+      "kaynakUrl": "https://estezone.com.tr/light-age-epicare-lpx/",
+      "eskiKelimeSayisi": 993
+    },
+    {
+      "slug": "light-age-epicare-duo",
+      "ad": "Light Age Epicare DUO",
+      "marka": "Light Age",
+      "kategori": "epilasyon",
+      "kategoriAd": "Lazer Epilasyon Sistemleri",
+      "rozet": "Çift Dalga Boyu",
+      "vitrin": true,
+      "oneCikan": "755 + 1064 nm",
+      "etiketler": [
+        "Alexandrite",
+        "Nd:YAG",
+        "Çift Platform",
+        "ABD"
+      ],
+      "hedef": "Tüm cilt tiplerine hizmet veren hastane ve klinikler",
+      "neden": "Alexandrite ve Nd:YAG tek gövdede; açık ciltten koyu cilde kadar tüm Fitzpatrick aralığını tek yatırımla karşılar.",
+      "birlesmeAdayi": null,
+      "ozet": "Light Age Epicare-Duo, lazer sistemlerinden beklenen yüksek düzey talepleri karşılamak için özel olarak tasarlanmıştır. Hastane ve kliniklerin ihtiyaçlarına yanıt verebilmek, müşteri memnuniyeti ve etkinliği arttırmak amacıyla Alexandrite Lazer ve Nd:YAG Lazerin tek bir ünitede birleştirilmesiyle bu yeni sistem oluşturulmuştur.",
+      "aciklama": [
+        "Light Age Epicare-Duo, lazer sistemlerinden beklenen yüksek düzey talepleri karşılamak için özel olarak tasarlanmıştır. Hastane ve kliniklerin ihtiyaçlarına yanıt verebilmek, müşteri memnuniyeti ve etkinliği arttırmak amacıyla Alexandrite Lazer ve Nd:YAG Lazerin tek bir ünitede birleştirilmesiyle bu yeni sistem oluşturulmuştur.",
+        "Epicare-Duo yüksek hızı ve gelişmiş özellikleriyle hasta sayısı yüksek olan hastane ve kliniklerin tüm ihtiyaçlarını karşılar.",
+        "Epicare-Duo Lazer sistemi günümüzün önde gelen 755 nm Alexandrite lazer sistemi ile epilasyon, pigmente lezyon uygulamaları yaparken vasküler ve diğer lezyon uygulamalarında ise 1064 nm Nd:YAG lazer sistemini kullanır. Nd:YAG Lazer sistemi ile tüm cilt tiplerine yönelik yaz aylarında da kullanılabilir. Etkinliği ile yüksek müşteri memnuniyeti ve uygulama başına düşük maliyet sağlayan bu sistem müşterilerinize daha kısa sürede ve ağrısız olarak sonuç almalarını sağlamaktadır.",
+        "Aynı zamanda müşterilerinizin farklı taleplerine tek bir cihaz ile yanıt verebiliyor olmanız, size daha düşük bir seviyede yatırım ile daha çok kazanma imkanı sağlar.",
+        "Alexandrite ve Nd:YAG lazerin farklı uygulama seçenekleriyle müşterilerinizin talep edeceği bir çok ihtiyacı karşılayabilirsiniz. Ayrıca seans başına daha düşük maliyet ile daha kısa süreli, ağrısız ve etkin uygulamalar yaparak müşteri memnuniyetini arttırabilir, yaptığınız yatırımın daha kısa sürede geri dönmesini sağlayabilirsiniz.",
+        "SmartScreen yazılımı ile müşteri veritabanı, performans geçmişi, sistemin bakımı ile ilgili öneriler, uzaktan gerekli yazılım müdahalelerinin yapılması gibi işinizi geliştirmenize yardımcı olacak çeşitli araçlara da sahip olabilirsiniz. Hatta cihazınızın ne kadar çalıştığını dünyanın her yerinden cihazınıza bağlanarak takip edebilirsiniz."
+      ],
+      "bolumler": [
+        "755-1064 nm Alexandrite + Nd-YAG Lazer Cihazı",
+        "Bizimle İletişime Geçin"
+      ],
+      "spec": [
+        {
+          "ad": "DALGA BOYU",
+          "deger": "755 NM · 1064 NM"
+        },
+        {
+          "ad": "Lazer Ortamı",
+          "deger": "ALEXANDRITE LAZER · Nd:YAG LAZER"
+        },
+        {
+          "ad": "Spot Alanı*",
+          "deger": "1.5, 3, 5, 7, 9, 12,15,18 mm. · 1.5, 3, 5, 7, 9, 12,15,18 mm."
+        },
+        {
+          "ad": "Enerji Maksimum Fluence",
+          "deger": "2500 J/cm2 ‘ye kadar · 2500 J/cm2 ‘ye kadar"
+        },
+        {
+          "ad": "Atım Süresi",
+          "deger": "Değişken 0.5 -300 ms · Değişken 0.5 -300 ms"
+        },
+        {
+          "ad": "Atım Hızı**",
+          "deger": "1-10 Hz’ e kadar (değişken & smart ) · 1-10 Hz’ e kadar (değişken & smart )"
+        },
+        {
+          "ad": "Elektriksel Gereksinimler",
+          "deger": "220-240 VAC, 50/60 Hz, 40 Amper · 220-240 VAC, 50/60 Hz, 40 Amper"
+        },
+        {
+          "ad": "Lazer Soğutma Sistemi",
+          "deger": "Su-Hava, Su-Su · Su-Hava, Su-Su"
+        },
+        {
+          "ad": "Boyutlar paketlenmemiş hali",
+          "deger": "102cm x 48cm x 71cm · 102cm x 48cm x 71cm"
+        }
+      ],
+      "ozellikler": [
+        "Light Age Epicare DUO",
+        "Epilasyon √",
+        "Batık kıl uygulamaları √",
+        "Ablatif olmayan cilt yenileme √",
+        "Yüz kılcal damar uygulamaları √",
+        "Bacakta damar uygulamaları √",
+        "Hemanjiyom √",
+        "Melazma √",
+        "Café-au-lait macules √",
+        "Blue nevi √",
+        "Poikiloderma √",
+        "Sebhorrehic keratosis √",
+        "Anjiyomlar (spider veya diğerleri) √",
+        "Hipertrofik skarlar √",
+        "Skin tags √",
+        "Pigmente lezyonlar √",
+        "Melanositik proliferasyonlar √"
+      ],
+      "kapak": "202307-light-age-epicare-duo-001.webp",
+      "gorseller": [
+        "202307-light-age-epicare-duo-001.webp",
+        "202109-light-age-epicare-duo-0001.jpg"
+      ],
+      "kaynakUrl": "https://estezone.com.tr/light-age-epicare-duo/",
+      "eskiKelimeSayisi": 734
+    },
+    {
+      "slug": "epicare-zenith",
+      "ad": "EpiCare Zenith",
+      "marka": "Light Age",
+      "kategori": "epilasyon",
+      "kategoriAd": "Lazer Epilasyon Sistemleri",
+      "rozet": "Akıllı Arayüz",
+      "vitrin": false,
+      "oneCikan": "2500 J/cm² Fluens",
+      "etiketler": [
+        "Alexandrite",
+        "755 nm",
+        "Bağlantılı"
+      ],
+      "hedef": "Yüksek hacimli epilasyon merkezleri",
+      "neden": "Kablosuz bağlantılı akıllı arayüz ve 1.5–40 mm başlık aralığıyla protokol yönetimini kolaylaştırır.",
+      "birlesmeAdayi": null,
+      "ozet": "EpiCare-Zenith™ sisteminin başka bir sürü özelliği vardır: Güçlü bir bilgisayar arabirimi, kablosuz ve internete bağlı, dünyanın en akıllı, en iyi kullanıcı arayüzü de dahil olmak üzere tedavilerinize ve uygulamanıza yardımcı olmak için gelişmiş yeni imkanlar sunar. Yeni SmartScreen™ sistemi sadece hastalarınızı, tedavilerini ve faturalarını takip etmekle kalmaz aynı zamanda işinizi organize eder.",
+      "aciklama": [
+        "EpiCare-Zenith™ sisteminin başka bir sürü özelliği vardır: Güçlü bir bilgisayar arabirimi, kablosuz ve internete bağlı, dünyanın en akıllı, en iyi kullanıcı arayüzü de dahil olmak üzere tedavilerinize ve uygulamanıza yardımcı olmak için gelişmiş yeni imkanlar sunar. Yeni SmartScreen™ sistemi sadece hastalarınızı, tedavilerini ve faturalarını takip etmekle kalmaz aynı zamanda işinizi organize eder.",
+        "EpiCare-Zenith™ lazer sistemlerinin etkili, güvenli ve konforlu epilasyon sonuçlarını verdiği klinik olarak kanıtlamıştır. 755 nm dal) ga boyu kıl şaftındaki melanini güçlü bir şekilde hedefler ve çevresindeki dokuya asgari düzeyde etkilerken, koyu cilt tipleri içinde tercih edilir. 755 nm dalga boyunda zamana göre yapılandırılmış atış formatları bulunur ki bu atışın etkinliğini optimize ederken istenmeyen yan etkileri de en aza indirir. Hastalar ve uygulayıcılar daha hızlı, hemen hemen ağrısız bir deneyimin tadını çıkarır.",
+        "** Standart Mod Sınırları: Fluens ≤ 40 J / cm, Puls Süresi ≥ 3 ms ve Atış Hızı ≤ 3 Hz. Daha Yüksek Fluensler, Daha Yüksek Atış Hızları ve Diğer Modlarda Daha Kısa Atış Süreleri."
+      ],
+      "bolumler": [
+        "Bizimle İletişime Geçin"
+      ],
+      "spec": [
+        {
+          "ad": "Dalga Boyları",
+          "deger": "755 nm"
+        },
+        {
+          "ad": "Uygulama Tipi",
+          "deger": "Alexandrite"
+        },
+        {
+          "ad": "Başlık",
+          "deger": "1.5 mm – 40 mm opsiyonel 15 | 18 | 20 | 24 | 28 mm standart"
+        },
+        {
+          "ad": "Maksimum Fluens**",
+          "deger": "2500 J/cm²‘ ye kadar"
+        },
+        {
+          "ad": "Atış Hızı**",
+          "deger": "1 – 10 Hz (değişken & “akıllı”)"
+        },
+        {
+          "ad": "Elektriksel Gereksinimler",
+          "deger": "220 – 240 Vac, 50/60 Hz, 40 A"
+        },
+        {
+          "ad": "System Soğutma",
+          "deger": "Su ve Hava*"
+        },
+        {
+          "ad": "Ölçüler",
+          "deger": "Ölçüler"
+        }
+      ],
+      "ozellikler": [
+        "EpiCare-Zenith"
+      ],
+      "kapak": "202307-epicare-zenith-00002-1.webp",
+      "gorseller": [
+        "202307-epicare-zenith-00002-1.webp",
+        "202109-epicare-zenith-0001.jpg",
+        "202002-EpiCare-Zenith-02.jpg",
+        "202002-EpiCare-Zenith-03.jpg"
+      ],
+      "kaynakUrl": "https://estezone.com.tr/epicare-zenith/",
+      "eskiKelimeSayisi": 247
+    },
+    {
+      "slug": "noblex",
+      "ad": "Noblex",
+      "marka": "FineMEC",
+      "kategori": "epilasyon",
+      "kategoriAd": "Lazer Epilasyon Sistemleri",
+      "rozet": "Kore Üretimi",
+      "vitrin": false,
+      "oneCikan": "Triple Pulse",
+      "etiketler": [
+        "Alexandrite",
+        "755 nm",
+        "80 J"
+      ],
+      "hedef": "Güzellik salonları ve orta ölçekli klinikler",
+      "neden": "Kore pazarının en büyük üreticilerinden FineMEC imzalı long pulse Alexandrite; triple pulse ile konforlu uygulama.",
+      "birlesmeAdayi": null,
+      "ozet": "Long Pulse Alexsandrite lazerin geliştirilmesine odaklanan FineMEC, Kore pazarında lazer epilasyon cihazlarının en büyük üreticilerinden biri haline gelmiştir.",
+      "aciklama": [
+        "Long Pulse Alexsandrite lazerin geliştirilmesine odaklanan FineMEC, Kore pazarında lazer epilasyon cihazlarının en büyük üreticilerinden biri haline gelmiştir.",
+        "FineMEC, bilgi birikimi ve sürekli geliştirme çabaları sayesinde Kore pazarının en tanınmış markalardan biridir.",
+        "Noblex, ağrısız epilasyondan pigmentli lezyonlara kadar çeşitli etkili tedaviler sunan, yüksek güçlü ve çok yönlü long pulse bir alexsandrite lazerdir."
+      ],
+      "bolumler": [
+        "Alexandrite Lazer Epilasyon",
+        "Bizimle İletişime Geçin"
+      ],
+      "spec": [
+        {
+          "ad": "Sistem",
+          "deger": "Long Pulse Alexandrite Lazer"
+        },
+        {
+          "ad": "Dalga Boyu",
+          "deger": "755 nm"
+        },
+        {
+          "ad": "Atış Süresi",
+          "deger": "0.2 ~ 100 ms (triple)"
+        },
+        {
+          "ad": "Darbe Gecikmesi",
+          "deger": "0 ~ 90 ms"
+        },
+        {
+          "ad": "Enerji",
+          "deger": "80 J’a kadar"
+        },
+        {
+          "ad": "Kontrol Paneli",
+          "deger": "Dokunmatik ekran giriş arayüzü"
+        },
+        {
+          "ad": "Elektronik Kontrol",
+          "deger": "Mikroişlemci"
+        },
+        {
+          "ad": "Atış Hızı",
+          "deger": "0.5 ~ 10 Hz"
+        },
+        {
+          "ad": "Spot Boyutu",
+          "deger": "2 ~ 20 mm (2, 3, 5, 7, 10, 15, 20 mm)"
+        },
+        {
+          "ad": "Fraksiyonel El Aleti (Opsiyonel)",
+          "deger": "18mm Spot alanı <160 nokta, 400 mikron atış alanı>"
+        },
+        {
+          "ad": "Atış Kontrolü",
+          "deger": "Ayak Pedalı"
+        },
+        {
+          "ad": "Lazer İletimi",
+          "deger": "Lens-coupled optical fiber with hand piece"
+        },
+        {
+          "ad": "Soğutma Tipi",
+          "deger": "RCS gaz soğutması / Hava soğutması"
+        },
+        {
+          "ad": "Soğutma Gereksinimleri",
+          "deger": "Su soğutma"
+        },
+        {
+          "ad": "Klavuz Işık",
+          "deger": "24 mW Lazer diode (650 nm)"
+        },
+        {
+          "ad": "Elektrik Gereksinimleri",
+          "deger": "AC 230V / 30A (50/60Hz tek faz)"
+        },
+        {
+          "ad": "Ölçüler",
+          "deger": "850(Yükseklik) x 385(En) x 950(Uzunluk)mm"
+        },
+        {
+          "ad": "Ağırlık",
+          "deger": "80 Kg"
+        }
+      ],
+      "ozellikler": [],
+      "kapak": "202212-noblex-03.webp",
+      "gorseller": [
+        "202212-noblex-03.webp",
+        "202212-noblex-01.webp"
+      ],
+      "kaynakUrl": "https://estezone.com.tr/noblex/",
+      "eskiKelimeSayisi": 190
+    },
+    {
+      "slug": "nobleen",
+      "ad": "Nobleen",
+      "marka": "FineMEC",
+      "kategori": "epilasyon",
+      "kategoriAd": "Lazer Epilasyon Sistemleri",
+      "rozet": "Çift Dalga Boyu",
+      "vitrin": true,
+      "oneCikan": "755 + 1064 nm",
+      "etiketler": [
+        "Alexandrite",
+        "Nd:YAG",
+        "Vasküler",
+        "Fraksiyonel"
+      ],
+      "hedef": "Tedavi menüsünü genişletmek isteyen klinikler",
+      "neden": "Epilasyondan vasküler lezyona kadar çoklu tedavi; opsiyonel fraksiyonel el aletiyle cilt yenileme de ekler.",
+      "birlesmeAdayi": null,
+      "ozet": "Nobleen, epilasyondan vasküler lezyonlara kadar profesyoneller için geliştirilmiş çift dalga boylu çoklu tedavi lazer cihazıdır.",
+      "aciklama": [
+        "Nobleen, epilasyondan vasküler lezyonlara kadar profesyoneller için geliştirilmiş çift dalga boylu çoklu tedavi lazer cihazıdır.",
+        "\"Nobleen’in opsiyonel “Fraksiyonel başlığı \", melazma ve pigment lezyonları için en gelişmiş tedaviyi sağlayan yenilikçi bir çözümdür.",
+        "Yine opsiyonel olan FineMEC'in yenilikçi \"İnce Kare Atışlı Işın Teknolojisi\", 20x20mm'lik olağanüstü bir kare şekilli atış boyutu sunar"
+      ],
+      "bolumler": [
+        "En iyi 755/1064nm Dual Lazer",
+        "Bizimle İletişime Geçin"
+      ],
+      "spec": [
+        {
+          "ad": "Sistem",
+          "deger": "Long Pulse Alexandrite, Long Pulse Nd Yag Laser"
+        },
+        {
+          "ad": "Dalga Boyu",
+          "deger": "755 nm – 1064nm"
+        },
+        {
+          "ad": "Tekrarlama Hızı",
+          "deger": "1 ~ 10 Hz"
+        },
+        {
+          "ad": "Çıkış Gücü",
+          "deger": "Up to 53 J – Up to 80 J"
+        },
+        {
+          "ad": "Atış Süresi",
+          "deger": "0.08 ~ 100 ms – 0.08 ~ 300 ms"
+        },
+        {
+          "ad": "Spot Boyutu",
+          "deger": "2 ~ 20 mm (2, 3, 5, 7, 10, 15, 20 mm)"
+        },
+        {
+          "ad": "Fraksiyonel El Aleti (Opsiyonel)",
+          "deger": "18mm Spot alanı <160 nokta, 400 mikron atış alanı>"
+        },
+        {
+          "ad": "Laser İletimi",
+          "deger": "Otomatik spot değişimi, Lens Bağlantılı el Aleti ile Optik Fiber Kablo"
+        },
+        {
+          "ad": "Hedefleme Işını",
+          "deger": "0.1 mW lazer diode (635 nm)"
+        },
+        {
+          "ad": "Kontrol Paneli",
+          "deger": "Dokunmatik ekran giriş arayüzü"
+        },
+        {
+          "ad": "Atış Kontrolü",
+          "deger": "Ayak Pedalı"
+        },
+        {
+          "ad": "Soğutma Tipi",
+          "deger": "RCS gaz soğutması / Hava soğutması (opsiyonel)"
+        },
+        {
+          "ad": "Soğutma Spreyi Süresi",
+          "deger": "5 ~ 20 ms (Pre / Post)"
+        },
+        {
+          "ad": "Elektrik Gereksinimleri",
+          "deger": "AC 230 V / 30 A (50 / 60 Hz) single phase"
+        },
+        {
+          "ad": "Ölçüler",
+          "deger": "880 (H) × 385 (W) × 950 (L)"
+        },
+        {
+          "ad": "Ağırlık",
+          "deger": "130 Kg"
+        }
+      ],
+      "ozellikler": [],
+      "kapak": "202212-nobleen-03.webp",
+      "gorseller": [
+        "202212-nobleen-03.webp",
+        "202212-nobleen-01.webp",
+        "202212-nobleen-02.webp"
+      ],
+      "kaynakUrl": "https://estezone.com.tr/nobleen/",
+      "eskiKelimeSayisi": 218
+    },
+    {
+      "slug": "elazer-plus",
+      "ad": "Elazer Plus",
+      "marka": "Estezone",
+      "kategori": "epilasyon",
+      "kategoriAd": "Lazer Epilasyon Sistemleri",
+      "rozet": "Değiştirilebilir Başlık",
+      "vitrin": false,
+      "oneCikan": "3 Dalga Boyu Mix",
+      "etiketler": [
+        "755 nm",
+        "808 nm",
+        "1064 nm",
+        "Sessiz"
+      ],
+      "hedef": "Konfor ve çok yönlülük arayan salon ve klinikler",
+      "neden": "Alexandrite + Diode + Nd:YAG mix atış, sessiz çalışma ve bölgeye göre değiştirilebilir aplikatör sistemi.",
+      "birlesmeAdayi": null,
+      "ozet": "Sessiz çalışma özelliği, hastalar ve operatörler için daha sessiz ve uygun bir çalışma ortamı sağlar. Ayrıca Elazer Plus başlık sistemi ile farklı bölgelerde kullanıma uygun değiştirilebilir aplikatörlere sahiptir.",
+      "aciklama": [
+        "Sessiz çalışma özelliği, hastalar ve operatörler için daha sessiz ve uygun bir çalışma ortamı sağlar. Ayrıca Elazer Plus başlık sistemi ile farklı bölgelerde kullanıma uygun değiştirilebilir aplikatörlere sahiptir.",
+        "Orijinal Amerikan “Coherent lazer” teknolojisi ile, çıkışın kararlı ve yeterli olmasını sağlamak için lazer başlığında orijinal barlar kullanılır. Yüksek kaliteli barlar, lazerin başlığının ömrünün uzun olmasını sağlar.",
+        "Sapma açısı azaltılmış, ışın kenarları yumuşatılmış tasarım ile daha etkin epilasyon sağlar.",
+        "Soğutma Tipi: TEC, air cooling + water cooling + semiconductor cooling"
+      ],
+      "bolumler": [
+        "Bizimle İletişime Geçin"
+      ],
+      "spec": [
+        {
+          "ad": "Dalga Boyları",
+          "deger": "808nm – 755nm – 1064nm"
+        },
+        {
+          "ad": "Fluence",
+          "deger": "5~80J/cm²"
+        },
+        {
+          "ad": "Pulse aralığı",
+          "deger": "5-100ms"
+        },
+        {
+          "ad": "Spot büyüklüğü",
+          "deger": "12.5*14.5mm 13.5*28.5mm 13.5*38.5mm Round 8.25mm"
+        },
+        {
+          "ad": "Frekansy",
+          "deger": "1 – 10 Hz"
+        },
+        {
+          "ad": "Başlık gücü",
+          "deger": "1800W"
+        },
+        {
+          "ad": "Cihaz Gücü",
+          "deger": "3300W"
+        },
+        {
+          "ad": "Ekran Özellikleri",
+          "deger": "12 Inch multi color dokunmatik"
+        }
+      ],
+      "ozellikler": [
+        "Elazer Plus"
+      ],
+      "kapak": "202406-elazer-plus-005.webp",
+      "gorseller": [
+        "202406-elazer-plus-005.webp",
+        "202406-elazer-plus-006.webp",
+        "202406-elazer-plus-007.webp"
+      ],
+      "kaynakUrl": "https://estezone.com.tr/elazer-plus/",
+      "eskiKelimeSayisi": 151
+    },
+    {
+      "slug": "elazer",
+      "ad": "Elazer",
+      "marka": "Estezone",
+      "kategori": "epilasyon",
+      "kategoriAd": "Lazer Epilasyon Sistemleri",
+      "rozet": "Giriş Seviyesi Mix",
+      "vitrin": false,
+      "oneCikan": "3 Dalga Boyu",
+      "etiketler": [
+        "755 nm",
+        "808 nm",
+        "1064 nm"
+      ],
+      "hedef": "İlk profesyonel cihazını alan işletmeler",
+      "neden": "Üç dalga boyunu erişilebilir bir yatırımla sunar; dört kademeli soğutma ile uzun seanslarda kararlı çalışır.",
+      "birlesmeAdayi": null,
+      "ozet": "Elazer lazer epilasyon cihazı 3 dalga boyunda işlem yapabilen fonksiyonel bir sisteme sahiptir.755 nm 808 nm ve 1064 nm dalga boyuna sahiptir.",
+      "aciklama": [],
+      "bolumler": [
+        "Elazer",
+        "Bizimle İletişime Geçin"
+      ],
+      "spec": [
+        {
+          "ad": "Lazer Tipi",
+          "deger": "Yüksek Yoğunluklu Elazer"
+        },
+        {
+          "ad": "Dalga Boyu",
+          "deger": "755+808+1064nm"
+        },
+        {
+          "ad": "Enerji",
+          "deger": "10~80J/cm2"
+        },
+        {
+          "ad": "Atış Süresi",
+          "deger": "10-100ms"
+        },
+        {
+          "ad": "Spot Genişliği",
+          "deger": "12mm*23mm"
+        },
+        {
+          "ad": "Frekans",
+          "deger": "1~10Hz"
+        },
+        {
+          "ad": "Soğutma",
+          "deger": "TEC, hava soğutma + su soğutma + yarı iletken soğutma"
+        },
+        {
+          "ad": "Soğutma Sistemi",
+          "deger": "Başlık soğutma sıcaklığı max: -16 derece"
+        },
+        {
+          "ad": "Ekran",
+          "deger": "10.4 Inch renkli ekran"
+        },
+        {
+          "ad": "Cihaz Boyutu",
+          "deger": "47*40*112CM"
+        },
+        {
+          "ad": "Net Ağırlık",
+          "deger": "42KG"
+        }
+      ],
+      "ozellikler": [
+        "Elazer lazer epilasyon cihazı 3 dalga boyunda işlem yapabilen fonksiyonel bir sisteme sahiptir.",
+        "755 nm 808 nm ve 1064 nm dalga boyuna sahiptir.",
+        "Kıl köklerinin içindeki yapıların yanı sıra farklı doku derinliklerini hedef alır. Bu sayede daha etkin sonuç alınmasını sağlar.",
+        "3 dalga boyu 808nm, 755nm ve 1064nm'nin tüm avantajlarını birleştirir. Farklı lazer özelliklerine sahiptir.",
+        "3 dalga boyu 808nm, 755nm ve 1064nm'nin tüm avantajlarını birleştirir. Farklı lazer özelliklerine sahiptir.",
+        "Kıl köklerinin içindeki yapıların yanı sıra farklı doku derinliklerini hedef alır. Bu sayede daha etkin sonuç alınmasını sağlar.",
+        "Elazer, lazer epilasyonda altın standart olan 808nm/755nm/1064n dalga boyunda çalışır"
+      ],
+      "kapak": "202307-elazer-1-1.webp",
+      "gorseller": [
+        "202307-elazer-1-1.webp",
+        "202302-elazer-1.webp",
+        "202302-elazer-2.webp",
+        "202108-elazer-04.jpg",
+        "202108-elazer-05-1.jpg",
+        "202108-elazer-06.jpg",
+        "202108-elazer-07.jpg"
+      ],
+      "kaynakUrl": "https://estezone.com.tr/elazer/",
+      "eskiKelimeSayisi": 167
+    },
+    {
+      "slug": "epizone-mix-diode-lazer",
+      "ad": "Epizone Mix Diode Lazer",
+      "marka": "Estezone",
+      "kategori": "epilasyon",
+      "kategoriAd": "Lazer Epilasyon Sistemleri",
+      "rozet": "Mix Atış",
+      "vitrin": false,
+      "oneCikan": "3300 W Güç",
+      "etiketler": [
+        "Mix Atış",
+        "12\" Dokunmatik",
+        "Diode"
+      ],
+      "hedef": "Yoğun seans temposu olan epilasyon merkezleri",
+      "neden": "En çok kullanılan üç dalga boyu tek başlıkta; 12 inç dokunmatik arayüzle operatör eğitimi kısalır.",
+      "birlesmeAdayi": null,
+      "ozet": "En çok kullanılan üç lazer; Alexandrite,Diode ve NdYag bir arada “Mix Atışlı” epilasyon cihazıdır.",
+      "aciklama": [
+        "En çok kullanılan üç lazer; Alexandrite,Diode ve NdYag bir arada “Mix Atışlı” epilasyon cihazıdır.",
+        "Epizone değiştirilebilir başlık sistemi ile farklı bölgelerde kullanıma uygun manyetik aplikatörlere sahiptir. Geniş uygulama bölgelerinde çok hızlı seans süreleri sağlar. 3300W’lık yüksek gücü ve 5.2 cm² lik büyük spot çapıyla çok hızlı uygulama imkanı sağlar.",
+        "Orijinal Amerikan “Coherent lazer” teknolojisi ile, çıkışın kararlı ve yeterli olmasını sağlamak için lazer başlığında orijinal barlar kullanılır. Yüksek kaliteli barlar, lazerin başlığının ömrünün uzun olmasını sağlar.",
+        "Sapma açısı azaltılmış, ışın kenarları yumuşatılmış tasarım ile daha etkin epilasyon sağlar.",
+        "Soğutma Tipi: TEC, air cooling + water cooling + semiconductor cooling"
+      ],
+      "bolumler": [
+        "Bizimle İletişime Geçin"
+      ],
+      "spec": [
+        {
+          "ad": "Dalga Boyları",
+          "deger": "808nm – 755nm – 1064nm"
+        },
+        {
+          "ad": "Pulse aralığı",
+          "deger": "5-100ms"
+        },
+        {
+          "ad": "Spot büyüklüğü",
+          "deger": "12.5*14.5mm 13.5*28.5mm 13.5*38.5mm Round 8.25mm"
+        },
+        {
+          "ad": "Frekansy",
+          "deger": "1 – 10 Hz"
+        },
+        {
+          "ad": "Başlık gücü",
+          "deger": "1800W"
+        },
+        {
+          "ad": "Cihaz Gücü",
+          "deger": "3300W"
+        },
+        {
+          "ad": "Ekran Özellikleri",
+          "deger": "12 Inch multi color dokunmatik"
+        }
+      ],
+      "ozellikler": [
+        "Epizone Mix Diode Lazer"
+      ],
+      "kapak": "202405-epizone-mix-001.webp",
+      "gorseller": [
+        "202405-epizone-mix-001.webp",
+        "202304-elazer-plus-003.webp",
+        "202304-elazer-plus-004.webp"
+      ],
+      "kaynakUrl": "https://estezone.com.tr/epizone-mix-diode-lazer/",
+      "eskiKelimeSayisi": 174
+    },
+    {
+      "slug": "cotra-plus-co2",
+      "ad": "Cotra Plus CO2",
+      "marka": "Cotra",
+      "kategori": "cilt",
+      "kategoriAd": "Cilt & Medikal Estetik",
+      "rozet": "Fraksiyonel CO2",
+      "vitrin": true,
+      "oneCikan": "10.600 nm · 50 W",
+      "etiketler": [
+        "Fraksiyonel CO2",
+        "Cerrahi",
+        "Jinekolojik"
+      ],
+      "hedef": "Dermatoloji, plastik cerrahi ve medikal estetik klinikleri",
+      "neden": "Cerrahi, zoom, fraksiyonel ve kozmetik modlarıyla tek cihazda dört ayrı tedavi hattı açar.",
+      "birlesmeAdayi": null,
+      "ozet": "Günümüz estetik ve medikal uygulamalarında, hem etkinlik hem de hasta konforu en üst düzeyde tutulmak isteniyor. COTRA PLUS, bu beklentileri fazlasıyla karşılayan, yeni nesil bir CO2 fraksiyonel lazer sistemidir. Dermatoloji ve jinekoloji alanlarındaki çok yönlü kullanımıyla öne çıkan bu cihaz, yüksek hassasiyetli lazer teknolojisini gelişmiş güvenlik ve konfor özellikleriyle birleştirerek sağlık profesyonellerine kusursuz bir çözüm sunar.",
+      "aciklama": [
+        "Günümüz estetik ve medikal uygulamalarında, hem etkinlik hem de hasta konforu en üst düzeyde tutulmak isteniyor. COTRA PLUS, bu beklentileri fazlasıyla karşılayan, yeni nesil bir CO2 fraksiyonel lazer sistemidir. Dermatoloji ve jinekoloji alanlarındaki çok yönlü kullanımıyla öne çıkan bu cihaz, yüksek hassasiyetli lazer teknolojisini gelişmiş güvenlik ve konfor özellikleriyle birleştirerek sağlık profesyonellerine kusursuz bir çözüm sunar.",
+        "COTRA PLUS, 50W çıkış gücü, hassas penetrasyon kontrolü, ergonomik tasarımı ve hava soğutmalı sistemiyle hem etkili hem de güvenli tedaviler vadeder. İyi huylu cilt lezyonlarından cilt gençleştirmeye, vajinal sıkılaştırmadan pigmentli lezyon tedavilerine kadar geniş bir endikasyon yelpazesinde kullanılan cihaz, kliniklerin teknolojiye dayalı prestijini artırırken, hastalara da memnuniyet verici sonuçlar sunar.",
+        "COTRA PLUS, CO2 lazer teknolojisinin lider üreticisi DSE tarafından geliştirilen, dermatoloji ve jinekoloji alanlarında maksimum performans sunan yenilikçi bir CO2 lazer cihazıdır. Gelişmiş fraksiyonel ve cerrahi uygulamalarıyla, cilt yenilemeden vajinal gençleştirmeye kadar geniş bir tedavi yelpazesi sunar."
+      ],
+      "bolumler": [
+        "COTRA PLUS CO2 Fraksiyonel CO2 Lazer Teknolojisinde Zirve",
+        "Bizimle İletişime Geçin",
+        "COTRA PLUS Nedir?",
+        "Endikasyonlar"
+      ],
+      "spec": [
+        {
+          "ad": "Lazer Tipi",
+          "deger": "CO2"
+        },
+        {
+          "ad": "Dalga Boyu",
+          "deger": "10,600 nm"
+        },
+        {
+          "ad": "Çıkış Gücü",
+          "deger": "50 W"
+        },
+        {
+          "ad": "Modlar",
+          "deger": "Cerrahi / Zoom / Fraksiyonel / Kozmetik"
+        },
+        {
+          "ad": "Pulse Süresi",
+          "deger": "0.5 – 2.0 ms"
+        },
+        {
+          "ad": "Yoğunluk Aralığı",
+          "deger": "0.3 – 2.5 mm (0.1 mm artışlarla)"
+        },
+        {
+          "ad": "Tarama Boyutu",
+          "deger": "Max. 20 x 20 mm"
+        },
+        {
+          "ad": "Cerrahi Kesi Boyutu",
+          "deger": "Max. 1.5 mm"
+        },
+        {
+          "ad": "Güç Gereksinimi",
+          "deger": "220-230 VAC, 50/60 Hz"
+        },
+        {
+          "ad": "Ebat",
+          "deger": "360 x 410 x 1090 mm"
+        },
+        {
+          "ad": "Ağırlık",
+          "deger": "60 kg"
+        }
+      ],
+      "ozellikler": [
+        "COTRA PLUS CO2",
+        "Kare, Daire, Üçgen, Altıgen",
+        "Normal & Karışık dolgu desenleri",
+        "Cerrahi El Aleti",
+        "Zoom Fraksiyonel Başlık",
+        "Vajinal Başlık",
+        "Kozmetik Başlık",
+        "Mikrotermal Tedavi Alanları sayesinde yalnızca cildin hedeflenen bölgelerine müdahale eder, böylece iyileşme süresi kısalır.",
+        "Kolajen üretimini tetikler ve cilt dokusunda gözle görülür yenilenme sağlar.",
+        "Yara izi, kırışıklık, pigmentasyon ve vajinal uygulamalar için güvenli ve etkili çözümler sunar.",
+        "50 W Enerji Çıkışı : Hızlı ve etkili tedavi sağlar.",
+        "Hassas Penetrasyon Derinliği : Derinlik kontrolü ile özelleştirilmiş uygulamalar.",
+        "Ayarlanabilir Pulse Süreleri (0,5 – 2,0 ms) : Buharlaşma ve pıhtılaşma üzerinde üstün kontrol.",
+        "Tekrar Atış Teknolojisi : Derinlemesine ve etkili tedavi için aynı alana çoklu atış yapılabilir.",
+        "Menisküs Lens Teknolojisi : Sapma olmadan, ideal nokta boyutunda hassas ablasyon.",
+        "Hava Soğutma Teknolojisi ile sessiz, etkili ve su sızıntısı riskinden arındırılmış soğutma.",
+        "Minimal ağrı – Çoğu uygulama için anestezik krem kullanımına gerek yok.",
+        "Hızlı İyileşme Süresi – Tedaviden hemen sonra günlük yaşama dönüş.",
+        "Fraksiyonel",
+        "İyi huylu cilt lezyonları (siğil, ben, vb.)",
+        "Pigmentli lezyonlar (solar lentigo, seboreik keratoz, yaşlılık lekeleri)",
+        "Cilt gençleştirme (kırışıklık, ince çizgi, doku iyileştirme)",
+        "Akne ve ameliyat sonrası yara izleri",
+        "Gözenek küçültme"
+      ],
+      "kapak": "202503-cotra-plus-co2-00.webp",
+      "gorseller": [
+        "202503-cotra-plus-co2-00.webp",
+        "202503-cotra-plus-co2-01.webp",
+        "202503-cotra-plus-co2-04.webp",
+        "202503-cotra-plus-co2-02.webp",
+        "202503-cotra-plus-co2-06.webp",
+        "202503-cotra-plus-co2-03.webp"
+      ],
+      "kaynakUrl": "https://estezone.com.tr/cotra-plus-co2/",
+      "eskiKelimeSayisi": 512
+    },
+    {
+      "slug": "lucid-q-ptp",
+      "ad": "Lucid Q-PTP",
+      "marka": "Lucid",
+      "kategori": "cilt",
+      "kategoriAd": "Cilt & Medikal Estetik",
+      "rozet": "Q-Switched Nd:YAG",
+      "vitrin": true,
+      "oneCikan": "1064 / 532 nm",
+      "etiketler": [
+        "Q-Switched",
+        "Dövme Silme",
+        "Leke"
+      ],
+      "hedef": "Leke ve dövme silme hattı kuran klinikler",
+      "neden": "PTP teknolojisiyle enerjiyi iki darbede ileterek yüksek etkinliği düşük cilt hasarı riskiyle birleştirir.",
+      "birlesmeAdayi": null,
+      "ozet": "LUCID Q-PTP, 1064 nm ve 532 nm olmak üzere i­ki­ dalga boyunu kullanır ve lazer gücünü 2 pulse’ta çok kısa bi­r sürede ­ilet­ir. Böylece yüksek enerj­iden kaynaklanab­ilecek ci­lt hasarlarından kaçınılmaktadır. LUCID Q-PTP, öncek­i lazer uygulama prosedürler­iyle karşılaştırıldığında dermi­s ve ep­iderm­s üzerindeki­ pigmentli­ lezyonları etkili­ şekilde azaltır ve ayrıca hi­popi­gmentasyon, p­igmentasyon ve Melazmanın tekrarlaması gi­bi­ yan etki­ r­isk­ini­ en aza ­ind­iri­r.",
+      "aciklama": [
+        "LUCID Q-PTP, 1064 nm ve 532 nm olmak üzere i­ki­ dalga boyunu kullanır ve lazer gücünü 2 pulse’ta çok kısa bi­r sürede ­ilet­ir. Böylece yüksek enerj­iden kaynaklanab­ilecek ci­lt hasarlarından kaçınılmaktadır. LUCID Q-PTP, öncek­i lazer uygulama prosedürler­iyle karşılaştırıldığında dermi­s ve ep­iderm­s üzerindeki­ pigmentli­ lezyonları etkili­ şekilde azaltır ve ayrıca hi­popi­gmentasyon, p­igmentasyon ve Melazmanın tekrarlaması gi­bi­ yan etki­ r­isk­ini­ en aza ­ind­iri­r.",
+        "Qas­-Long (darbe genişliği­ 300㎲ @ 1064nm), pigmentli­ hücrelerin lazer­ seçici­ olarak absorbe etmesini­ sağlayan tonlama ve lifting’­in bir kombinasyonudur. Pigmentli­ hücreler­i yok ederek kolajeni­ uyarır ve soyulma sonrası yenilenme, sıkılaşma, geniş gözeneklerin en aza indirilmesi­ ­için faydalıdır.",
+        "Q-PTP modu, çok kısa bir sürede 2 atımlık sabit lazer gücü enerjisi­ sağlar. Önceki­ lazer tonlama prosedürleriyle karşılaştırıldığında enerjisi­ çok daha yüksektir. Yüksek enerjili­ lazerin h­ipopi­gmentasyon, pigmentasyon veya Melazma nüksü g­ibi­ yan etkilerini­, yüksek enerjiyi­ ­iki­ye bölünerek azaltılırken etkinlik artırılır. Q-PTP modu hem 1064 nm hem de 532 nm dalga boylarında yapılabilir. (Ç­ft Pulse), 2 pulse güvenli­ enerj­i i­leti­m­i, Daha az yan etkili­, Daha etkili­ tedavi­.",
+        "Sistem, mükemmel görünürlük ve kullanılabilirliğe sahip 10,4 ­inç dokunmatik ekran ­le kontrol edilebilir.",
+        "Otomatik kalibrasyon sistemi­ tutarlı ve stabil enerji­ çıkısı sağladığı ­içi­n uzun süreli­ kullanımlarda uygun maliyetli­ ve güvenilir tedavi­ sağlar.",
+        "Kullanıcıya kolaylık sağlamak amacıyla sistem, El alet­ üç farklı tiptedir. Standart bir Zoom el aleti­ ve iki­ farklı (opsiyonel) fraksiyonel el aleti­ tercih edilebilir. Spot boyutunu otomatik olarak tanır. Daha rahat çalışma ­içi­n ­iki­ farklı tipte el aleti­ başlığı da mevcuttur."
+      ],
+      "bolumler": [
+        "1064nm / 532nm Q-Sw­tched Nd:YAG Laser",
+        "Bizimle İletişime Geçin"
+      ],
+      "spec": [
+        {
+          "ad": "Tip",
+          "deger": "Q-Switched Nd:YAG"
+        },
+        {
+          "ad": "Dalga boyu",
+          "deger": "1064nm / 532nm"
+        },
+        {
+          "ad": "Kol Sistemi",
+          "deger": "Via 7-articulated arm"
+        },
+        {
+          "ad": "Hedef Işın",
+          "deger": "635nm, 5mW"
+        },
+        {
+          "ad": "Işın Kalitesi",
+          "deger": "Top-Hat Odaklı"
+        },
+        {
+          "ad": "Enerji",
+          "deger": "Up to 2200mJ @ 1064nm PTP Q-Switched"
+        },
+        {
+          "ad": "Darbe Genişliği",
+          "deger": "5~7ns @ 1064nm Q-Switched"
+        },
+        {
+          "ad": "Frekans",
+          "deger": "up to 25Hz @ 1064nm Q-Switched"
+        }
+      ],
+      "ozellikler": [
+        "Lucid Q-PTP"
+      ],
+      "kapak": "202408-lucid-q-ptp-005.webp",
+      "gorseller": [
+        "202408-lucid-q-ptp-005.webp",
+        "202408-lucid-q-ptp-006.webp",
+        "202408-qasi-long-mod-01.webp",
+        "202408-q-ptp-modu-01.webp",
+        "202408-dokunmatik-ekran-01.webp",
+        "202408-otomatik-kalibrasyon-01.webp",
+        "202408-bilgi-depolama-01.webp",
+        "202408-Lucid-qptp-0002.webp",
+        "202408-dye-handpiece-01.webp"
+      ],
+      "kaynakUrl": "https://estezone.com.tr/lucid-q-ptp/",
+      "eskiKelimeSayisi": 814
+    },
+    {
+      "slug": "picozone",
+      "ad": "PicoZone",
+      "marka": "Estezone",
+      "kategori": "cilt",
+      "kategoriAd": "Cilt & Medikal Estetik",
+      "rozet": "Pikosaniye",
+      "vitrin": true,
+      "oneCikan": "750 ps Darbe",
+      "etiketler": [
+        "Pikosaniye",
+        "Leke",
+        "Dövme",
+        "Melazma"
+      ],
+      "hedef": "Premium leke ve dövme tedavisi sunan merkezler",
+      "neden": "Pikosaniye darbe genişliği pigmenti geleneksel Q-switched lazerden çok daha küçük parçalara ayırır; seans sayısı düşer.",
+      "birlesmeAdayi": null,
+      "ozet": "PicoLazer’de Lazer gücü Pico saniyede yani saniyenin trilyonda biri kadar kısa sürede cilt dokusuna yayılır, bu da pigmenti geleneksel Q:switch lazerden çok daha küçük parçalara ayırarak parçalar.",
+      "aciklama": [
+        "PicoLazer’de Lazer gücü Pico saniyede yani saniyenin trilyonda biri kadar kısa sürede cilt dokusuna yayılır, bu da pigmenti geleneksel Q:switch lazerden çok daha küçük parçalara ayırarak parçalar.",
+        "Pigment parçaları daha kolay ve daha hızlı şekilde vücut tarafından yok edilir. Minimum risk ve daha az ağrı Kısa atış süresi sayesinde lazer cilde daha az hasar verir. Tedavi daha güvenli ve daha az ağrılıdır.",
+        "Dövme silme için geleneksel Q: switch lazerlere göre çok daha az seansta sonuç alınır."
+      ],
+      "bolumler": [
+        "PicoZone",
+        "Bizimle İletişime Geçin",
+        "Picosaniye Lazer Nedir?"
+      ],
+      "spec": [
+        {
+          "ad": "Lazer Türü",
+          "deger": "Pikosaniye ND: YAG Lazer"
+        },
+        {
+          "ad": "Enerji Seviyesi",
+          "deger": "Maksimum 800mj (532nm) Maksimum 1600mj (1064nm)"
+        },
+        {
+          "ad": "Dalga Boyu",
+          "deger": "1064nm, 532nm (650nm ve 585nm İsteğe Bağlı)"
+        },
+        {
+          "ad": "Darbe Süresi",
+          "deger": "750ps"
+        },
+        {
+          "ad": "Tekrarlama Frekansı",
+          "deger": "1-10Hz"
+        },
+        {
+          "ad": "Nokta Boyutu",
+          "deger": "2-10mm"
+        },
+        {
+          "ad": "Boyut",
+          "deger": "90 x 45 x 170cm"
+        },
+        {
+          "ad": "Ağırlık",
+          "deger": "113kg"
+        }
+      ],
+      "ozellikler": [
+        "Endikasyonları",
+        "Tüm Renklerde Dövme Silme",
+        "Epidermal ve Dermal Pigmente, Lezyon Tedavisi",
+        "Yaşlılık ve Güneş Lekeleri",
+        "Kırışıklık Tedavisi",
+        "Kalıcı Makyaj Silme",
+        "Melazma ve Derin Lekeler",
+        "Vasküler Lezyonlar",
+        "Akne İzleri ve tedavisi",
+        "Cilt Gençleştirme",
+        "Tırnak Mantarı",
+        "Karbon Peeling",
+        "Epilasyon",
+        "Cilt Beyazlatma"
+      ],
+      "kapak": "202307-picozone-001.webp",
+      "gorseller": [
+        "202307-picozone-001.webp",
+        "202204-picozone-01-1.jpg",
+        "202204-PicoZone-02.jpg",
+        "202204-PicoZone-04.jpg",
+        "202204-PicoZone-03.jpg"
+      ],
+      "kaynakUrl": "https://estezone.com.tr/picozone/",
+      "eskiKelimeSayisi": 185
+    },
+    {
+      "slug": "modula-bbl",
+      "ad": "Modula BBL",
+      "marka": "Wavemed",
+      "kategori": "cilt",
+      "kategoriAd": "Cilt & Medikal Estetik",
+      "rozet": "İtalyan Üretimi",
+      "vitrin": false,
+      "oneCikan": "100.000 Atış Lamba",
+      "etiketler": [
+        "BBL",
+        "IPL",
+        "Class IIb",
+        "CE 1936"
+      ],
+      "hedef": "Cilt tonu ve doku protokolü kuran klinikler",
+      "neden": "Estetik ve medikal ayrı fluens seviyeleri, 100.000 atışlık lamba ömrüyle sarf maliyetini öngörülebilir kılar.",
+      "birlesmeAdayi": null,
+      "ozet": "Cildinizin tonunu, dokusunu ve elastikiyetini iyileştirmek hiç bu kadar kolay olmamıştı.",
+      "aciklama": [
+        "Cildinizin tonunu, dokusunu ve elastikiyetini iyileştirmek hiç bu kadar kolay olmamıştı.",
+        "Modula BBL, cilt yenileme ve gençleştirme alanında kullanılan gelişmiş bir geniş bant ışık (BBL) tedavi cihazıdır. Bu teknoloji, ciltteki çeşitli problemleri hedef alarak daha sağlıklı ve genç bir görünüm elde etmeyi amaçlar.",
+        "Modula BBL, değiştirilebilir filtreler sayesinde altı farklı tedavinin teknolojisini tek bir el aletinde yoğunlaştıran bir cihazdır. Foto gençleştirmeden akne tedavisine ve vasküler tedavilere uygundur.",
+        "Her seansı hasta için son derece verimli ve güvenli hale getiren çok sayıda sensör ve ayar kullanan son derece gelişmiş sisteme sahiptir.",
+        "Modula BBL, kaliteli üretim anlayışı ve yenilikçi teknolojisiyle dermatoloji alanında yeni bir standart belirliyor. Kullanım kolaylığı ve etkili sonuçları bir araya getiren bu cihaz, profesyoneller için mükemmel bir çözüm sunuyor.",
+        "Modula BBL aynı zamanda diğer teknolojilerle entegre edilerek tedavi maliyetlerini düşürüp etkinliği iki katına çıkararak mükemmel kombinasyonlar yaratabilen çok yönlü bir teknolojidir. Opsiyonel olarak Radyofrekans başlığı eklenebilir."
+      ],
+      "bolumler": [
+        "Modula BBL – Wavemed Modula Gelişmiş BBL Teknolojisi",
+        "Bizimle İletişime Geçin"
+      ],
+      "spec": [
+        {
+          "ad": "Güç",
+          "deger": "110 — 240VAC 5O-60Hz"
+        },
+        {
+          "ad": "Cihaz Sınıfı",
+          "deger": "Class IIb, CE 1936"
+        },
+        {
+          "ad": "Lamba Ömrü",
+          "deger": "100.000 atış"
+        },
+        {
+          "ad": "Fluence (Enerji Yoğunluğu)",
+          "deger": "26 J/cm² (Estetik), 35 J/cm² (Medikal)"
+        },
+        {
+          "ad": "Spot Alanı",
+          "deger": "50 x 12 mm (6 cm²)"
+        },
+        {
+          "ad": "Burst Modu",
+          "deger": "5 ardışık puls"
+        }
+      ],
+      "ozellikler": [
+        "Modula BBL",
+        "Değiştirilebilir Filtre Teknolojisi Altı farklı tedaviyi tek bir el aletinde birleştirir. Foto gençleştirmeden epilasyona kadar geniş bir uygulama yelpazesi sunar.",
+        "Yüksek Verimlilik Çok sayıda sensör ve ayar ile her seans hasta için hızlı ve etkili hale gelir.",
+        "Yeni kolajen ve elastin üretimini tetikler.",
+        "Cildi sıkılaştırır ve daha genç bir görünüm sağlar.",
+        "Cilt tonunu eşitler.",
+        "Akneye neden olan bakterileri hedef alır ve yok eder.",
+        "Rozasea kaynaklı kızarıklıkları hafifletir.",
+        "Farklı dalga boylarında damar tedavi filtreleri ile etkili sonuçlar sağlar.",
+        "Işık enerjisi kıl köküne ulaşarak termoliz yoluyla kılları kalıcı olarak yok eder.",
+        "Melanin tarafından emilen ışık, cilt yüzeyine zarar vermeden etki eder.",
+        "Derin ve yüzeysel damar problemlerinde etkili çözümler sunar.",
+        "Kılcal damarların görünümünü azaltır ve cildin sağlıklı görünümünü destekler."
+      ],
+      "kapak": "202501-modula-bbl-10.webp",
+      "gorseller": [
+        "202501-modula-bbl-10.webp",
+        "202501-module-bbl-018.webp",
+        "202501-module-bbl-015-1.webp",
+        "202501-module-bbl-016-1.webp",
+        "202501-module-bbl-011-1.webp",
+        "202501-module-bbl-012-1.webp",
+        "202501-module-bbl-013-1.webp",
+        "202501-module-bbl-014-1.webp"
+      ],
+      "kaynakUrl": "https://estezone.com.tr/modula-bbl/",
+      "eskiKelimeSayisi": 542
+    },
+    {
+      "slug": "goldzone",
+      "ad": "GoldZone",
+      "marka": "Estezone",
+      "kategori": "cilt",
+      "kategoriAd": "Cilt & Medikal Estetik",
+      "rozet": "Vakumlu Altın İğne",
+      "vitrin": false,
+      "oneCikan": "RF Mikro İğneleme",
+      "etiketler": [
+        "Altın İğne",
+        "RF",
+        "Vakum",
+        "0.4–4 mm"
+      ],
+      "hedef": "Ağrısız iğneleme protokolü arayan merkezler",
+      "neden": "Vakum desteği iğnelerin cilt altına daha az ağrıyla ulaşmasını sağlar; fraksiyonel ve mikro iğneleme başlıkları birlikte gelir.",
+      "birlesmeAdayi": null,
+      "ozet": "Goldzone, RF vakumlu mikro iğneleme, cildi vakumlayarak iğnelerin cilt altına daha ağrısız bir şekilde ulaşmasını sağlar.",
+      "aciklama": [
+        "Goldzone, RF vakumlu mikro iğneleme, cildi vakumlayarak iğnelerin cilt altına daha ağrısız bir şekilde ulaşmasını sağlar.",
+        "Vakum sayesinde İğneler RF enerjisini çok kısa sürede optimum seviyede cilt altına gönderir."
+      ],
+      "bolumler": [
+        "GoldZone",
+        "Ağrısız Uygulama Goldzone",
+        "Bizimle İletişime Geçin"
+      ],
+      "spec": [
+        {
+          "ad": "Güç Başlıklar",
+          "deger": "Max 50 watts"
+        },
+        {
+          "ad": "Frekans",
+          "deger": "Fraksiyonel RF Başlık, Mikro İğneleme RF Başlık"
+        },
+        {
+          "ad": "Frekans",
+          "deger": "2MHz"
+        },
+        {
+          "ad": "Enerji",
+          "deger": "1-10 Level"
+        },
+        {
+          "ad": "Darbe Süresi",
+          "deger": "10-900ms"
+        },
+        {
+          "ad": "İğne Derinliği",
+          "deger": "0.4-4mm ayarlanabilir"
+        },
+        {
+          "ad": "Basınç Seviyesi",
+          "deger": "1 – 4"
+        },
+        {
+          "ad": "Çalışma Modu",
+          "deger": "SINGLE/AUTO"
+        },
+        {
+          "ad": "Mod",
+          "deger": "MONO & BIPOLAR"
+        },
+        {
+          "ad": "Soğutma",
+          "deger": "1-3 Level (Max -10 °C)"
+        },
+        {
+          "ad": "Boyutlar",
+          "deger": "46 x 37 x 125CM"
+        },
+        {
+          "ad": "Güç",
+          "deger": "10%, 10A, 50HZ / AC110V ±10%10A, 60HZ"
+        }
+      ],
+      "ozellikler": [
+        "%50’si pozitif diğer %50’si Negatif Kutupludur. RF Enerjisi yalnızca iğnenin derinliğinde bu noktalar arasında dolaşır.",
+        "Bu mod yüz tedavisi için daha uygundur.",
+        "Uçtaki tüm metal noktalar pozitif kutupludur.",
+        "Hastaların tedavi sırasında negatif kutup başlığını elinde tutması gerekir. RF enerjisi Bipolar modundan daha derine inebilir. Bu yüzden vücut tedavisi için daha uygundur."
+      ],
+      "kapak": "202307-goldzone-2-1.webp",
+      "gorseller": [
+        "202307-goldzone-2-1.webp",
+        "202302-goldzone-2.webp",
+        "202204-GoldZone-02.jpg",
+        "202204-GoldZone-04.jpg",
+        "202108-elazer-06.jpg",
+        "202108-elazer-07.jpg",
+        "202204-GoldZone-05.jpg"
+      ],
+      "kaynakUrl": "https://estezone.com.tr/goldzone/",
+      "eskiKelimeSayisi": 172
+    },
+    {
+      "slug": "rfyne",
+      "ad": "RFYNE",
+      "marka": "RFYNE",
+      "kategori": "cilt",
+      "kategoriAd": "Cilt & Medikal Estetik",
+      "rozet": "İtalyan Estetiği",
+      "vitrin": false,
+      "oneCikan": "Yeni Nesil RF",
+      "etiketler": [
+        "Radyofrekans",
+        "Altın İğne",
+        "İtalya"
+      ],
+      "hedef": "Premium konumlanan medikal estetik klinikleri",
+      "neden": "Radyofrekans altın iğne teknolojisinde İtalyan tasarımı ve yeni nesil başlık mimarisi.",
+      "birlesmeAdayi": null,
+      "ozet": "RFYNE İtalyan Estetiği: Radyofrekans Altıniğne Teknolojisinde Yeni Nesil Çözümler",
+      "aciklama": [
+        "RFYNE İtalyan Estetiği: Radyofrekans Altıniğne Teknolojisinde Yeni Nesil Çözümler",
+        "Estetik tıp dünyasında teknolojik yeniliklerin öncüsü Wavemed, RF tabanlı gelişmiş cihazı RFYNE ile tanışın. İtalyan mühendisliğinin en son ürünü olan RFYNE, kullanıcılarına kişiselleştirilmiş ve etkili tedavi imkanları sunarak estetik uygulamalarda yeni ufuklar açıyor.",
+        "Homojen ve Çok Katmanlı Enerji Aktarımı Mikroiğneler, ciltte derin katmanlardan yüzeye kadar enerji aktarımı yaparak her bölgede eşit bir tedavi etkisi sağlar.",
+        "Derinlemesine Etki Farklı frekansların etkisiyle cihaz, mevcut teknolojilerden daha derin katmanlara erişebilir. Yeni geliştirilen iğneli başlıklarla 7-8 mm derinliklere ulaşılması hedeflenmektedir.",
+        "Vakum Destekli Tedavi Vakum teknolojisi sayesinde uygulama sırasında konfor artırılır ve enerjinin cilt yüzeyine homojen yayılımı sağlanır.",
+        "1. Çok Yönlü El Aleti Teknolojisi Monopolar ve Bipolar radyofrekans seçeneklerini sunan RFYNE, iğneli ve iğnesiz başlıklarıyla çok yönlü kullanım imkanı sağlar. Tedaviler, ihtiyaca göre kişiselleştirilerek daha yüksek hasta memnuniyeti hedeflenir."
+      ],
+      "bolumler": [
+        "Bizimle İletişime Geçin"
+      ],
+      "spec": [],
+      "ozellikler": [
+        "RFYNE İtalyan Estetiği",
+        "Vakum destekli ve ayarlanabilir başlıklar",
+        "Mikro iğnelerle çok katmanlı etki",
+        "Tedaviler sırasında daha hassas ve etkili sonuçlar"
+      ],
+      "kapak": "202501-rfyne-001.webp",
+      "gorseller": [
+        "202501-rfyne-001.webp",
+        "202501-rfyne-0001.webp",
+        "202501-rfyne-00.webp",
+        "202501-rfyne-01.webp",
+        "202501-rfyne-02-1.webp",
+        "202501-rfyne-03.webp",
+        "202501-rfyne-04.webp",
+        "202501-rfyne-02.webp"
+      ],
+      "kaynakUrl": "https://estezone.com.tr/rfyne/",
+      "eskiKelimeSayisi": 376
+    },
+    {
+      "slug": "utims-centerless",
+      "ad": "UTIMS Centerless",
+      "marka": "UTIMS",
+      "kategori": "cilt",
+      "kategoriAd": "Cilt & Medikal Estetik",
+      "rozet": "LIFU & HIFU",
+      "vitrin": true,
+      "oneCikan": "Centerless Kartuş",
+      "etiketler": [
+        "HIFU",
+        "LIFU",
+        "Yüz Germe",
+        "Sıkılaştırma"
+      ],
+      "hedef": "Cerrahisiz germe protokolü sunan klinikler",
+      "neden": "Centerless kartuş mimarisi ile odaklı ultrasonu daha homojen dağıtır; cilt sıkılaştırma ve yüz germede cerrahisiz alternatif.",
+      "birlesmeAdayi": null,
+      "ozet": "HIFU (Yüksek Yoğunluklu Odaklı Ultrason) bir cilt gençleşme yöntemidir ve cilt sıkılaştırma, kırışıklık azaltma ve yüz germe gibi estetik amaçlarla kullanılır. HIFU, yüksek yoğunluklu odaklı ultrason dalgalarını cilt altındaki˜ hedef dokulara odaklar. Bu dalgalar cilt yüzeyinden geçerken cildi olumsuz etkilemeden, cilt altındaki dokularda termal (ısı) etki oluşturur. Bu ısınma, kolajen üretimini artırarak ciltte sıkılaşmayı ve gençleşmeyi teşvik eder.",
+      "aciklama": [
+        "HIFU (Yüksek Yoğunluklu Odaklı Ultrason) bir cilt gençleşme yöntemidir ve cilt sıkılaştırma, kırışıklık azaltma ve yüz germe gibi estetik amaçlarla kullanılır. HIFU, yüksek yoğunluklu odaklı ultrason dalgalarını cilt altındaki˜ hedef dokulara odaklar. Bu dalgalar cilt yüzeyinden geçerken cildi olumsuz etkilemeden, cilt altındaki dokularda termal (ısı) etki oluşturur. Bu ısınma, kolajen üretimini artırarak ciltte sıkılaşmayı ve gençleşmeyi teşvik eder.",
+        "Utims A3 ile tek Kartuşla Dot Modunda (Noktasal Hasar) veya Linear Modunda (Doğrusal Hasar) tedavi gerçekleştirebilirsiniz.",
+        "UTIMS kartuşları, rakipleriyle karşılaştırıldığında stabilitesi­ ve ısı lezyonu şekliyle öne çıkıyor. Yaygın kullanılan standart kartuş teknolojilerinde, ağrı ve yanık risk­ artmaktadır. Patentli­ “Centerless Kartuşları” lezyonu elips şeklinde ve daha odaklıdır, bu nedenle UTIMS daha ağrısız, güvenli­ ve efektiftir.",
+        "UTIMS, 10 MHz ile 1,5 mm derinlik dahil 12 tip opsiyonel kartuş sunmaktadır.",
+        "UTIMS ultrasonu yüksek Frekanslıdır, (10MHz), bu sayede HIFU'da yüksek enerji ve hassas ısı lezyonu sağlar. Bu nedenle düşük derinliklerde (1,5mm) yüksek frekansın kullanılması daha güvenli ve etkin tedavi sağlar.",
+        "Dünyada çok az üreticinin başarılı olabildiği bu teknoloji “UTIMS A3 “te mevcuttur."
+      ],
+      "bolumler": [
+        "Centerless LIFU & HIFU",
+        "Bizimle İletişime Geçin"
+      ],
+      "spec": [],
+      "ozellikler": [
+        "UTIMS Centerless",
+        "Centerless HIFU",
+        "Centerless LIFU (L­inear Atış Teknoloji­)",
+        "Opsiyonel 12 çeşit kartuş ve 10MHz Frekans",
+        "Göz ve yanak bölgesi­ ­içi­n yen­ “Kalem tip­” kartuş",
+        "U-LINK Uzaktan onarım ve destek servis sistemi­",
+        "Tedavi­ sonuçlarını maksimuma çıkaran stabil elips şek­illi­ odak noktaları (ısı lezyonu)",
+        "Daha güvenli­ tedavi­ sağlayan kısa dikey çizgi­ ısı lezyonu",
+        "Daha ağrısız uygulama",
+        "Daha güvenli tedavi: %100 lot testine sahip kartuşlar",
+        "HIFU Test Phantom: Kendi˜ geliştirdiği, üretim",
+        "Isı Lezyonu Simülasyonu",
+        "3 adımlı ön inceleme",
+        "Yüzün kavisli kısmı için",
+        "Daha az ağrılı işlem için",
+        "Özelleştirilmiş tedavi için"
+      ],
+      "kapak": "202408-utims-centerless-00001.webp",
+      "gorseller": [
+        "202408-utims-centerless-00001.webp",
+        "202408-utims-centerless-0001.webp",
+        "202408-isi-lezyon-test-01.webp",
+        "202408-uzun-lezyon-01.webp",
+        "202408-isi-lezyon-test-02.webp",
+        "202408-utims-patent-teknoloji-01.webp",
+        "202408-yanik-onleyici-01.webp",
+        "202408-dar-kartus-01.webp",
+        "202408-iki-mod-kartus-001.webp",
+        "202408-isi-degerlendirme-01.webp"
+      ],
+      "kaynakUrl": "https://estezone.com.tr/utims-centerless/",
+      "eskiKelimeSayisi": 594
+    },
+    {
+      "slug": "hydrabeauty",
+      "ad": "HydraBeauty",
+      "marka": "Estezone",
+      "kategori": "cilt",
+      "kategoriAd": "Cilt & Medikal Estetik",
+      "rozet": "9-in-1 Platform",
+      "vitrin": false,
+      "oneCikan": "9-in-1 Bakım",
+      "etiketler": [
+        "HydraFacial",
+        "Peeling",
+        "Oksijen",
+        "PDT"
+      ],
+      "hedef": "Bakım hattını hızla kuran salon ve klinikler",
+      "neden": "Dokuz farklı başlık tek gövdede; bakım menüsünü tek yatırımla kurmak isteyen işletmeler için giriş noktası.",
+      "birlesmeAdayi": null,
+      "ozet": "Maksimum vakum basıncı ve 200 mmH ile optimize edilmiş vakum basıncı ile kalın ve mat ciltler ile ince ve hassas ciltlerde güvenle etkili tedavi.",
+      "aciklama": [
+        "Maksimum vakum basıncı ve 200 mmH ile optimize edilmiş vakum basıncı ile kalın ve mat ciltler ile ince ve hassas ciltlerde güvenle etkili tedavi.",
+        "Sebumu, gözeneklerdeki kalıntıyı temizlemek için çözünür bir çözelti (AHA) olan laktik Asit ile derine nüfuz eder.",
+        "Gözenekleri sebum, siyah nokta, T bölgesi vb.'den temizlemek için bir yağ kontrol solüsyonu (BHA) olan salisilik asit uygular.",
+        "B vitamini takviyesi, antioksidan etki, nemlendirme, melanin kontrolü ve besleyici ajanları takviye etmek için deriye nüfuz eder."
+      ],
+      "bolumler": [
+        "HydraBeauty",
+        "Bizimle İletişime Geçin"
+      ],
+      "spec": [
+        {
+          "ad": "Tip",
+          "deger": "9-in-1 Hydra Facial Mikrodermabsiyon"
+        },
+        {
+          "ad": "Sertifikalar",
+          "deger": "CE / 15013485 / RoHS / PSE"
+        },
+        {
+          "ad": "Model",
+          "deger": "HydraBeauty"
+        },
+        {
+          "ad": "Teknoloji: Başlıklar",
+          "deger": "1. Yüksek Frekans 2. HydraFacial 3. Elmas Peeling 4. Ultrasonik 5. Oksijen Püskürtme 6. Lenfatik Drenaj 7. Liftting 8. PDT Işık 9. Cilt Temizleyici"
+        },
+        {
+          "ad": "Kontrol",
+          "deger": "100Kpa Max / 0-1 ba"
+        },
+        {
+          "ad": "Elektriksel Sistem",
+          "deger": "100-240VAC, 50Hz/60Hz"
+        },
+        {
+          "ad": "Minimum Diğer Miktar",
+          "deger": "1pes"
+        },
+        {
+          "ad": "Paket Detayları",
+          "deger": "Boyut = 60*52*132cm, G.W.= 40KG, C.W.= 80KG"
+        }
+      ],
+      "ozellikler": [
+        "HydraBeauty"
+      ],
+      "kapak": "202307-hydrabeauty-0001.webp",
+      "gorseller": [
+        "202307-hydrabeauty-0001.webp",
+        "202305-hydrabeauty-0001.webp",
+        "202204-SkinZone-02.jpg",
+        "202204-SkinZone-03.jpg",
+        "202204-SkinZone-04.jpg"
+      ],
+      "kaynakUrl": "https://estezone.com.tr/hydrabeauty/",
+      "eskiKelimeSayisi": 175
+    },
+    {
+      "slug": "aileen",
+      "ad": "Aileen",
+      "marka": "FineMEC",
+      "kategori": "cilt",
+      "kategoriAd": "Cilt & Medikal Estetik",
+      "rozet": "Genesis Tekniği",
+      "vitrin": false,
+      "oneCikan": "1064 nm Nd:YAG",
+      "etiketler": [
+        "Nd:YAG",
+        "Genesis",
+        "Tüm Cilt Tipleri"
+      ],
+      "hedef": "Koyu cilt tiplerine de hizmet veren merkezler",
+      "neden": "0,3 ms darbe genişliğiyle Genesis tekniği; tüm cilt tiplerinde acısız ve etkili uygulama.",
+      "birlesmeAdayi": null,
+      "ozet": "0,3ms darbe genişliğine sahip 1064nm modlu Genesis Tekniği, tüm cilt tipleri için acısız ve etkili bir tedavi için tasarlandı.",
+      "aciklama": [
+        "0,3ms darbe genişliğine sahip 1064nm modlu Genesis Tekniği, tüm cilt tipleri için acısız ve etkili bir tedavi için tasarlandı.",
+        "Non invasive lazer tedavisini kullanarak kırışıklıklar, ince çizgiler, düzensiz cilt dokusu, geniş gözenekler, yara izleri ve kızarıklıklar güvenle giderilebilir.",
+        "Genesis Tekniğinin en büyük avantajı zaman faktörüdür, anında etki gösterir. Aileen, gelişmiş ve çok yönlü bir Long Pulse Nd:Yag lazer sistemidir.",
+        "Tüm cilt tipleri için epilasyon, bacak damarları, yüz damarları ve cilt sıkılaştırma tedavileri için kalıcı çözümler üretir"
+      ],
+      "bolumler": [
+        "Genesis Tekniği",
+        "Bizimle İletişime Geçin"
+      ],
+      "spec": [
+        {
+          "ad": "Sistem",
+          "deger": "Long Pulse ND:Yag Lazer"
+        },
+        {
+          "ad": "Dalga Boyu",
+          "deger": "1064 nm"
+        },
+        {
+          "ad": "Atış Süresi",
+          "deger": "0.1 – 100 ms"
+        },
+        {
+          "ad": "Çıkış Gücü",
+          "deger": "90 J’a kadar"
+        },
+        {
+          "ad": "Kontrol Paneli",
+          "deger": "Dokunmatik ekran giriş arayüzü"
+        },
+        {
+          "ad": "Elektronik Kontrol",
+          "deger": "Mikroişlemci"
+        },
+        {
+          "ad": "Tekrarlama Hızı",
+          "deger": "1 ~ 10 Hz"
+        },
+        {
+          "ad": "Spot Alanı",
+          "deger": "2 ~ 20 mm (2, 3, 5, 7, 10, 15, 20 mm)"
+        },
+        {
+          "ad": "Atış Kontrolü",
+          "deger": "Ayak Pedalı"
+        },
+        {
+          "ad": "Lazer İletimi",
+          "deger": "El parçası ile lens bağlantılı optik \u001aber"
+        },
+        {
+          "ad": "Soğutma Gereksinimleri",
+          "deger": "Su soğutma"
+        },
+        {
+          "ad": "Elektrik Gereksinimi",
+          "deger": "AC 230V / 30A (50/60Hz Tek Faz)"
+        },
+        {
+          "ad": "Ölçüler",
+          "deger": "850(Yükseklik) x 385(En) x 950(Uzunluk)mm"
+        },
+        {
+          "ad": "Ağırlık",
+          "deger": "80 kg"
+        }
+      ],
+      "ozellikler": [],
+      "kapak": "202212-aileen-02.webp",
+      "gorseller": [
+        "202212-aileen-02.webp",
+        "202212-aileen-01.png"
+      ],
+      "kaynakUrl": "https://estezone.com.tr/aileen/",
+      "eskiKelimeSayisi": 179
+    },
+    {
+      "slug": "t-shape-2",
+      "ad": "T-Shape 2",
+      "marka": "Baldan Group",
+      "kategori": "vucut",
+      "kategoriAd": "Vücut Şekillendirme & Zayıflama",
+      "rozet": "FDA 510(k) K231092",
+      "vitrin": true,
+      "oneCikan": "5 Teknoloji Bir Arada",
+      "etiketler": [
+        "Radyofrekans",
+        "LLLT",
+        "Vakum",
+        "Mesoterapi",
+        "İtalya"
+      ],
+      "hedef": "Kombine protokol kuran premium merkezler",
+      "neden": "Bipolar RF, LLLT lazer, dinamik vakum, mesosporasyon ve mesosphere tek platformda; FDA 510(k) belgeli.",
+      "birlesmeAdayi": null,
+      "ozet": "T-Shape 2, yüz ve vücut şekillendirmede kombin tedavi protokolleri sunan yüksek teknolojiye sahip profesyonel bir estetik cihazıdır. Estezone Medikal güvencesiyle Türkiye’de profesyonellerle buluşan T-Shape 2; klinikler, güzellik merkezleri ve estetik uygulama alanları için etkili, konforlu ve gelişmiş bir çözüm sunar.",
+      "aciklama": [
+        "T-Shape 2, yüz ve vücut şekillendirmede kombin tedavi protokolleri sunan yüksek teknolojiye sahip profesyonel bir estetik cihazıdır. Estezone Medikal güvencesiyle Türkiye’de profesyonellerle buluşan T-Shape 2; klinikler, güzellik merkezleri ve estetik uygulama alanları için etkili, konforlu ve gelişmiş bir çözüm sunar.",
+        "Bipolar radyofrekans, LLLT lazer, dinamik vakum teknolojisi, mesoporasyon ve mesosphere başlıklarını bir araya getiren cihaz; vücut şekillendirme, selülit görünümünün iyileştirilmesi, lenfatik drenaj, cilt sıkılaştırma ve kas gevşetme odaklı uygulamalarda profesyonel kullanım için tasarlanmıştır.",
+        "T-Shape 2’nin ileri teknoloji yazılımı sayesinde hasta süreçleri seans bazlı olarak takip edilebilir. Termal görüntüleme kamerası ve yazılım desteğiyle her kullanıcıya özel tedavi protokolleri belirlenebilir, uygulama verileri sistematik olarak toplanabilir ve dokunmatik ekran üzerinden güncellenebilir.",
+        "Bu yapı, profesyonellere daha kontrollü, izlenebilir ve kişiye özel bir uygulama deneyimi sağlar.",
+        "T-Shape 2, FDA sertifikasyonuna sahip teknolojisiyle güvenlik ve kalite açısından önemli testlerden geçmiştir. Belgelere göre cihazın teknolojisi; selülit görünümünün azaltılması, dolaşımın desteklenmesi, kas ağrısı ve spazmlarının azaltılması gibi alanlarda sertifikalı kullanım kapsamına sahiptir.",
+        "Estezone Medikal olarak, estetik ve güzellik sektöründeki uzun yıllara dayanan deneyimimizle kliniklerin, hastanelerin ve profesyonel estetik merkezlerinin ihtiyaç duyduğu ileri teknoloji cihazları sunuyoruz. T-Shape 2 ile amacımız; en son teknolojiyi erişilebilir kılmak, profesyonellere yüksek performanslı ve uzun ömürlü çözümler sağlamak, kullanıcı deneyimini güven, kalite ve konforla buluşturmaktır."
+      ],
+      "bolumler": [
+        "Zirvedekilerin Tercihi",
+        "Bizimle İletişime Geçin",
+        "FDA Sertifikasyonuna Sahip Teknoloji",
+        "Estezone Medikal Güvencesiyle",
+        "Bir Cihazda Çoklu Teknoloji",
+        "Uygulama Başlıkları"
+      ],
+      "spec": [
+        {
+          "ad": "Marka / Model",
+          "deger": "T-SHAPE 2"
+        },
+        {
+          "ad": "Üretici / Başvuru Sahibi",
+          "deger": "B&M S.R.L. Marketing Nel Benessere / Baldan Group"
+        },
+        {
+          "ad": "FDA 510(k) Numarası",
+          "deger": "K231092"
+        },
+        {
+          "ad": "FDA Sınıfı",
+          "deger": "Class II"
+        },
+        {
+          "ad": "FDA Ürün Kodları",
+          "deger": "NUV, PBX"
+        },
+        {
+          "ad": "Kullanım Statüsü",
+          "deger": "Prescription Use / profesyonel kullanım"
+        },
+        {
+          "ad": "Ana Teknolojiler",
+          "deger": "LLLT lazer, bipolar radyofrekans, vakum, mekanik masaj, motorize roller / sphere başlıklar"
+        },
+        {
+          "ad": "Lazer Dalga Boyları",
+          "deger": "650 nm ve 980 nm"
+        },
+        {
+          "ad": "Lazer Sınıfı",
+          "deger": "Class 3R"
+        },
+        {
+          "ad": "Maksimum Lazer Kaynak Gücü",
+          "deger": "100 mW"
+        },
+        {
+          "ad": "Lazer Güç Yoğunluğu",
+          "deger": "Maksimum 10 mW/cm², her diyot için"
+        },
+        {
+          "ad": "Radyofrekans Tipi",
+          "deger": "Bipolar RF"
+        },
+        {
+          "ad": "RF Frekansları",
+          "deger": "500 kHz, 1 MHz, 1.5 MHz, 2 MHz"
+        },
+        {
+          "ad": "RF Gücü",
+          "deger": "peak RF power: 150 W"
+        },
+        {
+          "ad": "RF Yoğunluk Limiti",
+          "deger": "Maksimum 10 mA/cm², elektrot başına"
+        },
+        {
+          "ad": "Vakum Basıncı",
+          "deger": "FDA kaydında maksimum -400 mbar; teknik föyde <80 kPa / 0.8 bar"
+        },
+        {
+          "ad": "Vakum Modu",
+          "deger": "Pulsed / rhythmic suction"
+        },
+        {
+          "ad": "Kontrol Sistemi",
+          "deger": "Mikroişlemci kontrollü sistem ve grafik kullanıcı arayüzü"
+        },
+        {
+          "ad": "Ekran",
+          "deger": "15 inç dijital dokunmatik ekran"
+        },
+        {
+          "ad": "Bağlantı",
+          "deger": "LAN Ethernet 10/100, Wi-Fi 802.11 b/g/n, USB 2.0"
+        },
+        {
+          "ad": "Elektrik Güvenlik Sınıfı",
+          "deger": "Class I-BF"
+        },
+        {
+          "ad": "Güç Beslemesi",
+          "deger": "100-120 VAC / 60 Hz ve 220-240 VAC / 50 Hz seçenekleri"
+        },
+        {
+          "ad": "El Aparatları",
+          "deger": "Large multipole, medium multipole, small multipole, roll handpiece, mesosphere handpiece, thermal imaging camera"
+        },
+        {
+          "ad": "Large Multipole Başlık",
+          "deger": "6 lazer diyot, 6 RF plaka, 6 elektroporasyon plaka"
+        },
+        {
+          "ad": "Medium Multipole Başlık",
+          "deger": "4 lazer diyot, 4 RF plaka, 4 elektroporasyon plaka"
+        },
+        {
+          "ad": "Small Multipole Başlık",
+          "deger": "4 RF plaka, 1 kırmızı LED, vakum"
+        },
+        {
+          "ad": "Roll Başlık",
+          "deger": "4 lazer diyot, RF’li 2 motorize roller, vakum"
+        },
+        {
+          "ad": "Mesosphere Başlık",
+          "deger": "45 motorize döner sphere"
+        },
+        {
+          "ad": "Ölçüler",
+          "deger": "57 x 86 x 170 cm"
+        },
+        {
+          "ad": "FDA Onaylı Kullanım Endikasyonları",
+          "deger": "Hafif kas ağrılarının ve spazmlarının giderilmesine yardımcı kullanım, lokal kan dolaşımında geçici iyileşme, selülit görünümünde geçici azalma"
+        }
+      ],
+      "ozellikler": [
+        "T-Shape 2",
+        "Multipolar ve bipolar radyofrekans: Yüzey ve derin cilt katmanlarında kontrollü ısı etkisi oluşturarak cilt sıkılaştırma, vücut şekillendirme ve kas gevşetme odaklı uygulamaları destekler.",
+        "LLLT lazer: El aparatlarına entegre lazer teknolojisiyle uygulamayı destekler.",
+        "Dinamik vakum: Doku üzerinde mekanik etki oluşturarak uygulama etkinliğini artırır.",
+        "Mesoporasyon: Hücre zarı geçirgenliğini artırmaya yardımcı olur; kozmetik aktif bileşenlerin emilimini destekler. Vücutta incelme ve kas gevşetme hedefli protokollerde tamamlayıcı etki sağlar.",
+        "Mesosphere başlık: 45 yumuşak silikon küre ile pulse vibrasyon etkisi sunar."
+      ],
+      "kapak": "202605-t-shape-2-01.webp",
+      "gorseller": [
+        "202605-t-shape-2-01.webp",
+        "202605-tshape2-image-01.webp",
+        "202605-tshape2-image-02.webp",
+        "202605-tshape2-image-03.webp",
+        "202605-tshape2-image-04.webp"
+      ],
+      "kaynakUrl": "https://estezone.com.tr/t-shape-2/",
+      "eskiKelimeSayisi": 847
+    },
+    {
+      "slug": "estesculpt-pro",
+      "ad": "EsteSculpt Pro",
+      "marka": "Estezone",
+      "kategori": "vucut",
+      "kategoriAd": "Vücut Şekillendirme & Zayıflama",
+      "rozet": "HI-EMT + RF",
+      "vitrin": true,
+      "oneCikan": "7 Tesla · 3000 W",
+      "etiketler": [
+        "HI-EMT",
+        "Radyofrekans",
+        "Kas Uyarımı"
+      ],
+      "hedef": "Kas + yağ protokolünü birlikte satan merkezler",
+      "neden": "HI-EMT kas uyarımını radyofrekansla birleştirir; tek seansta hem yağ hem kas hedeflenir.",
+      "birlesmeAdayi": null,
+      "ozet": "Estesculpt Pro, HI-EMT teknolojisini RF ile birleştirerek Dünya’da bil ilki gerçekleştirdi.",
+      "aciklama": [
+        "Estesculpt Pro, HI-EMT teknolojisini RF ile birleştirerek Dünya’da bil ilki gerçekleştirdi.",
+        "HIEMT: Electromanyetik dalgalarla, kas liflerini ve hücrelerini çok daha hızlı çoğalmaya ve büyümeye zorlar. Yüksek yoğunluk altında binlerce kasın kasılmasını tetikleyerek hastaların kas hacimlerini önemli ölçüde arttırır.",
+        "RF: Radyofrekans ısısı altında yağ hücreleri yakılıp yok edilebilir. Radyofrekans Antreman öncesi yapılan ısınma faaliyetine benzer bir şekilde kasları strese maruz bırakır. Böylelikle kaslara kan akışı hızlanır, daha hızlı ve güçlü bir gelişim gerçekleşir.",
+        "Ayrıca deri altı yağ katmanlarını apoptoza sebep olacak ve fiziksel olarak parçalanacak bir düzeye kadar ısıtır. Daha sonra parçalanmış yağ hücreleri metabolizma tarafından yavaş yavaş ve doğal yoldan vücuttan atılır. Böylece kalıcı olarak yağlar vücuttan atılmış olur."
+      ],
+      "bolumler": [
+        "Estesculpt Pro",
+        "Bizimle İletişime Geçin"
+      ],
+      "spec": [
+        {
+          "ad": "Manyetik Dalga Enerjisi",
+          "deger": "0-7tesla"
+        },
+        {
+          "ad": "Güç",
+          "deger": "3000W"
+        },
+        {
+          "ad": "RF Gücü",
+          "deger": "120W"
+        },
+        {
+          "ad": "Frekanslar",
+          "deger": "F1 : 1-10Hz F2 :1-100Hz"
+        },
+        {
+          "ad": "Ebat",
+          "deger": "1200mm*360mm*520mm"
+        },
+        {
+          "ad": "Net Ağırlık",
+          "deger": "63 kg"
+        }
+      ],
+      "ozellikler": [
+        "EsteSculpt Pro",
+        "Estesculpt Pro hastaların aynı anda hem kas yapma hem de vücudu şekillendirmesine olanak sunan bir cihazdır.",
+        "Şekil vermek, kas oluşturmak, yağları eritmek, kalça sıkılaştırmak ve karın kası egzersizlerine uygundur.",
+        "Dünyanın ilk non-inovaziv kalça sıkılaştırma prosedürünü uygular. İyileşme süresi veya herhangi bir tedavi öncesi / sonrası hazırlık gerektirmez.",
+        "Yüksek yoğunluk odaklı elektromanyetik enerjiye dayalıdır. Tek bir Estesculpt Pro Seansı kaslarınızın formunu ve gücünü geliştirmede son derece önemli olan binlerce kası kasılmasını sağlar.",
+        "Maksimum kasılma sağlayarak, kas oluşumunu, sıkılaşmayı, kondisyonu ve yağ yakmayı sağlar.",
+        "Karın bölgesinde yer alan yağları azaltır ve daha ince, atletik bir vücut konturu elde edilmesine yardımcı olur.",
+        "Önerilen Tedavi Planı: Özel hedeflerinize göre planlanmış en az 30 dakikalık 4 seanstır.",
+        "Yağları yakar, kas oluşturur",
+        "İnvasiv olmayan kalça kaldırma",
+        "Herkes için uygun, anestezi yok – ameliyat yok",
+        "Kısa tedavi süresi, 1 seans 30 dakika",
+        "5-10 gün arayla sadece 4 seans gerekir",
+        "Yoğun bir egzersiz gibi hissettirir",
+        "Kesintisiz ve güvenli",
+        "Hemen sonuç verir, 2-4 hafta içinde gözle görülür sonuçlar oluşur",
+        "Kas kütlesi ortalama %25 artar",
+        "Yağ kütlesi %30 azalır."
+      ],
+      "kapak": "202212-estesculpt-pro-06.webp",
+      "gorseller": [
+        "202212-estesculpt-pro-06.webp",
+        "202212-estesculpt-pro-02.webp",
+        "202108-estesculpt-03.jpg",
+        "202212-estesculpt-pro-04.webp",
+        "202108-estesculpt-05.jpg"
+      ],
+      "kaynakUrl": "https://estezone.com.tr/estesculpt-pro/",
+      "eskiKelimeSayisi": 323
+    },
+    {
+      "slug": "estesculpt-vudut-sekillendirme-cihazi",
+      "ad": "EsteSculpt",
+      "marka": "Estezone",
+      "kategori": "vucut",
+      "kategoriAd": "Vücut Şekillendirme & Zayıflama",
+      "rozet": "HI-EMT",
+      "vitrin": false,
+      "oneCikan": "30 Dakikada Yoğun Kasılma",
+      "etiketler": [
+        "HIEMT",
+        "7 Tesla",
+        "3 Mod"
+      ],
+      "hedef": "Vücut şekillendirme hattına giriş yapan işletmeler",
+      "neden": "Elektromanyetik alan motor sinir hücrelerini hedefleyerek genel egzersizde ulaşılamayan kasılma yoğunluğu üretir.",
+      "birlesmeAdayi": null,
+      "ozet": "HIEMT'nin elektromanyetik alanı, kas kasılmasını doğrudan uyaran aksiyon potansiyeli oluşturmak için motor sinir hücrelerini hedefler. 30 dakikalık tedavi sırasında kaslar, genel egzersizde elde edilemeyen yüksek frekans ve yüksek yoğunlukta 30.000 kez kasılır! Kas aşırı kasılması, büyük miktarda enerji kaynağı gerektirir, bu nedenle kasın yanındaki yağ hücreleri de tüketilir, bu da doğal apoptoza yol açar ve yağ kalınlığını etkili bir şekilde azaltır. EsteSculpt’ın neden olduğu kas hareketleri vücudun diğer eklemlerine veya kemiklerine zarar vermez ve karın veya kalça kaslarını etkili bir şekilde güçlendirebilir, kas liflerinin sayısını ve hacmini artırabilir. Vücut hatlarını daha belirgin hale getirir.",
+      "aciklama": [
+        "HIEMT'nin elektromanyetik alanı, kas kasılmasını doğrudan uyaran aksiyon potansiyeli oluşturmak için motor sinir hücrelerini hedefler. 30 dakikalık tedavi sırasında kaslar, genel egzersizde elde edilemeyen yüksek frekans ve yüksek yoğunlukta 30.000 kez kasılır! Kas aşırı kasılması, büyük miktarda enerji kaynağı gerektirir, bu nedenle kasın yanındaki yağ hücreleri de tüketilir, bu da doğal apoptoza yol açar ve yağ kalınlığını etkili bir şekilde azaltır. EsteSculpt’ın neden olduğu kas hareketleri vücudun diğer eklemlerine veya kemiklerine zarar vermez ve karın veya kalça kaslarını etkili bir şekilde güçlendirebilir, kas liflerinin sayısını ve hacmini artırabilir. Vücut hatlarını daha belirgin hale getirir."
+      ],
+      "bolumler": [
+        "EsteSculpt Vücut Şekillendirme Cihazı",
+        "Bizimle İletişime Geçin"
+      ],
+      "spec": [
+        {
+          "ad": "Manyetik Dalga（ Enerji ）",
+          "deger": "0-7tesla"
+        },
+        {
+          "ad": "Voltaj",
+          "deger": "110-220V 10-100/Hz"
+        },
+        {
+          "ad": "Çıkış Gücü",
+          "deger": "2600W"
+        },
+        {
+          "ad": "Frekans",
+          "deger": "F1:1-10Hz F2:1-100Hz"
+        },
+        {
+          "ad": "Darbe Genişliği",
+          "deger": "300us"
+        },
+        {
+          "ad": "Mod",
+          "deger": "model-I model-II model-III"
+        },
+        {
+          "ad": "Ekran",
+          "deger": "12 inch 16 :9"
+        },
+        {
+          "ad": "Tedavi Başlığı",
+          "deger": "I-B1 , II-B2"
+        },
+        {
+          "ad": "Cihaz Boyutu",
+          "deger": "52*36*114cm"
+        },
+        {
+          "ad": "package size",
+          "deger": "84*54*115CM"
+        },
+        {
+          "ad": "Net Ağırlık",
+          "deger": "60kg"
+        },
+        {
+          "ad": "Brüt Ağırlık",
+          "deger": "91kg"
+        }
+      ],
+      "ozellikler": [
+        "EsteSculpt Vücut Şekillendirme Cihazı",
+        "Estesculpt, çok işlevli bir vücut şekillendirme ve kas geliştirme aracıdır.",
+        "Özellikle kalça ve karın için etkilidir. Kısa süreli güçlü kas kasılmaları oluşturmak için yüksek yoğunluklu odaklanmış elektromanyetik (HIFEM) alan teknolojisini kullanır."
+      ],
+      "kapak": "202407-estesculpt-05.webp",
+      "gorseller": [
+        "202407-estesculpt-05.webp",
+        "202108-estesculpt-03.jpg",
+        "202407-estesculpt-06.webp",
+        "202108-estesculpt-05.jpg"
+      ],
+      "kaynakUrl": "https://estezone.com.tr/estesculpt-vudut-sekillendirme-cihazi/",
+      "eskiKelimeSayisi": 246
+    },
+    {
+      "slug": "esteslim-zayiflama-cihazi",
+      "ad": "EsteSlim",
+      "marka": "Estezone",
+      "kategori": "vucut",
+      "kategoriAd": "Vücut Şekillendirme & Zayıflama",
+      "rozet": "Soğuk Lipoliz",
+      "vitrin": true,
+      "oneCikan": "4 Farklı Başlık",
+      "etiketler": [
+        "Kriyolipoliz",
+        "Vakum",
+        "Apoptoz"
+      ],
+      "hedef": "Bölgesel incelme talebi yüksek merkezler",
+      "neden": "Yağ hücrelerini dondurarak apoptoza uğratır; üç ayrı başlık boyutuyla farklı bölgelere uyum sağlar.",
+      "birlesmeAdayi": null,
+      "ozet": "EsteSlim soğuk lipoliz cihazı vücutta bulunan fazla yağları dondurarak bu yağ hücrelerinin apoptoz olmasına sağlar. Daha sonrasında parçalanan bu yağ hücreleri bağışıklık sistemi tarafından dışarı atılır.",
+      "aciklama": [
+        "EsteSlim soğuk lipoliz cihazı vücutta bulunan fazla yağları dondurarak bu yağ hücrelerinin apoptoz olmasına sağlar. Daha sonrasında parçalanan bu yağ hücreleri bağışıklık sistemi tarafından dışarı atılır."
+      ],
+      "bolumler": [
+        "EsteSlim Zayıflama Cihazı (Soğuk Lipoliz)",
+        "Bizimle İletişime Geçin"
+      ],
+      "spec": [
+        {
+          "ad": "LCD Ekran",
+          "deger": "12 inch dokunmatik renkli ekran"
+        },
+        {
+          "ad": "Giriş Gücü",
+          "deger": "2000W"
+        },
+        {
+          "ad": "Çıkış Gücü",
+          "deger": "1000W"
+        },
+        {
+          "ad": "Vakum",
+          "deger": "0kpa-100kpa"
+        },
+        {
+          "ad": "Başlıklar",
+          "deger": "1 x Başlık A :220 * 76*125mm 2 x Başlık B :160 * 56* 65mm 1 x Başlık C :125 * 45* 70mm"
+        },
+        {
+          "ad": "Soğutma Derecesi",
+          "deger": "-15-5℃"
+        },
+        {
+          "ad": "Paket Boyutu",
+          "deger": "71*52*128 CM"
+        },
+        {
+          "ad": "Brüt Ağıtlık",
+          "deger": "95 kg"
+        },
+        {
+          "ad": "Voltaj",
+          "deger": "AC220V±10%,50Hz/ AC110V±10%,60Hz"
+        },
+        {
+          "ad": "Soğutma Sistemi",
+          "deger": "Hava soğutma + su soğutma + yarı iletken soğutma"
+        }
+      ],
+      "ozellikler": [
+        "EsteSlim Zayıflama Cihazı",
+        "Güçlü soğutma sistemi",
+        "Popüler ve eşsiz tasarım",
+        "Her aplikatörde dokunmatik ekran",
+        "Çift hava pompaları",
+        "En iyi donma (-15 ℃ derece)",
+        "Dört büyük tedavi başlığı",
+        "Bazı inatçı yağ şişkinlikleri diyet ve egzersize karşı direnç gösterir.",
+        "EsteSlim, yağ hücrelerini dondurarak, yağ hücresi apoptozunun oluşmasını sağlar.",
+        "Yağdaki lipidler diğer hücre tiplerine göre farklı bir sıcaklıkta kristalleştiğinden, EsteSlim, sinirlere veya diğer dokulara zarar vermez.",
+        "Tedavi sonrası yağ hücreleri apoptoz olur ve bağışıklık sistemi tarafından birkaç hafta içinde yavaş yavaş atılır.",
+        "Uygulama yapılan alanda yağ hücrelerinin sayısının azalmasıyla fiziksel görünümde bölgesel iyileşmeler görülür."
+      ],
+      "kapak": "202407-este-slim-10.webp",
+      "gorseller": [
+        "202407-este-slim-10.webp",
+        "202407-esteslim-003.webp",
+        "202407-esteslim-004.webp",
+        "202407-esteslim-005.webp",
+        "202407-esteslim-006.webp",
+        "202407-esteslim-007.webp"
+      ],
+      "kaynakUrl": "https://estezone.com.tr/esteslim-zayiflama-cihazi/",
+      "eskiKelimeSayisi": 214
+    },
+    {
+      "slug": "esteslim-mix",
+      "ad": "EsteSlim Mix",
+      "marka": "Estezone",
+      "kategori": "vucut",
+      "kategoriAd": "Vücut Şekillendirme & Zayıflama",
+      "rozet": "3 Teknoloji",
+      "vitrin": false,
+      "oneCikan": "Lipoliz + RF + Kavitasyon",
+      "etiketler": [
+        "Kriyolipoliz",
+        "RF",
+        "Kavitasyon"
+      ],
+      "hedef": "Tek cihazda kombine protokol isteyen işletmeler",
+      "neden": "Soğuk lipoliz, radyofrekans ve kavitasyonu tek gövdede toplayarak seans başına ciro potansiyelini artırır.",
+      "birlesmeAdayi": null,
+      "ozet": "Yağ hücresi düşük sıcaklığa dayanamaz, 5 derecenin altında yağ hücresindeki trigliserit katılaşır.",
+      "aciklama": [
+        "Yağ hücresi düşük sıcaklığa dayanamaz, 5 derecenin altında yağ hücresindeki trigliserit katılaşır.",
+        "Katılaşan yağ hücreleri daha sonra ölür ve yavaş yavaş vücut metabolizması yoluyla elimine edilir.",
+        "Soğuk Lipoliz gelişmiş soğutma teknolojisi hedef bölgelerde yağ tabakasının kalınlığını kademeli olarak azaltır."
+      ],
+      "bolumler": [
+        "Soğuk Lipoliz Uygulaması nedir?",
+        "Bizimle İletişime Geçin"
+      ],
+      "spec": [
+        {
+          "ad": "Çıkış Gücü",
+          "deger": "1800W"
+        },
+        {
+          "ad": "Soğutucu Başlık Basıncı",
+          "deger": "0-100kpa"
+        },
+        {
+          "ad": "RF Gücü",
+          "deger": "1-50J / cm2"
+        },
+        {
+          "ad": "Kavitasyon Gücü",
+          "deger": "1-70J / cm2"
+        },
+        {
+          "ad": "Soğutma",
+          "deger": "-15-5ºC"
+        },
+        {
+          "ad": "RF frekansı",
+          "deger": "10M"
+        },
+        {
+          "ad": "Kavitasyon Frekansı",
+          "deger": "40K"
+        },
+        {
+          "ad": "Brüt Ağıtlık",
+          "deger": "95 kg"
+        },
+        {
+          "ad": "Soğutma sistemi",
+          "deger": "*Yarı İletken Soğutma *Su Soğutma *Hava Soğutma"
+        },
+        {
+          "ad": "Boyutları",
+          "deger": "63mm*76mm*126mm"
+        },
+        {
+          "ad": "Ağırlık",
+          "deger": "75 kg"
+        }
+      ],
+      "ozellikler": [
+        "EsteSlim Mix",
+        "Karın ve kalça inceltme,",
+        "Doğum ve yağ aldırma ameliyatları sonrası sıkılaşma için,",
+        "Çatlakları azaltır,",
+        "Selülitler ve yağ dokusunda azalma sağlar."
+      ],
+      "kapak": "202407-esteslim-mix-1.webp",
+      "gorseller": [
+        "202407-esteslim-mix-1.webp",
+        "202108-esteslime-02.jpg",
+        "202212-esteslim-mix-03.webp",
+        "202407-esteslim-mix-3.webp"
+      ],
+      "kaynakUrl": "https://estezone.com.tr/esteslim-mix/",
+      "eskiKelimeSayisi": 131
+    },
+    {
+      "slug": "endoterapylazer",
+      "ad": "MedArt EndoTerapyLazer",
+      "marka": "MedArt",
+      "kategori": "vucut",
+      "kategoriAd": "Vücut Şekillendirme & Zayıflama",
+      "rozet": "Tek Seans Sonuç",
+      "vitrin": true,
+      "oneCikan": "1470 nm Endolazer",
+      "etiketler": [
+        "Endolazer",
+        "1470 nm",
+        "Sarkma",
+        "Kontur"
+      ],
+      "hedef": "Cerrahi ve medikal estetik klinikleri",
+      "neden": "Cilt altına fiberle girerek sarkma ve elastikiyet kaybını tek seansta hedefler; 400–1000 µm fiber seçenekleri.",
+      "birlesmeAdayi": null,
+      "ozet": "Zamanla cildinizde oluşan sarkma, elastikiyet kaybı ve kontur bozukluklarına karşı tek seansta gözle görülür ve uzun süreli sonuçlar sunan bu devrim niteliğindeki teknoloji ile tanışma zamanı. MedArt EndoTerapyLazer , lazer enerjisiyle cilt altına etki ederek kolajen üretimini artıran , cilt sıkılaştırma ve yağ azaltımı sağlayan yenilikçi bir medikal estetik çözümüdür.",
+      "aciklama": [
+        "Zamanla cildinizde oluşan sarkma, elastikiyet kaybı ve kontur bozukluklarına karşı tek seansta gözle görülür ve uzun süreli sonuçlar sunan bu devrim niteliğindeki teknoloji ile tanışma zamanı. MedArt EndoTerapyLazer , lazer enerjisiyle cilt altına etki ederek kolajen üretimini artıran , cilt sıkılaştırma ve yağ azaltımı sağlayan yenilikçi bir medikal estetik çözümüdür.",
+        "MedArt EndoTerapyLazer, özellikle aşağıdaki bölgelerde cilt sıkılaştırma, yağ azaltma ve kontur belirginleştirme için idealdir:",
+        "Danışanlarınıza tek seanslık bir tedavi ile uzun süreli gençleşme ve sıkılaşma sonuçları sunarak zaman ve maliyet verimliliği sağlarsınız. Bu özellik, danışan memnuniyetini artırırken, sizin de iş akışınızı optimize etmenize olanak tanır.",
+        "MedArt EndoTerapyLazer, lazer enerjisinin gücüyle ciltte gözle görülür sıkılaşma ve lifting etkisi yaratır. Özellikle yüz ovali, çene altı (gıdı), yanaklar, boyun ve vücut bölgelerindeki hafif sarkmaların düzelmesini sağlar, danışanlarınıza daha genç ve dinamik bir görünüm kazandırır.",
+        "Cihaz, bölgesel yağ birikimlerine karşı etkili bir çözüm sunar. Lazer enerjisi sayesinde yağ dokusunda anında lipoliz etkisi görülür ve lokal aşırı yağ dokuları seyrelir . Bu sayede, danışanlarınızın daha belirgin ve estetik konturlara sahip olmasına yardımcı olursunuz.",
+        "Cihaz, cildin alt katmanlarındaki kolajen liflerini uyararak yeni kolajen oluşumunu destekler . Bu sayede cilt, doğal yollarla yenilenir, elastikiyetini geri kazanır ve daha sıkı bir yapıya kavuşur."
+      ],
+      "bolumler": [
+        "Hedef Bölgeler ve Uygulama Alanları",
+        "Bizimle İletişime Geçin",
+        "Neden MedArt EndoTerapyLazer?",
+        "MedArt EndoTerapyLazer Teknik Özellikleri"
+      ],
+      "spec": [
+        {
+          "ad": "Lazer Türü",
+          "deger": "Kesintisiz Diode Lazer"
+        },
+        {
+          "ad": "Max Çıkış Gücü",
+          "deger": "15W"
+        },
+        {
+          "ad": "Dalga Boyu",
+          "deger": "1470 nm"
+        },
+        {
+          "ad": "Kılavuz Işık",
+          "deger": "Fiber üzerinden kırmızı gösterge ışığı (635 nm)"
+        },
+        {
+          "ad": "Fiberler",
+          "deger": "400µm, 600µm & 1000µm"
+        },
+        {
+          "ad": "Frekans Aralığı",
+          "deger": "0,3-100 Hz"
+        },
+        {
+          "ad": "Pulse",
+          "deger": "10-3000 milisaniye"
+        },
+        {
+          "ad": "Güç Kaynağı",
+          "deger": "100-240 VAC (50/60 Hz)"
+        },
+        {
+          "ad": "Boyut",
+          "deger": "30 x 27 x 17 cm"
+        },
+        {
+          "ad": "Ağırlık",
+          "deger": "Yaklaşık 4,5 kg"
+        },
+        {
+          "ad": "Tasarım Kalitesi",
+          "deger": "Avrupa tasarımı ve kalitesi"
+        },
+        {
+          "ad": "Özellikler",
+          "deger": "Lipoliz, Lifting ve Damar Tedavisi"
+        }
+      ],
+      "ozellikler": [
+        "EndoTerapyLazer",
+        "Yüz Ovali ve Çene Altı (Gıdı) : Yüz hatlarının daha keskin ve belirgin hale gelmesi.",
+        "Yanaklar ve Boyun : Sarkmaların giderilmesi, cilde genç ve sıkı bir görünüm kazandırılması.",
+        "Vücut Bölgeleri : Kolajen üretimi ile cilt sıkılaşması ve yağ azaltma hedeflenen çeşitli vücut bölgeleri.",
+        "Hiperhidroz (Aşırı Terleme) Tedavisi : Cihaz aynı zamanda aşırı terleme tedavisi için de kullanılabilme özelliğine sahiptir, bu da kliniğinizin hizmet yelpazesini genişletir."
+      ],
+      "kapak": "202506-medart-smartsculpt-endolazer.webp",
+      "gorseller": [
+        "202506-medart-smartsculpt-endolazer.webp",
+        "202506-SmartSculpt-01.webp",
+        "202506-SmartSculpt-03.webp",
+        "202506-SmartSculpt-04.webp",
+        "202506-SmartSculpt-05.webp",
+        "202506-SmartSculpt-06.webp",
+        "202506-SmartSculpt-07.webp"
+      ],
+      "kaynakUrl": "https://estezone.com.tr/endoterapylazer/",
+      "eskiKelimeSayisi": 555
+    },
+    {
+      "slug": "medart-smartsculpt-endolazer",
+      "ad": "MedArt SmartSculpt Endolazer",
+      "marka": "MedArt",
+      "kategori": "vucut",
+      "kategoriAd": "Vücut Şekillendirme & Zayıflama",
+      "rozet": "Kontur & Lipoliz",
+      "vitrin": false,
+      "oneCikan": "1470 nm · 15 W",
+      "etiketler": [
+        "Endolazer",
+        "Lipoliz",
+        "Kontur"
+      ],
+      "hedef": "Cerrahi destekli vücut kontur uygulamaları",
+      "neden": "Kesintisiz diode lazerle cilt altı lipoliz ve kontur; 0,3–100 Hz frekans aralığında hassas kontrol.",
+      "birlesmeAdayi": "endoterapylazer",
+      "ozet": "Zamanla cildinizde oluşan sarkma, elastikiyet kaybı ve kontur bozukluklarına karşı tek seansta gözle görülür ve uzun süreli sonuçlar sunan bu devrim niteliğindeki teknoloji ile tanışma zamanı. MedArt SmartSculpt Endolazer , lazer enerjisiyle cilt altına etki ederek kolajen üretimini artıran , cilt sıkılaştırma ve yağ azaltımı sağlayan yenilikçi bir medikal estetik çözümüdür.",
+      "aciklama": [
+        "Zamanla cildinizde oluşan sarkma, elastikiyet kaybı ve kontur bozukluklarına karşı tek seansta gözle görülür ve uzun süreli sonuçlar sunan bu devrim niteliğindeki teknoloji ile tanışma zamanı. MedArt SmartSculpt Endolazer , lazer enerjisiyle cilt altına etki ederek kolajen üretimini artıran , cilt sıkılaştırma ve yağ azaltımı sağlayan yenilikçi bir medikal estetik çözümüdür.",
+        "MedArt SmartSculpt Endolazer, özellikle aşağıdaki bölgelerde cilt sıkılaştırma, yağ azaltma ve kontur belirginleştirme için idealdir:",
+        "Danışanlarınıza tek seanslık bir tedavi ile uzun süreli gençleşme ve sıkılaşma sonuçları sunarak zaman ve maliyet verimliliği sağlarsınız. Bu özellik, danışan memnuniyetini artırırken, sizin de iş akışınızı optimize etmenize olanak tanır.",
+        "MedArt SmartSculpt, lazer enerjisinin gücüyle ciltte gözle görülür sıkılaşma ve lifting etkisi yaratır. Özellikle yüz ovali, çene altı (gıdı), yanaklar, boyun ve vücut bölgelerindeki hafif sarkmaların düzelmesini sağlar, danışanlarınıza daha genç ve dinamik bir görünüm kazandırır.",
+        "Cihaz, bölgesel yağ birikimlerine karşı etkili bir çözüm sunar. Lazer enerjisi sayesinde yağ dokusunda anında lipoliz etkisi görülür ve lokal aşırı yağ dokuları seyrelir . Bu sayede, danışanlarınızın daha belirgin ve estetik konturlara sahip olmasına yardımcı olursunuz.",
+        "Cihaz, cildin alt katmanlarındaki kolajen liflerini uyararak yeni kolajen oluşumunu destekler . Bu sayede cilt, doğal yollarla yenilenir, elastikiyetini geri kazanır ve daha sıkı bir yapıya kavuşur."
+      ],
+      "bolumler": [
+        "Hedef Bölgeler ve Uygulama Alanları",
+        "Bizimle İletişime Geçin",
+        "Neden MedArt SmartSculpt Endolazer?",
+        "MedArt SmartSculpt Endolazer Teknik Özellikleri"
+      ],
+      "spec": [
+        {
+          "ad": "Lazer Türü",
+          "deger": "Kesintisiz Diode Lazer"
+        },
+        {
+          "ad": "Max Çıkış Gücü",
+          "deger": "15W"
+        },
+        {
+          "ad": "Dalga Boyu",
+          "deger": "1470 nm"
+        },
+        {
+          "ad": "Kılavuz Işık",
+          "deger": "Fiber üzerinden kırmızı gösterge ışığı (635 nm)"
+        },
+        {
+          "ad": "Fiberler",
+          "deger": "400µm, 600µm & 1000µm"
+        },
+        {
+          "ad": "Frekans Aralığı",
+          "deger": "0,3-100 Hz"
+        },
+        {
+          "ad": "Pulse",
+          "deger": "10-3000 milisaniye"
+        },
+        {
+          "ad": "Güç Kaynağı",
+          "deger": "100-240 VAC (50/60 Hz)"
+        },
+        {
+          "ad": "Boyut",
+          "deger": "30 x 27 x 17 cm"
+        },
+        {
+          "ad": "Ağırlık",
+          "deger": "Yaklaşık 4,5 kg"
+        },
+        {
+          "ad": "Tasarım Kalitesi",
+          "deger": "Avrupa tasarımı ve kalitesi"
+        },
+        {
+          "ad": "Özellikler",
+          "deger": "Lipoliz, Lifting ve Damar Tedavisi"
+        }
+      ],
+      "ozellikler": [
+        "MedArt SmartSculpt Endolazer",
+        "Yüz Ovali ve Çene Altı (Gıdı) : Yüz hatlarının daha keskin ve belirgin hale gelmesi.",
+        "Yanaklar ve Boyun : Sarkmaların giderilmesi, cilde genç ve sıkı bir görünüm kazandırılması.",
+        "Vücut Bölgeleri : Kolajen üretimi ile cilt sıkılaşması ve yağ azaltma hedeflenen çeşitli vücut bölgeleri.",
+        "Hiperhidroz (Aşırı Terleme) Tedavisi : Cihaz aynı zamanda aşırı terleme tedavisi için de kullanılabilme özelliğine sahiptir, bu da kliniğinizin hizmet yelpazesini genişletir."
+      ],
+      "kapak": "202506-medart-smartsculpt-endolazer.webp",
+      "gorseller": [
+        "202506-medart-smartsculpt-endolazer.webp",
+        "202506-SmartSculpt-01.webp",
+        "202506-SmartSculpt-03.webp",
+        "202506-SmartSculpt-04.webp",
+        "202506-SmartSculpt-05.webp",
+        "202506-SmartSculpt-06.webp",
+        "202506-SmartSculpt-07.webp"
+      ],
+      "kaynakUrl": "https://estezone.com.tr/medart-smartsculpt-endolazer/",
+      "eskiKelimeSayisi": 565
+    },
+    {
+      "slug": "zimmer-cryo-6-cilt-sogutma-sistemi",
+      "ad": "Zimmer Cryo 6",
+      "marka": "Zimmer",
+      "kategori": "destek",
+      "kategoriAd": "Soğutma & Klinik Aksesuar",
+      "rozet": "Alman Üretimi",
+      "vitrin": true,
+      "oneCikan": "-30 °C Soğuk Hava",
+      "etiketler": [
+        "Soğutma",
+        "Class IIa",
+        "Almanya"
+      ],
+      "hedef": "Konforu farklılaştırıcı olarak satan tüm merkezler",
+      "neden": "Sektörün referans soğutma sistemi; -30 °C hava ile lazer ve IPL uygulamalarında ağrıyı belirgin azaltır.",
+      "birlesmeAdayi": null,
+      "ozet": "-30 °C derecedeki soğuk hava ile yapılan soğutma, deride önemli bir şekilde, acıyı azaltır ve rahat bir şekilde yüzeysel lazer ve IPL uygulamaları gerçekleşir.",
+      "aciklama": [
+        "-30 °C derecedeki soğuk hava ile yapılan soğutma, deride önemli bir şekilde, acıyı azaltır ve rahat bir şekilde yüzeysel lazer ve IPL uygulamaları gerçekleşir.",
+        "Zimmer Cryo 6 ve Zimmer Cryo 5 cihazları soğuk hava üreterek çalışan sistemlerdir. Zimmer Cryo Lazer Sistemleri İle entegre çalışarak kozmetik dermatolojide ve dermatolojik tedaviler yapılırken kullanılır. Zimmer Cryo 5 ve Zimmer Cryo 6 cihazları uygulama yapılan bölgeye soğuk hava üfleyerek uygulama bölgesindeki ağrıyı azaltır Aynı zamanda ciltte oluşan ısıyı azaltarak ciltte oluşacak termal hasar oluşma riskini azaltır. Zimmer Cryo 5 , Zimmer Cryo 6 cihazları; Alexandrite Lazer epilasyon uygulamaları, lazer ile leke silme, lazer ile ben alma gibi bir çok uygulamada etkin bir şekilde kullanılır."
+      ],
+      "bolumler": [
+        "Zimmer Cryo-6 Fonksiyonları",
+        "Bizimle İletişime Geçin"
+      ],
+      "spec": [
+        {
+          "ad": "Güç",
+          "deger": "230V~/50Hz"
+        },
+        {
+          "ad": "Power Girişi",
+          "deger": "Maksimum 1 kW"
+        },
+        {
+          "ad": "Stand-By Fonksiyonu",
+          "deger": "Ø appr. 260 W"
+        },
+        {
+          "ad": "Terapi Hava Akışı",
+          "deger": "300 – 1000 l/mn"
+        },
+        {
+          "ad": "IEC 601-1 Koruma Uyumu",
+          "deger": "Class I, Type B"
+        },
+        {
+          "ad": "MDD/MPG",
+          "deger": "Class IIa"
+        },
+        {
+          "ad": "Uygulama Tüpü Uzunluğu",
+          "deger": "180 cm"
+        },
+        {
+          "ad": "Oda Boyutları",
+          "deger": "L 460 mm x W 330 mm x H 970 mm"
+        },
+        {
+          "ad": "Baş ve Silindir Ölçüleri",
+          "deger": "L 570 mm / W 470 mm"
+        },
+        {
+          "ad": "Ölçüleri",
+          "deger": "50 mm Silindirler: 1050 mm 75 mm Silindirler: 1080 mm 100 mm Silindirler: 1110 mm"
+        },
+        {
+          "ad": "Ağırlık",
+          "deger": "55 kg"
+        }
+      ],
+      "ozellikler": [
+        "Zimmer Cryo-6 Cilt Soğutma Sistemi"
+      ],
+      "kapak": "202307-zimmer-cryo-6-cilt-sogutma-sistemi-001-1.webp",
+      "gorseller": [
+        "202307-zimmer-cryo-6-cilt-sogutma-sistemi-001-1.webp",
+        "202109-zimmer-cryo-6-cilt-sogutma-sistemi-0001.jpg"
+      ],
+      "kaynakUrl": "https://estezone.com.tr/zimmer-cryo-6-cilt-sogutma-sistemi/",
+      "eskiKelimeSayisi": 215
+    },
+    {
+      "slug": "epicool",
+      "ad": "EpiCool",
+      "marka": "Estezone",
+      "kategori": "destek",
+      "kategoriAd": "Soğutma & Klinik Aksesuar",
+      "rozet": "Ekonomik Soğutma",
+      "vitrin": false,
+      "oneCikan": "-15 / -21 °C",
+      "etiketler": [
+        "Soğutma",
+        "1000 l/dk",
+        "Class I"
+      ],
+      "hedef": "Soğutmayı standarda taşımak isteyen işletmeler",
+      "neden": "Erişilebilir yatırımla uygulama konforunu yükseltir; 1000 l/dk hava debisiyle uzun seanslara uygun.",
+      "birlesmeAdayi": null,
+      "ozet": "Bu cihaz, lazer ve IPL işlemlerinin acısız ve rahat geçmesini sağlayan soğutma teknolojisine sahiptir. Lazer epilasyon ve IPL lazer uygulamaları esnasında, kıl köklerine iletilen ışınlar nedeniyle ortaya çıkan yanma hissini azaltmak için tasarlanmış bir üründür. Havayı soğutarak, -15 ila -21 derece arası bir seviyede dışarı iletir. Ergonomik başlığı ve iki metrelik tüp uzunluğu sayesinde oldukça kolay şekilde kullanılabilir.",
+      "aciklama": [
+        "Bu cihaz, lazer ve IPL işlemlerinin acısız ve rahat geçmesini sağlayan soğutma teknolojisine sahiptir. Lazer epilasyon ve IPL lazer uygulamaları esnasında, kıl köklerine iletilen ışınlar nedeniyle ortaya çıkan yanma hissini azaltmak için tasarlanmış bir üründür. Havayı soğutarak, -15 ila -21 derece arası bir seviyede dışarı iletir. Ergonomik başlığı ve iki metrelik tüp uzunluğu sayesinde oldukça kolay şekilde kullanılabilir.",
+        "Cihaz; Alexandrite, Nd Yag, Diode ve IPL lazer işlemlerinde, tüm lazer sistemleri ve cihazları ile kullanılabilmektedir. Lazer epilasyon esnasında kıl köklerine gönderilen ışınlar ısıya dönüşür. Isıdan kaynaklı çeşitli komplikasyonlar ortaya çıkabilir. Epicool cilt soğutma cihazı ile bu ısının hassasiyet, yanma hissi ve acıya neden olması engellenir. Konforlu, acısız bir lazer epilasyon işlemi sağlanır.",
+        "Epicool cilt soğutma cihazı, havayı -40 dereceye kadar soğutur ve hortum çıkışında -15 ila -21 derecelik bir soğuk hava üflemesi oluşur. Lazer cihazlarının çalışırken ilettiği ışınlardan kaynaklı ortaya çıkan yanma hissinin engellenmesini sağlar.",
+        "Özellikle acıya karşı duyarlı kişilerde, cildin nispeten daha ince deriye sahip ve daha hassas bölgelerinde yapılan işlemlerde ciddi seviyede konfor sağlar. Bu sayede işlemler ara verilmeksizin, hızlı şekilde tamamlanabilir. Lazer uygulaması sonrası ortaya çıkabilen kızarıklık ve diğer komplikasyonlar bu cihaz aracılığıyla azalmış olur.",
+        "Lazer epilasyon işlemleri esnasında, cihazların kıl köklerine ilettiği ışınlar ısıya dönüşerek acı ve yanmaya neden olur. -15 ve -21 derece aralığında soğuk hava üfleyen Epicool lazer soğutma cihazı sayesinde oluşacak rahatsızlığın minimum seviyede kalması mümkün olur.",
+        "Epicool, -40 °C derecedeki soğuk hava ile yapılan soğutma, deride önemli bir şekilde, acıyı azaltır ve rahat bir şekilde yüzeysel lazer ve IPL uygulamaları gerçekleşmesini sağlar."
+      ],
+      "bolumler": [
+        "Epicool Soğutma Cihazı",
+        "Epicool Cilt Soğutma Cihazı Çalışma Prensibi"
+      ],
+      "spec": [
+        {
+          "ad": "Çalışma Gerilimi",
+          "deger": "220V AC~/50Hz 10A"
+        },
+        {
+          "ad": "Güç Girişi",
+          "deger": "1 kW max."
+        },
+        {
+          "ad": "Bekleme Güç Girişi",
+          "deger": "260 W kadar"
+        },
+        {
+          "ad": "Gürültü",
+          "deger": "70 dBa max."
+        },
+        {
+          "ad": "Hava Hacmi",
+          "deger": "1000l/dk max."
+        },
+        {
+          "ad": "Hortum Çıkış Sıcaklığı",
+          "deger": "-15°C ile -21°C"
+        },
+        {
+          "ad": "Koruma Class",
+          "deger": "Class I, Type B IEC 601-1′ e göre"
+        },
+        {
+          "ad": "MDD/MPG",
+          "deger": "Class Ila"
+        },
+        {
+          "ad": "Uygulama Tüp Uzunluğu",
+          "deger": "200 cm"
+        },
+        {
+          "ad": "Cihaz Boyutları (En-Boy-Yükseklik)",
+          "deger": "325mm x 630 mm x 890 mm"
+        },
+        {
+          "ad": "Ağırlık",
+          "deger": "57 kg"
+        }
+      ],
+      "ozellikler": [
+        "Cilt yüzeyinde yapılan işlemler esnasında oluşacak acıyı minimum seviyeye düşürür.",
+        "Cihaz; -40 derecedeki soğuk havayı en az -15, en fazla -21 derecede dışarı iletir.",
+        "Cilt yüzeyindeki lazer epilasyon ve IPL işlemlerinin acısız şekilde tamamlanmasını sağlar."
+      ],
+      "kapak": "202307-epicool-001-1.webp",
+      "gorseller": [
+        "202307-epicool-001-1.webp",
+        "202109-epicool-0001.jpg"
+      ],
+      "kaynakUrl": "https://estezone.com.tr/epicool/",
+      "eskiKelimeSayisi": 423
+    },
+    {
+      "slug": "lazer-epilasyon-gozlugu",
+      "ad": "Lazer Koruyucu Gözlük",
+      "marka": "Estezone",
+      "kategori": "destek",
+      "kategoriAd": "Soğutma & Klinik Aksesuar",
+      "rozet": "Dalga Boyuna Özel",
+      "vitrin": false,
+      "oneCikan": "5 Farklı Koruma",
+      "etiketler": [
+        "755/808 nm",
+        "1064 nm",
+        "10600 nm",
+        "IPL"
+      ],
+      "hedef": "Her lazer kullanan işletme — zorunlu güvenlik ekipmanı",
+      "neden": "Her dalga boyu farklı filtre gerektirir; cihaz envanterinize birebir uyan gözlük seti.",
+      "birlesmeAdayi": null,
+      "ozet": "Lazer Epilasyon Gözlüğü: Lazer cihazları farklı dalga boylarında çalıştığından her lazer cihazı için farklı koruyuculuğa sahip gözlükler kullanılmaktadır.",
+      "aciklama": [
+        "Lazer Epilasyon Gözlüğü: Lazer cihazları farklı dalga boylarında çalıştığından her lazer cihazı için farklı koruyuculuğa sahip gözlükler kullanılmaktadır."
+      ],
+      "bolumler": [
+        "Lazer Epilasyon Gözlüğü Özellikleri",
+        "Bizimle İletişime Geçin"
+      ],
+      "spec": [],
+      "ozellikler": [
+        "Lazer Epilasyon Gözlüğü",
+        "Lazer Koruma gözlükleri farklı çerçeve, renk ve modellere sahiptir.",
+        "CE normlarına uygun, sertifikalı ürünlerdir.",
+        "Kalite standartlarına uygun üretim ve koruyuculuğa sahiptir.",
+        "Zararlı lazer ışınlarından kullanıcıyı koruma amacıyla kullanıma uygundur.",
+        "200 – 540nm OD5+",
+        "266nm3 355nm",
+        "Plastik Lazer Koruma Gözlüğü",
+        "800 – 1100nm OD5+",
+        "635nm, 808nm, 980nm",
+        "Plastik Lazer Koruma Gözlüğü",
+        "740 – 850nm OD5+ OD6+",
+        "755nm, 808nm",
+        "Plastik Lazer Koruma Gözlüğü",
+        "740 – 1100nm",
+        "755nm, 808nm",
+        "980nm, 1064nm",
+        "Plastik Lazer Koruma Gözlüğü",
+        "2780, 2940nm",
+        "Er Lasers",
+        "CO² Laser",
+        "KTP Lazer",
+        "Ndyag Lazer Koruyucu Gözlük",
+        "532nm – 1064nm"
+      ],
+      "kapak": "202103-lazer-koruyucu-gozluk-01.jpg",
+      "gorseller": [
+        "202103-lazer-koruyucu-gozluk-01.jpg",
+        "202103-lazer-koruyucu-gozluk-02.jpg",
+        "202103-lazer-koruyucu-gozluk-03.jpg",
+        "202103-ATD-Laser-Safety-Goggle-for-755nm-808nm.jpg",
+        "202103-ADY-Laser-Safety-Goggle-for-740-1100nm.jpg",
+        "202103-lazer-koruyucu-gozluk-014.jpg",
+        "202103-CHP-Laser-Safety-Goggle-for-10600nm.jpg",
+        "202103-GTY-Laser-Safety-Goggle-for-532nm1064nm.jpg",
+        "202103-IPL-Safety-Goggle-200-1400nm.jpg",
+        "202103-lazer-koruyucu-gozluk-05.jpg"
+      ],
+      "kaynakUrl": "https://estezone.com.tr/lazer-epilasyon-gozlugu/",
+      "eskiKelimeSayisi": 190
+    }
+  ]
+}

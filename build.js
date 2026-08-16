@@ -1,0 +1,662 @@
+/* Estezone Medikal — statik site üreticisi
+   node build.js  ->  site/ klasörüne 45+ sayfa üretir */
+const fs = require('fs');
+const path = require('path');
+const P = require('./sablon/parcalar.js');
+const { kacis, ikon, sayfa, cihazKart, cta, kirinti, KATEGORI_MENU, SITE } = P;
+const icerik = require('./veri/icerik.js');
+const veri = require('./veri/cihazlar.json');
+
+const { marka, iletisim, guven, servisler, surec, farklar, sss, yasal } = icerik;
+const cihazlar = veri.cihazlar;
+const kategoriler = veri.kategoriler;
+
+const KOK = __dirname;
+const CIKTI = path.join(KOK, 'site');
+
+let yazilan = 0;
+function yaz(gorece, html) {
+  const tam = path.join(CIKTI, gorece);
+  fs.mkdirSync(path.dirname(tam), { recursive: true });
+  fs.writeFileSync(tam, html, 'utf8');
+  yazilan++;
+}
+
+/* ======================= 1. ANASAYFA ======================= */
+function anasayfa() {
+  const vitrin = cihazlar.filter((c) => c.vitrin).slice(0, 6);
+  const kahraman = cihazlar.find((c) => c.slug === 't-shape-2');
+
+  const sema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: marka.ad,
+    url: SITE,
+    description: marka.aciklama,
+    telephone: iletisim.telefon,
+    email: iletisim.eposta,
+    address: iletisim.ofisler.map((o) => ({
+      '@type': 'PostalAddress',
+      streetAddress: o.adres,
+      addressCountry: 'TR',
+    })),
+    sameAs: iletisim.sosyal.map((s) => s.url),
+  };
+
+  const govde = `
+<section class="hero">
+  <div class="hero-fon"></div><div class="hero-izgara"></div>
+  <div class="kap">
+    <div class="hero-ic">
+      <div>
+        <span class="ust-etiket">FDA &amp; CE belgeli platformlar</span>
+        <h1>Lazer teknolojisinde <em>20 yıllık mühendislik</em></h1>
+        <p class="giris">Estezone Medikal; hastane, klinik ve medikal estetik merkezlerine epilasyon, cilt ve
+          vücut şekillendirme platformları tedarik eder. Cihazı satıp çekilmez — <strong style="color:var(--metin)">kendi
+          teknik servis atölyesinde</strong> ayakta tutar.</p>
+        <div class="btn-grup">
+          <a class="btn btn-ana btn-b" href="cihazlar.html">28 cihazı inceleyin ${ikon.ok}</a>
+          <a class="btn btn-hat btn-b" href="cihaz-secim-danismani.html">Hangi cihaz bana uygun?</a>
+        </div>
+        <div class="guven">${guven
+          .map((g) => `<div><div class="s">${g.sayi}</div><div class="e">${g.etiket}</div></div>`)
+          .join('')}</div>
+      </div>
+      <div class="hero-gorsel belir">
+        <span class="hero-rozet hero-rozet--sag"><span class="e">FDA 510(k)</span><span class="d">K231092</span></span>
+        <img src="varlik/gorsel/${kahraman.kapak}" alt="${kacis(kahraman.ad)} — profesyonel estetik platform" width="640" height="540" fetchpriority="high">
+        <span class="hero-rozet hero-rozet--sol"><span class="e">Vitrin cihaz</span><span class="d">${kacis(kahraman.ad)}</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bolum dokulu">
+  <div class="kap">
+    <div class="bolum-basi">
+      <span class="ust-etiket">Portföy</span>
+      <h2>Dört ana hat, yirmi sekiz platform</h2>
+      <p class="giris">Her hat farklı bir gelir kalemi açar. İşletmenizin bugünkü hacmine göre başlayıp,
+        talep büyüdükçe aynı tedarikçiyle genişleyebilirsiniz.</p>
+    </div>
+    <div class="izgara izgara-4">
+      ${KATEGORI_MENU.map(([sl, k, ad]) => {
+        const kt = kategoriler[k];
+        const n = cihazlar.filter((c) => c.kategori === k).length;
+        return `<a class="kart belir" data-k="${k}" href="kategori/${sl}.html" style="border-top:2px solid var(--k-${k})">
+          <span class="mono" style="font-size:.72rem;letter-spacing:.14em;color:var(--k-${k})">${String(n).padStart(2, '0')} CİHAZ</span>
+          <h3 style="margin-top:.7rem">${ad}</h3>
+          <p>${kt.ozet}</p>
+          <span class="btn btn-sade" style="margin-top:1rem;font-size:.87rem">Hattı gör ${ikon.ok}</span>
+        </a>`;
+      }).join('')}
+    </div>
+  </div>
+</section>
+
+<section class="bolum">
+  <div class="kap">
+    <div class="bolum-basi">
+      <span class="ust-etiket">Öne çıkanlar</span>
+      <h2>Sahada en çok tercih edilen platformlar</h2>
+      <p class="giris">Farklı işletme ölçekleri ve tedavi menüleri için seçilmiş altı sistem.
+        Tamamı belgeli, tamamı kendi teknik servisimizin kapsamında.</p>
+    </div>
+    <div class="izgara izgara-3">${vitrin.map((c) => cihazKart(c)).join('')}</div>
+    <div class="orta" style="margin-top:2.4rem">
+      <a class="btn btn-hat btn-b" href="cihazlar.html">28 cihazın tamamını görün ${ikon.ok}</a>
+    </div>
+  </div>
+</section>
+
+<section class="bolum dokulu">
+  <div class="kap">
+    <div class="bolum-basi">
+      <span class="ust-etiket">Neden Estezone</span>
+      <h2>Cihaz satmak kolay. Onu 8 yıl çalışır tutmak zor.</h2>
+      <p class="giris">Estetik cihaz yatırımının gerçek maliyeti satın alma bedeli değil, duran gün sayısıdır.
+        Bu yüzden işimizin merkezinde servis var.</p>
+    </div>
+    <div class="izgara izgara-2">
+      ${farklar
+        .map(
+          (f) => `<div class="kart belir">
+        <span style="display:grid;place-items:center;width:44px;height:44px;border-radius:11px;background:var(--vurgu-sis);border:1px solid rgba(45,212,245,.24);color:var(--vurgu);margin-bottom:1.1rem">
+          <span style="width:21px;height:21px;display:block">${ikon[f.ikon] || ikon.rozet}</span></span>
+        <h3>${f.baslik}</h3><p>${f.metin}</p></div>`
+        )
+        .join('')}
+    </div>
+  </div>
+</section>
+
+<section class="bolum">
+  <div class="kap">
+    <div class="bolum-basi bolum-basi--orta">
+      <span class="ust-etiket">Satın alma süreci</span>
+      <h2>Beş adımda net bir yol</h2>
+      <p class="giris">Yüksek bedelli bir yatırımda sürpriz olmamalı. Her adımda ne olacağını baştan biliyorsunuz.</p>
+    </div>
+    <div class="surec belir">${surec
+      .map((s) => `<div class="surec-ad"><span class="no">${s.no}</span><h4>${s.ad}</h4><p>${s.metin}</p></div>`)
+      .join('')}</div>
+  </div>
+</section>
+
+<section class="bolum dokulu">
+  <div class="kap">
+    <div class="izgara izgara-2" style="gap:2.4rem;align-items:center">
+      <div>
+        <span class="ust-etiket">Karar araçları</span>
+        <h2 style="margin-top:.9rem">Tahminle değil, hesapla karar verin</h2>
+        <p class="giris" style="margin-top:1.1rem">Cihaz seçimi ve yatırım kararı için üç ücretsiz araç hazırladık.
+          Hiçbiri kayıt istemez, sonucu anında görürsünüz.</p>
+        <div class="btn-grup" style="margin-top:1.8rem">
+          <a class="btn btn-ana" href="cihaz-secim-danismani.html">Seçim danışmanını başlat ${ikon.ok}</a>
+        </div>
+      </div>
+      <div class="izgara" style="gap:.9rem">
+        ${[
+          ['cihaz-secim-danismani.html', 'Cihaz Seçim Danışmanı', '4 soruyla işletmenize uygun üç platformu önerir.', 'epilasyon'],
+          ['yatirim-hesaplayici.html', 'Yatırım Geri Dönüş Hesabı', 'Seans fiyatı ve hasta sayısından geri dönüş süresini çıkarır.', 'vucut'],
+          ['karsilastir.html', 'Cihaz Karşılaştırma', 'Üç cihazı teknik olarak yan yana koyar.', 'cilt'],
+        ]
+          .map(
+            ([u, ad, ac, k]) => `<a class="kart belir" href="${u}" data-k="${k}"
+          style="display:flex;gap:1rem;align-items:flex-start;padding:1.25rem">
+          <span style="width:9px;height:9px;border-radius:50%;background:var(--k-${k});margin-top:.55rem;flex:none;box-shadow:0 0 12px var(--k-${k})"></span>
+          <span><strong style="display:block;font-size:1.02rem;font-weight:580">${ad}</strong>
+          <span class="sonuk" style="font-size:.885rem;display:block;margin-top:.25rem;line-height:1.55">${ac}</span></span></a>`
+          )
+          .join('')}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bolum">
+  <div class="kap">
+    <div class="bolum-basi">
+      <span class="ust-etiket">Teknik servis</span>
+      <h2>Sekiz kalemde kendi atölyemizde onarım</h2>
+      <p class="giris">Flash lambadan fiber optiğe, güç kaynağından soğutma devresine kadar.
+        Bizden almadığınız cihazlar için de.</p>
+    </div>
+    <div class="izgara izgara-4">
+      ${servisler
+        .slice(0, 8)
+        .map(
+          (s) => `<div class="kart belir" style="padding:1.25rem">
+        <h4 style="font-size:.98rem">${s.ad}</h4><p style="font-size:.87rem">${s.ozet}</p></div>`
+        )
+        .join('')}
+    </div>
+    <div class="orta" style="margin-top:2.2rem">
+      <a class="btn btn-hat" href="teknik-servis.html">Teknik servis detayları ${ikon.ok}</a>
+    </div>
+  </div>
+</section>
+
+<section class="bolum dokulu">
+  <div class="kap" style="max-width:900px">
+    <div class="bolum-basi bolum-basi--orta">
+      <span class="ust-etiket">Sık sorulanlar</span>
+      <h2>Karar öncesi en çok sorulanlar</h2>
+    </div>
+    <div class="akordiyon belir">
+      ${sss
+        .map(
+          (f, i) =>
+            `<details${i === 0 ? ' open' : ''}><summary>${f.s}</summary><div class="cevap">${f.c}</div></details>`
+        )
+        .join('')}
+    </div>
+  </div>
+</section>
+
+${cta('', 'Cihazınızı seçelim, rakamları birlikte konuşalım', 'Envanterinizi ve hedef hacminizi paylaşın; size uygun platformu, sarf ve servis kalemleriyle birlikte tek teklifte çıkaralım.')}`;
+
+  yaz(
+    'index.html',
+    sayfa(
+      {
+        baslik: 'Estezone Medikal — Lazer Epilasyon ve Estetik Cihaz Tedarikçisi',
+        aciklama:
+          'FDA ve CE belgeli lazer epilasyon, cilt ve vücut şekillendirme cihazları. 20 yıllık tecrübe, kendi teknik servis atölyesi, Ankara ve İstanbul ofisleri.',
+        aktif: 'index.html',
+        gorsel: `varlik/gorsel/${kahraman.kapak}`,
+        sema,
+      },
+      govde
+    )
+  );
+}
+
+/* ======================= 2. CİHAZ LİSTESİ ======================= */
+function cihazListesi() {
+  const govde = `
+<section class="sayfa-bas"><div class="kap">
+  ${kirinti('', [{ ad: 'Cihazlar' }])}
+  <span class="ust-etiket" style="margin-top:1rem">Tüm portföy</span>
+  <h1>28 cihaz platformu</h1>
+  <p class="giris">Kategoriye göre süzün, marka veya teknoloji arayın. Her cihazın teknik künyesi,
+    kimin için uygun olduğu ve neden tercih edildiği ayrı ayrı yazıldı.</p>
+</div></section>
+
+<div class="filtre" data-filtre><div class="kap filtre-ic">
+  <div class="filtre-grup">
+    <button class="f-dug" data-k-filtre="hepsi" aria-pressed="true">Hepsi <span class="n">${cihazlar.length}</span></button>
+    ${KATEGORI_MENU.map(([, k, ad]) => {
+      const n = cihazlar.filter((c) => c.kategori === k).length;
+      return `<button class="f-dug" data-k-filtre="${k}" aria-pressed="false" style="--kr:var(--k-${k})"><span class="p"></span>${ad} <span class="n">${n}</span></button>`;
+    }).join('')}
+  </div>
+  <div class="f-ara">${ikon.ara}<input type="search" data-ara placeholder="Cihaz, marka veya teknoloji arayın…" aria-label="Cihaz ara"></div>
+  <span class="f-sonuc" data-sonuc-sayi>${cihazlar.length} cihaz</span>
+</div></div>
+
+<section style="padding-bottom:clamp(3rem,6vw,5rem)"><div class="kap">
+  <div class="izgara izgara-3">${cihazlar.map((c) => cihazKart(c)).join('')}</div>
+  <div class="bos-durum gizli" data-bos>
+    <h3>Aradığınız kriterde cihaz bulunamadı</h3>
+    <p class="giris" style="margin:.8rem auto 1.6rem">Filtreyi genişletin ya da doğrudan bize sorun —
+      portföyde olmayan bir platform için de tedarik yapabiliriz.</p>
+    <a class="btn btn-ana" href="iletisim.html">Bize sorun ${ikon.ok}</a>
+  </div>
+</div></section>
+
+${cta('', 'Hangisinin size uyduğundan emin değil misiniz?', 'Dört soruluk seçim danışmanımız işletme ölçeğinize ve hedef tedavi menünüze göre üç platform önerir.')}`;
+
+  yaz(
+    'cihazlar.html',
+    sayfa(
+      {
+        baslik: 'Tüm Cihazlar — Estezone Medikal',
+        aciklama:
+          'Lazer epilasyon, cilt, medikal estetik ve vücut şekillendirme kategorilerinde 28 profesyonel cihaz platformu. Teknik künye ve karşılaştırma.',
+        aktif: 'cihazlar.html',
+        kanonik: 'cihazlar.html',
+      },
+      govde
+    )
+  );
+}
+
+/* ======================= 3. KATEGORİ SAYFALARI ======================= */
+function kategoriSayfalari() {
+  KATEGORI_MENU.forEach(([sl, k, ad]) => {
+    const kt = kategoriler[k];
+    const liste = cihazlar.filter((c) => c.kategori === k);
+    const govde = `
+<section class="sayfa-bas"><div class="kap">
+  ${kirinti('kategori', [{ ad: 'Cihazlar', url: 'cihazlar.html' }, { ad }])}
+  <span class="ust-etiket" style="margin-top:1rem;color:var(--k-${k})">${liste.length} platform</span>
+  <h1>${kt.ad}</h1>
+  <p class="giris">${kt.ozet}</p>
+</div></section>
+
+<section class="bolum"><div class="kap">
+  <div class="izgara izgara-3">${liste.map((c) => cihazKart(c, 'kategori')).join('')}</div>
+</div></section>
+
+<section class="bolum-dar"><div class="kap">
+  <div class="izgara izgara-3">
+    ${KATEGORI_MENU.filter(([, kk]) => kk !== k)
+      .map(
+        ([s2, k2, a2]) =>
+          `<a class="kart belir" href="${s2}.html" style="border-top:2px solid var(--k-${k2})">
+        <span class="mono" style="font-size:.72rem;letter-spacing:.14em;color:var(--k-${k2})">DİĞER HAT</span>
+        <h3 style="margin-top:.6rem;font-size:1.15rem">${a2}</h3>
+        <p>${kategoriler[k2].ozet}</p></a>`
+      )
+      .join('')}
+  </div>
+</div></section>
+
+${cta('kategori', `${kt.kisa} hattında doğru cihazı birlikte seçelim`, 'Hedef hasta profilinizi ve günlük seans hacminizi paylaşın; bu hattaki hangi platformun size uyduğunu net söyleyelim.')}`;
+
+    yaz(
+      `kategori/${sl}.html`,
+      sayfa(
+        {
+          baslik: `${kt.ad} — Estezone Medikal`,
+          aciklama: kt.ozet,
+          yol: 'kategori',
+          aktif: 'cihazlar.html',
+          kanonik: `kategori/${sl}.html`,
+        },
+        govde
+      )
+    );
+  });
+}
+
+/* ======================= 4. CİHAZ DETAY ======================= */
+function cihazSayfalari() {
+  cihazlar.forEach((c) => {
+    const digerleri = cihazlar.filter((x) => x.kategori === c.kategori && x.slug !== c.slug).slice(0, 3);
+    const katSlug = KATEGORI_MENU.find(([, k]) => k === c.kategori)[0];
+
+    const sema = {
+      '@context': 'https://schema.org',
+      '@type': 'Product',
+      name: c.ad,
+      brand: { '@type': 'Brand', name: c.marka },
+      category: c.kategoriAd,
+      description: c.ozet,
+      image: `${SITE}/varlik/gorsel/${c.kapak}`,
+      additionalProperty: c.spec.slice(0, 12).map((s) => ({
+        '@type': 'PropertyValue',
+        name: s.ad,
+        value: s.deger,
+      })),
+      offers: {
+        '@type': 'Offer',
+        availability: 'https://schema.org/InStock',
+        priceCurrency: 'TRY',
+        seller: { '@type': 'Organization', name: marka.ad },
+      },
+    };
+
+    const govde = `
+<div class="kap">${kirinti('cihaz', [
+      { ad: 'Cihazlar', url: 'cihazlar.html' },
+      { ad: c.kategoriAd, url: `kategori/${katSlug}.html` },
+      { ad: c.ad },
+    ])}</div>
+
+<section><div class="kap cd-ust">
+  <div class="cd-galeri" data-galeri>
+    <div class="cd-ana-gor">
+      <img src="../varlik/gorsel/${c.kapak}" alt="${kacis(c.ad)}" data-ana-gorsel width="620" height="620" fetchpriority="high">
+    </div>
+    ${
+      c.gorseller.length > 1
+        ? `<div class="cd-kucuk">${c.gorseller
+            .slice(0, 6)
+            .map(
+              (g, i) =>
+                `<button data-kucuk="../varlik/gorsel/${g}" aria-current="${i === 0}" aria-label="Görsel ${i + 1}"><img src="../varlik/gorsel/${g}" alt="" loading="lazy" width="60" height="60"></button>`
+            )
+            .join('')}</div>`
+        : ''
+    }
+  </div>
+
+  <div class="cd-bilgi">
+    <span class="cd-marka">${kacis(c.marka)} · ${kacis(c.kategoriAd)}</span>
+    <h1>${kacis(c.ad)}</h1>
+    <div class="cd-rozetler">
+      ${c.rozet ? `<span class="rozet-one">${ikon.rozet}${kacis(c.rozet)}</span>` : ''}
+      ${(c.etiketler || []).map((e) => `<span class="pul">${kacis(e)}</span>`).join('')}
+    </div>
+    <p class="cd-ozet">${kacis(c.ozet)}</p>
+    <div class="cd-neden"><b>Neden bu cihaz</b>${kacis(c.neden)}</div>
+    <div class="cd-hedef">${ikon.hedef}<span><strong style="color:var(--metin)">Kimin için:</strong> ${kacis(c.hedef)}</span></div>
+    <div class="cd-eylem">
+      <a class="btn btn-ana btn-b" href="../iletisim.html?cihaz=${c.slug}">Bu cihaz için teklif alın ${ikon.ok}</a>
+      <a class="btn btn-wa" href="https://wa.me/${iletisim.whatsappHam}?text=${encodeURIComponent(c.ad + ' hakkında bilgi almak istiyorum.')}" target="_blank" rel="noopener">${ikon.wa}WhatsApp</a>
+    </div>
+    <p class="sonuk" style="font-size:.83rem;margin-top:1rem">Demo talebi, kurulum koşulları ve finansman seçenekleri için arayın: <a href="tel:${iletisim.telefonHam}" style="color:var(--vurgu)">${iletisim.telefon}</a></p>
+  </div>
+</div></section>
+
+<section class="bolum-dar"><div class="kap">
+  <div class="sekme-bar" data-sekme-bar>
+    <button data-hedef="genel" aria-selected="true">Genel bakış</button>
+    ${c.spec.length ? '<button data-hedef="teknik" aria-selected="false">Teknik künye</button>' : ''}
+    ${c.ozellikler.length ? '<button data-hedef="ozellik" aria-selected="false">Özellikler</button>' : ''}
+    <button data-hedef="servis" aria-selected="false">Servis &amp; garanti</button>
+  </div>
+
+  <div class="sekme-icerik">
+    <div data-sekme="genel">
+      <div class="izgara izgara-2" style="gap:2.4rem;align-items:start">
+        <div>
+          ${(c.aciklama.length ? c.aciklama : [c.ozet])
+            .map((p) => `<p class="giris" style="margin-bottom:1.05rem;max-width:none">${kacis(p)}</p>`)
+            .join('')}
+        </div>
+        <div class="arac">
+          <h3 style="font-size:1.1rem">Künye</h3>
+          <div style="margin-top:1.1rem;display:grid;gap:.7rem">
+            ${[
+              ['Marka', c.marka],
+              ['Kategori', c.kategoriAd],
+              ['Öne çıkan', c.oneCikan],
+              ['Konum', c.rozet || '—'],
+            ]
+              .map(
+                ([a, b]) =>
+                  `<div class="sonuc-satir"><span class="e">${a}</span><span class="d" style="font-size:.95rem">${kacis(b)}</span></div>`
+              )
+              .join('')}
+          </div>
+          <a class="btn btn-hat btn-k" style="margin-top:1.2rem;width:100%" href="../karsilastir.html">Başka cihazla karşılaştır</a>
+        </div>
+      </div>
+      ${
+        c.bolumler.length
+          ? `<div style="margin-top:2.4rem"><h3>Sayfa içeriği</h3><ul class="madde" style="margin-top:1rem">${c.bolumler
+              .map((b) => `<li>${kacis(b)}</li>`)
+              .join('')}</ul></div>`
+          : ''
+      }
+    </div>
+
+    ${
+      c.spec.length
+        ? `<div data-sekme="teknik" class="gizli">
+      <h3 style="margin-bottom:1.2rem">Teknik özellikler</h3>
+      <table class="spec"><tbody>${c.spec
+        .map((s) => `<tr><td>${kacis(s.ad)}</td><td>${kacis(s.deger)}</td></tr>`)
+        .join('')}</tbody></table>
+      <p class="sonuk" style="font-size:.82rem;margin-top:1rem">Değerler üretici beyanına dayanır; konfigürasyona göre değişebilir. Kesin değerler teklif aşamasında yazılı teyit edilir.</p>
+    </div>`
+        : ''
+    }
+
+    ${
+      c.ozellikler.length
+        ? `<div data-sekme="ozellik" class="gizli">
+      <h3 style="margin-bottom:1.2rem">Özellikler ve uygulama alanları</h3>
+      <ul class="madde">${c.ozellikler.map((o) => `<li>${kacis(o)}</li>`).join('')}</ul>
+    </div>`
+        : ''
+    }
+
+    <div data-sekme="servis" class="gizli">
+      <h3 style="margin-bottom:1.2rem">Bu cihaz için servis kapsamı</h3>
+      <p class="giris" style="margin-bottom:1.6rem">Satış sonrası destek, teklif aşamasında yazılı olarak netleşir.
+        Aşağıdaki kalemler kendi atölyemizde yapılır.</p>
+      <div class="izgara izgara-2">
+        ${servisler
+          .slice(0, 6)
+          .map((s) => `<div class="kart" style="padding:1.2rem"><h4 style="font-size:.97rem">${s.ad}</h4><p style="font-size:.87rem">${s.ozet}</p></div>`)
+          .join('')}
+      </div>
+      <a class="btn btn-hat" style="margin-top:1.6rem" href="../teknik-servis.html">Tüm teknik servis kalemleri ${ikon.ok}</a>
+    </div>
+  </div>
+</div></section>
+
+${
+  digerleri.length
+    ? `<section class="bolum dokulu"><div class="kap">
+  <div class="bolum-basi"><span class="ust-etiket">Aynı hatta</span><h2>Bunlara da bakın</h2></div>
+  <div class="izgara izgara-3">${digerleri.map((d) => cihazKart(d, 'cihaz')).join('')}</div>
+</div></section>`
+    : ''
+}
+
+${cta('cihaz', `${c.ad} için net bir teklif alın`, 'Başlık konfigürasyonu, sarf paketi, eğitim ve garanti süresi dahil tek kalemde fiyatlandıralım.')}`;
+
+    yaz(
+      `cihaz/${c.slug}.html`,
+      sayfa(
+        {
+          baslik: `${c.ad} — ${c.marka} | Estezone Medikal`,
+          aciklama: c.ozet.slice(0, 158),
+          yol: 'cihaz',
+          aktif: 'cihazlar.html',
+          kanonik: `cihaz/${c.slug}.html`,
+          gorsel: `varlik/gorsel/${c.kapak}`,
+          sema,
+        },
+        govde
+      )
+    );
+  });
+}
+
+/* ======================= 5. TEKNİK SERVİS ======================= */
+function teknikServis() {
+  const govde = `
+<section class="sayfa-bas"><div class="kap">
+  ${kirinti('', [{ ad: 'Teknik Servis' }])}
+  <span class="ust-etiket" style="margin-top:1rem">Platform bağımsız</span>
+  <h1>Teknik servis ve yedek parça</h1>
+  <p class="giris">Estetik cihaz yatırımının gerçek maliyeti, cihazın durduğu gün sayısıdır.
+    Kendi atölyemizde onarım yapıyoruz — bizden almadığınız cihazlar için de.</p>
+  <div class="btn-grup" style="margin-top:1.8rem">
+    <a class="btn btn-ana" href="iletisim.html">Servis talebi oluşturun ${ikon.ok}</a>
+    <a class="btn btn-wa" href="https://wa.me/${iletisim.whatsappHam}" target="_blank" rel="noopener">${ikon.wa}Arıza bildir</a>
+  </div>
+</div></section>
+
+<section class="bolum"><div class="kap">
+  <div class="bolum-basi"><span class="ust-etiket">Kapsam</span><h2>Sekiz kalemde müdahale</h2>
+    <p class="giris">Her kalem için ölçümlü teşhis yapılır; onarımın mı yenilemenin mi ekonomik olduğu net söylenir.</p></div>
+  <div class="izgara izgara-2">
+    ${servisler
+      .map(
+        (s) => `<div class="kart belir">
+      <h3 style="font-size:1.12rem">${s.ad}</h3>
+      <p style="margin-bottom:.75rem">${s.ozet}</p>
+      <p style="color:var(--metin-3);font-size:.875rem">${s.detay}</p></div>`
+      )
+      .join('')}
+  </div>
+</div></section>
+
+<section class="bolum dokulu"><div class="kap">
+  <div class="izgara izgara-2" style="gap:2.4rem;align-items:center">
+    <div>
+      <span class="ust-etiket">Önleyici bakım</span>
+      <h2 style="margin-top:.9rem">Arızayı beklemeyin</h2>
+      <p class="giris" style="margin-top:1.1rem">Lazer arızalarının önemli bölümü aslında soğutma ve
+        optik temizliği kaynaklıdır — yani önlenebilir arızalardır. Periyodik bakım takvimi,
+        seans ortasında duran bir cihazdan çok daha ucuza gelir.</p>
+      <ul class="madde" style="margin-top:1.5rem">
+        <li>Atış sayısına göre planlı lamba ve hazne değişimi</li>
+        <li>Soğutma devresi debi, sızdırmazlık ve sıcaklık kontrolü</li>
+        <li>Optik yol temizliği ve spot homojenlik kontrolü</li>
+        <li>Enerji kalibrasyonu ve protokol değerlerinin doğrulanması</li>
+        <li>Elektrik tesisatı ve topraklama uygunluk kontrolü</li>
+      </ul>
+    </div>
+    <div class="arac">
+      <span class="ust-etiket">Servis talebi</span>
+      <h3 style="margin-top:.8rem;font-size:1.25rem">Cihazınızı bildirin</h3>
+      <p class="sonuk" style="font-size:.9rem;margin-top:.6rem;margin-bottom:1.4rem">Marka ve model bilgisiyle
+        yazın; parçanın stokta olup olmadığını ve tahmini süreyi söyleyelim.</p>
+      <form data-form>
+        <label class="alan"><span>Cihaz marka / model</span><input required placeholder="ör. Light Age Epicare LPX"></label>
+        <label class="alan"><span>Arıza tanımı</span><textarea required placeholder="Cihaz ne yapıyor, hangi hatayı veriyor?"></textarea></label>
+        <div class="alan-2">
+          <label class="alan"><span>Ad Soyad</span><input required></label>
+          <label class="alan"><span>Telefon</span><input type="tel" required></label>
+        </div>
+        <button class="btn btn-ana" type="submit" style="width:100%">Servis talebi gönder</button>
+        <p class="sonuk" hidden data-form-not style="margin-top:1rem;padding:.9rem 1.1rem;background:var(--vurgu-sis);border:1px solid rgba(45,212,245,.26);border-radius:10px;font-size:.88rem">
+          Talebiniz alındı. <strong style="color:var(--metin)">Bu bir tanıtım demosudur</strong> — form gönderimi canlı sistemde e-posta ve CRM'e bağlanacaktır.</p>
+      </form>
+    </div>
+  </div>
+</div></section>
+
+${cta('', 'Envanterinizi çıkaralım, kritik parçaları stoklayalım', 'Sahadaki cihazlarınızın listesini paylaşın; hangi parçaların kritik olduğunu ve hangilerini önden stoklamanın mantıklı olduğunu birlikte belirleyelim.')}`;
+
+  yaz(
+    'teknik-servis.html',
+    sayfa(
+      {
+        baslik: 'Teknik Servis ve Yedek Parça — Estezone Medikal',
+        aciklama:
+          'Lazer cihazları için platform bağımsız teknik servis: flash lamba, pompa haznesi, optik lens, fiber optik, güç kaynağı ve soğutma sistemi onarımı.',
+        aktif: 'teknik-servis.html',
+        kanonik: 'teknik-servis.html',
+      },
+      govde
+    )
+  );
+}
+
+anasayfa();
+cihazListesi();
+kategoriSayfalari();
+cihazSayfalari();
+teknikServis();
+
+/* kurumsal, araç ve yasal sayfalar ayrı modülde */
+require('./sablon/sayfalar-2.js')({ yaz, cihazlar, kategoriler });
+
+/* ---- varlıkları kopyala ---- */
+function kopyala() {
+  fs.mkdirSync(path.join(CIKTI, 'varlik/css'), { recursive: true });
+  fs.mkdirSync(path.join(CIKTI, 'varlik/js'), { recursive: true });
+  fs.mkdirSync(path.join(CIKTI, 'varlik/gorsel'), { recursive: true });
+  fs.copyFileSync(path.join(KOK, 'sablon/stil.css'), path.join(CIKTI, 'varlik/css/stil.css'));
+  fs.copyFileSync(path.join(KOK, 'sablon/site.js'), path.join(CIKTI, 'varlik/js/site.js'));
+
+  const kaynak = path.join(KOK, 'kaynak/gorsel');
+  const gerekli = new Set();
+  cihazlar.forEach((c) => {
+    if (c.kapak) gerekli.add(c.kapak);
+    c.gorseller.slice(0, 6).forEach((g) => gerekli.add(g));
+  });
+  let n = 0;
+  gerekli.forEach((g) => {
+    const s = path.join(kaynak, g);
+    if (fs.existsSync(s)) {
+      fs.copyFileSync(s, path.join(CIKTI, 'varlik/gorsel', g));
+      n++;
+    }
+  });
+  return n;
+}
+
+const gorselSayi = kopyala();
+
+/* ---- sitemap + robots ---- */
+function sitemap() {
+  const url = [];
+  const gez = (dizin, on = '') => {
+    fs.readdirSync(path.join(CIKTI, dizin), { withFileTypes: true }).forEach((e) => {
+      if (e.isDirectory() && e.name !== 'varlik') gez(path.join(dizin, e.name), `${on}${e.name}/`);
+      else if (e.name.endsWith('.html') && e.name !== '404.html')
+        url.push(`${on}${e.name === 'index.html' && !on ? '' : e.name}`);
+    });
+  };
+  gez('.');
+  fs.writeFileSync(
+    path.join(CIKTI, 'sitemap.xml'),
+    `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${url.map((u) => `  <url><loc>${SITE}/${u}</loc><changefreq>monthly</changefreq></url>`).join('\n')}
+</urlset>`,
+    'utf8'
+  );
+  fs.writeFileSync(
+    path.join(CIKTI, 'robots.txt'),
+    `User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`,
+    'utf8'
+  );
+  return url.length;
+}
+const urlSayi = sitemap();
+
+console.log(`\n✓ ${yazilan} HTML sayfa üretildi`);
+console.log(`✓ ${gorselSayi} görsel kopyalandı`);
+console.log(`✓ sitemap.xml (${urlSayi} URL) + robots.txt`);
+console.log(`→ ${CIKTI}\n`);
