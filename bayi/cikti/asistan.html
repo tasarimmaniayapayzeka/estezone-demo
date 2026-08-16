@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>P6 Asistan · Estezone Yetkili Ağ Programı</title>
+<meta name="description" content="Üç kişilikli bayi ve talep asistanı prototipi">
+<link rel="stylesheet" href="stil.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230d5490'/><text x='16' y='22' font-size='17' font-family='sans-serif' font-weight='700' fill='%23fff' text-anchor='middle'>E</text></svg>">
+</head>
+<body>
+
+<div class="demo-bant" role="note">
+  <strong>TASARIM DEMOSU</strong> — Estezone Medikal’in resmî sitesi veya resmî bayilik
+  programı değildir. Teklif/sunum amaçlı prototiptir; tüm rakamlar temsilîdir.
+</div>
+
+<header class="ust">
+  <a class="marka" href="index.html">
+    <span class="marka-ad">Estezone</span>
+    <span class="marka-alt">Yetkili Ağ Programı</span>
+  </a>
+  <button class="menu-ac" aria-label="Menü" aria-expanded="false">☰</button>
+  <nav class="gezinme"><a href="index.html">Program</a><a href="rakip.html">Rakip kıyası</a><a href="basvuru.html">P1 Başvuru</a><a href="bolge.html">P2 Bölge</a><a href="portal.html">P3 Portal</a><a href="merkez-bul.html">P4 Merkez bul</a><a href="kazanc.html">P5 Kazanç</a><a href="asistan.html" class="aktif" aria-current="page">P6 Asistan</a><a href="akademi.html">P7 Akademi</a><a href="pazarlama.html">P8 Ko-op</a><a href="seo.html">SEO</a><a href="dijital.html">Dijital plan</a><a href="alternatif.html">Alternatifler</a><a href="yol-haritasi.html">Yol haritası</a></nav>
+</header>
+
+<main><section class="hero">
+  <div class="sinir">
+    <span class="etiket">Prototip P6 · çalışır durumda</span>
+    <h1>Bayi ve talep asistanı</h1>
+    <p class="spot">Üç ayrı insan aynı numarayı arıyor: bayi adayı, mevcut bayi ve son kullanıcı. Asistan önce <strong>kim olduğunu</strong> anlar, sonra konuşur. Aşağıdan deneyin.</p>
+    <ul class="hero-not"><li>3 kişilik akışı</li><li>Teşhis koymaz</li><li>Fiyat vermez</li><li>Doz/parametre önermez</li></ul>
+  </div>
+</section><section class="bolum ">
+  <div class="sinir">
+    
+    
+    
+      <div class="izgara i21 ara">
+        <div class="sohbet">
+          <div class="sohbet-ust">
+            <span class="canli"></span>
+            <div><strong style="color:#fff">Estezone Asistan</strong><small>7/24 · ön nitelendirme · demo</small></div>
+          </div>
+          <div class="sohbet-akis" id="sohbet-akis">
+            <div class="balon bot">
+              Merhaba. Estezone yetkili ağ asistanıyım. Önce kim olduğunuzu anlayayım —
+              aşağıdan seçebilir ya da doğrudan yazabilirsiniz.
+            </div>
+            <div class="balon sistem">
+              Bu bir <strong>demo</strong>dur. Yanıtlar kural tabanlıdır; hiçbir veri gönderilmez.
+            </div>
+          </div>
+          <div class="hizli kisilik-serit">
+            <span class="kucuk" style="align-self:center;margin-right:2px">Kimsiniz:</span>
+            <button data-kisilik="bayi">Bayi olmak istiyorum</button>
+            <button data-kisilik="mevcut">Zaten bayiyim</button>
+            <button data-kisilik="hasta">İşlem yaptırmak istiyorum</button>
+          </div>
+          <div class="hizli" id="sohbet-hizli"></div>
+          <div class="sohbet-giris">
+            <input type="text" id="sohbet-giris-alan" placeholder="Yazın… (ör. “Konya bölgesi açık mı?”)">
+            <button class="btn btn-ana" id="sohbet-gonder">Gönder</button>
+          </div>
+        </div>
+
+        <aside>
+          <div class="kutu">
+            <h4>Üç sert kural</h4>
+            <ul class="liste kotu ara-s">
+              <li><strong>Teşhis koymaz.</strong> “Bana uygun mu”, “kaç seans gerekir”, “yan etkisi olur mu”
+              sorularına yanıt vermez; uygulayıcıya yönlendirir.</li>
+              <li><strong>Fiyat vermez.</strong> Cihaz bedeli yazılı teklifle paylaşılır; hasta tarafında
+              fiyat paylaşımı zaten mevzuatla sınırlıdır.</li>
+              <li><strong>Doz/parametre önermez.</strong> Enerji, atış aralığı, cilt tipi eşleştirmesi
+              kapalı profesyonel katmanda, üyelik arkasındadır.</li>
+            </ul>
+          </div>
+          <div class="kutu ara-s">
+            <h4>Ne yapar</h4>
+            <ul class="liste iyi ara-s">
+              <li>Kişiliği ayırır: aday bayi / mevcut bayi / son kullanıcı</li>
+              <li>Bayi adayını bölge ve belge sorularıyla nitelendirir</li>
+              <li>Mevcut bayiyi arıza, sarf, talep ve ko-op başlıklarına ayırır</li>
+              <li>Son kullanıcıyı yetkili merkeze yönlendirir</li>
+              <li>Doğru sayfayı açar: başvuru, bölge, simülatör, portal, harita</li>
+            </ul>
+          </div>
+          <div class="kutu ara-s">
+            <h4>Neden kurallı, neden serbest LLM değil</h4>
+            <p class="kucuk">Sağlık ve tıbbi cihaz bağlamında serbest üretim, yanlış bir cümleyle
+            mevzuat ihlali üretebilir. Bu prototip <strong>kural tabanlıdır</strong>: ne söyleyeceği
+            önceden yazılmıştır. Canlıda LLM katmanı eklenirse üstüne aynı kurallar ve bir
+            <em>çıkış süzgeci</em> konur — EsteTouch, Griarts, Dr. Ramazan Ersoy ve Avrupa Tıp
+            Merkezi’nde çalışan hat budur.</p>
+          </div>
+        </aside>
+      </div>
+  </div>
+</section><section class="bolum gri">
+  <div class="sinir">
+    
+    <h2>Asistanın ölçtüğü şey</h2>
+    
+      <div class="izgara i4 ara">
+        <div class="kutu "><h4>Mesai dışı</h4><div>Talebin önemli kısmı akşam ve hafta sonu geliyor. Bugün bu talebin tamamı kayıp.</div></div>
+        <div class="kutu "><h4>Departman ayrımı</h4><div>Arıza çağrısı satış ekibinin kuyruğunda beklemez; en sıcak talep doğru yere düşer.</div></div>
+        <div class="kutu "><h4>Ön nitelendirme</h4><div>Görüşmeye başlamadan bölge, işletme türü ve belge durumu biliniyor olur.</div></div>
+        <div class="kutu "><h4>Soru envanteri</h4><div>İnsanların gerçekte ne sorduğu ilk kez veriye dönüşür — SEO ve içerik takvimi bundan beslenir.</div></div>
+      </div>
+  </div>
+</section></main>
+
+<footer class="alt">
+  <div class="sinir">
+    <p class="alt-ad">Estezone Yetkili Ağ Programı — prototip seti</p>
+    <p>16 Ağustos 2026 · 8 prototip, 14 sayfa · Bu belge Estezone Medikal’e sunulmak üzere hazırlanmış bir tekliftir.</p>
+    <p class="alt-uyari">
+      Sayfalardaki formlar, portal ve asistan <strong>demo</strong>dur — hiçbir yere veri
+      göndermez. Kazanç, KPI ve marj rakamları firmadan veri gelmeden yerleştirilmiş
+      varsayımlardır. Mevzuat notları bilgilendirme amaçlıdır, hukuk danışmanı onayı gerekir.
+    </p>
+    <nav class="alt-gez"><a href="index.html">Program</a><a href="rakip.html">Rakip kıyası</a><a href="basvuru.html">P1 Başvuru</a><a href="bolge.html">P2 Bölge</a><a href="portal.html">P3 Portal</a><a href="merkez-bul.html">P4 Merkez bul</a><a href="kazanc.html">P5 Kazanç</a><a href="asistan.html" class="aktif" aria-current="page">P6 Asistan</a><a href="akademi.html">P7 Akademi</a><a href="pazarlama.html">P8 Ko-op</a><a href="seo.html">SEO</a><a href="dijital.html">Dijital plan</a><a href="alternatif.html">Alternatifler</a><a href="yol-haritasi.html">Yol haritası</a></nav>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+
+</body>
+</html>

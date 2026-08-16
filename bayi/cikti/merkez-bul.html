@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>P4 Merkez bul · Estezone Yetkili Ağ Programı</title>
+<meta name="description" content="Yetkili uygulama merkezi bulucu prototipi">
+<link rel="stylesheet" href="stil.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230d5490'/><text x='16' y='22' font-size='17' font-family='sans-serif' font-weight='700' fill='%23fff' text-anchor='middle'>E</text></svg>">
+</head>
+<body>
+
+<div class="demo-bant" role="note">
+  <strong>TASARIM DEMOSU</strong> — Estezone Medikal’in resmî sitesi veya resmî bayilik
+  programı değildir. Teklif/sunum amaçlı prototiptir; tüm rakamlar temsilîdir.
+</div>
+
+<header class="ust">
+  <a class="marka" href="index.html">
+    <span class="marka-ad">Estezone</span>
+    <span class="marka-alt">Yetkili Ağ Programı</span>
+  </a>
+  <button class="menu-ac" aria-label="Menü" aria-expanded="false">☰</button>
+  <nav class="gezinme"><a href="index.html">Program</a><a href="rakip.html">Rakip kıyası</a><a href="basvuru.html">P1 Başvuru</a><a href="bolge.html">P2 Bölge</a><a href="portal.html">P3 Portal</a><a href="merkez-bul.html" class="aktif" aria-current="page">P4 Merkez bul</a><a href="kazanc.html">P5 Kazanç</a><a href="asistan.html">P6 Asistan</a><a href="akademi.html">P7 Akademi</a><a href="pazarlama.html">P8 Ko-op</a><a href="seo.html">SEO</a><a href="dijital.html">Dijital plan</a><a href="alternatif.html">Alternatifler</a><a href="yol-haritasi.html">Yol haritası</a></nav>
+</header>
+
+<main><section class="hero">
+  <div class="sinir">
+    <span class="etiket">Prototip P4 · çalışır durumda</span>
+    <h1>Yetkili Uygulama Merkezi Bul</h1>
+    <p class="spot">Sektörün oyununu değiştiren tek hamle: Estezone <strong>tüketiciye</strong> talep üretir, talebi cihaz sahibi merkeze yönlendirir. Bayiliğin argümanı “cihaz al”dan <strong>“müşteri al”</strong>a döner.</p>
+    <ul class="hero-not"><li>InMode kalıbı</li><li>Türkiye’de hiçbir cihaz markasında yok</li><li>Yorum/fiyat YOK — mevzuat</li></ul>
+  </div>
+</section><section class="bolum ">
+  <div class="sinir">
+    
+    <h2>Merkez arama</h2>
+    
+      <div class="izgara i2 ara-s" style="margin-bottom:18px">
+        <div class="alan"><label for="m-il">İl</label>
+          <select id="m-il"><option value="hepsi">Tüm iller</option><option value="Adana">Adana</option><option value="Ankara">Ankara</option><option value="Antalya">Antalya</option><option value="Bursa">Bursa</option><option value="Gaziantep">Gaziantep</option><option value="İstanbul">İstanbul</option><option value="İzmir">İzmir</option><option value="Konya">Konya</option><option value="Trabzon">Trabzon</option></select></div>
+        <div class="alan"><label for="m-islem">İlgilendiğiniz alan</label>
+          <select id="m-islem">
+            <option value="hepsi">Hepsi</option>
+            <option value="epilasyon">Lazer epilasyon</option>
+            <option value="cilt">Cilt yenileme</option>
+            <option value="vucut">Vücut şekillendirme</option>
+          </select></div>
+      </div>
+      <p class="kucuk" style="margin-bottom:14px"><strong id="merkez-sayac">0</strong> yetkili merkez listeleniyor</p>
+      <div class="izgara i2" id="merkez-liste">
+        <div class="merkez" data-il="Konya" data-islem="epilasyon,cilt">
+          <div class="merkez-logo">YI</div>
+          <div style="flex:1">
+            <h4>Yılmaz Estetik <span class="rozet altin">ALTIN</span></h4>
+            <p class="adres">Selçuklu / Konya</p>
+            <p class="kucuk ara-s"><strong>Doğrulanmış cihazlar:</strong> Elazer Plus · Arion Alexandrite</p>
+            <div class="rozet-sar ara-s">
+              <span class="rozet yesil">Cihaz kaydı doğrulandı</span>
+              <span class="rozet mavi">Sertifikalı uygulayıcı</span>
+              <span class="rozet">Servis sözleşmesi güncel</span>
+            </div>
+            <div class="btn-sar" style="margin-top:12px">
+              <button class="btn btn-ana" data-yonlendir style="font-size:13.5px;padding:7px 14px">Randevu talebi ilet</button>
+            </div>
+          </div>
+        </div><div class="merkez" data-il="Konya" data-islem="epilasyon">
+          <div class="merkez-logo">ME</div>
+          <div style="flex:1">
+            <h4>Meram Güzellik Merkezi <span class="rozet ">GÜMÜŞ</span></h4>
+            <p class="adres">Meram / Konya</p>
+            <p class="kucuk ara-s"><strong>Doğrulanmış cihazlar:</strong> Epizone Mix</p>
+            <div class="rozet-sar ara-s">
+              <span class="rozet yesil">Cihaz kaydı doğrulandı</span>
+              <span class="rozet mavi">Sertifikalı uygulayıcı</span>
+              <span class="rozet">Servis sözleşmesi güncel</span>
+            </div>
+            <div class="btn-sar" style="margin-top:12px">
+              <button class="btn btn-ana" data-yonlendir style="font-size:13.5px;padding:7px 14px">Randevu talebi ilet</button>
+            </div>
+          </div>
+        </div><div class="merkez" data-il="Ankara" data-islem="epilasyon,cilt,vucut">
+          <div class="merkez-logo">BE</div>
+          <div style="flex:1">
+            <h4>Beysu Medikal Estetik <span class="rozet mavi">PLATİN</span></h4>
+            <p class="adres">Çankaya / Ankara</p>
+            <p class="kucuk ara-s"><strong>Doğrulanmış cihazlar:</strong> Arion · PicoZone · EsteSculpt</p>
+            <div class="rozet-sar ara-s">
+              <span class="rozet yesil">Cihaz kaydı doğrulandı</span>
+              <span class="rozet mavi">Sertifikalı uygulayıcı</span>
+              <span class="rozet">Servis sözleşmesi güncel</span>
+            </div>
+            <div class="btn-sar" style="margin-top:12px">
+              <button class="btn btn-ana" data-yonlendir style="font-size:13.5px;padding:7px 14px">Randevu talebi ilet</button>
+            </div>
+          </div>
+        </div><div class="merkez" data-il="Ankara" data-islem="cilt">
+          <div class="merkez-logo">AN</div>
+          <div style="flex:1">
+            <h4>Ankara Cilt Merkezi <span class="rozet altin">ALTIN</span></h4>
+            <p class="adres">Keçiören / Ankara</p>
+            <p class="kucuk ara-s"><strong>Doğrulanmış cihazlar:</strong> Cotra Plus CO2 · HydraBeauty</p>
+            <div class="rozet-sar ara-s">
+              <span class="rozet yesil">Cihaz kaydı doğrulandı</span>
+              <span class="rozet mavi">Sertifikalı uygulayıcı</span>
+              <span class="rozet">Servis sözleşmesi güncel</span>
+            </div>
+            <div class="btn-sar" style="margin-top:12px">
+              <button class="btn btn-ana" data-yonlendir style="font-size:13.5px;padding:7px 14px">Randevu talebi ilet</button>
+            </div>
+          </div>
+        </div><div class="merkez" data-il="İstanbul" data-islem="epilasyon,cilt,vucut">
+          <div class="merkez-logo">AT</div>
+          <div style="flex:1">
+            <h4>Ataşehir Estetik <span class="rozet mavi">PLATİN</span></h4>
+            <p class="adres">Ataşehir / İstanbul</p>
+            <p class="kucuk ara-s"><strong>Doğrulanmış cihazlar:</strong> Noblex · Lucid Q-PTP · EsteSlim</p>
+            <div class="rozet-sar ara-s">
+              <span class="rozet yesil">Cihaz kaydı doğrulandı</span>
+              <span class="rozet mavi">Sertifikalı uygulayıcı</span>
+              <span class="rozet">Servis sözleşmesi güncel</span>
+            </div>
+            <div class="btn-sar" style="margin-top:12px">
+              <button class="btn btn-ana" data-yonlendir style="font-size:13.5px;padding:7px 14px">Randevu talebi ilet</button>
+            </div>
+          </div>
+        </div><div class="merkez" data-il="İstanbul" data-islem="cilt,vucut">
+          <div class="merkez-logo">Nİ</div>
+          <div style="flex:1">
+            <h4>Nişantaşı Medikal <span class="rozet altin">ALTIN</span></h4>
+            <p class="adres">Şişli / İstanbul</p>
+            <p class="kucuk ara-s"><strong>Doğrulanmış cihazlar:</strong> PicoZone · EsteSculpt Pro</p>
+            <div class="rozet-sar ara-s">
+              <span class="rozet yesil">Cihaz kaydı doğrulandı</span>
+              <span class="rozet mavi">Sertifikalı uygulayıcı</span>
+              <span class="rozet">Servis sözleşmesi güncel</span>
+            </div>
+            <div class="btn-sar" style="margin-top:12px">
+              <button class="btn btn-ana" data-yonlendir style="font-size:13.5px;padding:7px 14px">Randevu talebi ilet</button>
+            </div>
+          </div>
+        </div><div class="merkez" data-il="İstanbul" data-islem="epilasyon">
+          <div class="merkez-logo">BA</div>
+          <div style="flex:1">
+            <h4>Bakırköy Güzellik <span class="rozet ">GÜMÜŞ</span></h4>
+            <p class="adres">Bakırköy / İstanbul</p>
+            <p class="kucuk ara-s"><strong>Doğrulanmış cihazlar:</strong> Elazer</p>
+            <div class="rozet-sar ara-s">
+              <span class="rozet yesil">Cihaz kaydı doğrulandı</span>
+              <span class="rozet mavi">Sertifikalı uygulayıcı</span>
+              <span class="rozet">Servis sözleşmesi güncel</span>
+            </div>
+            <div class="btn-sar" style="margin-top:12px">
+              <button class="btn btn-ana" data-yonlendir style="font-size:13.5px;padding:7px 14px">Randevu talebi ilet</button>
+            </div>
+          </div>
+        </div><div class="merkez" data-il="İzmir" data-islem="epilasyon,vucut">
+          <div class="merkez-logo">BO</div>
+          <div style="flex:1">
+            <h4>Bornova Estetik <span class="rozet altin">ALTIN</span></h4>
+            <p class="adres">Bornova / İzmir</p>
+            <p class="kucuk ara-s"><strong>Doğrulanmış cihazlar:</strong> Aileen · EsteSlim Mix</p>
+            <div class="rozet-sar ara-s">
+              <span class="rozet yesil">Cihaz kaydı doğrulandı</span>
+              <span class="rozet mavi">Sertifikalı uygulayıcı</span>
+              <span class="rozet">Servis sözleşmesi güncel</span>
+            </div>
+            <div class="btn-sar" style="margin-top:12px">
+              <button class="btn btn-ana" data-yonlendir style="font-size:13.5px;padding:7px 14px">Randevu talebi ilet</button>
+            </div>
+          </div>
+        </div><div class="merkez" data-il="İzmir" data-islem="cilt">
+          <div class="merkez-logo">KA</div>
+          <div style="flex:1">
+            <h4>Karşıyaka Cilt <span class="rozet ">GÜMÜŞ</span></h4>
+            <p class="adres">Karşıyaka / İzmir</p>
+            <p class="kucuk ara-s"><strong>Doğrulanmış cihazlar:</strong> HydraBeauty</p>
+            <div class="rozet-sar ara-s">
+              <span class="rozet yesil">Cihaz kaydı doğrulandı</span>
+              <span class="rozet mavi">Sertifikalı uygulayıcı</span>
+              <span class="rozet">Servis sözleşmesi güncel</span>
+            </div>
+            <div class="btn-sar" style="margin-top:12px">
+              <button class="btn btn-ana" data-yonlendir style="font-size:13.5px;padding:7px 14px">Randevu talebi ilet</button>
+            </div>
+          </div>
+        </div><div class="merkez" data-il="Bursa" data-islem="epilasyon,cilt">
+          <div class="merkez-logo">Nİ</div>
+          <div style="flex:1">
+            <h4>Nilüfer Medikal <span class="rozet altin">ALTIN</span></h4>
+            <p class="adres">Nilüfer / Bursa</p>
+            <p class="kucuk ara-s"><strong>Doğrulanmış cihazlar:</strong> Epicare Zenith · GoldZone</p>
+            <div class="rozet-sar ara-s">
+              <span class="rozet yesil">Cihaz kaydı doğrulandı</span>
+              <span class="rozet mavi">Sertifikalı uygulayıcı</span>
+              <span class="rozet">Servis sözleşmesi güncel</span>
+            </div>
+            <div class="btn-sar" style="margin-top:12px">
+              <button class="btn btn-ana" data-yonlendir style="font-size:13.5px;padding:7px 14px">Randevu talebi ilet</button>
+            </div>
+          </div>
+        </div><div class="merkez" data-il="Antalya" data-islem="epilasyon">
+          <div class="merkez-logo">AN</div>
+          <div style="flex:1">
+            <h4>Antalya Estetik Merkezi <span class="rozet ">GÜMÜŞ</span></h4>
+            <p class="adres">Muratpaşa / Antalya</p>
+            <p class="kucuk ara-s"><strong>Doğrulanmış cihazlar:</strong> Nobleen</p>
+            <div class="rozet-sar ara-s">
+              <span class="rozet yesil">Cihaz kaydı doğrulandı</span>
+              <span class="rozet mavi">Sertifikalı uygulayıcı</span>
+              <span class="rozet">Servis sözleşmesi güncel</span>
+            </div>
+            <div class="btn-sar" style="margin-top:12px">
+              <button class="btn btn-ana" data-yonlendir style="font-size:13.5px;padding:7px 14px">Randevu talebi ilet</button>
+            </div>
+          </div>
+        </div><div class="merkez" data-il="Adana" data-islem="vucut">
+          <div class="merkez-logo">AD</div>
+          <div style="flex:1">
+            <h4>Adana Medikal Estetik <span class="rozet ">GÜMÜŞ</span></h4>
+            <p class="adres">Seyhan / Adana</p>
+            <p class="kucuk ara-s"><strong>Doğrulanmış cihazlar:</strong> EsteSculpt</p>
+            <div class="rozet-sar ara-s">
+              <span class="rozet yesil">Cihaz kaydı doğrulandı</span>
+              <span class="rozet mavi">Sertifikalı uygulayıcı</span>
+              <span class="rozet">Servis sözleşmesi güncel</span>
+            </div>
+            <div class="btn-sar" style="margin-top:12px">
+              <button class="btn btn-ana" data-yonlendir style="font-size:13.5px;padding:7px 14px">Randevu talebi ilet</button>
+            </div>
+          </div>
+        </div><div class="merkez" data-il="Gaziantep" data-islem="epilasyon,cilt">
+          <div class="merkez-logo">GA</div>
+          <div style="flex:1">
+            <h4>Gaziantep Cilt ve Lazer <span class="rozet altin">ALTIN</span></h4>
+            <p class="adres">Şahinbey / Gaziantep</p>
+            <p class="kucuk ara-s"><strong>Doğrulanmış cihazlar:</strong> Elazer Plus · Cotra Plus CO2</p>
+            <div class="rozet-sar ara-s">
+              <span class="rozet yesil">Cihaz kaydı doğrulandı</span>
+              <span class="rozet mavi">Sertifikalı uygulayıcı</span>
+              <span class="rozet">Servis sözleşmesi güncel</span>
+            </div>
+            <div class="btn-sar" style="margin-top:12px">
+              <button class="btn btn-ana" data-yonlendir style="font-size:13.5px;padding:7px 14px">Randevu talebi ilet</button>
+            </div>
+          </div>
+        </div><div class="merkez" data-il="Trabzon" data-islem="epilasyon">
+          <div class="merkez-logo">TR</div>
+          <div style="flex:1">
+            <h4>Trabzon Estetik <span class="rozet ">BRONZ</span></h4>
+            <p class="adres">Ortahisar / Trabzon</p>
+            <p class="kucuk ara-s"><strong>Doğrulanmış cihazlar:</strong> Epizone Mix</p>
+            <div class="rozet-sar ara-s">
+              <span class="rozet yesil">Cihaz kaydı doğrulandı</span>
+              <span class="rozet mavi">Sertifikalı uygulayıcı</span>
+              <span class="rozet">Servis sözleşmesi güncel</span>
+            </div>
+            <div class="btn-sar" style="margin-top:12px">
+              <button class="btn btn-ana" data-yonlendir style="font-size:13.5px;padding:7px 14px">Randevu talebi ilet</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p id="merkez-bos" class="kutu ara" style="display:none">Bu kriterlerde yetkili merkez bulunamadı.
+      <strong>Bu boşluk aslında bir satış listesidir:</strong> merkez olmayan her ilçe, bayi ekibinin hedefidir.</p>
+      <div id="merkez-bildirim" class="kutu vurgulu ara" style="display:none"></div>
+  </div>
+</section><section class="bolum gri">
+  <div class="sinir">
+    <span class="ust-baslik">Mevzuat kısıtı</span>
+    <h2>Türkiye sürümü neden farklı olmak zorunda</h2>
+    
+      <div class="izgara i2 ara">
+        <div class="kutu altin"><h4>ABD’deki hâli: pazaryeri</h4><div>InMode “Find a Provider” haritasında hasta puanı, öncesi-sonrası galerisi ve kampanya olabiliyor. Marka tüketiciye reklam yapıyor, talebi cihaz sahibine akıtıyor; klinik cihazı <em>hasta akışı için</em> alıyor.</div></div>
+        <div class="kutu uyari"><h4>Türkiye’deki hâli: kayıt defteri</h4><div>12/11/2025 tarihli 33075 sayılı Tanıtım Yönetmeliği sağlık kuruluşlarını bağlar. Türkçe içerikte <strong>fiyat, hasta yorumu ve karşılaştırmalı üstünlük tanıtımı yapılamaz.</strong> Harita bu yüzden doğrulanabilir olgular üzerine kurulur: adres, cihaz modeli, sertifika ve servis sözleşmesi durumu.</div></div>
+      </div>
+      <div class="kutu uyari ara">
+        <h4>Yayına almadan önce hukukçu onayı şart</h4>
+        <p>Bu sayfa iki mevzuatın kesiştiği yerde duruyor: cihaz satıcısını bağlayan Tıbbi Cihaz
+        Satış/Tanıtım Yönetmeliği ile sağlık kuruluşunu bağlayan 33075 sayılı Yönetmelik.
+        Merkezin adının ve cihazının yayınlanması, merkezin kendi tanıtımı sayılıp sayılmayacağı
+        <strong>yazılı görüş alınmadan</strong> karara bağlanmamalıdır. Prototip bu yüzden yol
+        haritasında Faz 3’tedir — en değerli ve en riskli prototip aynısıdır.</p>
+      </div>
+  </div>
+</section><section class="bolum ">
+  <div class="sinir">
+    
+    <h2>Neden bu tek hamle ağı değiştirir</h2>
+    
+      <div class="huni ara">
+        <div class="huni-sat"><b>Estezone reklam verir</b><span>Tüketici “yakınımda lazer epilasyon” arar</span><em>Estezone bütçesi</em></div><div class="huni-sat"><b>Harita merkezi gösterir</b><span>Yalnızca doğrulanmış cihaz + sertifikalı personel</span><em>Kalite kapısı</em></div><div class="huni-sat"><b>Talep merkeze düşer</b><span>WhatsApp + e-posta, aynı anda panele sayaç</span><em>Ölçülebilir</em></div><div class="huni-sat"><b>Merkez cirosu artar</b><span>Cihaz kendini daha hızlı öder</span><em>Amorti kısalır</em></div><div class="huni-sat"><b>Merkez ikinci cihazı alır</b><span>ve sarf almayı bırakmaz</span><em>Tekrar eden gelir</em></div><div class="huni-sat"><b>Yeni aday sıraya girer</b><span>“Haritada olmak için cihaz gerekiyor”</span><em>Ağ kendi kendini büyütür</em></div>
+      </div>
+      <p class="kaynak ara">Bu döngünün adı talep pompasıdır: marka tüketici talebi üretip kanala
+      dağıttığında, kanal cihazı satın almak için sıraya girer. InMode’un “Verified Provider”
+      programı tam olarak bunun üzerine kurulu.</p>
+  </div>
+</section></main>
+
+<footer class="alt">
+  <div class="sinir">
+    <p class="alt-ad">Estezone Yetkili Ağ Programı — prototip seti</p>
+    <p>16 Ağustos 2026 · 8 prototip, 14 sayfa · Bu belge Estezone Medikal’e sunulmak üzere hazırlanmış bir tekliftir.</p>
+    <p class="alt-uyari">
+      Sayfalardaki formlar, portal ve asistan <strong>demo</strong>dur — hiçbir yere veri
+      göndermez. Kazanç, KPI ve marj rakamları firmadan veri gelmeden yerleştirilmiş
+      varsayımlardır. Mevzuat notları bilgilendirme amaçlıdır, hukuk danışmanı onayı gerekir.
+    </p>
+    <nav class="alt-gez"><a href="index.html">Program</a><a href="rakip.html">Rakip kıyası</a><a href="basvuru.html">P1 Başvuru</a><a href="bolge.html">P2 Bölge</a><a href="portal.html">P3 Portal</a><a href="merkez-bul.html" class="aktif" aria-current="page">P4 Merkez bul</a><a href="kazanc.html">P5 Kazanç</a><a href="asistan.html">P6 Asistan</a><a href="akademi.html">P7 Akademi</a><a href="pazarlama.html">P8 Ko-op</a><a href="seo.html">SEO</a><a href="dijital.html">Dijital plan</a><a href="alternatif.html">Alternatifler</a><a href="yol-haritasi.html">Yol haritası</a></nav>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+
+</body>
+</html>

@@ -4,19 +4,49 @@ const { marka, iletisim, yasal } = icerik;
 
 const SITE = 'https://estezone.com.tr';
 
-/* Aktif tema — build.js tarafından ayarlanır.
-   'koyu' = v1 (Dalga Boyu, koyu)  ·  'acik' = v2 (Açık Kurumsal) */
-const T = { tema: 'koyu', digerYol: 'v2/', digerAd: 'Açık Kurumsal (v2)' };
+/* Üç tasarım sürümü. build.js hangisinin kurulacağını belirler.
+   Her tema aynı içeriği ve aynı işlevleri kullanır; yalnızca stil dosyası,
+   çıktı klasörü ve marka renkleri değişir. */
+const TEMALAR = {
+  koyu: {
+    etiket: 'v1',
+    ad: 'Koyu — Dalga Boyu',
+    yol: '', // site kökü
+    temaRengi: '#06090f',
+    favZemin: '2dd4f5',
+    favCizgi: '04202a',
+    favR: '8',
+    font: 'family=Inter:wght@400;450;500;550;600;650&family=JetBrains+Mono:wght@400;500;600',
+  },
+  acik: {
+    etiket: 'v2',
+    ad: 'Açık Kurumsal',
+    yol: 'v2/',
+    temaRengi: '#ffffff',
+    favZemin: '0d5490',
+    favCizgi: 'ffffff',
+    favR: '6',
+    font: 'family=Inter:wght@400;450;500;550;600;650&family=Inter+Tight:wght@600;650;700;750&family=JetBrains+Mono:wght@400;500;600',
+  },
+  v3: {
+    etiket: 'v3',
+    ad: 'Editoryal Premium',
+    yol: 'v3/',
+    temaRengi: '#faf8f5',
+    favZemin: '2d5f54',
+    favCizgi: 'faf8f5',
+    favR: '3',
+    font: 'family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;450;500;550;600&family=JetBrains+Mono:wght@400;500',
+  },
+};
+
+const T = { tema: 'koyu' };
 function temaAyarla(tema) {
-  T.tema = tema;
-  if (tema === 'acik') {
-    T.digerYol = '../';
-    T.digerAd = 'Koyu — Dalga Boyu (v1)';
-  } else {
-    T.digerYol = 'v2/';
-    T.digerAd = 'Açık Kurumsal (v2)';
-  }
+  T.tema = TEMALAR[tema] ? tema : 'koyu';
 }
+/* Sayfanın bulunduğu yerden site köküne çıkan yol.
+   k = tema kökünden yukarı ('' veya '../'); tema kökü de v2/ ya da v3/ ise bir üst daha. */
+const siteKoku = (k) => k + (T.tema === 'koyu' ? '' : '../');
 
 const kacis = (s = '') =>
   String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -93,7 +123,7 @@ function kafa({ baslik, aciklama, yol = '', kanonik, sema, gorsel }) {
 <title>${kacis(baslik)}</title>
 <meta name="description" content="${kacis(aciklama)}">
 <link rel="canonical" href="${SITE}/${kanonik || ''}">
-<meta name="theme-color" content="${T.tema === 'acik' ? '#ffffff' : '#06090f'}">
+<meta name="theme-color" content="${TEMALAR[T.tema].temaRengi}">
 <meta name="robots" content="noindex, nofollow">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="${marka.ad}">
@@ -105,12 +135,12 @@ function kafa({ baslik, aciklama, yol = '', kanonik, sema, gorsel }) {
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;550;600;650&family=Inter+Tight:wght@600;650;700;750&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?${TEMALAR[T.tema].font}&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="${k}varlik/css/stil.css">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='${
-    T.tema === 'acik' ? '6' : '8'
-  }' fill='%23${T.tema === 'acik' ? '0d5490' : '2dd4f5'}'/%3E%3Cpath d='M5 16h4l3-9 6 18 3-9h6' fill='none' stroke='%23${
-    T.tema === 'acik' ? 'ffffff' : '04202a'
+    TEMALAR[T.tema].favR
+  }' fill='%23${TEMALAR[T.tema].favZemin}'/%3E%3Cpath d='M5 16h4l3-9 6 18 3-9h6' fill='none' stroke='%23${
+    TEMALAR[T.tema].favCizgi
   }' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 ${sema ? `<script type="application/ld+json">${JSON.stringify(sema)}</script>` : ''}`;
 }
@@ -149,13 +179,20 @@ function ust(yol = '', aktif = '') {
         : '')
   ).join('');
 
-  const buTema = T.tema === 'acik' ? 'Açık Kurumsal (v2)' : 'Koyu — Dalga Boyu (v1)';
+  const kok = siteKoku(k);
+  const temaSerit = Object.entries(TEMALAR)
+    .map(([anahtar, t]) =>
+      anahtar === T.tema
+        ? `<b class="secili">${t.etiket} · ${t.ad}</b>`
+        : `<a href="${kok}${t.yol}">${t.etiket} · ${t.ad}</a>`
+    )
+    .join('<i class="ayrac-nokta">·</i>');
+
   return `<a class="atla" href="#ana">İçeriğe atla</a>
 <div class="tema-serit">
   <div class="kap tema-serit-ic">
-    <span>Tasarım sürümü: <b>${buTema}</b></span>
-    <span>·</span>
-    <a href="${k}${T.digerYol}">${T.digerAd} sürümüne geç →</a>
+    <span class="serit-baslik">Tasarım sürümü</span>
+    ${temaSerit}
   </div>
 </div>
 <div class="demo-bant" role="note">

@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>P1 Başvuru hunisi · Estezone Yetkili Ağ Programı</title>
+<meta name="description" content="Otomatik skorlamalı bayi başvuru prototipi">
+<link rel="stylesheet" href="stil.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230d5490'/><text x='16' y='22' font-size='17' font-family='sans-serif' font-weight='700' fill='%23fff' text-anchor='middle'>E</text></svg>">
+</head>
+<body>
+
+<div class="demo-bant" role="note">
+  <strong>TASARIM DEMOSU</strong> — Estezone Medikal’in resmî sitesi veya resmî bayilik
+  programı değildir. Teklif/sunum amaçlı prototiptir; tüm rakamlar temsilîdir.
+</div>
+
+<header class="ust">
+  <a class="marka" href="index.html">
+    <span class="marka-ad">Estezone</span>
+    <span class="marka-alt">Yetkili Ağ Programı</span>
+  </a>
+  <button class="menu-ac" aria-label="Menü" aria-expanded="false">☰</button>
+  <nav class="gezinme"><a href="index.html">Program</a><a href="rakip.html">Rakip kıyası</a><a href="basvuru.html" class="aktif" aria-current="page">P1 Başvuru</a><a href="bolge.html">P2 Bölge</a><a href="portal.html">P3 Portal</a><a href="merkez-bul.html">P4 Merkez bul</a><a href="kazanc.html">P5 Kazanç</a><a href="asistan.html">P6 Asistan</a><a href="akademi.html">P7 Akademi</a><a href="pazarlama.html">P8 Ko-op</a><a href="seo.html">SEO</a><a href="dijital.html">Dijital plan</a><a href="alternatif.html">Alternatifler</a><a href="yol-haritasi.html">Yol haritası</a></nav>
+</header>
+
+<main><section class="hero">
+  <div class="sinir">
+    <span class="etiket">Prototip P1 · çalışır durumda</span>
+    <h1>Başvuru hunisi + otomatik skorlama</h1>
+    <p class="spot">Aşağıdaki form <strong>gerçekten çalışıyor</strong>: seçim yaptıkça sağdaki skor, kademe önerisi ve kapı kontrolü canlı güncellenir. Bugün Estezone’a bayi adayının ulaşmasının tek yolu telefon.</p>
+    <ul class="hero-not"><li>100 puanlık skor</li><li>Belge kapısı</li><li>Bölge müsaitliği</li><li>Otomatik kademe önerisi</li></ul>
+  </div>
+</section><section class="bolum ">
+  <div class="sinir">
+    
+    <h2>Yetkili ağ başvurusu</h2>
+    
+      <div class="izgara i21 ara">
+        <form id="basvuru-form">
+          <div class="kutu">
+            <h4>1 · Hangi katman</h4>
+            <p class="kucuk">Üç ayrı yol, üç ayrı eşik. Yanlış katmana başvuran elenmez, doğru katmana yönlendirilir.</p>
+            <div class="secim-sar ara-s">
+              <button type="button" class="secim" data-secim="rol" data-deger="bayi">Bölge bayisi <span class="kucuk">(satar)</span></button>
+              <button type="button" class="secim secili" data-secim="rol" data-deger="merkez">Uygulama merkezi <span class="kucuk">(kullanır)</span></button>
+              <button type="button" class="secim" data-secim="rol" data-deger="referans">Referans ortağı <span class="kucuk">(yönlendirir)</span></button>
+            </div>
+          </div>
+
+          <div class="kutu ara-s">
+            <h4>2 · İşletme</h4>
+            <div class="alan">
+              <label for="f-tur">İşletme türü</label>
+              <select id="f-tur">
+                <option value="klinik">Poliklinik / muayenehane</option>
+                <option value="tipmerkezi">Tıp merkezi / hastane</option>
+                <option value="guzellikmerkezi" selected>Güzellik merkezi</option>
+                <option value="salon">Güzellik salonu</option>
+                <option value="medikal">Medikal satış / servis firması</option>
+                <option value="yatirimci">Bireysel yatırımcı (henüz işletme yok)</option>
+              </select>
+              <p class="ipucu">İşletme türü, hangi cihazların önerilebileceğini de belirler.</p>
+            </div>
+            <div class="alan">
+              <label for="f-il">Hedef bölge</label>
+              <select id="f-il">
+                <option value="İstanbul (Anadolu)" data-durum="dolu">İstanbul (Anadolu) — kapalı</option><option value="İstanbul (Avrupa)" data-durum="acik">İstanbul (Avrupa) — açık</option><option value="Bursa" data-durum="acik" selected>Bursa — açık</option><option value="Kocaeli" data-durum="rezerve">Kocaeli — görüşme sürüyor</option><option value="Balıkesir" data-durum="acik">Balıkesir — açık</option><option value="Tekirdağ" data-durum="acik">Tekirdağ — açık</option><option value="Sakarya" data-durum="acik">Sakarya — açık</option><option value="Çanakkale" data-durum="acik">Çanakkale — açık</option><option value="Edirne" data-durum="acik">Edirne — açık</option><option value="Yalova" data-durum="acik">Yalova — açık</option><option value="Kırklareli" data-durum="acik">Kırklareli — açık</option><option value="Bilecik" data-durum="acik">Bilecik — açık</option><option value="Ankara" data-durum="dolu">Ankara — kapalı</option><option value="Konya" data-durum="rezerve">Konya — görüşme sürüyor</option><option value="Kayseri" data-durum="acik">Kayseri — açık</option><option value="Eskişehir" data-durum="acik">Eskişehir — açık</option><option value="Sivas" data-durum="acik">Sivas — açık</option><option value="Aksaray" data-durum="acik">Aksaray — açık</option><option value="Nevşehir" data-durum="acik">Nevşehir — açık</option><option value="Kırıkkale" data-durum="acik">Kırıkkale — açık</option><option value="Karaman" data-durum="acik">Karaman — açık</option><option value="Niğde" data-durum="acik">Niğde — açık</option><option value="Yozgat" data-durum="acik">Yozgat — açık</option><option value="Çankırı" data-durum="acik">Çankırı — açık</option><option value="Kırşehir" data-durum="acik">Kırşehir — açık</option><option value="İzmir" data-durum="rezerve">İzmir — görüşme sürüyor</option><option value="Antalya" data-durum="acik">Antalya — açık</option><option value="Denizli" data-durum="acik">Denizli — açık</option><option value="Muğla" data-durum="acik">Muğla — açık</option><option value="Aydın" data-durum="acik">Aydın — açık</option><option value="Manisa" data-durum="acik">Manisa — açık</option><option value="Afyonkarahisar" data-durum="acik">Afyonkarahisar — açık</option><option value="Kütahya" data-durum="acik">Kütahya — açık</option><option value="Uşak" data-durum="acik">Uşak — açık</option><option value="Adana" data-durum="acik">Adana — açık</option><option value="Mersin" data-durum="acik">Mersin — açık</option><option value="Hatay" data-durum="acik">Hatay — açık</option><option value="Kahramanmaraş" data-durum="acik">Kahramanmaraş — açık</option><option value="Osmaniye" data-durum="acik">Osmaniye — açık</option><option value="Isparta" data-durum="acik">Isparta — açık</option><option value="Burdur" data-durum="acik">Burdur — açık</option><option value="Samsun" data-durum="acik">Samsun — açık</option><option value="Trabzon" data-durum="acik">Trabzon — açık</option><option value="Ordu" data-durum="acik">Ordu — açık</option><option value="Rize" data-durum="acik">Rize — açık</option><option value="Zonguldak" data-durum="acik">Zonguldak — açık</option><option value="Tokat" data-durum="acik">Tokat — açık</option><option value="Amasya" data-durum="acik">Amasya — açık</option><option value="Giresun" data-durum="acik">Giresun — açık</option><option value="Çorum" data-durum="acik">Çorum — açık</option><option value="Kastamonu" data-durum="acik">Kastamonu — açık</option><option value="Bolu" data-durum="acik">Bolu — açık</option><option value="Düzce" data-durum="acik">Düzce — açık</option><option value="Karabük" data-durum="acik">Karabük — açık</option><option value="Bartın" data-durum="acik">Bartın — açık</option><option value="Sinop" data-durum="acik">Sinop — açık</option><option value="Artvin" data-durum="acik">Artvin — açık</option><option value="Gümüşhane" data-durum="acik">Gümüşhane — açık</option><option value="Bayburt" data-durum="acik">Bayburt — açık</option><option value="Gaziantep" data-durum="rezerve">Gaziantep — görüşme sürüyor</option><option value="Şanlıurfa" data-durum="acik">Şanlıurfa — açık</option><option value="Diyarbakır" data-durum="acik">Diyarbakır — açık</option><option value="Mardin" data-durum="acik">Mardin — açık</option><option value="Batman" data-durum="acik">Batman — açık</option><option value="Adıyaman" data-durum="acik">Adıyaman — açık</option><option value="Siirt" data-durum="acik">Siirt — açık</option><option value="Şırnak" data-durum="acik">Şırnak — açık</option><option value="Kilis" data-durum="acik">Kilis — açık</option><option value="Van" data-durum="acik">Van — açık</option><option value="Erzurum" data-durum="acik">Erzurum — açık</option><option value="Malatya" data-durum="acik">Malatya — açık</option><option value="Elazığ" data-durum="acik">Elazığ — açık</option><option value="Erzincan" data-durum="acik">Erzincan — açık</option><option value="Ağrı" data-durum="acik">Ağrı — açık</option><option value="Muş" data-durum="acik">Muş — açık</option><option value="Bingöl" data-durum="acik">Bingöl — açık</option><option value="Bitlis" data-durum="acik">Bitlis — açık</option><option value="Hakkâri" data-durum="acik">Hakkâri — açık</option><option value="Iğdır" data-durum="acik">Iğdır — açık</option><option value="Kars" data-durum="acik">Kars — açık</option><option value="Ardahan" data-durum="acik">Ardahan — açık</option><option value="Tunceli" data-durum="acik">Tunceli — açık</option><option value="KKTC" data-durum="acik">KKTC — açık</option><option value="Azerbaycan" data-durum="acik">Azerbaycan — açık</option><option value="Gürcistan" data-durum="acik">Gürcistan — açık</option><option value="Kuzey Irak" data-durum="acik">Kuzey Irak — açık</option><option value="Kosova" data-durum="acik">Kosova — açık</option><option value="Kuzey Makedonya" data-durum="acik">Kuzey Makedonya — açık</option><option value="Türkmenistan" data-durum="acik">Türkmenistan — açık</option><option value="Özbekistan" data-durum="acik">Özbekistan — açık</option>
+              </select>
+              <p class="ipucu">Durum canlı: <strong>Konya</strong> (görüşmede) veya <strong>Ankara</strong> (kapalı)
+              seçin — skor düşer ve alternatif önerilir.</p>
+            </div>
+          </div>
+
+          <div class="kutu ara-s">
+            <h4>3 · Belgeler <span class="rozet kirmizi">kapı</span></h4>
+            <p class="kucuk">Tıbbi cihaz satan her noktanın belgeli olması gerekir. Belgesiz aday
+            <em>reddedilmez</em> — belgelendirme sürecine alınır.</p>
+            <div class="secim-sar ara-s">
+              <button type="button" class="secim" data-secim="belge" data-deger="yetki">Satış merkezi yetki belgesi</button>
+              <button type="button" class="secim secili" data-secim="belge" data-deger="uts">ÜTS kaydı</button>
+              <button type="button" class="secim" data-secim="belge" data-deger="satis">Satış ve tanıtım elemanı sertifikası</button>
+              <button type="button" class="secim" data-secim="belge" data-deger="klinik">Klinik destek elemanı sertifikası</button>
+              <button type="button" class="secim secili" data-secim="belge" data-deger="ruhsat">İşyeri açma ruhsatı</button>
+            </div>
+          </div>
+
+          <div class="kutu ara-s">
+            <h4>4 · Kapasite</h4>
+            <div class="alan">
+              <label for="f-deneyim">Sektör deneyimi — <span id="f-deneyim-d">6 yıl</span></label>
+              <input type="range" id="f-deneyim" min="0" max="20" value="6">
+            </div>
+            <div class="alan">
+              <label for="f-cihaz">Halihazırda kullandığınız cihaz — <span id="f-cihaz-d">2 cihaz</span></label>
+              <input type="range" id="f-cihaz" min="0" max="10" value="2">
+            </div>
+            <div class="alan">
+              <label for="f-butce">Yatırım bandı</label>
+              <select id="f-butce">
+                <option value="0">Henüz belirsiz</option>
+                <option value="1">250.000 ₺ altı</option>
+                <option value="2" selected>250.000 – 750.000 ₺</option>
+                <option value="3">750.000 – 2.000.000 ₺</option>
+                <option value="4">2.000.000 ₺ üzeri</option>
+              </select>
+              <p class="ipucu">Bant sorulmadığı için bugün satış ekibi her adaya aynı süreyi ayırıyor.</p>
+            </div>
+          </div>
+
+          <div class="kutu ara-s">
+            <h4>5 · İletişim ve izin</h4>
+            <div class="izgara i2">
+              <div class="alan"><label for="f-ad">Ad soyad</label><input type="text" id="f-ad" placeholder="Demo — doldurmak zorunda değilsiniz"></div>
+              <div class="alan"><label for="f-tel">Telefon</label><input type="tel" id="f-tel" placeholder="0___ ___ __ __"></div>
+            </div>
+            <label class="onay"><input type="checkbox" checked> Aydınlatma metnini okudum, kişisel verilerimin başvuru değerlendirmesi için işlenmesine <strong>açık rıza</strong> veriyorum.</label>
+            <label class="onay"><input type="checkbox"> Ticari elektronik ileti almak istiyorum <span class="kucuk">(ayrı kutu — aydınlatma metnine gömülemez)</span></label>
+            <button class="btn btn-ana" type="submit">Başvuruyu gönder</button>
+            <div id="form-sonuc" class="ara-s"></div>
+          </div>
+        </form>
+
+        <aside class="skor-panel">
+          <div class="kutu">
+            <h4>Canlı başvuru skoru</h4>
+            <div class="skor-halka ara-s">
+              <div class="halka">
+                <svg width="92" height="92" viewBox="0 0 92 92">
+                  <circle cx="46" cy="46" r="40" fill="none" stroke="#eef2f7" stroke-width="9"/>
+                  <circle id="skor-yay" cx="46" cy="46" r="40" fill="none" stroke="#0d5490" stroke-width="9" stroke-linecap="round"/>
+                </svg>
+                <span class="deger" id="skor-deger">0</span>
+              </div>
+              <div class="kucuk">Belge 35 · kapasite 25 · deneyim 20 · bölge 20 puan üzerinden.
+              Eşikler temsilîdir; gerçek ağırlıklar satış verisiyle kalibre edilir.</div>
+            </div>
+            <div class="skor-kirilim" id="skor-kirilim"></div>
+            <div class="ayrac"></div>
+            <div id="skor-karar"></div>
+          </div>
+        </aside>
+      </div>
+  </div>
+</section><section class="bolum gri">
+  <div class="sinir">
+    <span class="ust-baslik">Neden skorlama</span>
+    <h2>Skor ne işe yarar</h2>
+    
+      <div class="izgara i3 ara">
+        <div class="kutu "><h4>Satış ekibinin zamanı</h4><div>Bugün her adaya aynı süre ayrılıyor. Skor, 60 puan üstünü satış ekibine, altını otomatik bilgilendirme dizisine yönlendirir.</div></div>
+        <div class="kutu "><h4>Mevzuat kalkanı</h4><div>Belge kapısı, belgesiz bir noktaya cihaz satılmasını yapısal olarak zorlaştırır. Sorumluluk zincirin tepesine döner — kapı en ucuz sigortadır.</div></div>
+        <div class="kutu "><h4>Ölçüm</h4><div>Hangi ilden, hangi işletme türünden, hangi bütçe bandından kaç başvuru geldiği ilk kez ölçülebilir hale gelir. Reklam bütçesi buna göre dağıtılır.</div></div>
+      </div>
+      <div class="kutu uyari ara">
+        <h4>Reddetmek yerine yönlendirmek</h4>
+        <p>Bu huninin en önemli tasarım kararı: <strong>kimse reddedilmiyor.</strong> Belgesi olmayan
+        bölge bayisi adayı “uygulama merkezi” ya da “referans ortağı” katmanına, bütçesi yetmeyen aday
+        kiralama ve sertifikalı ikinci el hattına düşüyor. Reddedilen aday rakibe gider; yönlendirilen
+        aday havuzda kalır.</p>
+      </div>
+  </div>
+</section></main>
+
+<footer class="alt">
+  <div class="sinir">
+    <p class="alt-ad">Estezone Yetkili Ağ Programı — prototip seti</p>
+    <p>16 Ağustos 2026 · 8 prototip, 14 sayfa · Bu belge Estezone Medikal’e sunulmak üzere hazırlanmış bir tekliftir.</p>
+    <p class="alt-uyari">
+      Sayfalardaki formlar, portal ve asistan <strong>demo</strong>dur — hiçbir yere veri
+      göndermez. Kazanç, KPI ve marj rakamları firmadan veri gelmeden yerleştirilmiş
+      varsayımlardır. Mevzuat notları bilgilendirme amaçlıdır, hukuk danışmanı onayı gerekir.
+    </p>
+    <nav class="alt-gez"><a href="index.html">Program</a><a href="rakip.html">Rakip kıyası</a><a href="basvuru.html" class="aktif" aria-current="page">P1 Başvuru</a><a href="bolge.html">P2 Bölge</a><a href="portal.html">P3 Portal</a><a href="merkez-bul.html">P4 Merkez bul</a><a href="kazanc.html">P5 Kazanç</a><a href="asistan.html">P6 Asistan</a><a href="akademi.html">P7 Akademi</a><a href="pazarlama.html">P8 Ko-op</a><a href="seo.html">SEO</a><a href="dijital.html">Dijital plan</a><a href="alternatif.html">Alternatifler</a><a href="yol-haritasi.html">Yol haritası</a></nav>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+
+</body>
+</html>

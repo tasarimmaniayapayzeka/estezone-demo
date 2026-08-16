@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>P5 Kazanç simülatörü · Estezone Yetkili Ağ Programı</title>
+<meta name="description" content="Bayi kazanç ve amortisman simülatörü">
+<link rel="stylesheet" href="stil.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230d5490'/><text x='16' y='22' font-size='17' font-family='sans-serif' font-weight='700' fill='%23fff' text-anchor='middle'>E</text></svg>">
+</head>
+<body>
+
+<div class="demo-bant" role="note">
+  <strong>TASARIM DEMOSU</strong> — Estezone Medikal’in resmî sitesi veya resmî bayilik
+  programı değildir. Teklif/sunum amaçlı prototiptir; tüm rakamlar temsilîdir.
+</div>
+
+<header class="ust">
+  <a class="marka" href="index.html">
+    <span class="marka-ad">Estezone</span>
+    <span class="marka-alt">Yetkili Ağ Programı</span>
+  </a>
+  <button class="menu-ac" aria-label="Menü" aria-expanded="false">☰</button>
+  <nav class="gezinme"><a href="index.html">Program</a><a href="rakip.html">Rakip kıyası</a><a href="basvuru.html">P1 Başvuru</a><a href="bolge.html">P2 Bölge</a><a href="portal.html">P3 Portal</a><a href="merkez-bul.html">P4 Merkez bul</a><a href="kazanc.html" class="aktif" aria-current="page">P5 Kazanç</a><a href="asistan.html">P6 Asistan</a><a href="akademi.html">P7 Akademi</a><a href="pazarlama.html">P8 Ko-op</a><a href="seo.html">SEO</a><a href="dijital.html">Dijital plan</a><a href="alternatif.html">Alternatifler</a><a href="yol-haritasi.html">Yol haritası</a></nav>
+</header>
+
+<main><section class="hero">
+  <div class="sinir">
+    <span class="etiket">Prototip P5 · çalışır durumda</span>
+    <h1>Bayi kazanç simülatörü</h1>
+    <p class="spot">Bayilik kararı duygusal değil <strong>aritmetiktir</strong>. Rakiplerin hiçbiri bu aritmetiği göstermiyor; gösteren taraf konuşmayı yönetir.</p>
+    <ul class="hero-not"><li>Cihaz + sarf + servis ayrı</li><li>Kademe etkisi</li><li>Tekrar eden gelir payı</li><li>Amortisman ayrı hesap</li></ul>
+  </div>
+</section><section class="bolum ">
+  <div class="sinir">
+    <span class="ust-baslik">Katman A</span>
+    <h2>Bölge bayisi tarafı</h2>
+    
+      <div class="izgara i12 ara">
+        <div class="kutu" id="kazanc-sim">
+          <h4>Girdiler</h4>
+          <div class="alan"><label for="k-adet">Yıllık cihaz satışı — <span id="k-adet-d"></span></label>
+            <input type="range" id="k-adet" min="1" max="40" value="8"></div>
+          <div class="alan"><label for="k-bedel">Ortalama cihaz bedeli — <span id="k-bedel-d"></span></label>
+            <input type="range" id="k-bedel" min="150" max="2500" step="50" value="650"></div>
+          <div class="alan"><label for="k-marj">Cihaz marjı — <span id="k-marj-d"></span></label>
+            <input type="range" id="k-marj" min="5" max="35" value="16"></div>
+          <div class="ayrac"></div>
+          <div class="alan"><label for="k-kurulu">Sarf tabanı (kurulu cihaz) — <span id="k-kurulu-d"></span></label>
+            <input type="range" id="k-kurulu" min="0" max="80" value="14"></div>
+          <div class="alan"><label for="k-sarf">Cihaz başına aylık sarf — <span id="k-sarf-d"></span></label>
+            <input type="range" id="k-sarf" min="0" max="40" value="9"></div>
+          <div class="alan"><label for="k-sarfmarj">Sarf marjı — <span id="k-sarfmarj-d"></span></label>
+            <input type="range" id="k-sarfmarj" min="10" max="60" value="34"></div>
+          <div class="ayrac"></div>
+          <div class="alan"><label for="k-servis">Yıllık bakım sözleşmesi — <span id="k-servis-d"></span></label>
+            <input type="range" id="k-servis" min="0" max="60" value="9"></div>
+          <div class="alan"><label for="k-kademe">Kademe</label>
+            <select id="k-kademe">
+              <option value="bronz">Bronz</option>
+              <option value="gumus">Gümüş (+3 puan)</option>
+              <option value="altin" selected>Altın (+7 puan)</option>
+              <option value="platin">Platin (+12 puan)</option>
+            </select></div>
+        </div>
+        <div id="k-sonuc"></div>
+      </div>
+  </div>
+</section><section class="bolum gri">
+  <div class="sinir">
+    <span class="ust-baslik">Katman B</span>
+    <h2>Uygulama merkezi tarafı</h2>
+    
+      <p>Aynı aracın ikinci yüzü: cihazı <em>kullanacak</em> merkez için amortisman. Satış ekibi
+      bu tabloyu görürse yanlış müşteriye cihaz satmaz — iade, şikâyet ve itibar kaybı en baştan önlenir.</p>
+      <div class="izgara i12 ara">
+        <div class="kutu" id="amor-sim">
+          <h4>Girdiler</h4>
+          <div class="alan"><label for="a-bedel">Cihaz bedeli — <span id="a-bedel-d"></span></label>
+            <input type="range" id="a-bedel" min="150" max="2500" step="50" value="650"></div>
+          <div class="alan"><label for="a-seans">Günlük seans — <span id="a-seans-d"></span></label>
+            <input type="range" id="a-seans" min="1" max="24" value="7"></div>
+          <div class="alan"><label for="a-ucret">Ortalama seans bedeli — <span id="a-ucret-d"></span></label>
+            <input type="range" id="a-ucret" min="200" max="6000" step="100" value="1400"></div>
+          <div class="alan"><label for="a-sarf">Seans başına sarf gideri — <span id="a-sarf-d"></span></label>
+            <input type="range" id="a-sarf" min="0" max="1500" step="25" value="175"></div>
+          <div class="alan"><label for="a-gider">Aylık sabit gider payı — <span id="a-gider-d"></span></label>
+            <input type="range" id="a-gider" min="0" max="400" step="5" value="85"></div>
+        </div>
+        <div id="a-sonuc"></div>
+      </div>
+  </div>
+</section><section class="bolum gri">
+  <div class="sinir">
+    
+    <h2>Aracın asıl işi rakam vermek değil</h2>
+    
+      <div class="izgara i3 ara">
+        <div class="kutu "><h4>Nitelendirme</h4><div>Rakamı gören ciddi aday kalır, gerisi kendi eliyle ayrılır. Satış ekibinin en pahalı kaynağı — zamanı — korunur.</div></div>
+        <div class="kutu "><h4>Beklenti yönetimi</h4><div>Amortisman 30 ay çıkıyorsa bunu satıştan <em>önce</em> söylemek, altı ay sonra iade konuşmasından ucuzdur.</div></div>
+        <div class="kutu "><h4>Takip bahanesi</h4><div>“Hesabın PDF’ini göndereyim mi?” — e-posta ve telefonu istemenin en doğal yolu. Rakamı hesaplayan kişi zaten karar sürecindedir.</div></div>
+      </div>
+      <div class="kutu uyari ara">
+        <h4>Bu sayfadaki tüm rakamlar temsilîdir</h4>
+        <p>Marjlar, sarf tutarları ve bakım sözleşmesi bedeli firmadan veri gelmeden yerleştirilmiş
+        varsayımlardır. Yol haritasının Faz 0 maddesi budur: gerçek marj bandı ve sarf fiyat listesi
+        alınmadan bu araç müşteriye <strong>gösterilemez</strong>. Yanlış rakamla kurulan bir kazanç
+        vaadi, hiç vaat vermemekten pahalıya patlar.</p>
+      </div>
+  </div>
+</section></main>
+
+<footer class="alt">
+  <div class="sinir">
+    <p class="alt-ad">Estezone Yetkili Ağ Programı — prototip seti</p>
+    <p>16 Ağustos 2026 · 8 prototip, 14 sayfa · Bu belge Estezone Medikal’e sunulmak üzere hazırlanmış bir tekliftir.</p>
+    <p class="alt-uyari">
+      Sayfalardaki formlar, portal ve asistan <strong>demo</strong>dur — hiçbir yere veri
+      göndermez. Kazanç, KPI ve marj rakamları firmadan veri gelmeden yerleştirilmiş
+      varsayımlardır. Mevzuat notları bilgilendirme amaçlıdır, hukuk danışmanı onayı gerekir.
+    </p>
+    <nav class="alt-gez"><a href="index.html">Program</a><a href="rakip.html">Rakip kıyası</a><a href="basvuru.html">P1 Başvuru</a><a href="bolge.html">P2 Bölge</a><a href="portal.html">P3 Portal</a><a href="merkez-bul.html">P4 Merkez bul</a><a href="kazanc.html" class="aktif" aria-current="page">P5 Kazanç</a><a href="asistan.html">P6 Asistan</a><a href="akademi.html">P7 Akademi</a><a href="pazarlama.html">P8 Ko-op</a><a href="seo.html">SEO</a><a href="dijital.html">Dijital plan</a><a href="alternatif.html">Alternatifler</a><a href="yol-haritasi.html">Yol haritası</a></nav>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>P2 Bölge haritası · Estezone Yetkili Ağ Programı</title>
+<meta name="description" content="Bölge müsaitliği ve kıtlık motoru prototipi">
+<link rel="stylesheet" href="stil.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230d5490'/><text x='16' y='22' font-size='17' font-family='sans-serif' font-weight='700' fill='%23fff' text-anchor='middle'>E</text></svg>">
+</head>
+<body>
+
+<div class="demo-bant" role="note">
+  <strong>TASARIM DEMOSU</strong> — Estezone Medikal’in resmî sitesi veya resmî bayilik
+  programı değildir. Teklif/sunum amaçlı prototiptir; tüm rakamlar temsilîdir.
+</div>
+
+<header class="ust">
+  <a class="marka" href="index.html">
+    <span class="marka-ad">Estezone</span>
+    <span class="marka-alt">Yetkili Ağ Programı</span>
+  </a>
+  <button class="menu-ac" aria-label="Menü" aria-expanded="false">☰</button>
+  <nav class="gezinme"><a href="index.html">Program</a><a href="rakip.html">Rakip kıyası</a><a href="basvuru.html">P1 Başvuru</a><a href="bolge.html" class="aktif" aria-current="page">P2 Bölge</a><a href="portal.html">P3 Portal</a><a href="merkez-bul.html">P4 Merkez bul</a><a href="kazanc.html">P5 Kazanç</a><a href="asistan.html">P6 Asistan</a><a href="akademi.html">P7 Akademi</a><a href="pazarlama.html">P8 Ko-op</a><a href="seo.html">SEO</a><a href="dijital.html">Dijital plan</a><a href="alternatif.html">Alternatifler</a><a href="yol-haritasi.html">Yol haritası</a></nav>
+</header>
+
+<main><section class="hero">
+  <div class="sinir">
+    <span class="etiket">Prototip P2 · çalışır durumda</span>
+    <h1>Bölge haritası ve kıtlık motoru</h1>
+    <p class="spot">Bayilik “başvurulan” değil <strong>“kapılan”</strong> bir şey olduğunda başvuru sayısı değişir. Bölge koruması aynı anda hem adaya değer hem mevcut bayiye güvencedir.</p>
+    <ul class="hero-not"><li>84 açık</li><li>4 görüşme sürüyor</li><li>2 kapalı</li><li>Filtre + arama çalışıyor</li></ul>
+  </div>
+</section><section class="bolum ">
+  <div class="sinir">
+    
+    <h2>Bölge durumu</h2>
+    
+      <div class="gosterge">
+        <span><i class="nokta acik"></i> Açık — başvuruya kapalı değil</span>
+        <span><i class="nokta rezerve"></i> Görüşme sürüyor — sıraya alınır</span>
+        <span><i class="nokta dolu"></i> Kapalı — bölge koruması geçerli</span>
+      </div>
+      <div class="izgara i21">
+        <div>
+          <div class="izgara i2 ara-s" style="margin-bottom:16px">
+            <input type="text" id="bolge-ara" placeholder="İl ara…">
+            <div class="secim-sar">
+              <button class="secim secili" data-durum-suzgec="hepsi">Hepsi</button>
+              <button class="secim" data-durum-suzgec="acik">Açık</button>
+              <button class="secim" data-durum-suzgec="rezerve">Görüşmede</button>
+              <button class="secim" data-durum-suzgec="dolu">Kapalı</button>
+            </div>
+          </div>
+          <p class="kucuk" style="margin-bottom:14px"><strong id="bolge-sayac">0</strong> bölge gösteriliyor · bir bölgeye tıklayın</p>
+          <div id="bolge-kap">
+            <div class="bolge-grup">
+              <h4>Marmara <small>12 bölge · 10 açık</small></h4>
+              <div class="il-sar">
+                <button class="il dolu" data-ad="İstanbul (Anadolu)" data-durum="dolu" data-not="Ataşehir ofisi doğrudan">İstanbul (Anadolu)</button><button class="il acik" data-ad="İstanbul (Avrupa)" data-durum="acik" data-not="">İstanbul (Avrupa)</button><button class="il acik" data-ad="Bursa" data-durum="acik" data-not="">Bursa</button><button class="il rezerve" data-ad="Kocaeli" data-durum="rezerve" data-not="Görüşme 2. tur">Kocaeli</button><button class="il acik" data-ad="Balıkesir" data-durum="acik" data-not="">Balıkesir</button><button class="il acik" data-ad="Tekirdağ" data-durum="acik" data-not="">Tekirdağ</button><button class="il acik" data-ad="Sakarya" data-durum="acik" data-not="">Sakarya</button><button class="il acik" data-ad="Çanakkale" data-durum="acik" data-not="">Çanakkale</button><button class="il acik" data-ad="Edirne" data-durum="acik" data-not="">Edirne</button><button class="il acik" data-ad="Yalova" data-durum="acik" data-not="">Yalova</button><button class="il acik" data-ad="Kırklareli" data-durum="acik" data-not="">Kırklareli</button><button class="il acik" data-ad="Bilecik" data-durum="acik" data-not="">Bilecik</button>
+              </div>
+            </div><div class="bolge-grup">
+              <h4>İç Anadolu <small>13 bölge · 11 açık</small></h4>
+              <div class="il-sar">
+                <button class="il dolu" data-ad="Ankara" data-durum="dolu" data-not="Beysukent merkez doğrudan">Ankara</button><button class="il rezerve" data-ad="Konya" data-durum="rezerve" data-not="Belge bekleniyor">Konya</button><button class="il acik" data-ad="Kayseri" data-durum="acik" data-not="">Kayseri</button><button class="il acik" data-ad="Eskişehir" data-durum="acik" data-not="">Eskişehir</button><button class="il acik" data-ad="Sivas" data-durum="acik" data-not="">Sivas</button><button class="il acik" data-ad="Aksaray" data-durum="acik" data-not="">Aksaray</button><button class="il acik" data-ad="Nevşehir" data-durum="acik" data-not="">Nevşehir</button><button class="il acik" data-ad="Kırıkkale" data-durum="acik" data-not="">Kırıkkale</button><button class="il acik" data-ad="Karaman" data-durum="acik" data-not="">Karaman</button><button class="il acik" data-ad="Niğde" data-durum="acik" data-not="">Niğde</button><button class="il acik" data-ad="Yozgat" data-durum="acik" data-not="">Yozgat</button><button class="il acik" data-ad="Çankırı" data-durum="acik" data-not="">Çankırı</button><button class="il acik" data-ad="Kırşehir" data-durum="acik" data-not="">Kırşehir</button>
+              </div>
+            </div><div class="bolge-grup">
+              <h4>Ege <small>9 bölge · 8 açık</small></h4>
+              <div class="il-sar">
+                <button class="il rezerve" data-ad="İzmir" data-durum="rezerve" data-not="Ön anlaşma">İzmir</button><button class="il acik" data-ad="Antalya" data-durum="acik" data-not="">Antalya</button><button class="il acik" data-ad="Denizli" data-durum="acik" data-not="">Denizli</button><button class="il acik" data-ad="Muğla" data-durum="acik" data-not="">Muğla</button><button class="il acik" data-ad="Aydın" data-durum="acik" data-not="">Aydın</button><button class="il acik" data-ad="Manisa" data-durum="acik" data-not="">Manisa</button><button class="il acik" data-ad="Afyonkarahisar" data-durum="acik" data-not="">Afyonkarahisar</button><button class="il acik" data-ad="Kütahya" data-durum="acik" data-not="">Kütahya</button><button class="il acik" data-ad="Uşak" data-durum="acik" data-not="">Uşak</button>
+              </div>
+            </div><div class="bolge-grup">
+              <h4>Akdeniz <small>7 bölge · 7 açık</small></h4>
+              <div class="il-sar">
+                <button class="il acik" data-ad="Adana" data-durum="acik" data-not="">Adana</button><button class="il acik" data-ad="Mersin" data-durum="acik" data-not="">Mersin</button><button class="il acik" data-ad="Hatay" data-durum="acik" data-not="">Hatay</button><button class="il acik" data-ad="Kahramanmaraş" data-durum="acik" data-not="">Kahramanmaraş</button><button class="il acik" data-ad="Osmaniye" data-durum="acik" data-not="">Osmaniye</button><button class="il acik" data-ad="Isparta" data-durum="acik" data-not="">Isparta</button><button class="il acik" data-ad="Burdur" data-durum="acik" data-not="">Burdur</button>
+              </div>
+            </div><div class="bolge-grup">
+              <h4>Karadeniz <small>18 bölge · 18 açık</small></h4>
+              <div class="il-sar">
+                <button class="il acik" data-ad="Samsun" data-durum="acik" data-not="">Samsun</button><button class="il acik" data-ad="Trabzon" data-durum="acik" data-not="">Trabzon</button><button class="il acik" data-ad="Ordu" data-durum="acik" data-not="">Ordu</button><button class="il acik" data-ad="Rize" data-durum="acik" data-not="">Rize</button><button class="il acik" data-ad="Zonguldak" data-durum="acik" data-not="">Zonguldak</button><button class="il acik" data-ad="Tokat" data-durum="acik" data-not="">Tokat</button><button class="il acik" data-ad="Amasya" data-durum="acik" data-not="">Amasya</button><button class="il acik" data-ad="Giresun" data-durum="acik" data-not="">Giresun</button><button class="il acik" data-ad="Çorum" data-durum="acik" data-not="">Çorum</button><button class="il acik" data-ad="Kastamonu" data-durum="acik" data-not="">Kastamonu</button><button class="il acik" data-ad="Bolu" data-durum="acik" data-not="">Bolu</button><button class="il acik" data-ad="Düzce" data-durum="acik" data-not="">Düzce</button><button class="il acik" data-ad="Karabük" data-durum="acik" data-not="">Karabük</button><button class="il acik" data-ad="Bartın" data-durum="acik" data-not="">Bartın</button><button class="il acik" data-ad="Sinop" data-durum="acik" data-not="">Sinop</button><button class="il acik" data-ad="Artvin" data-durum="acik" data-not="">Artvin</button><button class="il acik" data-ad="Gümüşhane" data-durum="acik" data-not="">Gümüşhane</button><button class="il acik" data-ad="Bayburt" data-durum="acik" data-not="">Bayburt</button>
+              </div>
+            </div><div class="bolge-grup">
+              <h4>Güneydoğu <small>9 bölge · 8 açık</small></h4>
+              <div class="il-sar">
+                <button class="il rezerve" data-ad="Gaziantep" data-durum="rezerve" data-not="Bölge temsilcisi görüşmesi">Gaziantep</button><button class="il acik" data-ad="Şanlıurfa" data-durum="acik" data-not="">Şanlıurfa</button><button class="il acik" data-ad="Diyarbakır" data-durum="acik" data-not="">Diyarbakır</button><button class="il acik" data-ad="Mardin" data-durum="acik" data-not="">Mardin</button><button class="il acik" data-ad="Batman" data-durum="acik" data-not="">Batman</button><button class="il acik" data-ad="Adıyaman" data-durum="acik" data-not="">Adıyaman</button><button class="il acik" data-ad="Siirt" data-durum="acik" data-not="">Siirt</button><button class="il acik" data-ad="Şırnak" data-durum="acik" data-not="">Şırnak</button><button class="il acik" data-ad="Kilis" data-durum="acik" data-not="">Kilis</button>
+              </div>
+            </div><div class="bolge-grup">
+              <h4>Doğu Anadolu <small>14 bölge · 14 açık</small></h4>
+              <div class="il-sar">
+                <button class="il acik" data-ad="Van" data-durum="acik" data-not="">Van</button><button class="il acik" data-ad="Erzurum" data-durum="acik" data-not="">Erzurum</button><button class="il acik" data-ad="Malatya" data-durum="acik" data-not="">Malatya</button><button class="il acik" data-ad="Elazığ" data-durum="acik" data-not="">Elazığ</button><button class="il acik" data-ad="Erzincan" data-durum="acik" data-not="">Erzincan</button><button class="il acik" data-ad="Ağrı" data-durum="acik" data-not="">Ağrı</button><button class="il acik" data-ad="Muş" data-durum="acik" data-not="">Muş</button><button class="il acik" data-ad="Bingöl" data-durum="acik" data-not="">Bingöl</button><button class="il acik" data-ad="Bitlis" data-durum="acik" data-not="">Bitlis</button><button class="il acik" data-ad="Hakkâri" data-durum="acik" data-not="">Hakkâri</button><button class="il acik" data-ad="Iğdır" data-durum="acik" data-not="">Iğdır</button><button class="il acik" data-ad="Kars" data-durum="acik" data-not="">Kars</button><button class="il acik" data-ad="Ardahan" data-durum="acik" data-not="">Ardahan</button><button class="il acik" data-ad="Tunceli" data-durum="acik" data-not="">Tunceli</button>
+              </div>
+            </div><div class="bolge-grup">
+              <h4>Yurt dışı (faz 2) <small>8 bölge · 8 açık</small></h4>
+              <div class="il-sar">
+                <button class="il acik" data-ad="KKTC" data-durum="acik" data-not="">KKTC</button><button class="il acik" data-ad="Azerbaycan" data-durum="acik" data-not="">Azerbaycan</button><button class="il acik" data-ad="Gürcistan" data-durum="acik" data-not="">Gürcistan</button><button class="il acik" data-ad="Kuzey Irak" data-durum="acik" data-not="">Kuzey Irak</button><button class="il acik" data-ad="Kosova" data-durum="acik" data-not="">Kosova</button><button class="il acik" data-ad="Kuzey Makedonya" data-durum="acik" data-not="">Kuzey Makedonya</button><button class="il acik" data-ad="Türkmenistan" data-durum="acik" data-not="">Türkmenistan</button><button class="il acik" data-ad="Özbekistan" data-durum="acik" data-not="">Özbekistan</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <aside class="skor-panel">
+          <div class="kutu" id="bolge-detay">
+            <h4>Bir bölge seçin</h4>
+            <p class="ara-s">Soldaki listeden bir il seçtiğinizde durum, koşullar ve sonraki adım burada görünür.</p>
+          </div>
+          <div class="kutu ara-s">
+            <h4>Bölge koruması nasıl işler</h4>
+            <ul class="liste ara-s">
+              <li>Bir bölgede yalnızca <strong>bir</strong> sözleşmeli bayi olur</li>
+              <li>Bayi, fırsatı sisteme <strong>kaydeder</strong>; kayıtlı fırsat koruma süresi boyunca onundur</li>
+              <li>Aynı müşteriyi ikinci bayi kaydedemez — sistem çakışmayı engeller</li>
+              <li>Hedefi tutmayan bayide bölge <strong>yeniden açılır</strong> (sözleşmede tarihli eşik)</li>
+              <li>Uygulama merkezi (B) ve referans ortağı (C) katmanları bölge korumasına tabi değildir</li>
+            </ul>
+            <p class="kaynak">Bu kalıbın adı <em>deal registration + territory protection</em>;
+            medikal cihaz dahil B2B kanallarında standarttır.</p>
+          </div>
+        </aside>
+      </div>
+  </div>
+</section><section class="bolum gri">
+  <div class="sinir">
+    <span class="ust-baslik">Dürüstlük kaydı</span>
+    <h2>Kıtlık gerçek olmalı</h2>
+    
+      <div class="izgara i2 ara">
+        <div class="kutu uyari"><h4>Bu sayfadaki durumlar temsilîdir</h4><div>Ankara ve İstanbul Anadolu, Estezone’un kendi ofisleri olduğu için “kapalı”; diğer dört “görüşme sürüyor” işareti <strong>örnek veridir.</strong> Gerçek durum firmanın mevcut bayi ve satış ilişkileri haritalanmadan girilemez.</div></div>
+        <div class="kutu uyari"><h4>Sahte kıtlık geri teper</h4><div>“Son 3 bölge” yazıp altı ay sonra hâlâ aynı üç bölgeyi göstermek, kıtlığı bir pazarlama numarasına çevirir ve güveni yakar. Durum alanı <strong>operasyondan beslenmeli</strong>, elle yazılmamalı — bu yüzden portal (P3) ile aynı veritabanını paylaşır.</div></div>
+      </div>
+  </div>
+</section></main>
+
+<footer class="alt">
+  <div class="sinir">
+    <p class="alt-ad">Estezone Yetkili Ağ Programı — prototip seti</p>
+    <p>16 Ağustos 2026 · 8 prototip, 14 sayfa · Bu belge Estezone Medikal’e sunulmak üzere hazırlanmış bir tekliftir.</p>
+    <p class="alt-uyari">
+      Sayfalardaki formlar, portal ve asistan <strong>demo</strong>dur — hiçbir yere veri
+      göndermez. Kazanç, KPI ve marj rakamları firmadan veri gelmeden yerleştirilmiş
+      varsayımlardır. Mevzuat notları bilgilendirme amaçlıdır, hukuk danışmanı onayı gerekir.
+    </p>
+    <nav class="alt-gez"><a href="index.html">Program</a><a href="rakip.html">Rakip kıyası</a><a href="basvuru.html">P1 Başvuru</a><a href="bolge.html" class="aktif" aria-current="page">P2 Bölge</a><a href="portal.html">P3 Portal</a><a href="merkez-bul.html">P4 Merkez bul</a><a href="kazanc.html">P5 Kazanç</a><a href="asistan.html">P6 Asistan</a><a href="akademi.html">P7 Akademi</a><a href="pazarlama.html">P8 Ko-op</a><a href="seo.html">SEO</a><a href="dijital.html">Dijital plan</a><a href="alternatif.html">Alternatifler</a><a href="yol-haritasi.html">Yol haritası</a></nav>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+
+</body>
+</html>

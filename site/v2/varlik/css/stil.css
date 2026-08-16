@@ -2267,3 +2267,12 @@ p {
 .logo-im {
   color: #fff;
 }
+
+/* tema şeridi — üç sürüm arası geçiş */
+.tema-serit-ic .serit-baslik {
+  font-family: var(--f-mono);
+  font-size: .63rem; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--metin-3); margin-right: .3rem;
+}
+.tema-serit b.secili { color: var(--m-600); font-weight: 600; }
+.tema-serit .ayrac-nokta { font-style: normal; opacity: .35; }

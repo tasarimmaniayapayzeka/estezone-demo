@@ -23,11 +23,14 @@ const cihazlar = veri.cihazlar
 const kategoriler = veri.kategoriler;
 
 /* tema: `node build.js` -> koyu (v1)   ·   `node build.js acik` -> açık (v2) */
-const TEMA = process.argv[2] === 'acik' ? 'acik' : 'koyu';
+const GECERLI = ['koyu', 'acik', 'v3'];
+const TEMA = GECERLI.includes(process.argv[2]) ? process.argv[2] : 'koyu';
 P.temaAyarla(TEMA);
 
+const ALT_KLASOR = { koyu: '', acik: 'v2', v3: 'v3' }[TEMA];
+
 const KOK = __dirname;
-const CIKTI = TEMA === 'acik' ? path.join(KOK, 'site', 'v2') : path.join(KOK, 'site');
+const CIKTI = ALT_KLASOR ? path.join(KOK, 'site', ALT_KLASOR) : path.join(KOK, 'site');
 
 let yazilan = 0;
 function yaz(gorece, html) {
@@ -852,8 +855,8 @@ function sitemap() {
   const url = [];
   const gez = (dizin, on = '') => {
     fs.readdirSync(path.join(CIKTI, dizin), { withFileTypes: true }).forEach((e) => {
-      // 'v2' = diğer tema sürümü, bu sitemap'e girmez
-      if (e.isDirectory() && e.name !== 'varlik' && e.name !== 'v2')
+      // diğer tema sürümleri ve kıyas sunumu bu sitemap'e girmez
+      if (e.isDirectory() && !['varlik','v2','v3','kiyas'].includes(e.name))
         gez(path.join(dizin, e.name), `${on}${e.name}/`);
       else if (e.name.endsWith('.html') && e.name !== '404.html')
         url.push(`${on}${e.name === 'index.html' && !on ? '' : e.name}`);

@@ -6,6 +6,12 @@
       "runtimeExecutable": "node",
       "runtimeArgs": ["sunucu.js"],
       "port": 8050
+    },
+    {
+      "name": "estezone-bayi",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["bayi/sunucu.js"],
+      "port": 8055
     }
   ]
 }
