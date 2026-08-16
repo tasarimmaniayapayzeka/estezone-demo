@@ -7,8 +7,8 @@ const sharp = require('C:/Users/İHSAN/Desktop/Claude-Projeler/27-MediestGroup/n
 
 const KOK = path.join(__dirname, '..');
 const YEDEK = 'C:/Users/İHSAN/Desktop/Claude-yedekler/28-Estezone/gorseller-4k';
-const TEMIZ_4K = path.join(YEDEK, 'temiz');
-const TEMIZ_TUM = path.join(YEDEK, 'temiz-tum');
+const TEMIZ_4K = path.join(YEDEK, '4k-filigransiz');
+const TEMIZ_TUM = path.join(YEDEK, 'tum-filigransiz');
 const HEDEF = path.join(KOK, 'kaynak', 'gorsel');
 
 // 4K yükseltilen kapaklar -> kaynak dosya adı

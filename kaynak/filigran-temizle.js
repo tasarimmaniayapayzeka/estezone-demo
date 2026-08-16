@@ -55,12 +55,16 @@ function zeminOlc(data, W, H, C) {
      Ölçüm denendi ve TEHLİKELİ çıktı: cihazın kendi gri tonunu filigran sanıp
      taşmanın gövdeyi yemesine yol açtı (Aileen ve Noblex bu şekilde bozulmuştu).
 
-     Filigran rengi C(130,180,222). Opaklık iki aileye ayrılıyor — ölçüldü:
-       • beyaz zeminli kareler        → α ≈ 0.12   (255,255,255) → (240,246,251)
-       • açık mavi/gri zeminli kareler → α ≈ 0.30   (208,238,249) → (183,219,238)
-     Zemin parlaklığından hangi aile olduğu belirlenir. */
-  const beyazZemin = Math.min(...BG) >= 245;
-  const A = beyazZemin ? 0.12 : 0.3;
+     Filigran rengi her karede aynı: C(130,180,222). Değişen tek şey OPAKLIK —
+     ölçülen değerler: 0.12 (çoğu beyaz zeminli), 0.25 (Elazer Plus), 0.30 (mavi zeminli).
+
+     Tek bir α seçmek yerine EN YÜKSEK opaklığı uç nokta alıyoruz. Taşma testi
+     zaten BG ile BGW arasındaki DOĞRU PARÇASINI kabul ettiği için, aradaki tüm
+     opaklıklar (0 → 0.32) kendiliğinden kapsanır. Yön hep aynı olduğundan bu
+     genişletme nötr gri cihaz piksellerini içine almaz: nötr gri, beyazdan
+     siyaha giden eksende durur, filigran ekseni ise maviye sapar — aradaki dik
+     uzaklık toleransın (9) çok üstündedir. */
+  const A = 0.32;
   const C_ = [130, 180, 222];
   const BGW = BG.map((v, k) => Math.round(v + A * (C_[k] - v)));
   return { BG, BGW, alfa: A };
