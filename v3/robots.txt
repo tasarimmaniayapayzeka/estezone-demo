@@ -1,0 +1,3 @@
+# Tasarım demosu — resmî site değildir, dizine eklenmemelidir.
+User-agent: *
+Disallow: /
