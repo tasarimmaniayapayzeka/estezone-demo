@@ -6,13 +6,37 @@ Mevcut [estezone.com.tr](https://estezone.com.tr) sitesinin (WordPress + Impreza
 Revolution) yerine geçmek üzere sıfırdan yazılmış **statik HTML** site. Estezone Medikal'e sunulacak
 teklif demosudur — henüz canlı site değildir.
 
+## İki tasarım sürümü
+
+Aynı içerik ve aynı işlevler, iki farklı görsel dil. Müşteri seçsin diye ikisi de canlı.
+
+| | v1 — **Koyu / "Dalga Boyu"** | v2 — **Açık Kurumsal** |
+|---|---|---|
+| Çıktı | `site/` | `site/v2/` |
+| Stil | `sablon/stil-koyu.css` | `sablon/stil-acik.css` |
+| Zemin | `#06090f` gece laciverti | `#ffffff` / `#f5f8fb` |
+| Ana renk | `#2dd4f5` cyan | `#0d5490` — **Estezone'un kendi logo laciverti** |
+| Başlık fontu | Inter | Inter Tight |
+| Buton | hap (100px) | keskin (10px) |
+| Karakter | teknoloji vitrini | mühendislik ciddiyeti |
+
+v2, analiz raporunun 7. bölümündeki öneriyi uygular: *"EsteTouch satış-enerjik; Estezone aynı
+çıtada ama farklı karakterde olmalı — daha keskin köşeler, daha yüksek bilgi yoğunluğu,
+tablo ve rozet kültürü, daha sakin renk. Hap buton yok."*
+
+Her sayfanın en üstünde bir şerit iki sürüm arasında geçiş yapar.
+
 ## Çalıştırma
 
 ```bash
-node build.js     # veri + şablon -> site/ (46 sayfa)
-node sunucu.js    # http://localhost:8050
-node denetle.js   # kırık link / eksik görsel / meta denetimi
+node build.js         # koyu (v1)  -> site/
+node build.js acik    # açık (v2)  -> site/v2/
+node sunucu.js        # http://localhost:8050  (v2: /v2/)
+node denetle.js       # v1 denetimi
+node denetle.js v2    # v2 denetimi
 ```
+
+> İki sürümü de kurmadan yayınlamayın — `site/v2/` ayrı bir build'dir, `node build.js` onu güncellemez.
 
 ## Klasör düzeni
 

@@ -197,8 +197,7 @@ ${cta('', 'Showroom’a bekleriz', 'Ankara Beysukent’teki showroom’umuzda ci
   </div>
 </div></section>
 
-${cta('', 'Sonuçtan emin olmak ister misiniz?', 'Danışman bir başlangıç noktasıdır. Mekânınızın elektrik altyapısı, operatör deneyimi ve hedef hasta profilinizi konuşarak seçimi netleştirelim.')}
-${veriBetik}`
+${cta('', 'Sonuçtan emin olmak ister misiniz?', 'Danışman bir başlangıç noktasıdır. Mekânınızın elektrik altyapısı, operatör deneyimi ve hedef hasta profilinizi konuşarak seçimi netleştirelim.')}`
     )
   );
 
@@ -299,8 +298,7 @@ ${cta('', 'Rakamlar tuttuysa cihazı konuşalım', 'Hedef geri dönüş süreniz
     kendi sayfasındaki künye sekmesine bakın. Değerler üretici beyanına dayanır.</p>
 </div></section>
 
-${cta('', 'Karşılaştırdınız, şimdi deneyin', 'Seçtiğiniz platformları Ankara showroom’umuzda çalışır halde görebilir, uygun modellerde kendi merkezinizde demo talep edebilirsiniz.')}
-${veriBetik}`
+${cta('', 'Karşılaştırdınız, şimdi deneyin', 'Seçtiğiniz platformları Ankara showroom’umuzda çalışır halde görebilir, uygun modellerde kendi merkezinizde demo talep edebilirsiniz.')}`
     )
   );
 

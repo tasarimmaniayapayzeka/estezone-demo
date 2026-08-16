@@ -2,13 +2,17 @@
 const fs = require('fs');
 const path = require('path');
 
-const KOK = path.join(__dirname, 'site');
+// node denetle.js        -> site/ (koyu, v2 hariç)
+// node denetle.js v2     -> site/v2/ (açık)
+const HEDEF = process.argv[2] === 'v2' ? path.join('site', 'v2') : 'site';
+const KOK = path.join(__dirname, HEDEF);
+const V2_HARIC = process.argv[2] !== 'v2';
 const sayfalar = [];
 (function gez(d = '') {
   fs.readdirSync(path.join(KOK, d), { withFileTypes: true }).forEach((e) => {
     const g = d ? `${d}/${e.name}` : e.name;
     if (e.isDirectory()) {
-      if (e.name !== 'varlik') gez(g);
+      if (e.name !== 'varlik' && !(V2_HARIC && e.name === 'v2')) gez(g);
     } else if (e.name.endsWith('.html')) sayfalar.push(g);
   });
 })();
@@ -70,7 +74,9 @@ let bayt = 0;
 (function say(d = '') {
   fs.readdirSync(path.join(KOK, d), { withFileTypes: true }).forEach((e) => {
     const g = d ? `${d}/${e.name}` : e.name;
-    if (e.isDirectory()) say(g);
+    if (e.isDirectory()) {
+      if (!(V2_HARIC && e.name === 'v2')) say(g);
+    }
     else bayt += fs.statSync(path.join(KOK, g)).size;
   });
 })();

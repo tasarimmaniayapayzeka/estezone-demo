@@ -2027,3 +2027,298 @@ p {
     color: #000;
   }
 }
+
+/* ==========================================================================
+   EK: AI asistan + dalga boyu matrisi + tema geçiş (koyu sürüm)
+   ========================================================================== */
+
+.yuzen button {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  box-shadow: var(--golge-l);
+  transition: var(--gecis);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+.yuzen button:hover {
+  transform: scale(1.08) translateY(-2px);
+}
+.yuzen button svg {
+  width: 24px;
+  height: 24px;
+}
+.yuzen .asistan {
+  background: linear-gradient(135deg, var(--vurgu), var(--vurgu-koyu));
+  color: #03161d;
+}
+@media (max-width: 640px) {
+  .yuzen button {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.asistan-panel {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 160;
+  width: min(94vw, 388px);
+  max-height: min(76vh, 620px);
+  background: var(--yuzey);
+  border: 1px solid var(--kenar-güçlü);
+  border-radius: var(--r);
+  box-shadow: var(--golge-l);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.asistan-panel[hidden] {
+  display: none;
+}
+.asistan-bas {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.85rem 1rem;
+  background: var(--yuzey-2);
+  border-bottom: 1px solid var(--kenar);
+  flex: none;
+}
+.asistan-bas .im {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: var(--vurgu-sis);
+  color: var(--vurgu);
+  display: grid;
+  place-items: center;
+  flex: none;
+}
+.asistan-bas .im svg {
+  width: 16px;
+  height: 16px;
+}
+.asistan-bas b {
+  display: block;
+  font-size: 0.92rem;
+  font-weight: 620;
+  color: var(--metin);
+}
+.asistan-bas small {
+  display: block;
+  font-size: 0.73rem;
+  color: var(--metin-3);
+}
+.asistan-bas button {
+  margin-left: auto;
+  color: var(--metin-3);
+  display: grid;
+  place-items: center;
+}
+.asistan-bas button:hover {
+  color: var(--metin);
+}
+.asistan-govde {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.balon {
+  max-width: 88%;
+  padding: 0.68rem 0.9rem;
+  border-radius: var(--r);
+  font-size: 0.885rem;
+  line-height: 1.6;
+  animation: gir 200ms ease-out;
+}
+.balon.bot {
+  background: var(--yuzey-2);
+  border: 1px solid var(--kenar);
+  color: var(--metin-2);
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+.balon.ben {
+  background: linear-gradient(135deg, var(--vurgu), var(--vurgu-koyu));
+  color: #03161d;
+  font-weight: 500;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+.balon a {
+  color: var(--vurgu);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.balon.ben a {
+  color: #03161d;
+}
+.balon .kart-mini {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--kenar);
+  border-radius: var(--r-s);
+}
+.balon .kart-mini img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  flex: none;
+}
+.balon .kart-mini strong {
+  display: block;
+  font-size: 0.83rem;
+  color: var(--metin);
+}
+.balon .kart-mini span {
+  display: block;
+  font-size: 0.73rem;
+  color: var(--metin-3);
+}
+.asistan-oneri {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0.7rem 1rem;
+  border-top: 1px solid var(--kenar);
+  flex: none;
+}
+.asistan-oneri button {
+  font-size: 0.79rem;
+  padding: 0.36rem 0.7rem;
+  border-radius: 100px;
+  border: 1px solid var(--kenar);
+  color: var(--metin-2);
+  transition: var(--gecis);
+}
+.asistan-oneri button:hover {
+  background: var(--vurgu-sis);
+  border-color: var(--kenar-parlak);
+  color: var(--metin);
+}
+.asistan-alt {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.7rem 1rem 0.85rem;
+  border-top: 1px solid var(--kenar);
+  flex: none;
+}
+.asistan-alt input {
+  flex: 1;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid var(--kenar);
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 0.875rem;
+}
+.asistan-alt input:focus {
+  outline: none;
+  border-color: var(--kenar-parlak);
+}
+.asistan-alt button {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--vurgu), var(--vurgu-koyu));
+  color: #03161d;
+  display: grid;
+  place-items: center;
+  flex: none;
+}
+.asistan-alt svg {
+  width: 17px;
+  height: 17px;
+}
+.asistan-not {
+  font-size: 0.7rem;
+  color: var(--metin-3);
+  text-align: center;
+  padding: 0 1rem 0.7rem;
+  line-height: 1.45;
+  flex: none;
+}
+
+/* dalga boyu matrisi */
+.matris th.sirala {
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+}
+.matris th.sirala::after {
+  content: '↕';
+  opacity: 0.35;
+  margin-left: 0.35rem;
+  font-size: 0.8em;
+}
+.matris th.sirala[data-yon='asc']::after {
+  content: '↑';
+  opacity: 1;
+  color: var(--vurgu);
+}
+.matris th.sirala[data-yon='desc']::after {
+  content: '↓';
+  opacity: 1;
+  color: var(--vurgu);
+}
+.matris td.ad {
+  font-weight: 600;
+  color: var(--metin);
+}
+.matris .mono-h {
+  font-family: var(--f-mono);
+  font-size: 0.83rem;
+  color: var(--metin);
+}
+.dalga-cip {
+  display: inline-block;
+  padding: 0.14rem 0.42rem;
+  border-radius: var(--r-s);
+  font-family: var(--f-mono);
+  font-size: 0.755rem;
+  font-weight: 500;
+  border: 1px solid;
+  margin-right: 0.25rem;
+  white-space: nowrap;
+}
+.kars-tablo tbody tr:hover td {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* tema geçiş şeridi */
+.tema-serit {
+  background: var(--yuzey);
+  border-bottom: 1px solid var(--kenar);
+  font-size: 0.8rem;
+}
+.tema-serit-ic {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding-block: 0.45rem;
+  flex-wrap: wrap;
+  color: var(--metin-3);
+}
+.tema-serit a {
+  color: var(--vurgu);
+  font-weight: 550;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.tema-serit b {
+  color: var(--metin);
+}
+
+.logo-im {
+  color: #04202a;
+}

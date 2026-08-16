@@ -4,12 +4,44 @@ const { marka, iletisim, yasal } = icerik;
 
 const SITE = 'https://estezone.com.tr';
 
+/* Aktif tema — build.js tarafından ayarlanır.
+   'koyu' = v1 (Dalga Boyu, koyu)  ·  'acik' = v2 (Açık Kurumsal) */
+const T = { tema: 'koyu', digerYol: 'v2/', digerAd: 'Açık Kurumsal (v2)' };
+function temaAyarla(tema) {
+  T.tema = tema;
+  if (tema === 'acik') {
+    T.digerYol = '../';
+    T.digerAd = 'Koyu — Dalga Boyu (v1)';
+  } else {
+    T.digerYol = 'v2/';
+    T.digerAd = 'Açık Kurumsal (v2)';
+  }
+}
+
 const kacis = (s = '') =>
   String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
+/* Arama normalizasyonu — Türkçe noktasız ı tuzağını çözer.
+   "HIFU".toLocaleLowerCase('tr') = "hıfu" olduğu için kullanıcının yazdığı "hifu" eşleşmezdi.
+   Her iki taraf da ASCII'ye katlanır. site.js içindeki norm() ile BİREBİR aynı olmalı. */
+const aramaNorm = (s = '') =>
+  String(s)
+    .toLocaleLowerCase('tr')
+    .replace(/[ıİI]/g, 'i')
+    .replace(/[şŞ]/g, 's')
+    .replace(/[ğĞ]/g, 'g')
+    .replace(/[üÜ]/g, 'u')
+    .replace(/[öÖ]/g, 'o')
+    .replace(/[çÇ]/g, 'c')
+    .replace(/\s+/g, ' ')
+    .trim();
+
 /* ---------- simgeler ---------- */
 const ikon = {
-  logo: '<svg viewBox="0 0 24 24" fill="none" stroke="#04202a" stroke-width="2.4" stroke-linecap="round"><path d="M3 12h3l2.5-7 5 14 2.5-7H21"/></svg>',
+  // stroke = currentColor → rengi .logo-im üzerinden tema belirler
+  logo: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3l2.5-7 5 14 2.5-7H21"/></svg>',
+  asistan: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.6 9.6 0 0 1-3.8-.7L3 21l1.9-4.9A8.3 8.3 0 0 1 3.6 11.5a8.4 8.4 0 0 1 8.9-8.4 8.4 8.4 0 0 1 8.5 8.4Z"/></svg>',
+  gonder: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7Z"/></svg>',
   ok: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
   asagi: '<svg class="ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>',
   menu: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>',
@@ -42,9 +74,10 @@ const ANA_MENU = [
     ad: 'Araçlar',
     url: 'cihaz-secim-danismani.html',
     alt: [
-      ['cihaz-secim-danismani', 'epilasyon', 'Cihaz Seçim Danışmanı', '4 soruda size uygun platform'],
+      ['cihaz-secim-danismani', 'epilasyon', 'Cihaz Seçim Danışmanı', '3 soruda size uygun platform'],
       ['yatirim-hesaplayici', 'vucut', 'Yatırım Geri Dönüş Hesabı', 'Cihaz kaç ayda kendini öder'],
       ['karsilastir', 'cilt', 'Cihaz Karşılaştırma', 'Üç cihazı yan yana koyun'],
+      ['teknik-matris', 'destek', 'Dalga Boyu & Teknik Matris', '28 cihaz tek tabloda, sıralanabilir'],
     ],
   },
   { ad: 'Kiralama & 2. El', url: 'kiralama-ikinci-el.html' },
@@ -60,7 +93,7 @@ function kafa({ baslik, aciklama, yol = '', kanonik, sema, gorsel }) {
 <title>${kacis(baslik)}</title>
 <meta name="description" content="${kacis(aciklama)}">
 <link rel="canonical" href="${SITE}/${kanonik || ''}">
-<meta name="theme-color" content="#06090f">
+<meta name="theme-color" content="${T.tema === 'acik' ? '#ffffff' : '#06090f'}">
 <meta name="robots" content="noindex, nofollow">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="${marka.ad}">
@@ -72,9 +105,13 @@ function kafa({ baslik, aciklama, yol = '', kanonik, sema, gorsel }) {
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;550;600;650&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;550;600;650&family=Inter+Tight:wght@600;650;700;750&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="${k}varlik/css/stil.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232dd4f5'/%3E%3Cpath d='M5 16h4l3-9 6 18 3-9h6' fill='none' stroke='%2304202a' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='${
+    T.tema === 'acik' ? '6' : '8'
+  }' fill='%23${T.tema === 'acik' ? '0d5490' : '2dd4f5'}'/%3E%3Cpath d='M5 16h4l3-9 6 18 3-9h6' fill='none' stroke='%23${
+    T.tema === 'acik' ? 'ffffff' : '04202a'
+  }' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 ${sema ? `<script type="application/ld+json">${JSON.stringify(sema)}</script>` : ''}`;
 }
 
@@ -88,7 +125,7 @@ function ust(yol = '', aktif = '') {
       <div class="alt-menu">${m.alt
         .map(
           ([sl, kat, ad, ac]) =>
-            `<a href="${k}${sl.includes('-danismani') || sl.includes('hesaplayici') || sl === 'karsilastir' ? sl + '.html' : 'kategori/' + sl + '.html'}">
+            `<a href="${k}${/danismani|hesaplayici|karsilastir|teknik-matris/.test(sl) ? sl + '.html' : 'kategori/' + sl + '.html'}">
           <span class="nokta" style="background:var(--k-${kat})"></span>
           <span><strong>${ad}</strong><small>${ac}</small></span></a>`
         )
@@ -103,7 +140,7 @@ function ust(yol = '', aktif = '') {
             .map(
               ([sl, , ad]) =>
                 `<a href="${k}${
-                  sl.includes('-danismani') || sl.includes('hesaplayici') || sl === 'karsilastir'
+                  /danismani|hesaplayici|karsilastir|teknik-matris/.test(sl)
                     ? sl + '.html'
                     : 'kategori/' + sl + '.html'
                 }" style="padding-left:1.6rem;font-size:.92rem;color:var(--metin-2)">${ad}</a>`
@@ -112,7 +149,15 @@ function ust(yol = '', aktif = '') {
         : '')
   ).join('');
 
+  const buTema = T.tema === 'acik' ? 'Açık Kurumsal (v2)' : 'Koyu — Dalga Boyu (v1)';
   return `<a class="atla" href="#ana">İçeriğe atla</a>
+<div class="tema-serit">
+  <div class="kap tema-serit-ic">
+    <span>Tasarım sürümü: <b>${buTema}</b></span>
+    <span>·</span>
+    <a href="${k}${T.digerYol}">${T.digerAd} sürümüne geç →</a>
+  </div>
+</div>
 <div class="demo-bant" role="note">
   <div class="kap demo-bant-ic">
     <span class="demo-etiket">TASARIM DEMOSU</span>
@@ -175,6 +220,7 @@ function alt(yol = '') {
           <li><a href="${k}cihaz-secim-danismani.html">Cihaz seçim danışmanı</a></li>
           <li><a href="${k}yatirim-hesaplayici.html">Yatırım hesaplayıcı</a></li>
           <li><a href="${k}karsilastir.html">Cihaz karşılaştırma</a></li>
+          <li><a href="${k}teknik-matris.html">Dalga boyu matrisi</a></li>
           <li><a href="${k}blog.html">Blog</a></li>
         </ul>
       </div>
@@ -189,19 +235,10 @@ function alt(yol = '') {
         </ul>
       </div>
     </div>
-    <div class="kunye">
-      <h5>Künye</h5>
-      <div class="kunye-izgara">
-        ${icerik.kunye.alanlar
-          .map(
-            ([ad, deger]) =>
-              `<div><span>${ad}</span><b class="${deger ? '' : 'bekliyor'}">${deger || 'firmadan alınacak'}</b></div>`
-          )
-          .join('')}
-      </div>
-      <p class="sonuk" style="font-size:.74rem;margin-top:.8rem">6563 sayılı Elektronik Ticaretin Düzenlenmesi
-        Hakkında Kanun md.3 uyarınca zorunlu künye alanlarıdır. Demo sürümde boş bırakılmıştır.</p>
-    </div>
+    <!-- Künye bloğu demo sürümünde kaldırıldı (boş alanlar bitmemiş görünüyordu).
+         6563 sayılı Kanun md.3 gereği CANLIYA GEÇERKEN geri eklenmeli:
+         ticaret unvanı, MERSİS, ticaret sicil no, vergi dairesi/no, KEP, satış merkezi yetki belgesi no.
+         Alanlar veri/icerik.js -> kunye içinde duruyor. -->
     <div class="alt-son">
       <span>© <span data-yil>2026</span> ${marka.ad}. Tüm hakları saklıdır.</span>
       <div class="alt-yasal">
@@ -216,8 +253,25 @@ function alt(yol = '') {
   </div>
 </footer>
 <div class="yuzen">
+  <button class="asistan" data-asistan-ac aria-label="Cihaz asistanını aç">${ikon.asistan}</button>
   <a class="wa" href="https://wa.me/${iletisim.whatsappHam}" aria-label="WhatsApp ile yazın" target="_blank" rel="noopener">${ikon.wa}</a>
   <a class="tel" href="tel:${iletisim.telefonHam}" aria-label="Telefonla arayın">${ikon.tel}</a>
+</div>
+
+<div class="asistan-panel" data-asistan hidden role="dialog" aria-label="Estezone cihaz asistanı">
+  <div class="asistan-bas">
+    <span class="im">${ikon.asistan}</span>
+    <span><b>Estezone Cihaz Asistanı</b><small>28 cihazı bilir · teşhis koymaz</small></span>
+    <button data-asistan-kapat aria-label="Kapat">${ikon.kapat}</button>
+  </div>
+  <div class="asistan-govde" data-asistan-govde></div>
+  <div class="asistan-oneri" data-asistan-oneri></div>
+  <form class="asistan-alt" data-asistan-form>
+    <input type="text" placeholder="Cihaz, teknoloji veya soru yazın…" aria-label="Mesajınız" autocomplete="off">
+    <button type="submit" aria-label="Gönder">${ikon.gonder}</button>
+  </form>
+  <p class="asistan-not">Bu asistan cihaz bilgisi verir; tıbbi teşhis veya tedavi önerisi sunmaz.
+    Fiyat ve kesin teknik değerler teklif aşamasında yazılı bildirilir.</p>
 </div>
 <div class="cerez" data-cerez hidden role="dialog" aria-label="Çerez tercihleri">
   <div class="cerez-ic">
@@ -233,6 +287,7 @@ function alt(yol = '') {
     </div>
   </div>
 </div>
+<script src="${k}varlik/js/cihazlar.js" defer></script>
 <script src="${k}varlik/js/site.js" defer></script>`;
 }
 
@@ -257,9 +312,9 @@ ${alt(opt.yol)}
 function cihazKart(c, yol = '') {
   const k = yol ? '../' : '';
   const y = icerik.yetkiler[c.yetki] || icerik.yetkiler.tibbi;
-  const arama = [c.ad, c.marka, c.oneCikan, ...(c.etiketler || []), c.kategoriAd, c.rozet, y.ad]
-    .join(' ')
-    .toLocaleLowerCase('tr');
+  const arama = aramaNorm(
+    [c.ad, c.marka, c.oneCikan, ...(c.etiketler || []), c.kategoriAd, c.rozet, y.ad, c.neden].join(' ')
+  );
   return `<a class="c-kart belir" data-cihaz data-k="${c.kategori}" data-y="${c.yetki}" data-arama="${kacis(arama)}" href="${k}cihaz/${c.slug}.html">
   <div class="c-kart-gor">
     ${c.rozet ? `<span class="c-kart-rozet">${kacis(c.rozet)}</span>` : ''}
@@ -305,4 +360,4 @@ function kirinti(yol, parcalar) {
     .join('')}</nav>`;
 }
 
-module.exports = { SITE, kacis, ikon, kafa, ust, alt, sayfa, cihazKart, cta, kirinti, KATEGORI_MENU, ANA_MENU, icerik };
+module.exports = { SITE, kacis, aramaNorm, ikon, kafa, ust, alt, sayfa, cihazKart, cta, kirinti, KATEGORI_MENU, ANA_MENU, icerik, temaAyarla, T };

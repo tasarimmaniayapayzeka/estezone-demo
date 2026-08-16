@@ -22,8 +22,12 @@ const cihazlar = veri.cihazlar
   .map((c) => ({ ...c, yetki: icerik.cihazYetkisi(c.slug, c.kategori) }));
 const kategoriler = veri.kategoriler;
 
+/* tema: `node build.js` -> koyu (v1)   ·   `node build.js acik` -> açık (v2) */
+const TEMA = process.argv[2] === 'acik' ? 'acik' : 'koyu';
+P.temaAyarla(TEMA);
+
 const KOK = __dirname;
-const CIKTI = path.join(KOK, 'site');
+const CIKTI = TEMA === 'acik' ? path.join(KOK, 'site', 'v2') : path.join(KOK, 'site');
 
 let yazilan = 0;
 function yaz(gorece, html) {
@@ -640,7 +644,141 @@ ${cta('', 'Envanterinizi çıkaralım, kritik parçaları stoklayalım', 'Sahada
   );
 }
 
+/* ======================= 4b. DALGA BOYU MATRİSİ ======================= */
+function dalgaBoyuMatrisi() {
+  // spec tablosundan dalga boyu / güç / spot / frekans çek
+  const bul = (c, ...anahtarlar) => {
+    const s = (c.spec || []).find((x) =>
+      anahtarlar.some((a) => x.ad.toLocaleLowerCase('tr').includes(a))
+    );
+    return s ? s.deger : '';
+  };
+  // "10,600 nm" ve "10.600 nm" = 10600 (binlik ayırıcı) · "10,6 nm" = 10.6 (ondalık)
+  const sayiCoz = (ham) => {
+    const binliksiz = ham.replace(/[.,](\d{3})(?!\d)/g, '$1');
+    return parseFloat(binliksiz.replace(',', '.'));
+  };
+  const nmCikar = (metin) => {
+    const m = [
+      ...new Set(
+        [...String(metin).matchAll(/(\d[\d.,]*)\s*nm/gi)].map((x) => sayiCoz(x[1])).filter((n) => n >= 100)
+      ),
+    ].sort((a, b) => a - b);
+    return m.length ? m : null;
+  };
+  const RENK = [
+    [500, 620, '#16a34a'],
+    [620, 780, '#dc2626'],
+    [780, 1000, '#b45309'],
+    [1000, 1400, '#7c3aed'],
+    [1400, 99999, '#0369a1'],
+  ];
+  const cip = (nm) => {
+    const r = RENK.find(([a, b]) => nm >= a && nm < b) || RENK[4];
+    return `<span class="dalga-cip" style="color:${r[2]};border-color:${r[2]}40;background:${r[2]}12">${nm} nm</span>`;
+  };
+
+  const satirlar = cihazlar
+    .map((c) => {
+      const dalgaMetin = bul(c, 'dalga boy', 'dalgaboy', 'lazer ortamı', 'sistem');
+      const nm = nmCikar(dalgaMetin) || nmCikar(c.oneCikan) || nmCikar(c.etiketler.join(' '));
+      const guc = bul(c, 'çıkış gücü', 'güç', 'enerji', 'fluence', 'maksimum fluens');
+      const spot = bul(c, 'spot');
+      const frekans = bul(c, 'frekans', 'tekrarlama', 'atış hızı', 'atım hızı');
+      const y = icerik.yetkiler[c.yetki];
+      return { c, nm, guc, spot, frekans, y };
+    })
+    .sort((a, b) => (a.nm ? a.nm[0] : 99999) - (b.nm ? b.nm[0] : 99999));
+
+  const govde = `
+<section class="sayfa-bas"><div class="kap">
+  ${kirinti('', [{ ad: 'Araçlar' }, { ad: 'Teknik Matris' }])}
+  <span class="ust-etiket" style="margin-top:1rem">28 cihaz · tek tablo</span>
+  <h1>Dalga boyu ve teknik matris</h1>
+  <p class="giris">Katalog sayfaları arasında gezinmeden tüm portföyü tek teknik tabloda görün.
+    Sütun başlığına tıklayarak sıralayın, arayarak süzün.</p>
+</div></section>
+
+<section class="bolum"><div class="kap">
+  <div class="filtre-ic" style="margin-bottom:1.4rem">
+    <div class="f-ara">${ikon.ara}<input type="search" data-matris-ara placeholder="Cihaz, marka, dalga boyu veya teknoloji…" aria-label="Matriste ara"></div>
+    <span class="f-sonuc" data-matris-sayi>${cihazlar.length} cihaz</span>
+  </div>
+
+  <div class="kars-tablo matris" data-matris>
+    <table>
+      <thead><tr>
+        <th class="sirala">Cihaz</th>
+        <th class="sirala" data-tip="sayi">Dalga boyu</th>
+        <th class="sirala">Kategori</th>
+        <th class="sirala">Güç / enerji</th>
+        <th class="sirala">Spot</th>
+        <th class="sirala">Frekans</th>
+        <th class="sirala">Kimler kullanabilir</th>
+      </tr></thead>
+      <tbody>
+        ${satirlar
+          .map(
+            ({ c, nm, guc, spot, frekans, y }) => `<tr data-arama="${kacis(
+            P.aramaNorm(
+              [c.ad, c.marka, c.kategoriAd, c.rozet, c.oneCikan, y.ad, ...(c.etiketler || []), ...(c.spec || []).map((s) => s.deger)].join(' ')
+            )
+          )}">
+          <td class="ad"><a href="cihaz/${c.slug}.html">${kacis(c.ad)}</a><br><span class="sonuk" style="font-size:.78rem;font-weight:400">${kacis(c.marka)}</span></td>
+          <td data-s="${nm ? nm[0] : 99999}">${nm ? nm.map(cip).join('') : '<span class="sonuk">—</span>'}</td>
+          <td>${kacis(c.kategoriAd)}</td>
+          <td class="mono-h">${kacis(guc) || '<span class="sonuk">—</span>'}</td>
+          <td class="mono-h">${kacis(spot) || '<span class="sonuk">—</span>'}</td>
+          <td class="mono-h">${kacis(frekans) || '<span class="sonuk">—</span>'}</td>
+          <td><span class="yetki-pul"><span class="d" style="background:${y.renk}"></span>${y.kisa}</span></td>
+        </tr>`
+          )
+          .join('')}
+      </tbody>
+    </table>
+  </div>
+
+  <p class="sonuk" style="font-size:.82rem;margin-top:1.1rem;max-width:90ch">
+    Değerler cihaz künyelerinden çıkarılmıştır ve üretici beyanına dayanır; konfigürasyona göre değişebilir.
+    Boş hücreler, o cihazın künyesinde ilgili değerin bulunmadığı anlamına gelir.
+    Kesin değerler teklif aşamasında yazılı teyit edilir. "Kimler kullanabilir" sütunu ön bilgilendirmedir.
+  </p>
+
+  <div class="izgara izgara-4" style="margin-top:2rem">
+    ${[
+      ['620–780 nm', 'Alexandrite bandı — açık ve orta cilt tiplerinde epilasyon', '#dc2626'],
+      ['780–1000 nm', 'Diode bandı — geniş cilt tipi aralığı, yüksek hacim', '#b45309'],
+      ['1000–1400 nm', 'Nd:YAG / endolazer — koyu cilt ve derin doku', '#7c3aed'],
+      ['1400 nm üstü', 'CO2 fraksiyonel — ablatif cilt yenileme', '#0369a1'],
+    ]
+      .map(
+        ([ad, ac, renk]) => `<div class="kart" style="padding:1.1rem;border-top:3px solid ${renk}">
+      <b class="mono" style="font-size:.85rem;color:${renk}">${ad}</b>
+      <p style="font-size:.85rem;margin-top:.4rem">${ac}</p></div>`
+      )
+      .join('')}
+  </div>
+</div></section>
+
+${cta('', 'Tabloda gördüğünüzü sahada görün', 'İlgilendiğiniz iki üç platformu söyleyin; Ankara showroom’umuzda yan yana çalışır halde hazırlayalım.')}`;
+
+  yaz(
+    'teknik-matris.html',
+    sayfa(
+      {
+        baslik: 'Dalga Boyu ve Teknik Matris — Estezone Medikal',
+        aciklama:
+          '28 estetik cihaz platformunun dalga boyu, güç, spot boyutu ve frekans değerleri tek karşılaştırmalı tabloda. Sıralanabilir ve süzülebilir.',
+        aktif: 'cihazlar.html',
+        kanonik: 'teknik-matris.html',
+      },
+      govde
+    )
+  );
+}
+
 anasayfa();
+dalgaBoyuMatrisi();
 cihazListesi();
 kategoriSayfalari();
 cihazSayfalari();
@@ -654,8 +792,32 @@ function kopyala() {
   fs.mkdirSync(path.join(CIKTI, 'varlik/css'), { recursive: true });
   fs.mkdirSync(path.join(CIKTI, 'varlik/js'), { recursive: true });
   fs.mkdirSync(path.join(CIKTI, 'varlik/gorsel'), { recursive: true });
-  fs.copyFileSync(path.join(KOK, 'sablon/stil.css'), path.join(CIKTI, 'varlik/css/stil.css'));
+  fs.copyFileSync(path.join(KOK, `sablon/stil-${TEMA}.css`), path.join(CIKTI, 'varlik/css/stil.css'));
   fs.copyFileSync(path.join(KOK, 'sablon/site.js'), path.join(CIKTI, 'varlik/js/site.js'));
+
+  // paylaşımlı cihaz verisi — asistan, danışman, karşılaştırma bunu kullanır
+  const istemci = cihazlar.map((c) => ({
+    slug: c.slug,
+    ad: c.ad,
+    marka: c.marka,
+    kategori: c.kategori,
+    kategoriAd: c.kategoriAd,
+    yetki: c.yetki,
+    rozet: c.rozet || '',
+    vitrin: c.vitrin,
+    oneCikan: c.oneCikan,
+    etiketler: c.etiketler,
+    etiketSayi: (c.etiketler || []).length,
+    hedef: c.hedef,
+    neden: c.neden,
+    gorsel: `varlik/gorsel/${c.kapak}`,
+    url: `cihaz/${c.slug}.html`,
+  }));
+  fs.writeFileSync(
+    path.join(CIKTI, 'varlik/js/cihazlar.js'),
+    `window.ESTEZONE_CIHAZLAR=${JSON.stringify(istemci)};`,
+    'utf8'
+  );
 
   const kaynak = path.join(KOK, 'kaynak/gorsel');
   const gerekli = new Set();
@@ -681,7 +843,9 @@ function sitemap() {
   const url = [];
   const gez = (dizin, on = '') => {
     fs.readdirSync(path.join(CIKTI, dizin), { withFileTypes: true }).forEach((e) => {
-      if (e.isDirectory() && e.name !== 'varlik') gez(path.join(dizin, e.name), `${on}${e.name}/`);
+      // 'v2' = diğer tema sürümü, bu sitemap'e girmez
+      if (e.isDirectory() && e.name !== 'varlik' && e.name !== 'v2')
+        gez(path.join(dizin, e.name), `${on}${e.name}/`);
       else if (e.name.endsWith('.html') && e.name !== '404.html')
         url.push(`${on}${e.name === 'index.html' && !on ? '' : e.name}`);
     });

@@ -5,6 +5,21 @@
   const $$ = (s, k = document) => [...k.querySelectorAll(s)];
   const TR = (n) => new Intl.NumberFormat('tr-TR').format(Math.round(n));
 
+  /* Arama normalizasyonu — Türkçe noktasız ı tuzağı.
+     "HIFU".toLocaleLowerCase('tr') = "hıfu" olur, kullanıcının yazdığı "hifu" tutmazdı.
+     parcalar.js içindeki aramaNorm() ile BİREBİR aynı olmalı. */
+  const norm = (s) =>
+    String(s || '')
+      .toLocaleLowerCase('tr')
+      .replace(/[ıİI]/g, 'i')
+      .replace(/[şŞ]/g, 's')
+      .replace(/[ğĞ]/g, 'g')
+      .replace(/[üÜ]/g, 'u')
+      .replace(/[öÖ]/g, 'o')
+      .replace(/[çÇ]/g, 'c')
+      .replace(/\s+/g, ' ')
+      .trim();
+
   /* ---- yapışkan başlık ---- */
   const ust = $('.ust');
   if (ust) {
@@ -64,7 +79,7 @@
     let yetki = 'hepsi';
 
     const uygula = () => {
-      const q = (aramaEl?.value || '').trim().toLocaleLowerCase('tr');
+      const q = norm(aramaEl?.value);
       let n = 0;
       kartlar.forEach((k) => {
         const kUygun = kategori === 'hepsi' || k.dataset.k === kategori;
@@ -319,4 +334,188 @@
 
   /* ---- yıl ---- */
   $$('[data-yil]').forEach((e) => (e.textContent = new Date().getFullYear()));
+
+  /* =========================================================================
+     AI CİHAZ ASİSTANI
+     Demo sürümü: anahtarsız, kural tabanlı. Cihaz verisinden cevap üretir.
+     Canlıda aynı arayüz OpenAI'ye bağlanır; kurallar sistem promptuna taşınır.
+     KURAL: teşhis/tedavi önerisi VERMEZ, fiyat SÖYLEMEZ, uydurmaz.
+     ========================================================================= */
+  const asistan = $('[data-asistan]');
+  if (asistan && window.ESTEZONE_CIHAZLAR) {
+    const C = window.ESTEZONE_CIHAZLAR;
+    const govde = $('[data-asistan-govde]', asistan);
+    const oneriKap = $('[data-asistan-oneri]', asistan);
+    const form = $('[data-asistan-form]', asistan);
+    const girdi = $('input', form);
+    const kok = document.querySelector('link[rel=stylesheet][href*="varlik/css"]')
+      ? document.querySelector('link[rel=stylesheet][href*="varlik/css"]').getAttribute('href').replace('varlik/css/stil.css', '')
+      : '';
+
+
+    const ONERILER = [
+      'Alexandrite cihazlarınız neler?',
+      'Salonuma hangi cihazı alabilirim?',
+      'Dövme silme için ne önerirsiniz?',
+      'Teknik servis veriyor musunuz?',
+      'Fiyat öğrenebilir miyim?',
+      'Kiralama var mı?',
+    ];
+
+    let acildi = false;
+    const balon = (html, kim = 'bot') => {
+      const d = document.createElement('div');
+      d.className = `balon ${kim}`;
+      d.innerHTML = html;
+      govde.appendChild(d);
+      govde.scrollTop = govde.scrollHeight;
+      return d;
+    };
+    const yaz = (html) => {
+      const b = balon('<span style="opacity:.5">yazıyor…</span>');
+      setTimeout(() => {
+        b.innerHTML = html;
+        govde.scrollTop = govde.scrollHeight;
+      }, 380);
+    };
+    const cihazKarti = (c) =>
+      `<a class="kart-mini" href="${kok}${c.url}">
+        <img src="${kok}${c.gorsel}" alt="" loading="lazy">
+        <span><strong>${c.ad}</strong><span>${c.marka} · ${c.oneCikan}</span></span></a>`;
+
+    const listele = (dizi, oncesi) =>
+      oncesi + dizi.slice(0, 3).map(cihazKarti).join('') +
+      (dizi.length > 3 ? `<p style="margin-top:.5rem;font-size:.82rem">…ve ${dizi.length - 3} cihaz daha. <a href="${kok}cihazlar.html">Tümünü görün</a></p>` : '');
+
+    function cevapla(soru) {
+      const q = norm(soru);
+      const gecer = (...k) => k.some((x) => q.includes(x));
+
+      // --- güvenlik kapısı: tıbbi tavsiye istenirse reddet ---
+      if (gecer('bende ', 'benim cildim', 'hastayim', 'tedavi olabilir', 'bana iyi gelir', 'agriyor', 'sorunum var', 'tesh'))
+        return 'Ben bir cihaz asistanıyım; kişiye yönelik tıbbi değerlendirme yapamam. Uygulama kararı için hekiminize ya da hizmet aldığınız kliniğe danışmalısınız. Cihazların teknik özellikleri konusunda yardımcı olabilirim.';
+
+      // --- fiyat ---
+      if (gecer('fiyat', 'ucret', 'kac para', 'ne kadar', 'maliyet', 'butce'))
+        return `Cihaz fiyatlarını sitede yayınlamıyoruz — aynı cihaz başlık konfigürasyonu, sarf paketi, eğitim ve garanti süresine göre farklı bedelle çıkıyor. <a href="${kok}iletisim.html">Teklif formunu</a> doldurursanız envanterinize göre net fiyat çıkarırız.<br><br>Bu arada <a href="${kok}yatirim-hesaplayici.html">yatırım geri dönüş hesaplayıcısıyla</a> cihazın kaç ayda kendini ödeyeceğini şimdiden görebilirsiniz.`;
+
+      // --- işletme türü / mevzuat ---
+      if (gecer('salon', 'guzellik merkezi', 'klinik mi', 'yetki', 'mevzuat', 'ruhsat', 'uts', 'alabilir miyim')) {
+        const salon = C.filter((c) => c.yetki === 'salon');
+        return listele(
+          salon,
+          `Bu tamamen işletme türünüze bağlı. <b>Güzellik salonları</b> lazer sınıfı cihazları bulunduramaz; Alexandrite, Nd:YAG, CO2 gibi sistemler poliklinik/tıp merkezi/hastane gerektirir.<br><br>Salon için uygun görünen cihazlar:`
+        ) + `<p style="margin-top:.5rem;font-size:.82rem"><a href="${kok}cihazlar.html">Cihaz listesinde</a> "İşletme türüm" filtresini kullanabilirsiniz. Kesin durum ÜTS kaydınız ve ruhsat tipinizle teyit edilir.</p>`;
+      }
+
+      // --- servis ---
+      if (gecer('servis', 'ariza', 'tamir', 'onarim', 'yedek parca', 'lamba', 'bakim'))
+        return `Evet — kendi atölyemizde onarım yapıyoruz, üstelik <b>bizden almadığınız cihazlar için de</b>. Flash lamba, pompa haznesi, optik lens, fiber optik, güç kaynağı, diode başlık ve soğutma sistemi müdahaleleri kapsamda.<br><br>Cihazın marka ve modelini yazarsanız parça durumunu söyleyebilirim: <a href="${kok}teknik-servis.html">Teknik servis sayfası</a>`;
+
+      // --- kiralama / 2. el ---
+      if (gecer('kirala', 'ikinci el', '2. el', 'takas', 'taksit', 'finansman'))
+        return `Kiralama, kontrollü ikinci el ve takas seçeneklerimiz var. İkinci el cihazlar atölyemizden geçmeden teslim edilmez; atış sayısı ve lamba ömrü yazılı beyan edilir.<br><br><a href="${kok}kiralama-ikinci-el.html">Kiralama & 2. el sayfası</a>`;
+
+      // --- teknoloji eşleşmeleri ---
+      const TEKNOLOJI = [
+        [['alexandrite', 'aleksandrit', '755'], 'Alexandrite (755 nm) platformlarımız:', (c) => /alexandrite|755/i.test(c.etiketler.join(' ') + c.oneCikan)],
+        [['diode', 'diyot', '808'], 'Diode / mix atışlı sistemlerimiz:', (c) => /diode|808|mix/i.test(c.etiketler.join(' ') + c.oneCikan + c.ad)],
+        [['nd:yag', 'ndyag', 'nd yag', '1064'], 'Nd:YAG (1064 nm) sistemlerimiz:', (c) => /nd:yag|1064/i.test(c.etiketler.join(' ') + c.oneCikan)],
+        [['dovme', 'leke', 'pigment', 'pico', 'melazma'], 'Leke ve dövme için pigment hedefleyen sistemler:', (c) => /pico|q-switch|dovme|leke|pigment/i.test(norm(c.etiketler.join(' ') + c.oneCikan + c.neden))],
+        [['co2', 'fraksiyonel', 'skar', 'iz'], 'Fraksiyonel CO2 sistemimiz:', (c) => /co2/i.test(c.etiketler.join(' ') + c.ad)],
+        [['zayifla', 'incel', 'lipoliz', 'yag', 'kilo', 'selulit'], 'Vücut şekillendirme ve bölgesel incelme hattı:', (c) => c.kategori === 'vucut'],
+        [['kas', 'emt', 'hiemt', 'sculpt'], 'Kas uyarımı (HI-EMT) platformlarımız:', (c) => /emt|sculpt/i.test(norm(c.ad + c.etiketler.join(' ')))],
+        [['hifu', 'germe', 'sarkma', 'sikilas'], 'Cilt sıkılaştırma ve germe için:', (c) => /hifu|lifu|endolazer|rf/i.test(norm(c.etiketler.join(' ') + c.oneCikan))],
+        [['epilasyon', 'tuy', 'agda', 'lazer epilasyon'], 'Lazer epilasyon platformlarımız:', (c) => c.kategori === 'epilasyon'],
+        [['cilt bakim', 'hydra', 'peeling', 'bakim'], 'Cilt bakım hattı:', (c) => c.kategori === 'cilt'],
+        [['sogutma', 'agri', 'konfor', 'zimmer'], 'Uygulama konforu için soğutma sistemlerimiz:', (c) => c.kategori === 'destek'],
+        [['gozluk', 'koruyucu', 'guvenlik'], 'Dalga boyuna özel koruyucu gözlüklerimiz:', (c) => /gozluk/i.test(norm(c.ad))],
+      ];
+      for (const [anahtarlar, giris, sec] of TEKNOLOJI) {
+        if (gecer(...anahtarlar)) {
+          const bulunan = C.filter(sec);
+          if (bulunan.length) return listele(bulunan, giris + '<br>');
+        }
+      }
+
+      // --- cihaz adıyla doğrudan arama ---
+      const adEsleme = C.filter((c) => norm(c.ad).includes(q) || norm(c.marka).includes(q) || q.includes(norm(c.ad)));
+      if (q.length > 2 && adEsleme.length)
+        return listele(adEsleme, `Aradığınız cihaz${adEsleme.length > 1 ? 'lar' : ''}:<br>`);
+
+      // --- selam / genel ---
+      if (gecer('merhaba', 'selam', 'iyi gunler', 'kolay gelsin'))
+        return 'Merhaba. Estezone portföyündeki 28 cihazı biliyorum — teknoloji, kimin kullanabileceği, servis kapsamı gibi konularda yardımcı olabilirim. Ne arıyorsunuz?';
+      if (gecer('tesekkur', 'sagol', 'eyvallah'))
+        return 'Rica ederim. Somut bir teklif isterseniz <a href="' + kok + 'iletisim.html">buradan</a> ulaşabilir ya da 0312 466 66 86 numarasını arayabilirsiniz.';
+
+      // --- anlaşılmadı ---
+      return `Bunu tam çözemedim. Şunları deneyebilirsiniz: bir <b>teknoloji</b> (Alexandrite, diode, CO2, HIFU, soğuk lipoliz), bir <b>ihtiyaç</b> (epilasyon, leke, dövme, bölgesel incelme) ya da bir <b>cihaz adı</b> yazın.<br><br>Alternatif olarak <a href="${kok}cihaz-secim-danismani.html">seçim danışmanımız</a> üç soruyla size uygun platformu bulur.`;
+    }
+
+    const ac = () => {
+      asistan.hidden = false;
+      if (!acildi) {
+        acildi = true;
+        balon(
+          'Merhaba. Estezone <b>cihaz asistanıyım</b>. Portföydeki 28 platformu, hangi işletme türünün hangi cihazı bulundurabileceğini ve servis kapsamımızı biliyorum.<br><br>Tıbbi teşhis veya tedavi önerisi vermem — cihaz sorularınız için buradayım.'
+        );
+        oneriKap.innerHTML = ONERILER.map((o) => `<button type="button">${o}</button>`).join('');
+        $$('button', oneriKap).forEach((b) =>
+          b.addEventListener('click', () => {
+            balon(b.textContent, 'ben');
+            yaz(cevapla(b.textContent));
+          })
+        );
+      }
+      setTimeout(() => girdi.focus(), 80);
+    };
+
+    $('[data-asistan-ac]')?.addEventListener('click', () => (asistan.hidden ? ac() : (asistan.hidden = true)));
+    $('[data-asistan-kapat]', asistan)?.addEventListener('click', () => (asistan.hidden = true));
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const s = girdi.value.trim();
+      if (!s) return;
+      balon(s, 'ben');
+      girdi.value = '';
+      yaz(cevapla(s));
+    });
+  }
+
+  /* ---- dalga boyu matrisi: sıralama + arama ---- */
+  const matris = $('[data-matris]');
+  if (matris) {
+    const govde = $('tbody', matris);
+    const satirlar = () => $$('tr', govde);
+    $$('th.sirala', matris).forEach((th, i) =>
+      th.addEventListener('click', () => {
+        const yon = th.dataset.yon === 'asc' ? 'desc' : 'asc';
+        $$('th.sirala', matris).forEach((x) => delete x.dataset.yon);
+        th.dataset.yon = yon;
+        const idx = [...th.parentNode.children].indexOf(th);
+        const sayisal = th.dataset.tip === 'sayi';
+        satirlar()
+          .sort((a, b) => {
+            const x = a.cells[idx].dataset.s ?? a.cells[idx].textContent.trim();
+            const y = b.cells[idx].dataset.s ?? b.cells[idx].textContent.trim();
+            const r = sayisal ? (parseFloat(x) || 0) - (parseFloat(y) || 0) : x.localeCompare(y, 'tr');
+            return yon === 'asc' ? r : -r;
+          })
+          .forEach((tr) => govde.appendChild(tr));
+      })
+    );
+    $('[data-matris-ara]')?.addEventListener('input', (e) => {
+      const q = norm(e.target.value);
+      let n = 0;
+      satirlar().forEach((tr) => {
+        const havuz = (tr.dataset.arama || '') + ' ' + norm(tr.textContent);
+        const gor = !q || havuz.includes(q);
+        tr.classList.toggle('gizli', !gor);
+        if (gor) n++;
+      });
+      const s = $('[data-matris-sayi]');
+      if (s) s.textContent = `${n} cihaz`;
+    });
+  }
 })();
