@@ -468,6 +468,28 @@ ${cta('', 'Bütçenizi söyleyin, seçenekleri çıkaralım', 'Peşin, taksitli,
           <label class="alan"><span>E-posta</span><input type="email" autocomplete="email"></label>
           <label class="alan"><span>İşletme / şehir</span><input></label>
         </div>
+        <div class="alan-2">
+          <label class="alan"><span>İşletme türü</span>
+            <select name="isletme" required>
+              <option value="">— seçiniz —</option>
+              ${Object.entries(icerik.yetkiler)
+                .map(([k, y]) => `<option value="${k}">${y.ad}</option>`)
+                .join('')}
+              <option value="diger">Diğer / henüz kurulmadı</option>
+            </select></label>
+          <label class="alan"><span>Vergi numarası</span><input name="vergi" inputmode="numeric"></label>
+        </div>
+        <label class="alan"><span>ÜTS kaydınız var mı?</span>
+          <select name="uts">
+            <option value="">— seçiniz —</option>
+            <option>Evet, ÜTS'ye kayıtlıyız</option>
+            <option>Hayır, henüz kayıtlı değiliz</option>
+            <option>Emin değilim / bilgi almak istiyorum</option>
+          </select></label>
+        <p class="sonuk" style="font-size:.79rem;line-height:1.55;margin:-.4rem 0 1.1rem">
+          İşletme türü, vergi numarası ve ÜTS kaydı; Tıbbi Cihaz Satış, Reklam ve Tanıtım Yönetmeliği
+          md.26/7 gereği tıbbi cihaz satışında sorulması gereken bilgilerdir. Hangi cihazı
+          bulundurabileceğinizi de bu bilgiler belirler.</p>
         <label class="alan"><span>Mesajınız</span><textarea placeholder="Günlük seans hacminiz, mevcut cihaz envanteriniz ve hedefiniz hakkında kısa bilgi verirseniz daha net bir teklif hazırlayabiliriz."></textarea></label>
         <label style="display:flex;gap:.65rem;align-items:flex-start;font-size:.845rem;color:var(--metin-2);margin-bottom:1.2rem">
           <input type="checkbox" required style="width:auto;margin-top:.25rem">

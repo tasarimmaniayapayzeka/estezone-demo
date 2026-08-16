@@ -62,7 +62,7 @@ module.exports = {
       etiketler: ['Alexandrite', '755 nm', '700 J/cm²', 'ABD'],
       hedef: 'Referans kalite arayan hastane ve büyük klinikler',
       neden:
-        'Long pulse Alexandrite kategorisinin referans platformu; LP ve LPX seçenekleriyle güç ihtiyacına göre ölçeklenir.',
+        'ABD üretimi long pulse Alexandrite platformu; LP ve LPX seçenekleriyle güç ihtiyacına göre ölçeklenir.',
     },
     'light-age-epicare-duo': {
       kategori: 'epilasyon',
@@ -96,7 +96,7 @@ module.exports = {
       etiketler: ['Alexandrite', '755 nm', '80 J'],
       hedef: 'Güzellik salonları ve orta ölçekli klinikler',
       neden:
-        'Kore pazarının en büyük üreticilerinden FineMEC imzalı long pulse Alexandrite; triple pulse ile konforlu uygulama.',
+        'Kore’nin köklü lazer üreticilerinden FineMEC imzalı long pulse Alexandrite; triple pulse ile konforlu uygulama.',
     },
     nobleen: {
       kategori: 'epilasyon',
@@ -345,7 +345,7 @@ module.exports = {
       etiketler: ['Soğutma', 'Class IIa', 'Almanya'],
       hedef: 'Konforu farklılaştırıcı olarak satan tüm merkezler',
       neden:
-        'Sektörün referans soğutma sistemi; -30 °C hava ile lazer ve IPL uygulamalarında ağrıyı belirgin azaltır.',
+        'Alman üretimi soğutma sistemi; -30 °C hava ile lazer ve IPL uygulamalarında hasta konforunu belirgin yükseltir.',
     },
     epicool: {
       kategori: 'destek',

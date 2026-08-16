@@ -51,22 +51,26 @@
     belirler.forEach((el) => el.classList.add('gorundu'));
   }
 
-  /* ---- cihaz filtresi + arama ---- */
+  /* ---- cihaz filtresi + arama + işletme türü ---- */
   const filtre = $('[data-filtre]');
   if (filtre) {
     const kartlar = $$('[data-cihaz]');
     const sayacEl = $('[data-sonuc-sayi]');
     const bosEl = $('[data-bos]');
     const aramaEl = $('[data-ara]');
+    // bir işletme türü, kendi seviyesindeki ve altındaki cihazları bulundurabilir
+    const KAPSAM = { salon: ['salon'], merkez: ['salon', 'merkez'], tibbi: ['salon', 'merkez', 'tibbi'] };
     let kategori = 'hepsi';
+    let yetki = 'hepsi';
 
     const uygula = () => {
       const q = (aramaEl?.value || '').trim().toLocaleLowerCase('tr');
       let n = 0;
       kartlar.forEach((k) => {
         const kUygun = kategori === 'hepsi' || k.dataset.k === kategori;
+        const yUygun = yetki === 'hepsi' || (KAPSAM[yetki] || []).includes(k.dataset.y);
         const qUygun = !q || (k.dataset.arama || '').includes(q);
-        const gor = kUygun && qUygun;
+        const gor = kUygun && yUygun && qUygun;
         k.classList.toggle('gizli', !gor);
         if (gor) n++;
       });
@@ -81,12 +85,47 @@
         uygula();
       })
     );
+    $$('[data-y-filtre]').forEach((b) =>
+      b.addEventListener('click', () => {
+        yetki = b.dataset.yFiltre;
+        $$('[data-y-filtre]').forEach((x) => x.setAttribute('aria-pressed', x === b));
+        uygula();
+      })
+    );
     aramaEl?.addEventListener('input', uygula);
 
     // ?k=kategori ile derin bağlantı
     const url = new URLSearchParams(location.search).get('k');
     if (url) $(`[data-k-filtre="${CSS.escape(url)}"]`)?.click();
     else uygula();
+  }
+
+  /* ---- çerez rızası (kabul/ret eşit ağırlıkta, rıza kaydı tutulur) ---- */
+  const cerez = $('[data-cerez]');
+  if (cerez) {
+    const ANAHTAR = 'estezone-cerez';
+    let mevcut = null;
+    try {
+      mevcut = localStorage.getItem(ANAHTAR);
+    } catch (e) {
+      /* depolama kapalı */
+    }
+    if (!mevcut) cerez.hidden = false;
+
+    const kaydet = (karar) => {
+      try {
+        localStorage.setItem(ANAHTAR, JSON.stringify({ karar, tarih: new Date().toISOString() }));
+      } catch (e) {
+        /* yoksay */
+      }
+      cerez.hidden = true;
+      // Canlıda: yalnızca karar === 'kabul' ise ölçüm/reklam script'i buradan yüklenir.
+    };
+    $('[data-cerez-kabul]', cerez)?.addEventListener('click', () => kaydet('kabul'));
+    $('[data-cerez-ret]', cerez)?.addEventListener('click', () => kaydet('ret'));
+    $('[data-cerez-yonet]', cerez)?.addEventListener('click', () => {
+      location.href = cerez.querySelector('a')?.getAttribute('href') || 'cerez.html';
+    });
   }
 
   /* ---- cihaz galerisi ---- */

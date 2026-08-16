@@ -61,6 +61,35 @@ site/                ÜRETİLEN ÇIKTI — elle düzenlenmez
   ayrı iki sayfa). `cihaz-meta.js` içinde `birlesme_adayi` olarak işaretlendi — canlıya geçişte
   biri 301 ile diğerine yönlendirilmeli.
 
+## Mevzuat katmanı
+
+`sablon/mevzuat.js` — kaynak siteden gelen **her metin** build sırasında bu süzgeçten geçer.
+Tıbbi Cihaz Satış, Reklam ve Tanıtım Yönetmeliği (15/5/2014, değ. 2023/2025) uyarınca:
+
+| Süzülen | Yerine |
+|---|---|
+| "FDA Onaylı" (numarasız) | "FDA 510(k) izinli" / künyede K-numarası |
+| "en kalıcı epilasyon sonuçları" | "kalıcı tüy azaltmada yaygın tercih edilen" |
+| "dünyanın en iyi kullanıcı arayüzü" | "gelişmiş kullanıcı arayüzü" |
+| "%100 lot testi", "daha güvenli tedavi" | ölçülebilir/nötr ifade |
+
+Ayrıca eklendi: **24 ay asgari garanti bloğu** (md.25/2, 25/A–25/Ç — 1.1.2025'ten zorunlu),
+**işletme türü uygunluk rozeti + filtresi**, **eşit ağırlıklı çerez rızası** (rıza kaydı zaman damgalı),
+**6563 md.3 künye alanları**, formda **işletme türü + vergi no + ÜTS kaydı** (md.26/7).
+Sepet/online ödeme **yoktur** (md.26/4 — Ek-3 dışı cihazların internetten satışı yasak).
+
+> ⚠ **Teyit bekleyen:** İşletme türü sınıflandırması (17 tıbbi / 7 merkez / 4 salon) cihaz
+> teknolojisinden türetilmiş **ön bilgilendirmedir**. Dayanak olarak gösterilen "salon yalnızca
+> 600–1200 nm IPL ve ≤20 J/cm² diyot" kuralının numara ve tarihli kaynağı doğrulanmadı.
+> Yayına almadan önce hukuk danışmanı onayı gerekir — bkz. `notlar/ACIK-RISKLER.md` madde 4.
+
+## Analiz belgeleri (`notlar/`)
+
+- **ANALIZ-RAPORU.md** — 8 paralel denetçinin (tasarım, teknik, SEO, ürün, dönüşüm, referans,
+  rakip, mevzuat) bulgularının konsolidasyonu; mevcut sitenin röntgeni + 12 bölümlük şartname
+- **MUSTERIYE-SORULACAKLAR.md** — Faz 1 başlamadan Estezone'dan alınması gereken 28 bilgi
+- **ACIK-RISKLER.md** — analizin kendi doğrulanmamış iddiaları (sunum öncesi okunmalı)
+
 ## Dikkat
 
 - Formlar **demo**dur; gönderimde bilgilendirme notu gösterilir, hiçbir yere veri gitmez.

@@ -61,6 +61,7 @@ function kafa({ baslik, aciklama, yol = '', kanonik, sema, gorsel }) {
 <meta name="description" content="${kacis(aciklama)}">
 <link rel="canonical" href="${SITE}/${kanonik || ''}">
 <meta name="theme-color" content="#06090f">
+<meta name="robots" content="noindex, nofollow">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="${marka.ad}">
 <meta property="og:title" content="${kacis(baslik)}">
@@ -112,6 +113,14 @@ function ust(yol = '', aktif = '') {
   ).join('');
 
   return `<a class="atla" href="#ana">İçeriğe atla</a>
+<div class="demo-bant" role="note">
+  <div class="kap demo-bant-ic">
+    <span class="demo-etiket">TASARIM DEMOSU</span>
+    <p>Bu sayfa <b>resmî Estezone Medikal sitesi değildir.</b> TasarımMania tarafından hazırlanmış,
+      onaylanmamış bir tasarım önerisidir. Gerçek site:
+      <a href="https://estezone.com.tr" rel="noopener nofollow" target="_blank">estezone.com.tr</a></p>
+  </div>
+</div>
 <header class="ust">
   <div class="kap ust-ic">
     <a class="logo" href="${k}index.html"><span class="logo-im">${ikon.logo}</span><span><b>Estezone</b> <span>Medikal</span></span></a>
@@ -180,6 +189,19 @@ function alt(yol = '') {
         </ul>
       </div>
     </div>
+    <div class="kunye">
+      <h5>Künye</h5>
+      <div class="kunye-izgara">
+        ${icerik.kunye.alanlar
+          .map(
+            ([ad, deger]) =>
+              `<div><span>${ad}</span><b class="${deger ? '' : 'bekliyor'}">${deger || 'firmadan alınacak'}</b></div>`
+          )
+          .join('')}
+      </div>
+      <p class="sonuk" style="font-size:.74rem;margin-top:.8rem">6563 sayılı Elektronik Ticaretin Düzenlenmesi
+        Hakkında Kanun md.3 uyarınca zorunlu künye alanlarıdır. Demo sürümde boş bırakılmıştır.</p>
+    </div>
     <div class="alt-son">
       <span>© <span data-yil>2026</span> ${marka.ad}. Tüm hakları saklıdır.</span>
       <div class="alt-yasal">
@@ -196,6 +218,20 @@ function alt(yol = '') {
 <div class="yuzen">
   <a class="wa" href="https://wa.me/${iletisim.whatsappHam}" aria-label="WhatsApp ile yazın" target="_blank" rel="noopener">${ikon.wa}</a>
   <a class="tel" href="tel:${iletisim.telefonHam}" aria-label="Telefonla arayın">${ikon.tel}</a>
+</div>
+<div class="cerez" data-cerez hidden role="dialog" aria-label="Çerez tercihleri">
+  <div class="cerez-ic">
+    <div>
+      <b>Çerez tercihleriniz</b>
+      <p>Sitenin çalışması için zorunlu çerezler kullanılır. Analitik ve pazarlama çerezleri
+        yalnızca onay verirseniz çalıştırılır. Ayrıntı: <a href="${k}cerez.html">Çerez Politikası</a></p>
+    </div>
+    <div class="cerez-dug">
+      <button class="btn btn-hat btn-k" data-cerez-ret>Reddet</button>
+      <button class="btn btn-hat btn-k" data-cerez-yonet>Tercihleri yönet</button>
+      <button class="btn btn-ana btn-k" data-cerez-kabul>Kabul et</button>
+    </div>
+  </div>
 </div>
 <script src="${k}varlik/js/site.js" defer></script>`;
 }
@@ -220,10 +256,11 @@ ${alt(opt.yol)}
 /* ---------- kart ---------- */
 function cihazKart(c, yol = '') {
   const k = yol ? '../' : '';
-  const arama = [c.ad, c.marka, c.oneCikan, ...(c.etiketler || []), c.kategoriAd, c.rozet]
+  const y = icerik.yetkiler[c.yetki] || icerik.yetkiler.tibbi;
+  const arama = [c.ad, c.marka, c.oneCikan, ...(c.etiketler || []), c.kategoriAd, c.rozet, y.ad]
     .join(' ')
     .toLocaleLowerCase('tr');
-  return `<a class="c-kart belir" data-cihaz data-k="${c.kategori}" data-arama="${kacis(arama)}" href="${k}cihaz/${c.slug}.html">
+  return `<a class="c-kart belir" data-cihaz data-k="${c.kategori}" data-y="${c.yetki}" data-arama="${kacis(arama)}" href="${k}cihaz/${c.slug}.html">
   <div class="c-kart-gor">
     ${c.rozet ? `<span class="c-kart-rozet">${kacis(c.rozet)}</span>` : ''}
     <img src="${k}varlik/gorsel/${c.kapak}" alt="${kacis(c.ad)} — ${kacis(c.marka)}" loading="lazy" width="400" height="300">
@@ -238,7 +275,10 @@ function cihazKart(c, yol = '') {
       .map((e) => `<span class="pul">${kacis(e)}</span>`)
       .join('')}</div>
   </div>
-  <div class="c-kart-alt"><span class="sonuk">${kacis(c.kategoriAd)}</span><span class="git">İncele ${ikon.ok}</span></div>
+  <div class="c-kart-alt">
+    <span class="yetki-pul" title="Bu cihazı bulundurabilecek işletme türü (ön bilgilendirme)">
+      <span class="d" style="background:${y.renk}"></span>${y.kisa}</span>
+    <span class="git">İncele ${ikon.ok}</span></div>
 </a>`;
 }
 

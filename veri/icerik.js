@@ -198,10 +198,106 @@ module.exports = {
     },
   ],
 
+  /* Garanti bloğu — Tıbbi Cihaz Satış, Reklam ve Tanıtım Yönetmeliği md.25/2, 25/A–25/Ç, 26/9
+     (1.1.2025'ten itibaren zorunlu). Süreler mevzuatın ASGARİ değerleridir;
+     Estezone'un gerçek taahhütleri teyit edilip buradan güncellenmelidir. */
+  garanti: {
+    baslik: 'Garanti ve satış sonrası taahhütler',
+    not: 'Aşağıdaki değerler mevzuatın öngördüğü asgari koşullardır. Cihaza özel süreler teklifte yazılı olarak belirtilir.',
+    maddeler: [
+      { ad: 'Garanti süresi', deger: 'asgari 24 ay', ek: 'Cihaz ve konfigürasyona göre uzatılabilir.' },
+      {
+        ad: 'Yedek parça temini',
+        deger: '20 iş günü (yurt içi) · 30 iş günü (yurt dışı)',
+        ek: 'Stokta bulunan kritik parçalarda süre daha kısadır.',
+      },
+      {
+        ad: 'Yetkili teknik servis',
+        deger: 'Estezone Medikal — Ankara atölyesi',
+        ek: 'Onarım kendi bünyemizde yapılır, üçüncü tarafa devredilmez.',
+      },
+      {
+        ad: 'Kurulum öncesi eğitim',
+        deger: 'bedelsiz temel teknik eğitim',
+        ek: 'Cihaz ilk kullanıma alınmadan önce operatöre verilir.',
+      },
+      {
+        ad: 'Yıllık azami tamir süresi',
+        deger: 'teklifte yazılı olarak belirtilir',
+        ek: 'Süre aşımında ikame cihaz politikası uygulanır.',
+      },
+    ],
+  },
+
+  /* İşletme türü ↔ cihaz eşleştirmesi.
+     ÖNEMLİ: Aşağıdaki sınıflandırma cihaz teknolojisinden türetilmiş ÖN BİLGİLENDİRMEDİR.
+     Kesin yetki durumu; cihazın kullanım amacı beyanı, ÜTS kaydı ve işletmenin ruhsat tipiyle
+     birlikte değerlendirilir. Yayına almadan önce Estezone ve hukuk danışmanı teyit etmelidir. */
+  yetkiler: {
+    salon: {
+      ad: 'Güzellik salonu',
+      kisa: 'Salon',
+      renk: '#34d399',
+      aciklama:
+        'Hekim gözetimi gerektirmeyen, lazer sınıfı dışındaki kozmetik uygulama cihazları. Güzellik salonları yalnızca sınırlı bir grup cihazı bulundurabilir.',
+    },
+    merkez: {
+      ad: 'Güzellik merkezi',
+      kisa: 'Merkez',
+      renk: '#2dd4f5',
+      aciklama:
+        'Yetkili personel ile çalışan güzellik merkezleri. Epilasyon endikasyonlu, sınırlı enerji aralığındaki sistemler bu grupta değerlendirilir.',
+    },
+    tibbi: {
+      ad: 'Poliklinik · tıp merkezi · hastane',
+      kisa: 'Tıbbi kuruluş',
+      renk: '#a78bfa',
+      aciklama:
+        'Hekim sorumluluğunda kullanılması gereken tıbbi lazer ve invaziv sistemler. Bu cihazlar yalnızca ruhsatlı sağlık kuruluşlarına satılabilir.',
+    },
+  },
+
+  /* Elektronik ticaret künyesi (6563 sayılı Kanun md.3).
+     DEĞERLER HENÜZ ALINMADI — Estezone'dan temin edilip doldurulacak. */
+  kunye: {
+    eksik: true,
+    alanlar: [
+      ['Ticaret unvanı', null],
+      ['MERSİS numarası', null],
+      ['Ticaret sicil numarası', null],
+      ['Vergi dairesi / numarası', null],
+      ['KEP adresi', null],
+      ['Satış merkezi yetki belgesi no', null],
+    ],
+  },
+
   // Yasal — mevcut sitede bu sayfalar var, yenisinde de olacak
   yasal: [
     { slug: 'kvkk', ad: 'KVKK Aydınlatma Metni' },
     { slug: 'gizlilik', ad: 'Gizlilik Politikası' },
     { slug: 'cerez', ad: 'Çerez Politikası' },
   ],
+};
+
+/* Cihaz -> işletme türü yetkisi (ön sınıflandırma, teyide tabi).
+   Ölçüt: tıbbi lazer / invaziv sistem = tıbbi kuruluş;
+   epilasyon endikasyonlu sınırlı sistem = merkez; lazer dışı kozmetik = salon. */
+module.exports.cihazYetkisi = function (slug, kategori) {
+  // Tıbbi lazer, invaziv/iğneli sistemler ve reçeteli kullanım beyanı olanlar
+  const TIBBI = new Set([
+    'arion-alexandrite-lazer', 'light-age-epicare-lpx', 'light-age-epicare-duo', 'epicare-zenith',
+    'noblex', 'nobleen', 'aileen', 'cotra-plus-co2', 'lucid-q-ptp', 'picozone', 'modula-bbl',
+    'goldzone', 'rfyne', 'utims-centerless', 'endoterapylazer', 'medart-smartsculpt-endolazer',
+    // T-Shape 2: kendi teknik künyesinde "Prescription Use / profesyonel kullanım", FDA Class II
+    't-shape-2',
+  ]);
+  // Epilasyon endikasyonlu sınırlı sistemler + non-invaziv kontur/lipoliz platformları
+  const MERKEZ = new Set([
+    'elazer', 'elazer-plus', 'epizone-mix-diode-lazer',
+    'estesculpt-pro', 'estesculpt-vudut-sekillendirme-cihazi',
+    'esteslim-zayiflama-cihazi', 'esteslim-mix',
+  ]);
+  if (TIBBI.has(slug)) return 'tibbi';
+  if (MERKEZ.has(slug)) return 'merkez';
+  return 'salon'; // lazer dışı cilt bakım, soğutma sistemleri, koruyucu ekipman
 };

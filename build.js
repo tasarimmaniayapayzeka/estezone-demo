@@ -5,10 +5,21 @@ const path = require('path');
 const P = require('./sablon/parcalar.js');
 const { kacis, ikon, sayfa, cihazKart, cta, kirinti, KATEGORI_MENU, SITE } = P;
 const icerik = require('./veri/icerik.js');
+
+// cihaz-meta.js veya ham veri değiştiyse cihazlar.json'u tazele
+require('child_process').execFileSync(process.execPath, [path.join(__dirname, 'veri/birlestir.js')], {
+  stdio: 'ignore',
+});
 const veri = require('./veri/cihazlar.json');
 
+const mevzuat = require('./sablon/mevzuat.js');
+
 const { marka, iletisim, guven, servisler, surec, farklar, sss, yasal } = icerik;
-const cihazlar = veri.cihazlar;
+// Kaynak siteden gelen tüm cihaz metinleri mevzuat süzgecinden geçer (bkz. sablon/mevzuat.js)
+// + her cihaza işletme türü yetkisi eklenir (ön sınıflandırma, teyide tabi)
+const cihazlar = veri.cihazlar
+  .map(mevzuat.cihazTemizle)
+  .map((c) => ({ ...c, yetki: icerik.cihazYetkisi(c.slug, c.kategori) }));
 const kategoriler = veri.kategoriler;
 
 const KOK = __dirname;
@@ -49,7 +60,7 @@ function anasayfa() {
   <div class="kap">
     <div class="hero-ic">
       <div>
-        <span class="ust-etiket">FDA &amp; CE belgeli platformlar</span>
+        <span class="ust-etiket">CE belgeli profesyonel platformlar</span>
         <h1>Lazer teknolojisinde <em>20 yıllık mühendislik</em></h1>
         <p class="giris">Estezone Medikal; hastane, klinik ve medikal estetik merkezlerine epilasyon, cilt ve
           vücut şekillendirme platformları tedarik eder. Cihazı satıp çekilmez — <strong style="color:var(--metin)">kendi
@@ -98,9 +109,9 @@ function anasayfa() {
   <div class="kap">
     <div class="bolum-basi">
       <span class="ust-etiket">Öne çıkanlar</span>
-      <h2>Sahada en çok tercih edilen platformlar</h2>
-      <p class="giris">Farklı işletme ölçekleri ve tedavi menüleri için seçilmiş altı sistem.
-        Tamamı belgeli, tamamı kendi teknik servisimizin kapsamında.</p>
+      <h2>Farklı ölçekler için seçilmiş altı platform</h2>
+      <p class="giris">Küçük salondan hastaneye kadar değişen ihtiyaçlara karşılık gelen sistemler.
+        Tamamı CE belgeli, tamamı kendi teknik servisimizin kapsamında.</p>
     </div>
     <div class="izgara izgara-3">${vitrin.map((c) => cihazKart(c)).join('')}</div>
     <div class="orta" style="margin-top:2.4rem">
@@ -222,7 +233,7 @@ ${cta('', 'Cihazınızı seçelim, rakamları birlikte konuşalım', 'Envanterin
       {
         baslik: 'Estezone Medikal — Lazer Epilasyon ve Estetik Cihaz Tedarikçisi',
         aciklama:
-          'FDA ve CE belgeli lazer epilasyon, cilt ve vücut şekillendirme cihazları. 20 yıllık tecrübe, kendi teknik servis atölyesi, Ankara ve İstanbul ofisleri.',
+          'Hastane, klinik ve medikal estetik merkezlerine lazer epilasyon, cilt ve vücut şekillendirme cihazı tedariki. 20 yıllık tecrübe, kendi teknik servis atölyesi, Ankara ve İstanbul ofisleri.',
         aktif: 'index.html',
         gorsel: `varlik/gorsel/${kahraman.kapak}`,
         sema,
@@ -253,6 +264,21 @@ function cihazListesi() {
   </div>
   <div class="f-ara">${ikon.ara}<input type="search" data-ara placeholder="Cihaz, marka veya teknoloji arayın…" aria-label="Cihaz ara"></div>
   <span class="f-sonuc" data-sonuc-sayi>${cihazlar.length} cihaz</span>
+</div>
+<div class="kap" style="padding-top:.7rem;border-top:1px dashed var(--kenar);margin-top:.75rem">
+  <div class="filtre-ic">
+    <span class="f-sonuc" style="color:var(--metin-2)">İşletme türüm:</span>
+    <div class="filtre-grup">
+      <button class="f-dug" data-y-filtre="hepsi" aria-pressed="true">Fark etmez</button>
+      ${Object.entries(icerik.yetkiler)
+        .map(
+          ([k, y]) =>
+            `<button class="f-dug" data-y-filtre="${k}" aria-pressed="false" style="--kr:${y.renk}"><span class="p"></span>${y.ad}</button>`
+        )
+        .join('')}
+    </div>
+    <span class="f-sonuc" style="flex:1;min-width:220px;color:var(--metin-3)">Ön bilgilendirmedir; kesin yetki ÜTS kaydı ve ruhsat tipiyle teyit edilir.</span>
+  </div>
 </div></div>
 
 <section style="padding-bottom:clamp(3rem,6vw,5rem)"><div class="kap">
@@ -393,6 +419,16 @@ function cihazSayfalari() {
     <p class="cd-ozet">${kacis(c.ozet)}</p>
     <div class="cd-neden"><b>Neden bu cihaz</b>${kacis(c.neden)}</div>
     <div class="cd-hedef">${ikon.hedef}<span><strong style="color:var(--metin)">Kimin için:</strong> ${kacis(c.hedef)}</span></div>
+    ${(() => {
+      const y = icerik.yetkiler[c.yetki];
+      return `<div class="yetki-kutu">
+      <span class="im" style="background:${y.renk}"></span>
+      <div><b>Bulundurma yetkisi: ${y.ad}</b>
+        <p>${y.aciklama}</p>
+        <small>Bu bir ön bilgilendirmedir. Kesin durum; cihazın kullanım amacı beyanı, ÜTS kaydınız ve
+        işletmenizin ruhsat tipiyle birlikte değerlendirilir. Teklif aşamasında birlikte teyit ederiz.</small>
+      </div></div>`;
+    })()}
     <div class="cd-eylem">
       <a class="btn btn-ana btn-b" href="../iletisim.html?cihaz=${c.slug}">Bu cihaz için teklif alın ${ikon.ok}</a>
       <a class="btn btn-wa" href="https://wa.me/${iletisim.whatsappHam}?text=${encodeURIComponent(c.ad + ' hakkında bilgi almak istiyorum.')}" target="_blank" rel="noopener">${ikon.wa}WhatsApp</a>
@@ -466,9 +502,21 @@ function cihazSayfalari() {
     }
 
     <div data-sekme="servis" class="gizli">
+      <h3 style="margin-bottom:1.2rem">${icerik.garanti.baslik}</h3>
+      <p class="giris" style="margin-bottom:1.5rem">${icerik.garanti.not}</p>
+      <div class="garanti" style="margin-bottom:2.4rem">
+        ${icerik.garanti.maddeler
+          .map(
+            (g) => `<div class="garanti-satir">
+          <div class="a">${g.ad}</div>
+          <div><div class="b">${g.deger}</div><div class="c">${g.ek}</div></div></div>`
+          )
+          .join('')}
+      </div>
+
       <h3 style="margin-bottom:1.2rem">Bu cihaz için servis kapsamı</h3>
-      <p class="giris" style="margin-bottom:1.6rem">Satış sonrası destek, teklif aşamasında yazılı olarak netleşir.
-        Aşağıdaki kalemler kendi atölyemizde yapılır.</p>
+      <p class="giris" style="margin-bottom:1.6rem">Aşağıdaki kalemler kendi atölyemizde yapılır;
+        üçüncü tarafa devredilmez.</p>
       <div class="izgara izgara-2">
         ${servisler
           .slice(0, 6)
@@ -647,14 +695,25 @@ ${url.map((u) => `  <url><loc>${SITE}/${u}</loc><changefreq>monthly</changefreq>
 </urlset>`,
     'utf8'
   );
+  // DEMO: arama motorlarına kapalı — gerçek estezone.com.tr ile çift içerik yaratmasın.
+  // Canlıya geçişte bu blok "Allow: /" + Sitemap satırıyla değiştirilecek.
   fs.writeFileSync(
     path.join(CIKTI, 'robots.txt'),
-    `User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`,
+    `# Tasarım demosu — resmî site değildir, dizine eklenmemelidir.\nUser-agent: *\nDisallow: /\n`,
     'utf8'
   );
   return url.length;
 }
 const urlSayi = sitemap();
+
+if (mevzuat.rapor.length) {
+  const grup = {};
+  mevzuat.rapor.forEach((r) => (grup[r.desen] = (grup[r.desen] || 0) + 1));
+  console.log(`\n⚖ mevzuat süzgeci ${mevzuat.rapor.length} ifadeyi düzeltti:`);
+  Object.entries(grup)
+    .sort((a, b) => b[1] - a[1])
+    .forEach(([d, n]) => console.log(`   ${String(n).padStart(3)}×  ${d}`));
+}
 
 console.log(`\n✓ ${yazilan} HTML sayfa üretildi`);
 console.log(`✓ ${gorselSayi} görsel kopyalandı`);
