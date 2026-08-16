@@ -12,7 +12,7 @@ const sayfalar = [];
   fs.readdirSync(path.join(KOK, d), { withFileTypes: true }).forEach((e) => {
     const g = d ? `${d}/${e.name}` : e.name;
     if (e.isDirectory()) {
-      if (e.name !== 'varlik' && !(V2_HARIC && e.name === 'v2')) gez(g);
+      if (e.name !== 'varlik' && e.name !== 'kiyas' && !(V2_HARIC && e.name === 'v2')) gez(g);
     } else if (e.name.endsWith('.html')) sayfalar.push(g);
   });
 })();

@@ -838,6 +838,15 @@ function kopyala() {
 
 const gorselSayi = kopyala();
 
+/* kıyas/teklif sunumu — tema bağımsız, yalnızca köke bir kez kopyalanır */
+if (TEMA === 'koyu') {
+  const kay = path.join(KOK, 'kiyas');
+  const hed = path.join(CIKTI, 'kiyas');
+  fs.mkdirSync(hed, { recursive: true });
+  fs.readdirSync(kay).forEach((f) => fs.copyFileSync(path.join(kay, f), path.join(hed, f)));
+  console.log(`✓ kıyas sunumu kopyalandı (${fs.readdirSync(kay).length} dosya)`);
+}
+
 /* ---- sitemap + robots ---- */
 function sitemap() {
   const url = [];
