@@ -144,23 +144,46 @@
   }
 
   /* ---- hero showroom videosu (koşullu yükleme) ----
-     4.7 MB'lık dosyayı herkese indirtmeyiz: yalnız geniş ekran + hızlı
-     bağlantı + hareket kısıtlaması kapalıysa yüklenir. Diğer herkes zaten
-     aynı sahnenin fotoğrafını görür, hiçbir şey eksilmez. */
+     Telefonda da oynar (önce yalnız ≥900px'te yüklüyordu, mobilde sabit
+     fotoğraf kalıyordu). Varsa hafif mobil kopya tercih edilir; yalnızca
+     veri tasarrufu açıkken veya yavaş bağlantıda video hiç yüklenmez —
+     o durumda aynı sahnenin fotoğrafı görünmeye devam eder.
+     iOS'ta otomatik oynatma için muted + playsinline ŞART; ayrıca bazı
+     tarayıcılar autoplay özniteliğine rağmen play() beklediği için
+     çağrıyı elle de yapıyoruz (reddedilirse sessizce fotoğrafta kalır). */
   const heroKap = $('[data-hero-video]');
   if (heroKap) {
-    const genis = matchMedia('(min-width: 900px)').matches;
     const hareketOk = !matchMedia('(prefers-reduced-motion: reduce)').matches;
     const ag = navigator.connection || {};
-    const hizli = !ag.saveData && !/2g|slow-2g|3g/.test(ag.effectiveType || '');
-    if (genis && hareketOk && hizli) {
+    const hizli = !ag.saveData && !/(^|-)2g$/.test(ag.effectiveType || '');
+    if (hareketOk && hizli) {
+      const tam = heroKap.dataset.heroVideo;
+      const mobil = heroKap.dataset.heroVideoMobil;
+      const dar = matchMedia('(max-width: 900px)').matches;
       const v = document.createElement('video');
-      v.src = heroKap.dataset.heroVideo;
-      v.muted = v.loop = v.playsInline = v.autoplay = true;
+      v.src = dar && mobil ? mobil : tam;
+      v.muted = true;
+      v.defaultMuted = true;
+      v.loop = true;
+      v.autoplay = true;
+      v.playsInline = true;
+      v.setAttribute('muted', '');
+      v.setAttribute('playsinline', '');
+      v.setAttribute('webkit-playsinline', '');
       v.setAttribute('aria-hidden', 'true');
+      v.preload = 'auto';
       v.className = 'hero-video';
       v.addEventListener('canplay', () => heroKap.classList.add('hero-video-hazir'), { once: true });
       heroKap.appendChild(v);
+      const oynat = () => {
+        const s = v.play();
+        if (s && s.catch) s.catch(() => {});
+      };
+      oynat();
+      // Bazı tarayıcılar ilk dokunuşa kadar oynatmaz; ilk etkileşimde tekrar dene.
+      ['touchstart', 'click'].forEach((o) =>
+        addEventListener(o, () => v.paused && oynat(), { once: true, passive: true })
+      );
     }
   }
 
