@@ -2592,3 +2592,31 @@ p {
 .cekmece-bas .logo-gorsel{height:30px}
 .alt .logo-gorsel{height:32px}
 @media (max-width:640px){.ust-ic .logo-gorsel{height:31px}}
+
+/* ==========================================================================
+   Showroom sahneleri + 3B eğimli hero + ikonlu güven kartları
+   Hero: beyaz kutu yerine Higgsfield showroom kompoziti, kenara tam oturur;
+   hafif perspektif eğimi hover'da düzleşir. Güven: kaba 2×2 sayı kutuları
+   yerine 3D ikonlu kompakt kurumsal kartlar. Bento: sahne fotoğrafı tam kaplama.
+   ========================================================================== */
+.hero-gorsel{background:#0d0b12;aspect-ratio:4/3;transform:perspective(1300px) rotateY(-6deg) rotateX(1.5deg);transition:transform .55s cubic-bezier(.2,.7,.2,1),box-shadow .55s ease;will-change:transform;box-shadow:0 30px 70px rgba(0,0,0,.4),0 22px 90px rgba(45,95,84,.13)}
+.hero-gorsel:hover{transform:perspective(1300px) rotateY(0deg) rotateX(0deg) scale(1.015)}
+.hero-gorsel img{object-fit:cover;padding:0;filter:none;mix-blend-mode:normal;width:100%;height:100%}
+.hero-gorsel::after{background:linear-gradient(180deg,transparent 58%,rgba(0,0,0,.34))}
+@media (max-width:760px){.hero-gorsel,.hero-gorsel:hover{transform:none}}
+
+.guven{grid-template-columns:repeat(2,1fr);gap:12px;background:transparent;border:none;border-radius:0;overflow:visible}
+.guven::before{display:none}
+.guven .guven-kart{display:flex;flex-direction:row;align-items:center;gap:1.05rem;background:#ffffff;border:1px solid var(--kenar);border-radius:16px;padding:1rem 1.15rem;min-height:94px;transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease}
+.guven .guven-kart:hover{transform:translateY(-4px);border-color:rgba(143,106,51,.5);box-shadow:0 14px 34px rgba(0,0,0,.16),0 8px 32px rgba(45,95,84,.13)}
+.guven-ikon{flex:0 0 56px;width:56px;height:56px;border-radius:14px;background:#101014;border:1px solid rgba(255,255,255,.08);display:grid;place-items:center}
+.guven-ikon img{width:46px;height:46px;object-fit:contain;transition:transform .35s ease}
+.guven .guven-kart:hover .guven-ikon img{transform:scale(1.16) rotate(-4deg)}
+.guven-metin{display:flex;flex-direction:column;gap:.2rem;min-width:0}
+.guven .s{font-size:1.3rem;line-height:1}
+.guven .e{font-size:.82rem;margin-top:0;line-height:1.45}
+@media (max-width:480px){.guven{grid-template-columns:1fr}}
+
+.c-kart--sahne .c-kart-gor{background:#0d0b12}
+.c-kart--sahne .c-kart-gor img{object-fit:cover;width:100%;height:100%;padding:0;mix-blend-mode:normal;transition:transform .6s ease}
+.c-kart--sahne:hover .c-kart-gor img{transform:scale(1.05)}
