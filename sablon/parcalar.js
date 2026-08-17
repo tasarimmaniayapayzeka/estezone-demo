@@ -1,6 +1,14 @@
 // Ortak sayfa parçaları: head, başlık, navigasyon, alt bilgi, kart, CTA
+const fs = require('fs');
+const path = require('path');
 const icerik = require('../veri/icerik.js');
 const { marka, iletisim, yasal } = icerik;
+
+/* Higgsfield showroom kompoziti olan cihazlar: kartlarda beyaz katalog
+   kapağı yerine sahne fotoğrafı kullanılır (dosya yoksa kapağa düşer). */
+const SAHNE_VAR = new Set(
+  fs.readdirSync(path.join(__dirname, '../kaynak/gorsel')).filter((f) => f.startsWith('showroom-'))
+);
 
 const SITE = 'https://estezone.com.tr';
 
@@ -363,16 +371,17 @@ ${alt(opt.yol)}
 
 /* ---------- kart ---------- */
 function cihazKart(c, yol = '', sahneGorsel = '') {
-  // sahneGorsel: kapak yerine showroom kompoziti kullan (yalnız ana sayfa vitrini)
   const k = yol ? '../' : '';
   const y = icerik.yetkiler[c.yetki] || icerik.yetkiler.tibbi;
+  const varsayilanSahne = SAHNE_VAR.has(`showroom-${c.slug}.webp`) ? `showroom-${c.slug}.webp` : '';
+  const sahne = sahneGorsel || varsayilanSahne;
   const arama = aramaNorm(
     [c.ad, c.marka, c.oneCikan, ...(c.etiketler || []), c.kategoriAd, c.rozet, y.ad, c.neden].join(' ')
   );
-  return `<a class="c-kart${sahneGorsel ? ' c-kart--sahne' : ''} belir" data-cihaz data-k="${c.kategori}" data-y="${c.yetki}" data-arama="${kacis(arama)}" href="${k}cihaz/${c.slug}.html">
+  return `<a class="c-kart${sahne ? ' c-kart--sahne' : ''} belir" data-cihaz data-k="${c.kategori}" data-y="${c.yetki}" data-arama="${kacis(arama)}" href="${k}cihaz/${c.slug}.html">
   <div class="c-kart-gor">
     ${c.rozet ? `<span class="c-kart-rozet">${kacis(c.rozet)}</span>` : ''}
-    <img src="${k}varlik/gorsel/${sahneGorsel || c.kapak}" alt="${kacis(c.ad)} — ${kacis(c.marka)}" loading="lazy" width="400" height="300">
+    <img src="${k}varlik/gorsel/${sahne || c.kapak}" alt="${kacis(c.ad)} — ${kacis(c.marka)}" loading="lazy" width="400" height="300">
   </div>
   <div class="c-kart-govde">
     <span class="c-kart-marka">${kacis(c.marka)}</span>
