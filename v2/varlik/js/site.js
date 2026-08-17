@@ -257,7 +257,7 @@
       const kap = $('[data-oneri]', dan);
       kap.innerHTML = puanli
         .map(
-          (c) => `<a class="c-kart" data-k="${c.kategori}" href="${c.url}">
+          (c) => `<a class="c-kart c-kart--sahne" data-k="${c.kategori}" href="${c.url}">
         <div class="c-kart-gor">${c.rozet ? `<span class="c-kart-rozet">${c.rozet}</span>` : ''}
           <img src="${c.gorsel}" alt="${c.ad}" loading="lazy"></div>
         <div class="c-kart-govde">
@@ -298,7 +298,7 @@
         <thead><tr><th></th>${secili
           .map(
             (c) =>
-              `<th><div style="display:flex;gap:.6rem;align-items:center"><img src="${c.gorsel}" alt="" width="42" height="42" style="object-fit:contain;background:var(--yuzey);border-radius:8px;padding:3px"><span>${c.ad}</span></div></th>`
+              `<th><div style="display:flex;gap:.6rem;align-items:center"><img src="${c.gorsel}" alt="" width="42" height="42" style="object-fit:cover;border-radius:8px"><span>${c.ad}</span></div></th>`
           )
           .join('')}</tr></thead>
         <tbody>${SATIR.map(

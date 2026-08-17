@@ -2663,3 +2663,26 @@ html, body { overflow-x: clip; }
 .cd-akordiyon summary::after { content: '+'; font-family: var(--f-mono); font-size: 1.1rem; line-height: 1; color: var(--vurgu); transition: transform 0.25s ease; }
 .cd-akordiyon details[open] summary::after { transform: rotate(45deg); }
 .cd-akordiyon details p { padding: 0 1.15rem 1rem; color: var(--metin-2); line-height: 1.7; font-size: 0.95rem; }
+
+/* Edinim kartları (kiralama/2.el/takas): 3D ikon + hover'da yükselme,
+   ikon dönüşü ve karttan geçen parlama süpürmesi — statik kutu hissi biter. */
+.edinim-kart { position: relative; overflow: hidden; transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease; }
+.edinim-kart::after { content: ''; position: absolute; inset: 0; background: linear-gradient(115deg, transparent 32%, rgba(255, 255, 255, 0.07) 50%, transparent 68%); transform: translateX(-130%); pointer-events: none; }
+.edinim-kart:hover { transform: translateY(-6px); border-color: var(--kenar-parlak); box-shadow: var(--parlama); }
+.edinim-kart:hover::after { transform: translateX(130%); transition: transform 0.85s ease; }
+.edinim-ikon { display: grid; place-items: center; width: 96px; height: 96px; border-radius: 20px; background: #101014; border: 1px solid rgba(255, 255, 255, 0.08); margin-bottom: 1.15rem; }
+.edinim-ikon img { width: 82px; height: 82px; object-fit: contain; transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.3, 1.4); }
+.edinim-kart:hover .edinim-ikon img { transform: scale(1.14) rotate(-5deg); }
+.edinim-kart .madde li { transition: color 0.25s ease; }
+.edinim-kart .madde li:hover { color: var(--metin); }
+/* bu temada tanımsızdı — edinim kartı hover'ı için */
+:root { --kenar-parlak: rgba(143, 106, 51, 0.45); --parlama: 0 14px 34px rgba(45, 95, 84, 0.13); }
+
+/* Bento mobil düzeltmesi: Bento v2'nin taban 45%/55% kolon tanımı, kaynak
+   sırası gereği eski ≤640 tek-kolon kuralını eziyordu — kartlar 170px'e
+   sıkışıp etiket pulları komşu karta taşıyordu. Son sözü bu blok söyler. */
+@media (max-width: 640px) {
+  .bento { grid-template-columns: 1fr; }
+  .c-kart--kahraman,
+  .bento > .c-kart:last-child:not(.c-kart--kahraman) { grid-column: auto; grid-row: auto; }
+}
