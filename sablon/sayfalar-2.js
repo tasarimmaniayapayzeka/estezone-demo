@@ -361,7 +361,8 @@ ${cta('', 'Karşılaştırdınız, şimdi deneyin', 'Seçtiğiniz platformları 
       ],
     ]
       .map(
-        ([ad, ozet, maddeler]) => `<div class="kart belir">
+        ([ad, ozet, maddeler], i) => `<div class="kart edinim-kart belir">
+      <span class="edinim-ikon"><img src="varlik/gorsel/ikon3d-edinim-0${i + 1}.webp" alt="" width="84" height="84" loading="lazy"></span>
       <h3>${ad}</h3><p style="margin-bottom:1rem">${ozet}</p>
       <ul class="madde">${maddeler.map((m) => `<li>${m}</li>`).join('')}</ul></div>`
       )

@@ -920,7 +920,7 @@ function kopyala() {
     etiketSayi: (c.etiketler || []).length,
     hedef: c.hedef,
     neden: c.neden,
-    gorsel: `varlik/gorsel/${c.kapak}`,
+    gorsel: `varlik/gorsel/${sahneGorseli(c.slug) || c.kapak}`,
     url: `cihaz/${c.slug}.html`,
   }));
   fs.writeFileSync(
