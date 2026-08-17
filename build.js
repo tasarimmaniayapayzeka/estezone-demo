@@ -1034,6 +1034,25 @@ function kopyala() {
     fs.copyFileSync(path.join(temaIkon, f), path.join(CIKTI, 'varlik/gorsel', f))
   );
 
+  /* cPanel Git deploy tarifi — YALNIZ kök temada (v1), çünkü site/ klasörü
+     gh-pages dalına subtree ile itiliyor ve bu dosyanın dal KÖKÜNDE olması
+     gerekiyor. cPanel "Update from Remote & Deploy" dediğinde bunu okur. */
+  if (TEMA === 'koyu') {
+    fs.writeFileSync(
+      path.join(CIKTI, '.cpanel.yml'),
+      [
+        '---',
+        'deployment:',
+        '  tasks:',
+        '    - export HEDEF=/home/estezone/public_html',
+        '    - /bin/cp -R . $HEDEF/',
+        '    - /bin/rm -rf $HEDEF/.git $HEDEF/.cpanel.yml',
+        '',
+      ].join('\n'),
+      'utf8'
+    );
+  }
+
   /* ---- AI asistanı sunucu tarafı ----
      api/sohbet.php + bilgi-tabani.txt her tema köküne kopyalanır. Sistem
      promptu HER derlemede veriden yeniden üretilir; içerik değişince bot da
