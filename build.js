@@ -1033,6 +1033,51 @@ function kopyala() {
   temaIkonlari.forEach((f) =>
     fs.copyFileSync(path.join(temaIkon, f), path.join(CIKTI, 'varlik/gorsel', f))
   );
+
+  /* ---- AI asistanı sunucu tarafı ----
+     api/sohbet.php + bilgi-tabani.txt her tema köküne kopyalanır. Sistem
+     promptu HER derlemede veriden yeniden üretilir; içerik değişince bot da
+     güncel konuşur. GitHub Pages'te PHP çalışmaz (frontend yedeğe düşer),
+     cPanel'de anahtar girilince AI devreye girer. */
+  const apiKaynak = path.join(KOK, 'api');
+  if (fs.existsSync(apiKaynak)) {
+    const apiHedef = path.join(CIKTI, 'api');
+    fs.mkdirSync(apiHedef, { recursive: true });
+    fs.readdirSync(apiKaynak)
+      // ORNEK-estezone-gizli.php YAYINA ÇIKMAZ: o dosya web kökünün dışına
+      // elle kopyalanacak şablondur; public_html'de durursa ileride içine
+      // gerçek anahtar yazıldığında indirilebilir hâle gelir.
+      .filter((f) => f.endsWith('.php') && !f.startsWith('ORNEK-'))
+      .forEach((f) => fs.copyFileSync(path.join(apiKaynak, f), path.join(apiHedef, f)));
+    const { sistemPromptu } = require('./sablon/bilgi-tabani.js');
+    const prompt = sistemPromptu();
+    fs.writeFileSync(path.join(apiHedef, 'bilgi-tabani.txt'), prompt, 'utf8');
+
+    /* Bilgi tabanı ve günlükler tarayıcıdan okunmasın. sohbet.php açık kalır. */
+    fs.writeFileSync(
+      path.join(apiHedef, '.htaccess'),
+      [
+        '# Bilgi tabanı ve yardımcı dosyalar dışarıya kapalı; yalnız sohbet.php çalışır.',
+        '<FilesMatch "\\.(txt|md|json|log)$">',
+        '  Require all denied',
+        '</FilesMatch>',
+        '<Files "sohbet.php">',
+        '  Require all granted',
+        '</Files>',
+        '',
+      ].join('\n'),
+      'utf8'
+    );
+
+    /* SIZINTI DENETİMİ — yayına gerçek anahtar çıkmasın (diğer projelerde
+       masaüstünde açık sk- anahtarları bulundu; aynı hata burada olmasın). */
+    const sizanlar = fs
+      .readdirSync(apiHedef)
+      .filter((f) => /\b(sk-[A-Za-z0-9_-]{20,})/.test(fs.readFileSync(path.join(apiHedef, f), 'utf8')));
+    if (sizanlar.length) {
+      throw new Error('GÜVENLİK: yayına API anahtarı sızıyor → ' + sizanlar.join(', '));
+    }
+  }
   if (temaIkonlari.length) console.log(`  tema ikon seti: ${temaIkonlari.length} dosya (ikon-${TEMA})`);
   return n;
 }

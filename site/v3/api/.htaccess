@@ -1,0 +1,7 @@
+# Bilgi tabanı ve yardımcı dosyalar dışarıya kapalı; yalnız sohbet.php çalışır.
+<FilesMatch "\.(txt|md|json|log)$">
+  Require all denied
+</FilesMatch>
+<Files "sohbet.php">
+  Require all granted
+</Files>

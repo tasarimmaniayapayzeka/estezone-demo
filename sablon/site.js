@@ -417,9 +417,15 @@
     const oneriKap = $('[data-asistan-oneri]', asistan);
     const form = $('[data-asistan-form]', asistan);
     const girdi = $('input', form);
-    const kok = document.querySelector('link[rel=stylesheet][href*="varlik/css"]')
-      ? document.querySelector('link[rel=stylesheet][href*="varlik/css"]').getAttribute('href').replace('varlik/css/stil.css', '')
-      : '';
+    /* Site kökü: stil bağlantısından türetilir. DİKKAT — href'te önbellek
+       kırıcı sorgu var (…/stil.css?v=abc123); sorgu atılmazsa kök
+       "?v=abc123" olarak çıkıyor ve hem asistan linkleri hem AI adresi
+       bozuluyordu. Bu yüzden önce ? sonrası kesilir. */
+    const kok = (() => {
+      const l = document.querySelector('link[rel=stylesheet][href*="varlik/css"]');
+      if (!l) return '';
+      return l.getAttribute('href').split('?')[0].replace('varlik/css/stil.css', '');
+    })();
 
 
     const ONERILER = [
@@ -522,6 +528,65 @@
       return `Bunu tam çözemedim. Şunları deneyebilirsiniz: bir <b>teknoloji</b> (Alexandrite, diode, CO2, HIFU, soğuk lipoliz), bir <b>ihtiyaç</b> (epilasyon, leke, dövme, bölgesel incelme) ya da bir <b>cihaz adı</b> yazın.<br><br>Alternatif olarak <a href="${kok}cihaz-secim-danismani.html">seçim danışmanımız</a> üç soruyla size uygun platformu bulur.`;
     }
 
+    /* ---- AI katmanı ----
+       Sunucuda api/sohbet.php varsa (canlı site) gerçek AI cevaplar; GitHub
+       Pages demosunda PHP çalışmadığı için 404 döner ve kural tabanlı motora
+       sessizce düşülür. Kullanıcı her iki durumda da cevap alır. */
+    const AI = { adres: kok + 'api/sohbet.php', durum: 'bilinmiyor' }; // bilinmiyor | acik | kapali
+    const gecmis = [];
+
+    const guvenliMetin = (s) =>
+      String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    /* Modelden gelen düz metni sınırlı biçimlendirmeyle HTML'e çevirir:
+       **kalın**, satır sonu ve site içi bağlantılar (sayfa.html). */
+    const aiBicimle = (metin) => {
+      let h = guvenliMetin(metin)
+        .replace(/\*\*(.+?)\*\*/g, '<b>$1</b>')
+        .replace(/\n{2,}/g, '<br><br>')
+        .replace(/\n/g, '<br>');
+      h = h.replace(/\b((?:cihaz\/|kategori\/)?[a-z0-9-]+\.html)\b/g, (t) => `<a href="${kok}${t}">${t}</a>`);
+      return h;
+    };
+
+    async function aiSor(soru) {
+      const y = await fetch(AI.adres, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ soru, gecmis: gecmis.slice(-6) }),
+      });
+      if (!y.ok) throw new Error('http-' + y.status);
+      const j = await y.json();
+      if (!j.cevap) throw new Error('bos');
+      return j.cevap;
+    }
+
+    /* Tek giriş noktası: önce AI dener, olmazsa kural tabanlı motor. */
+    async function sor(soru) {
+      const b = balon('<span class="yaziyor"><i></i><i></i><i></i></span>');
+      const bitir = (html, kaynak) => {
+        b.innerHTML = html;
+        if (kaynak) b.dataset.kaynak = kaynak;
+        govde.scrollTop = govde.scrollHeight;
+      };
+      gecmis.push({ rol: 'ben', metin: soru });
+      if (AI.durum !== 'kapali') {
+        try {
+          const cevap = await aiSor(soru);
+          AI.durum = 'acik';
+          gecmis.push({ rol: 'bot', metin: cevap });
+          return bitir(aiBicimle(cevap), 'ai');
+        } catch (e) {
+          // 429 = hız sınırı: kullanıcıya söyle, motoru kapatma
+          if (String(e.message) === 'http-429')
+            return bitir('Çok hızlı yazıyorsunuz. Bir dakika sonra tekrar deneyin.', 'sinir');
+          AI.durum = 'kapali'; // bu oturumda bir daha denemeyelim
+        }
+      }
+      const kural = cevapla(soru);
+      gecmis.push({ rol: 'bot', metin: kural.replace(/<[^>]+>/g, ' ') });
+      setTimeout(() => bitir(kural, 'kural'), 300);
+    }
+
     const ac = () => {
       asistan.hidden = false;
       if (!acildi) {
@@ -533,7 +598,7 @@
         $$('button', oneriKap).forEach((b) =>
           b.addEventListener('click', () => {
             balon(b.textContent, 'ben');
-            yaz(cevapla(b.textContent));
+            sor(b.textContent);
           })
         );
       }
@@ -548,7 +613,7 @@
       if (!s) return;
       balon(s, 'ben');
       girdi.value = '';
-      yaz(cevapla(s));
+      sor(s);
     });
   }
 
