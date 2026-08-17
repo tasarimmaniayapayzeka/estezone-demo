@@ -555,6 +555,9 @@
         body: JSON.stringify({ soru, gecmis: gecmis.slice(-6) }),
       });
       if (!y.ok) throw new Error('http-' + y.status);
+      /* Statik barındırmada (GitHub Pages) PHP çalıştırılmaz, dosya ham metin
+         olarak 200 döner. JSON beklediğimizi baştan doğrulayıp yedeğe geçelim. */
+      if (!(y.headers.get('content-type') || '').includes('json')) throw new Error('php-calismiyor');
       const j = await y.json();
       if (!j.cevap) throw new Error('bos');
       return j.cevap;
