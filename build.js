@@ -951,6 +951,11 @@ function kopyala() {
   fs.readdirSync(kaynak)
     .filter((f) => f.startsWith('ikon3d-') || f.startsWith('logo-') || f.startsWith('showroom-'))
     .forEach((f) => gerekli.add(f));
+  /* Tema ikon seti: kaynak/gorsel/ikon-<tema>/ altında aynı adla varyant varsa
+     varsayılanın (v4 mor-krom ailesi) ÜZERİNE yazılır — markup dosya adları
+     hiç değişmez, her tema kendi malzeme dilindeki ikonu alır. */
+  const temaIkon = path.join(kaynak, `ikon-${TEMA}`);
+  const temaIkonlari = fs.existsSync(temaIkon) ? fs.readdirSync(temaIkon) : [];
   let n = 0;
   gerekli.forEach((g) => {
     const s = path.join(kaynak, g);
@@ -959,6 +964,10 @@ function kopyala() {
       n++;
     }
   });
+  temaIkonlari.forEach((f) =>
+    fs.copyFileSync(path.join(temaIkon, f), path.join(CIKTI, 'varlik/gorsel', f))
+  );
+  if (temaIkonlari.length) console.log(`  tema ikon seti: ${temaIkonlari.length} dosya (ikon-${TEMA})`);
   return n;
 }
 
