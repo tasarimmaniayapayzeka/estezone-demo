@@ -2403,3 +2403,27 @@ p {
 .akordiyon details[open] {
   box-shadow: inset 2px 0 0 var(--mor);
 }
+
+/* ==========================================================================
+   GÜVEN ŞERİDİ DÜZELTMESİ
+   Sorun: auto-fit, dar hero kolonunda 3+1 sarıyor ve iki BOŞ hücre
+   bırakıyordu; hücre içinde sayı ile etiket arasında da kopukluk vardı.
+   Çözüm: her genişlikte 2×2 dolu ızgara + kompakt, ortalanmış hücre.
+   ========================================================================== */
+.guven {
+  grid-template-columns: repeat(2, 1fr);
+}
+.guven div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 1.2rem 1.35rem;
+  min-height: 96px;
+}
+.guven .s {
+  line-height: 1;
+}
+.guven .e {
+  margin-top: 0;
+}
