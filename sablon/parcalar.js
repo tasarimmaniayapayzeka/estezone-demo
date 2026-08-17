@@ -387,7 +387,9 @@ function cihazKart(c, yol = '') {
 /* ---------- CTA ---------- */
 function cta(yol = '', baslik, metin) {
   const k = yol ? '../' : '';
-  return `<section class="bolum"><div class="kap"><div class="cta belir">
+  /* bolum-cta: üst boşluk kısaltılmış. Normal .bolum kullanılınca önceki
+     bölümün alt boşluğuyla üst üste binip ~240px ölü alan oluşuyordu. */
+  return `<section class="bolum bolum-cta"><div class="kap"><div class="cta belir">
   <span class="ust-etiket" style="justify-content:center">Sonraki adım</span>
   <h2 style="margin-top:.9rem">${baslik}</h2>
   <p class="giris">${metin}</p>

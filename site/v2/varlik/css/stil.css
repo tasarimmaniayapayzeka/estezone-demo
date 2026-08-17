@@ -2276,3 +2276,26 @@ p {
 }
 .tema-serit b.secili { color: var(--m-600); font-weight: 600; }
 .tema-serit .ayrac-nokta { font-style: normal; opacity: .35; }
+
+/* ---------- Sayfa sonu ritmi: SSS → CTA geçişi ---------- */
+.bolum-cta { padding-top: clamp(1.2rem, 2.4vw, 2.4rem); }
+.sss-kapanis {
+  text-align: center; margin-top: 1.7rem; font-size: .92rem; color: var(--metin-3);
+}
+.sss-kapanis a {
+  color: var(--m-600); font-weight: 600; display: inline-flex; align-items: center;
+  gap: .35rem; transition: var(--gecis);
+}
+.sss-kapanis a svg { width: 15px; height: 15px; }
+.sss-kapanis a:hover { gap: .62rem; color: var(--m-700); }
+.bolum-cta .kap { position: relative; }
+.bolum-cta .kap::before {
+  content: ''; position: absolute; left: 50%; top: -46px; translate: -50% 0;
+  width: min(72%, 640px); height: 120px;
+  background: radial-gradient(ellipse at 50% 100%, rgba(13,84,144,.1), transparent 72%);
+  filter: blur(30px); pointer-events: none; z-index: 0;
+}
+.bolum-cta .cta { position: relative; z-index: 1; }
+.akordiyon summary { padding-block: 1.24rem; }
+.akordiyon details[open] { background: var(--m-50); box-shadow: inset 2px 0 0 var(--m-600); }
+.akordiyon details[open] .cevap { padding-bottom: 1.45rem; }
