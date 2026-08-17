@@ -2687,3 +2687,30 @@ p {
    katalog/uygulama çekimleri beyaz kutuda kalır (JS sınıfı değiştirir). */
 .cd-ana-gor--sahne{background:#0d0b12}
 .cd-ana-gor--sahne img{object-fit:cover;padding:0;mix-blend-mode:normal;width:100%;height:100%}
+
+/* ==========================================================================
+   Mobil onarım turu (390px başsız Chrome denetimiyle bulunanlar):
+   1) Üst çubuk her sayfada +15px taşıyordu — dar ekranda telefon düğmesi
+      ikonlaşır, menü düğmesi kadraja girer.
+   2) cihazlar.html +179px taşıyordu — filtredeki nowrap uyarı sarmalanır.
+   3) html/body overflow-x:clip emniyeti (yatay kıpırdama biter).
+   4) Küçük ekran marj/boşluk ayarları: kenar payı, bölüm ritmi, alt bilgi.
+   ========================================================================== */
+html, body { overflow-x: clip; }
+.f-sonuc { white-space: normal; }
+@media (max-width: 700px) {
+  .ust-eylem { gap: 0.5rem; }
+  .ust-eylem .btn-hat span { display: none; }
+  .ust-eylem .btn-hat { padding: 0.6rem 0.72rem; }
+  .tema-serit-ic { font-size: 0.72rem; gap: 0.3rem 0.55rem; }
+  .filtre { top: 60px; }
+}
+@media (max-width: 640px) {
+  .kap { width: min(100% - 2.2rem, var(--en)); }
+  .bolum { padding-block: clamp(3rem, 10vw, 4.5rem); }
+  .bolum-basi { margin-bottom: 1.9rem; }
+  .hero-ic { gap: 2rem; }
+  .guven { gap: 10px; }
+  .cd-kucuk { flex-wrap: wrap; }
+  .alt-izgara { gap: 2.1rem; }
+}
