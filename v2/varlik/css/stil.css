@@ -2682,3 +2682,8 @@ p {
 .c-kart--sahne .c-kart-gor{background:#0d0b12}
 .c-kart--sahne .c-kart-gor img{object-fit:cover;width:100%;height:100%;padding:0;mix-blend-mode:normal;transition:transform .6s ease}
 .c-kart--sahne:hover .c-kart-gor img{transform:scale(1.05)}
+
+/* Cihaz detay galerisi: showroom sahnesi koyu çerçevede tam kaplar;
+   katalog/uygulama çekimleri beyaz kutuda kalır (JS sınıfı değiştirir). */
+.cd-ana-gor--sahne{background:#0d0b12}
+.cd-ana-gor--sahne img{object-fit:cover;padding:0;mix-blend-mode:normal;width:100%;height:100%}

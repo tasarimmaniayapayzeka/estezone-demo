@@ -147,9 +147,12 @@
   const galeri = $('[data-galeri]');
   if (galeri) {
     const ana = $('[data-ana-gorsel]', galeri);
+    const cerceve = ana.closest('.cd-ana-gor');
     $$('[data-kucuk]', galeri).forEach((b) =>
       b.addEventListener('click', () => {
         ana.src = b.dataset.kucuk;
+        // showroom sahnesi koyu çerçeve + tam kaplama ister; katalog çekimi beyaz kutuda kalır
+        cerceve.classList.toggle('cd-ana-gor--sahne', b.dataset.kucuk.includes('/showroom-'));
         $$('[data-kucuk]', galeri).forEach((x) => x.setAttribute('aria-current', x === b));
       })
     );
