@@ -50,7 +50,7 @@ function anasayfa() {
   const bentoVitrin = [
     'arion-alexandrite-lazer', // epilasyon
     'cotra-plus-co2', // cilt
-    'estesculpt-pro', // vücut
+    'esteslim-zayiflama-cihazi', // vücut (beyaz zeminli fotoğraf; EsteSculpt Pro'nunki koyu metalikti)
     'zimmer-cryo-6-cilt-sogutma-sistemi', // destek
   ].map((s) => cihazlar.find((c) => c.slug === s));
 

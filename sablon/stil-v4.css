@@ -2740,3 +2740,39 @@ p {
     grid-column: auto;
   }
 }
+
+/* ---------- Görsel plakası tek tip + kahraman metin dengesi ----------
+   Fotoğraf zeminleri beyaza normalize edildi (kaynak/beyazlat.js);
+   kart görsel alanı da SAF BEYAZ plaka oldu — kartlar artık yamalı değil.
+   Kahraman metni dikeyde ortalanır, alttaki kopukluk gider. */
+.c-kart-gor {
+  background: #fff;
+}
+.c-kart-gor img {
+  mix-blend-mode: normal;
+}
+.cd-ana-gor {
+  background: #fff;
+}
+.cd-ana-gor img,
+.cd-kucuk button img {
+  mix-blend-mode: normal;
+}
+.cd-kucuk button {
+  background: #fff;
+}
+.hero-gorsel {
+  background: #fff;
+}
+.hero-gorsel img {
+  mix-blend-mode: normal;
+}
+.c-kart--kahraman .c-kart-govde {
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 1.8rem 2rem;
+}
+.c-kart--kahraman .c-kart-etiket {
+  margin-top: 0.6rem;
+  padding-top: 0;
+}
