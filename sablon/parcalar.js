@@ -362,16 +362,17 @@ ${alt(opt.yol)}
 }
 
 /* ---------- kart ---------- */
-function cihazKart(c, yol = '') {
+function cihazKart(c, yol = '', sahneGorsel = '') {
+  // sahneGorsel: kapak yerine showroom kompoziti kullan (yalnız ana sayfa vitrini)
   const k = yol ? '../' : '';
   const y = icerik.yetkiler[c.yetki] || icerik.yetkiler.tibbi;
   const arama = aramaNorm(
     [c.ad, c.marka, c.oneCikan, ...(c.etiketler || []), c.kategoriAd, c.rozet, y.ad, c.neden].join(' ')
   );
-  return `<a class="c-kart belir" data-cihaz data-k="${c.kategori}" data-y="${c.yetki}" data-arama="${kacis(arama)}" href="${k}cihaz/${c.slug}.html">
+  return `<a class="c-kart${sahneGorsel ? ' c-kart--sahne' : ''} belir" data-cihaz data-k="${c.kategori}" data-y="${c.yetki}" data-arama="${kacis(arama)}" href="${k}cihaz/${c.slug}.html">
   <div class="c-kart-gor">
     ${c.rozet ? `<span class="c-kart-rozet">${kacis(c.rozet)}</span>` : ''}
-    <img src="${k}varlik/gorsel/${c.kapak}" alt="${kacis(c.ad)} — ${kacis(c.marka)}" loading="lazy" width="400" height="300">
+    <img src="${k}varlik/gorsel/${sahneGorsel || c.kapak}" alt="${kacis(c.ad)} — ${kacis(c.marka)}" loading="lazy" width="400" height="300">
   </div>
   <div class="c-kart-govde">
     <span class="c-kart-marka">${kacis(c.marka)}</span>

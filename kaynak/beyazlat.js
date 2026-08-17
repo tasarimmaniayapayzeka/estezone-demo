@@ -107,7 +107,13 @@ async function beyazlat(dosya) {
 (async () => {
   const dosyalar = fs
     .readdirSync(KLASOR)
-    .filter((f) => /\.(webp|jpe?g|png)$/i.test(f) && !f.startsWith('ikon3d-') && !f.startsWith('logo-'));
+    .filter(
+      (f) =>
+        /\.(webp|jpe?g|png)$/i.test(f) &&
+        !f.startsWith('ikon3d-') &&
+        !f.startsWith('logo-') &&
+        !f.startsWith('showroom-')
+    );
   console.log(`${dosyalar.length} görsel taranıyor (ikon3d hariç)...\n`);
   const ozet = {};
   for (const f of dosyalar) {

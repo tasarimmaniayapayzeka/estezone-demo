@@ -86,12 +86,14 @@ function anasayfa() {
           <a class="btn btn-hat btn-b" href="cihaz-secim-danismani.html">Hangi cihaz bana uygun?</a>
         </div>
         <div class="guven">${guven
-          .map((g) => `<div><div class="s">${g.sayi}</div><div class="e">${g.etiket}</div></div>`)
+          .map(
+            (g, i) => `<div class="guven-kart belir"><span class="guven-ikon"><img src="varlik/gorsel/ikon3d-guven-0${i + 1}.webp" alt="" width="56" height="56" loading="lazy"></span><span class="guven-metin"><b class="s">${g.sayi}</b><span class="e">${g.etiket}</span></span></div>`
+          )
           .join('')}</div>
       </div>
       <div class="hero-gorsel belir">
         <span class="hero-rozet hero-rozet--sag"><span class="e">FDA 510(k)</span><span class="d">K231092</span></span>
-        <img src="varlik/gorsel/${kahraman.kapak}" alt="${kacis(kahraman.ad)} — profesyonel estetik platform" width="640" height="540" fetchpriority="high">
+        <img src="varlik/gorsel/showroom-t-shape-2.webp" alt="${kacis(kahraman.ad)} — Estezone showroom" width="640" height="480" fetchpriority="high">
         <span class="hero-rozet hero-rozet--sol"><span class="e">Vitrin cihaz</span><span class="d">${kacis(kahraman.ad)}</span></span>
       </div>
     </div>
@@ -130,10 +132,10 @@ function anasayfa() {
         Tamamı CE belgeli, tamamı kendi teknik servisimizin kapsamında.</p>
     </div>
     <div class="bento">
-      <a class="c-kart c-kart--kahraman belir" data-k="${kahraman.kategori}" href="cihaz/${kahraman.slug}.html">
+      <a class="c-kart c-kart--kahraman c-kart--sahne belir" data-k="${kahraman.kategori}" href="cihaz/${kahraman.slug}.html">
         <div class="c-kart-gor">
           <span class="c-kart-rozet">${kacis(kahraman.rozet)}</span>
-          <img src="varlik/gorsel/${kahraman.kapak}" alt="${kacis(kahraman.ad)} — ${kacis(kahraman.marka)}" width="640" height="640" loading="lazy">
+          <img src="varlik/gorsel/showroom-t-shape-2.webp" alt="${kacis(kahraman.ad)} — ${kacis(kahraman.marka)}" width="640" height="480" loading="lazy">
         </div>
         <div class="c-kart-govde">
           <span class="c-kart-marka">${kacis(kahraman.marka)} · Amiral gemisi</span>
@@ -148,7 +150,7 @@ function anasayfa() {
           <span class="yetki-pul"><span class="d" style="background:${icerik.yetkiler[kahraman.yetki].renk}"></span>${icerik.yetkiler[kahraman.yetki].kisa}</span>
           <span class="git">İncele ${ikon.ok}</span></div>
       </a>
-      ${bentoVitrin.map((c) => cihazKart(c)).join('')}
+      ${bentoVitrin.map((c) => cihazKart(c, '', `showroom-${c.slug}.webp`)).join('')}
     </div>
     <div class="orta" style="margin-top:2.4rem">
       <a class="btn btn-hat btn-b" href="cihazlar.html">28 cihazın tamamını görün ${ikon.ok}</a>
@@ -883,9 +885,9 @@ function kopyala() {
     if (c.kapak) gerekli.add(c.kapak);
     c.gorseller.slice(0, 6).forEach((g) => gerekli.add(g));
   });
-  // 3D servis ikonları (Higgsfield üretimi) + gerçek marka logoları (estezone.com.tr)
+  // 3D ikonlar + gerçek marka logoları + showroom sahne fotoğrafları (Higgsfield kompozit)
   fs.readdirSync(kaynak)
-    .filter((f) => f.startsWith('ikon3d-') || f.startsWith('logo-'))
+    .filter((f) => f.startsWith('ikon3d-') || f.startsWith('logo-') || f.startsWith('showroom-'))
     .forEach((f) => gerekli.add(f));
   let n = 0;
   gerekli.forEach((g) => {
