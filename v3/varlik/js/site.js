@@ -143,6 +143,72 @@
     });
   }
 
+  /* ---- hero showroom videosu (koşullu yükleme) ----
+     4.7 MB'lık dosyayı herkese indirtmeyiz: yalnız geniş ekran + hızlı
+     bağlantı + hareket kısıtlaması kapalıysa yüklenir. Diğer herkes zaten
+     aynı sahnenin fotoğrafını görür, hiçbir şey eksilmez. */
+  const heroKap = $('[data-hero-video]');
+  if (heroKap) {
+    const genis = matchMedia('(min-width: 900px)').matches;
+    const hareketOk = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const ag = navigator.connection || {};
+    const hizli = !ag.saveData && !/2g|slow-2g|3g/.test(ag.effectiveType || '');
+    if (genis && hareketOk && hizli) {
+      const v = document.createElement('video');
+      v.src = heroKap.dataset.heroVideo;
+      v.muted = v.loop = v.playsInline = v.autoplay = true;
+      v.setAttribute('aria-hidden', 'true');
+      v.className = 'hero-video';
+      v.addEventListener('canplay', () => heroKap.classList.add('hero-video-hazir'), { once: true });
+      heroKap.appendChild(v);
+    }
+  }
+
+  /* ---- teklif sihirbazı: 3 seçim → hazır WhatsApp mesajı ----
+     Form değil; her adım tek dokunuşla ilerler, son adımda mesaj metni
+     kullanıcıya GÖSTERİLİR (ne göndereceğini görmeden göndermesin). */
+  const sihirbaz = $('[data-sihirbaz]');
+  if (sihirbaz) {
+    const WA = '905398410585';
+    const secim = {};
+    const adimlar = $$('[data-sh-adim]', sihirbaz);
+    const sonuc = $('[data-sh-sonuc]', sihirbaz);
+    const cubuk = $('[data-sh-cubuk]', sihirbaz);
+    const goster = (n) => {
+      adimlar.forEach((a) => (a.hidden = +a.dataset.shAdim !== n));
+      sonuc.hidden = n <= adimlar.length;
+      cubuk.style.width = Math.min(100, ((n - 1) / adimlar.length) * 100) + '%';
+    };
+    const mesajKur = () => {
+      const m =
+        `Merhaba, Estezone Medikal'den cihaz teklifi almak istiyorum.\n\n` +
+        `• İlgilendiğim hat: ${secim.hat}\n` +
+        `• İşletme türüm: ${secim.isletme}\n` +
+        `• Edinim tercihim: ${secim.edinim}\n\n` +
+        `Uygun platformlar ve şartlar hakkında bilgi verebilir misiniz?`;
+      $('[data-sh-mesaj]', sihirbaz).textContent = m;
+      $('[data-sh-wa]', sihirbaz).href = `https://wa.me/${WA}?text=${encodeURIComponent(m)}`;
+    };
+    $$('[data-sh]', sihirbaz).forEach((b) =>
+      b.addEventListener('click', () => {
+        const alan = b.dataset.sh;
+        secim[alan] = b.dataset.deger;
+        // aynı adımdaki kardeşlerin seçimini temizle
+        $$(`[data-sh="${alan}"]`, sihirbaz).forEach((x) => x.setAttribute('aria-pressed', x === b));
+        const sira = { hat: 2, isletme: 3, edinim: 4 }[alan];
+        if (sira === 4) mesajKur();
+        goster(sira);
+      })
+    );
+    const sifirla = $('[data-sh-sifirla]', sihirbaz);
+    if (sifirla)
+      sifirla.addEventListener('click', () => {
+        Object.keys(secim).forEach((k) => delete secim[k]);
+        $$('[data-sh]', sihirbaz).forEach((x) => x.setAttribute('aria-pressed', 'false'));
+        goster(1);
+      });
+  }
+
   /* ---- cihaz galerisi ---- */
   const galeri = $('[data-galeri]');
   if (galeri) {
