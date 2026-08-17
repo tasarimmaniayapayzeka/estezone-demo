@@ -2980,3 +2980,16 @@ html, body { overflow-x: clip; }
   .c-kart--kahraman,
   .bento > .c-kart:last-child:not(.c-kart--kahraman) { grid-column: auto; grid-row: auto; }
 }
+
+/* Rozet çipi düzeltmesi: .e (etiket) ve .d (değer) satır içi span kaldığı
+   için "FDA 510(K)K231092" gibi yapışık tek satır basılıyordu — iki satıra
+   ayrılır. Yüzen düğmeler mobilde küçülüp köşeye çekilir, metni az kapatır. */
+.hero-rozet .e, .hero-rozet .d { display: block; }
+@media (max-width: 700px) {
+  .hero-rozet { padding: 0.5rem 0.78rem; }
+  .hero-rozet .e { font-size: 0.56rem; }
+  .hero-rozet .d { font-size: 0.86rem; }
+  .yuzen { right: 0.8rem; bottom: 0.8rem; gap: 0.45rem; }
+  .yuzen a, .yuzen button { width: 46px; height: 46px; }
+  .yuzen svg { width: 20px; height: 20px; }
+}

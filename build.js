@@ -34,11 +34,23 @@ const ANLATIM_KUMELERI = [
 function cihazAnlatim(c) {
   const par = (c.aciklama.length ? c.aciklama : [c.ozet]).filter(Boolean);
   if (!par.length) return '';
-  const giris = `<p class="giris" style="margin-bottom:1.05rem;max-width:none">${kacis(par[0])}</p>`;
-  const kalan = par.slice(1);
+  /* Giriş TEK nefes olmalı: ilk paragraf uzunsa cümle sınırından kısalt,
+     artan kısım akordiyondaki kümesine katılır (epicool'da giriş blok gibiydi). */
+  let girisMetni = par[0];
+  let kalan = par.slice(1);
+  if (girisMetni.length > 230) {
+    const cumleler = girisMetni.match(/[^.!?]+[.!?]+["»']?\s*/g) || [girisMetni];
+    let g = '';
+    for (const cu of cumleler) {
+      if (g && (g + cu).length > 230) break;
+      g += cu;
+    }
+    const artan = girisMetni.slice(g.length).trim();
+    girisMetni = g.trim();
+    if (artan) kalan = [artan, ...kalan];
+  }
+  const giris = `<p class="giris" style="margin-bottom:1.05rem;max-width:none">${kacis(girisMetni)}</p>`;
   if (!kalan.length) return giris;
-  if (kalan.length === 1)
-    return giris + `<p class="giris" style="margin-bottom:1.05rem;max-width:none">${kacis(kalan[0])}</p>`;
 
   const sira = [];
   const kume = new Map();
@@ -62,8 +74,8 @@ function cihazAnlatim(c) {
     giris +
     `<div class="cd-akordiyon">${sira
       .map(
-        (b, i) =>
-          `<details${i === 0 ? ' open' : ''}><summary>${b}</summary>${kume
+        (b) =>
+          `<details><summary>${b}</summary>${kume
             .get(b)
             .map((p) => `<p>${kacis(p)}</p>`)
             .join('')}</details>`
