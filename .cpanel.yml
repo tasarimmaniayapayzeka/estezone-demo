@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export HEDEF=/home/estezone/public_html
+    - /bin/cp -R . $HEDEF/
+    - /bin/rm -rf $HEDEF/.git $HEDEF/.cpanel.yml
