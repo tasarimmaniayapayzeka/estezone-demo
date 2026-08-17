@@ -15,6 +15,62 @@ const veri = require('./veri/cihazlar.json');
 const mevzuat = require('./sablon/mevzuat.js');
 
 const { marka, iletisim, guven, servisler, surec, farklar, sss, yasal } = icerik;
+
+/* Cihaz anlatımı: uzun paragraf yığını yerine kısa giriş + anlamlı başlıklı
+   akordiyon (smilegroup içerik düzeni). Paragraflar anahtar kelimeye göre
+   kümelenir; küme sırası metindeki ilk geçişe göre korunur. */
+/* Her küme birden çok küçük desen taşır; paragraf en çok deseni tutturduğu
+   kümeye gider (eşitlikte üstteki kazanır). Tek geniş regex denendi:
+   "teknoloji/sistem" her pazarlama cümlesinde geçtiği için hepsi ilk kümeye
+   yığıldı — o yüzden puanlama + jenerik kelimelerin dışlanması şart. */
+const ANLATIM_KUMELERI = [
+  ['Teknoloji ve çalışma prensibi', [/filtre/i, /sens[öo]r/i, /dalga boyu/i, /enerji/i, /soğutma/i, /başlık/i, /el aleti/i, /donanım/i, /prensi[bp]/i, /modül/i, /fiber/i, /atım/i]],
+  ['Uygulama alanları', [/tedavi/i, /uygulama/i, /akne/i, /leke/i, /epilasyon/i, /gençleştir/i, /vaskül/i, /pigment/i, /kontur/i, /bölge/i, /incelt/i, /sıkılaş/i, /cilt tipi/i]],
+  ['Verimlilik ve hasta konforu', [/verim/i, /güvenl/i, /konfor/i, /hızl/i, /seans/i, /ağrı/i, /hasta/i, /kolay/i]],
+  ['Kalite ve üretim', [/üretim/i, /kalite/i, /standart/i, /sertifika/i, /\bCE\b/, /FDA/i, /garanti/i, /üretici/i]],
+  ['Kombinasyon ve entegrasyon', [/entegre/i, /kombinasyon/i, /birlikte kullan/i, /maliyet/i, /yatırım/i]],
+];
+
+function cihazAnlatim(c) {
+  const par = (c.aciklama.length ? c.aciklama : [c.ozet]).filter(Boolean);
+  if (!par.length) return '';
+  const giris = `<p class="giris" style="margin-bottom:1.05rem;max-width:none">${kacis(par[0])}</p>`;
+  const kalan = par.slice(1);
+  if (!kalan.length) return giris;
+  if (kalan.length === 1)
+    return giris + `<p class="giris" style="margin-bottom:1.05rem;max-width:none">${kacis(kalan[0])}</p>`;
+
+  const sira = [];
+  const kume = new Map();
+  for (const p of kalan) {
+    let baslik = 'Öne çıkan detaylar';
+    let enIyi = 0;
+    for (const [ad, desenler] of ANLATIM_KUMELERI) {
+      const puan = desenler.filter((r) => r.test(p)).length;
+      if (puan > enIyi) {
+        enIyi = puan;
+        baslik = ad;
+      }
+    }
+    if (!kume.has(baslik)) {
+      kume.set(baslik, []);
+      sira.push(baslik);
+    }
+    kume.get(baslik).push(p);
+  }
+  return (
+    giris +
+    `<div class="cd-akordiyon">${sira
+      .map(
+        (b, i) =>
+          `<details${i === 0 ? ' open' : ''}><summary>${b}</summary>${kume
+            .get(b)
+            .map((p) => `<p>${kacis(p)}</p>`)
+            .join('')}</details>`
+      )
+      .join('')}</div>`
+  );
+}
 // Kaynak siteden gelen tüm cihaz metinleri mevzuat süzgecinden geçer (bkz. sablon/mevzuat.js)
 // + her cihaza işletme türü yetkisi eklenir (ön sınıflandırma, teyide tabi)
 const cihazlar = veri.cihazlar
@@ -513,9 +569,7 @@ function cihazSayfalari() {
     <div data-sekme="genel">
       <div class="izgara izgara-2" style="gap:2.4rem;align-items:start">
         <div>
-          ${(c.aciklama.length ? c.aciklama : [c.ozet])
-            .map((p) => `<p class="giris" style="margin-bottom:1.05rem;max-width:none">${kacis(p)}</p>`)
-            .join('')}
+          ${cihazAnlatim(c)}
         </div>
         <div class="arac">
           <h3 style="font-size:1.1rem">Künye</h3>
@@ -535,13 +589,6 @@ function cihazSayfalari() {
           <a class="btn btn-hat btn-k" style="margin-top:1.2rem;width:100%" href="../karsilastir.html">Başka cihazla karşılaştır</a>
         </div>
       </div>
-      ${
-        c.bolumler.length
-          ? `<div style="margin-top:2.4rem"><h3>Sayfa içeriği</h3><ul class="madde" style="margin-top:1rem">${c.bolumler
-              .map((b) => `<li>${kacis(b)}</li>`)
-              .join('')}</ul></div>`
-          : ''
-      }
     </div>
 
     ${
