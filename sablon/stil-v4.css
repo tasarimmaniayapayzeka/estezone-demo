@@ -2642,3 +2642,55 @@ p {
 .bolum-son {
   padding-bottom: clamp(2rem, 3.5vw, 3.2rem);
 }
+
+/* ---------- Vitrin bento: kahraman 2×2 + 5 kart, 3×3 tam dolu ---------- */
+.bento {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+}
+.c-kart--kahraman {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.c-kart--kahraman .c-kart-gor {
+  aspect-ratio: auto;
+  flex: 1 1 auto;
+  min-height: 340px;
+}
+.c-kart--kahraman .c-kart-gor img {
+  padding: 2.2rem;
+}
+.c-kart--kahraman .c-kart-govde h3 {
+  font-size: clamp(1.5rem, 2.2vw, 1.95rem);
+}
+.c-kart--kahraman .c-kart-govde p {
+  -webkit-line-clamp: 3;
+  font-size: 0.95rem;
+  max-width: 58ch;
+}
+@media (max-width: 1080px) {
+  .bento {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .c-kart--kahraman {
+    grid-column: span 2;
+    grid-row: auto;
+  }
+  .c-kart--kahraman .c-kart-gor {
+    min-height: 280px;
+  }
+  /* 5 tekli kart 2 kolonda 2+2+1 kalır — sonuncusu tam genişlik alsın */
+  .bento > .c-kart:last-child:not(.c-kart--kahraman) {
+    grid-column: span 2;
+  }
+}
+@media (max-width: 640px) {
+  .bento {
+    grid-template-columns: 1fr;
+  }
+  .c-kart--kahraman,
+  .bento > .c-kart:last-child:not(.c-kart--kahraman) {
+    grid-column: auto;
+  }
+}

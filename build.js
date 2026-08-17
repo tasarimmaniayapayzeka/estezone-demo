@@ -42,8 +42,16 @@ function yaz(gorece, html) {
 
 /* ======================= 1. ANASAYFA ======================= */
 function anasayfa() {
-  const vitrin = cihazlar.filter((c) => c.vitrin).slice(0, 6);
   const kahraman = cihazlar.find((c) => c.slug === 't-shape-2');
+  /* Bento vitrini: kahraman (T-Shape 2) 2×2 + dört kategoriyi de temsil eden 5 kart.
+     3×3 ızgaraya 6 kart tam oturur — boş hücre matematiksel olarak imkânsız. */
+  const bentoVitrin = [
+    'arion-alexandrite-lazer', // epilasyon
+    'cotra-plus-co2', // cilt
+    'lucid-q-ptp', // cilt (dövme/leke hattı)
+    'estesculpt-pro', // vücut
+    'zimmer-cryo-6-cilt-sogutma-sistemi', // destek
+  ].map((s) => cihazlar.find((c) => c.slug === s));
 
   const sema = {
     '@context': 'https://schema.org',
@@ -120,7 +128,27 @@ function anasayfa() {
       <p class="giris">Küçük salondan hastaneye kadar değişen ihtiyaçlara karşılık gelen sistemler.
         Tamamı CE belgeli, tamamı kendi teknik servisimizin kapsamında.</p>
     </div>
-    <div class="izgara izgara-3">${vitrin.map((c) => cihazKart(c)).join('')}</div>
+    <div class="bento">
+      <a class="c-kart c-kart--kahraman belir" data-k="${kahraman.kategori}" href="cihaz/${kahraman.slug}.html">
+        <div class="c-kart-gor">
+          <span class="c-kart-rozet">${kacis(kahraman.rozet)}</span>
+          <img src="varlik/gorsel/${kahraman.kapak}" alt="${kacis(kahraman.ad)} — ${kacis(kahraman.marka)}" width="640" height="640" loading="lazy">
+        </div>
+        <div class="c-kart-govde">
+          <span class="c-kart-marka">${kacis(kahraman.marka)} · Amiral gemisi</span>
+          <h3>${kacis(kahraman.ad)}</h3>
+          <span class="c-kart-one">${kacis(kahraman.oneCikan)}</span>
+          <p>${kacis(kahraman.neden)}</p>
+          <div class="c-kart-etiket">${(kahraman.etiketler || [])
+            .map((e) => `<span class="pul">${kacis(e)}</span>`)
+            .join('')}</div>
+        </div>
+        <div class="c-kart-alt">
+          <span class="yetki-pul"><span class="d" style="background:${icerik.yetkiler[kahraman.yetki].renk}"></span>${icerik.yetkiler[kahraman.yetki].kisa}</span>
+          <span class="git">İncele ${ikon.ok}</span></div>
+      </a>
+      ${bentoVitrin.map((c) => cihazKart(c)).join('')}
+    </div>
     <div class="orta" style="margin-top:2.4rem">
       <a class="btn btn-hat btn-b" href="cihazlar.html">28 cihazın tamamını görün ${ikon.ok}</a>
     </div>
