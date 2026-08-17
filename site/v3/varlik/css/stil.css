@@ -2249,3 +2249,40 @@ p {
 /* güven şeridi: auto-fit 3+1 sarıyordu → 2×2 dengeli ızgara */
 .guven { grid-template-columns: repeat(2, 1fr); gap: 1.4rem 2rem; }
 .guven .e { margin-top: .3rem; }
+
+/* ---------- Sayfa finali: SSS + çağrı kartı (iki kolon) ---------- */
+.sss-duzen {
+  display: grid; grid-template-columns: minmax(300px, .85fr) 1.35fr;
+  gap: clamp(2.2rem, 4.5vw, 4.5rem); align-items: start;
+}
+@media (max-width: 940px) { .sss-duzen { grid-template-columns: 1fr; } }
+.sss-sol { position: sticky; top: 100px; }
+@media (max-width: 940px) { .sss-sol { position: static; } }
+.sss-kart {
+  position: relative; margin-top: 1.8rem; padding: 1.7rem;
+  border-radius: var(--r); background: var(--kagit);
+  border: 1px solid var(--cizgi); overflow: hidden;
+}
+.sss-kart::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: var(--pirinc);
+}
+.sss-kart > b {
+  display: block; font-family: var(--f-bas); font-size: 1.16rem;
+  font-weight: 600; color: var(--metin); line-height: 1.3;
+}
+.sss-kart > p { font-size: .88rem; color: var(--metin-2); line-height: 1.68; margin-top: .55rem; }
+.sss-kart-btnler { display: grid; gap: .6rem; margin-top: 1.3rem; }
+.sss-kart-btnler .btn { width: 100%; }
+.sss-tel {
+  display: flex; align-items: center; justify-content: center; gap: .55rem;
+  margin-top: .95rem; padding: .68rem; border-radius: var(--r-b);
+  border: 1px solid var(--cizgi-2); font-family: var(--f-mono);
+  font-size: .95rem; color: var(--metin); transition: var(--gecis);
+}
+.sss-tel:hover { border-color: var(--y-500); background: var(--y-50); }
+.sss-tel svg { width: 16px; height: 16px; flex: none; color: var(--y-600); }
+.sss-kart small {
+  display: block; text-align: center; margin-top: .85rem;
+  font-size: .76rem; color: var(--metin-3); line-height: 1.55;
+}

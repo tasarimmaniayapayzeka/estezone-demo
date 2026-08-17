@@ -2310,3 +2310,41 @@ p {
 .guven div:nth-child(even) { border-right: none; }
 .guven div:nth-child(-n+2) { border-bottom: 1px solid var(--cizgi); }
 .guven .e { margin-top: 0; }
+
+/* ---------- Sayfa finali: SSS + çağrı kartı (iki kolon) ---------- */
+.sss-duzen {
+  display: grid; grid-template-columns: minmax(300px, .85fr) 1.35fr;
+  gap: clamp(2rem, 4vw, 4rem); align-items: start;
+}
+@media (max-width: 940px) { .sss-duzen { grid-template-columns: 1fr; } }
+.sss-sol { position: sticky; top: 100px; }
+@media (max-width: 940px) { .sss-sol { position: static; } }
+.sss-kart {
+  position: relative; margin-top: 1.7rem; padding: 1.6rem;
+  border-radius: var(--r); background: #fff;
+  border: 1px solid var(--cizgi-2); box-shadow: var(--golge); overflow: hidden;
+}
+.sss-kart::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--m-600);
+}
+.sss-kart > b {
+  display: block; font-family: var(--fb, inherit); font-size: 1.08rem;
+  font-weight: 700; letter-spacing: -.02em; color: var(--metin); line-height: 1.32;
+}
+.sss-kart > p { font-size: .875rem; color: var(--metin-2); line-height: 1.62; margin-top: .55rem; }
+.sss-kart-btnler { display: grid; gap: .6rem; margin-top: 1.25rem; }
+.sss-kart-btnler .btn { width: 100%; }
+.sss-tel {
+  display: flex; align-items: center; justify-content: center; gap: .55rem;
+  margin-top: .95rem; padding: .65rem; border-radius: var(--r-b);
+  border: 1px solid var(--cizgi-2); font-family: var(--fm, monospace);
+  font-size: .95rem; font-weight: 550; color: var(--metin); transition: 180ms;
+}
+.sss-tel:hover { border-color: var(--m-400); background: var(--m-50); }
+.sss-tel svg { width: 16px; height: 16px; flex: none; color: var(--m-600); }
+.sss-kart small {
+  display: block; text-align: center; margin-top: .8rem;
+  font-size: .755rem; color: var(--metin-3); line-height: 1.5;
+}
+.sss-duzen .akordiyon { background: #fff; }

@@ -215,26 +215,41 @@ function anasayfa() {
   </div>
 </section>
 
+<!-- SAYFA FİNALİ: SSS + çağrı tek bölümde.
+     Eskiden dar akordiyon + ayrı CTA kutusu alt alta yüzüyor, geniş ekranda
+     koca boşlukta iki küçük kutu gibi kalıyordu. Şimdi: solda sabit çağrı
+     kartı, sağda akordiyon — tam genişlik, tek tasarlanmış kapanış. -->
 <section class="bolum dokulu">
-  <div class="kap" style="max-width:900px">
-    <div class="bolum-basi bolum-basi--orta">
-      <span class="ust-etiket">Sık sorulanlar</span>
-      <h2>Karar öncesi en çok sorulanlar</h2>
+  <div class="kap">
+    <div class="sss-duzen">
+      <div class="sss-sol belir">
+        <span class="ust-etiket">Sık sorulanlar</span>
+        <h2 style="margin-top:.85rem">Karar öncesi en çok sorulanlar</h2>
+        <p class="giris" style="margin-top:1rem">Altı soruda; fiyatlama mantığımız, demo süreci,
+          kiralama ve servis kapsamı. Cevabını bulamadığınız konu için yandaki kanallardan ulaşın.</p>
+        <div class="sss-kart">
+          <b>Cihazınızı seçelim, rakamları konuşalım</b>
+          <p>Envanterinizi ve hedef hacminizi paylaşın; uygun platformu sarf ve servis
+            kalemleriyle birlikte tek teklifte çıkaralım.</p>
+          <div class="sss-kart-btnler">
+            <a class="btn btn-ana" href="iletisim.html">Teklif ve demo talebi</a>
+            <a class="btn btn-wa" href="https://wa.me/${iletisim.whatsappHam}" target="_blank" rel="noopener">${ikon.wa}WhatsApp'tan yazın</a>
+          </div>
+          <a class="sss-tel" href="tel:${iletisim.telefonHam}">${ikon.tel}<span>${iletisim.telefon}</span></a>
+          <small>Ankara ve İstanbul ofislerimizden aynı gün dönüş yapılır.</small>
+        </div>
+      </div>
+      <div class="akordiyon belir">
+        ${sss
+          .map(
+            (f, i) =>
+              `<details${i === 0 ? ' open' : ''}><summary>${f.s}</summary><div class="cevap">${f.c}</div></details>`
+          )
+          .join('')}
+      </div>
     </div>
-    <div class="akordiyon belir">
-      ${sss
-        .map(
-          (f, i) =>
-            `<details${i === 0 ? ' open' : ''}><summary>${f.s}</summary><div class="cevap">${f.c}</div></details>`
-        )
-        .join('')}
-    </div>
-    <p class="sss-kapanis belir">Cevabını bulamadığınız bir konu mu var?
-      <a href="iletisim.html">Doğrudan sorun</a></p>
   </div>
-</section>
-
-${cta('', 'Cihazınızı seçelim, rakamları birlikte konuşalım', 'Envanterinizi ve hedef hacminizi paylaşın; size uygun platformu, sarf ve servis kalemleriyle birlikte tek teklifte çıkaralım.')}`;
+</section>`;
 
   yaz(
     'index.html',
