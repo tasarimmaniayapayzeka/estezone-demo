@@ -14,7 +14,7 @@ const veri = require('./veri/cihazlar.json');
 
 const mevzuat = require('./sablon/mevzuat.js');
 
-const { marka, iletisim, guven, servisler, surec, farklar, sss, yasal } = icerik;
+const { marka, iletisim, guven, servisler, surec, farklar, sss, yasal, referanslar } = icerik;
 
 /* Cihaz anlatımı: uzun paragraf yığını yerine kısa giriş + anlamlı başlıklı
    akordiyon (smilegroup içerik düzeni). Paragraflar anahtar kelimeye göre
@@ -159,7 +159,7 @@ function anasayfa() {
           )
           .join('')}</div>
       </div>
-      <div class="hero-gorsel belir">
+      <div class="hero-gorsel belir" data-hero-video="varlik/gorsel/showroom-t-shape-2.mp4">
         <span class="hero-rozet hero-rozet--sag"><span class="e">FDA 510(k)</span><span class="d">K231092</span></span>
         <img src="varlik/gorsel/showroom-t-shape-2.webp" alt="${kacis(kahraman.ad)} — Estezone showroom" width="640" height="480" fetchpriority="high">
         <span class="hero-rozet hero-rozet--sol"><span class="e">Vitrin cihaz</span><span class="d">${kacis(kahraman.ad)}</span></span>
@@ -264,7 +264,73 @@ function anasayfa() {
   </div>
 </section>
 
-<section class="bolum dokulu">
+<section class="bolum"><div class="kap">
+  <div class="bolum-basi">
+    <span class="ust-etiket">Sahadan</span>
+    <h2>Hangi işletme, hangi hatta başladı</h2>
+    <p class="giris">Kurumsal iş referanslarımız — hasta görseli ya da tedavi sonucu değil, işletmenin
+      yatırım yolculuğu. Rakamlar temsilîdir; teklif aşamasında gerçek referanslarımızı paylaşırız.</p>
+  </div>
+  <div class="ref-ozet belir">${referanslar.ozet
+    .map((o) => `<div><b>${o.sayi}</b><span>${o.etiket}</span></div>`)
+    .join('')}</div>
+  <div class="izgara izgara-3" style="margin-top:1.6rem">
+    ${referanslar.vakalar
+      .map(
+        (v) => `<article class="kart ref-kart belir">
+      <div class="ref-bas">
+        <span class="yetki-pul"><span class="d" style="background:${icerik.yetkiler[v.yetki].renk}"></span>${kacis(v.tip)}</span>
+        <span class="mono ref-sehir">${kacis(v.sehir)}</span>
+      </div>
+      <h3>${kacis(v.baslik)}</h3>
+      <p>${kacis(v.metin)}</p>
+      <div class="ref-alt"><span class="pul">${kacis(v.hat)}</span><span class="ref-olcut">${kacis(v.olcut)}</span></div>
+    </article>`
+      )
+      .join('')}
+  </div>
+</div></section>
+
+<section class="bolum dokulu"><div class="kap">
+  <div class="bolum-basi bolum-basi--orta">
+    <span class="ust-etiket" style="justify-content:center">60 saniyede teklif</span>
+    <h2>Üç soru, hazır teklif mesajı</h2>
+    <p class="giris">Formu doldurmayın; üç seçim yapın, mesajınızı biz yazalım. WhatsApp'ta göndermeye hazır gelsin.</p>
+  </div>
+  <div class="sihirbaz belir" data-sihirbaz>
+    <div class="sh-adim" data-sh-adim="1">
+      <span class="sh-no">01</span><h4>Hangi hatta yatırım düşünüyorsunuz?</h4>
+      <div class="sh-secenek">${KATEGORI_MENU.map(
+        ([sl, k, ad]) => `<button type="button" data-sh="hat" data-deger="${kacis(ad)}" data-k="${k}">${ad}</button>`
+      ).join('')}</div>
+    </div>
+    <div class="sh-adim" data-sh-adim="2" hidden>
+      <span class="sh-no">02</span><h4>İşletme türünüz nedir?</h4>
+      <div class="sh-secenek">${Object.entries(icerik.yetkiler)
+        .map(([k, y]) => `<button type="button" data-sh="isletme" data-deger="${kacis(y.ad || y.kisa)}">${kacis(y.kisa)}</button>`)
+        .join('')}</div>
+      <p class="sonuk sh-not">Bu bilgi, cihazın bulundurma yetkisini önden değerlendirmemiz için gerekli.</p>
+    </div>
+    <div class="sh-adim" data-sh-adim="3" hidden>
+      <span class="sh-no">03</span><h4>Nasıl edinmeyi düşünüyorsunuz?</h4>
+      <div class="sh-secenek">${['Peşin satın alma', 'Taksitli / finansman', 'Kiralama', 'Takas ile', 'Henüz karar vermedim']
+        .map((e) => `<button type="button" data-sh="edinim" data-deger="${e}">${e}</button>`)
+        .join('')}</div>
+    </div>
+    <div class="sh-sonuc" data-sh-sonuc hidden>
+      <span class="sh-no">✓</span><h4>Mesajınız hazır</h4>
+      <blockquote class="sh-mesaj" data-sh-mesaj></blockquote>
+      <div class="btn-grup">
+        <a class="btn btn-wa btn-b" data-sh-wa href="#" target="_blank" rel="noopener">${ikon.wa}WhatsApp'tan gönder</a>
+        <a class="btn btn-hat btn-b" href="iletisim.html">Formu tercih ederim</a>
+      </div>
+      <button type="button" class="btn btn-sade sh-sifirla" data-sh-sifirla>Baştan başla</button>
+    </div>
+    <div class="sh-ilerleme"><span data-sh-cubuk style="width:0%"></span></div>
+  </div>
+</div></section>
+
+<section class="bolum">
   <div class="kap">
     <div class="izgara izgara-2" style="gap:2.4rem;align-items:center">
       <div>

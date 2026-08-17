@@ -313,3 +313,49 @@ module.exports.cihazYetkisi = function (slug, kategori) {
   if (MERKEZ.has(slug)) return 'merkez';
   return 'salon'; // lazer dışı cilt bakım, soğutma sistemleri, koruyucu ekipman
 };
+
+/* ---------- Referans vitrini (B2B kurumsal referans) ----------
+   ÖNEMLİ: Hasta yorumu / tedavi sonucu paylaşımı DEĞİL — bu, sağlık
+   tanıtım mevzuatında yasak. Burada yalnızca kurumsal iş referansı var:
+   hangi tip işletmeye kaç kurulum, hangi ilde, hangi hat. Rakamlar
+   müşteriden teyit alınana kadar TEMSİLİdir (notlar/MUSTERIYE-SORULACAKLAR). */
+module.exports.referanslar = {
+  ozet: [
+    { sayi: '20+', etiket: 'yıllık tedarik geçmişi' },
+    { sayi: '4', etiket: 'ana cihaz hattı' },
+    { sayi: '2', etiket: 'ofis · Ankara & İstanbul' },
+    { sayi: '8', etiket: 'kalemde atölye onarımı' },
+  ],
+  vakalar: [
+    {
+      tip: 'Güzellik salonu',
+      yetki: 'salon',
+      sehir: 'Ankara',
+      hat: 'Lazer epilasyon',
+      baslik: 'Tek kabinli salonda ikinci gelir hattı',
+      metin:
+        'Cilt bakımı ağırlıklı çalışan salon, epilasyon talebini dışarıya yönlendirmeyi bırakmak istedi. Giriş seviyesi diode platformla başlanıp altı ay sonra ikinci başlık eklendi.',
+      olcut: 'Kiralamayla başlayıp satın almaya geçti',
+    },
+    {
+      tip: 'Medikal estetik merkezi',
+      yetki: 'merkez',
+      sehir: 'İstanbul',
+      hat: 'Vücut şekillendirme',
+      baslik: 'Sezon yoğunluğunda ek kapasite',
+      metin:
+        'Yaz döneminde randevu sırası uzayan merkez, üç aylık kiralama ile ikinci kontur platformu aldı. Sezon sonunda cihaz teslim edildi, ertesi yıl aynı model satın alındı.',
+      olcut: 'Sezonluk kiralama → kalıcı yatırım',
+    },
+    {
+      tip: 'Poliklinik',
+      yetki: 'tibbi',
+      sehir: 'Ankara',
+      hat: 'Cilt & medikal estetik',
+      baslik: 'Farklı marka cihaza atölye desteği',
+      metin:
+        'Bizden alınmamış bir CO2 platformunun güç kaynağı arızasında ölçümlü teşhis yapıldı; onarımın yenilemeden ekonomik olduğu yazılı raporlandı ve cihaz sahaya döndü.',
+      olcut: 'Marka bağımsız teknik servis',
+    },
+  ],
+};
