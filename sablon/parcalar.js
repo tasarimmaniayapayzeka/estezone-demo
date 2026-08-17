@@ -20,6 +20,7 @@ const TEMALAR = {
     favZemin: '2dd4f5',
     favCizgi: '04202a',
     favR: '8',
+    logoDosya: 'logo-estezone-beyaz.webp',
     font: 'family=Inter:wght@400;450;500;550;600;650&family=JetBrains+Mono:wght@400;500;600',
   },
   acik: {
@@ -30,6 +31,7 @@ const TEMALAR = {
     favZemin: '0d5490',
     favCizgi: 'ffffff',
     favR: '6',
+    logoDosya: 'logo-estezone-mavi.webp',
     font: 'family=Inter:wght@400;450;500;550;600;650&family=Inter+Tight:wght@600;650;700;750&family=JetBrains+Mono:wght@400;500;600',
   },
   v3: {
@@ -40,6 +42,7 @@ const TEMALAR = {
     favZemin: '2d5f54',
     favCizgi: 'faf8f5',
     favR: '3',
+    logoDosya: 'logo-estezone-mavi.webp',
     font: 'family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;450;500;550;600&family=JetBrains+Mono:wght@400;500',
   },
   v4: {
@@ -50,6 +53,7 @@ const TEMALAR = {
     favZemin: 'a855f7',
     favCizgi: '0b0910',
     favR: '9',
+    logoDosya: 'logo-estezone-beyaz.webp',
     font: 'family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;450;500;550;600&family=JetBrains+Mono:wght@400;500;600',
   },
 };
@@ -152,11 +156,8 @@ function kafa({ baslik, aciklama, yol = '', kanonik, sema, gorsel }) {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?${TEMALAR[T.tema].font}&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="${k}varlik/css/stil.css?v=${SURUM}">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='${
-    TEMALAR[T.tema].favR
-  }' fill='%23${TEMALAR[T.tema].favZemin}'/%3E%3Cpath d='M5 16h4l3-9 6 18 3-9h6' fill='none' stroke='%23${
-    TEMALAR[T.tema].favCizgi
-  }' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="${k}varlik/gorsel/logo-favicon.png?v=${SURUM}">
+<link rel="apple-touch-icon" href="${k}varlik/gorsel/logo-dokunma.png">
 ${sema ? `<script type="application/ld+json">${JSON.stringify(sema)}</script>` : ''}`;
 }
 
@@ -220,7 +221,7 @@ function ust(yol = '', aktif = '') {
 </div>
 <header class="ust">
   <div class="kap ust-ic">
-    <a class="logo" href="${k}index.html"><span class="logo-im">${ikon.logo}</span><span><b>Estezone</b> <span>Medikal</span></span></a>
+    <a class="logo" href="${k}index.html"><img class="logo-gorsel" src="${k}varlik/gorsel/${TEMALAR[T.tema].logoDosya}" alt="Estezone Medikal" width="157" height="38"></a>
     <ul class="nav">${nav}</ul>
     <div class="ust-eylem">
       <a class="btn btn-hat btn-k" href="tel:${iletisim.telefonHam}">${ikon.tel}<span>${iletisim.telefon}</span></a>
@@ -232,7 +233,7 @@ function ust(yol = '', aktif = '') {
 <div class="cekmece" role="dialog" aria-label="Menü">
   <div class="cekmece-panel">
     <div class="cekmece-bas">
-      <a class="logo" href="${k}index.html"><span class="logo-im">${ikon.logo}</span><b>Estezone</b></a>
+      <a class="logo" href="${k}index.html"><img class="logo-gorsel" src="${k}varlik/gorsel/${TEMALAR[T.tema].logoDosya}" alt="Estezone Medikal" width="124" height="30"></a>
       <button class="cekmece-kapat" aria-label="Kapat">${ikon.kapat}</button>
     </div>
     <nav>${mobil}</nav>
@@ -251,7 +252,7 @@ function alt(yol = '') {
   <div class="kap">
     <div class="alt-izgara">
       <div>
-        <a class="logo" href="${k}index.html" style="margin-bottom:1.1rem"><span class="logo-im">${ikon.logo}</span><span><b>Estezone</b> <span>Medikal</span></span></a>
+        <a class="logo" href="${k}index.html" style="margin-bottom:1.1rem"><img class="logo-gorsel" src="${k}varlik/gorsel/${TEMALAR[T.tema].logoDosya}" alt="Estezone Medikal" width="133" height="32"></a>
         <p class="sonuk" style="font-size:.895rem;max-width:38ch;line-height:1.65">${marka.aciklama}</p>
         <div class="btn-grup" style="margin-top:1.3rem">
           <a class="btn btn-wa btn-k" href="https://wa.me/${iletisim.whatsappHam}">${ikon.wa}WhatsApp</a>

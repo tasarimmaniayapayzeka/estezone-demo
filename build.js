@@ -883,9 +883,9 @@ function kopyala() {
     if (c.kapak) gerekli.add(c.kapak);
     c.gorseller.slice(0, 6).forEach((g) => gerekli.add(g));
   });
-  // 3D servis ikonları (Higgsfield üretimi, arka planı temizlenmiş)
+  // 3D servis ikonları (Higgsfield üretimi) + gerçek marka logoları (estezone.com.tr)
   fs.readdirSync(kaynak)
-    .filter((f) => f.startsWith('ikon3d-'))
+    .filter((f) => f.startsWith('ikon3d-') || f.startsWith('logo-'))
     .forEach((f) => gerekli.add(f));
   let n = 0;
   gerekli.forEach((g) => {
