@@ -50,7 +50,11 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
 }
 
 // Aynı köken dışından çağrıyı reddet (anahtarın başkası tarafından kullanılmasını önler)
-$IZINLI_HOSTLAR = ['estezone.com.tr', 'www.estezone.com.tr', 'localhost', '127.0.0.1'];
+$IZINLI_HOSTLAR = [
+    'estezone.info', 'www.estezone.info',       // sunum/demo alanı (cPanel)
+    'estezone.com.tr', 'www.estezone.com.tr',   // resmî alan (ileride)
+    'localhost', '127.0.0.1',
+];
 $kaynak = $_SERVER['HTTP_ORIGIN'] ?? $_SERVER['HTTP_REFERER'] ?? '';
 if ($kaynak !== '') {
     $host = parse_url($kaynak, PHP_URL_HOST) ?: '';

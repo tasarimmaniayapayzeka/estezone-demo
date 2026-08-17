@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/estezone/public_html/
+    - /bin/cp -R site/* $DEPLOYPATH
+    - /bin/cp yayin/htaccess-kok.txt $DEPLOYPATH.htaccess
