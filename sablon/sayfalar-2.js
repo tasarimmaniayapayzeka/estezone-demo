@@ -103,7 +103,11 @@ module.exports = function ({ yaz, cihazlar, kategoriler }) {
 <section class="bolum"><div class="kap">
   <div class="bolum-basi bolum-basi--orta"><span class="ust-etiket">Süreç</span><h2>Bizimle çalışmak nasıl işler</h2></div>
   <div class="surec belir">${surec
-    .map((s) => `<div class="surec-ad"><span class="no">${s.no}</span><h4>${s.ad}</h4><p>${s.metin}</p></div>`)
+    .map(
+      (s, i) => `<div class="surec-ad">
+      <span class="surec-ikon"><img src="varlik/gorsel/ikon3d-surec-0${i + 1}.webp" alt="" width="72" height="72" loading="lazy"></span>
+      <span class="no">${s.no}</span><h4>${s.ad}</h4><p>${s.metin}</p></div>`
+    )
     .join('')}</div>
 </div></section>
 

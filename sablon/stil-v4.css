@@ -2776,3 +2776,109 @@ p {
   margin-top: 0.6rem;
   padding-top: 0;
 }
+
+/* ---------- Satın alma süreci v2: 3D ikonlu zaman çizelgesi ----------
+   Eski düz şerit yerine: 5 sabit kart, ikonları birbirine bağlayan
+   yatay çizgi, hover'da yükselme. Dar ekranda dikey zaman çizelgesi. */
+.surec {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.1rem;
+  border: none;
+  background: none;
+  border-radius: 0;
+  overflow: visible;
+  position: relative;
+}
+.surec::before {
+  content: '';
+  position: absolute;
+  top: 60px;
+  left: 6%;
+  right: 6%;
+  height: 2px;
+  background: var(--gradyan);
+  opacity: 0.55;
+}
+.surec-ad {
+  background: linear-gradient(168deg, var(--yuzey), var(--zemin-2));
+  border: 1px solid var(--kenar);
+  border-radius: var(--r);
+  padding: 1.4rem 1.15rem 1.45rem;
+  text-align: center;
+  position: relative;
+  transition: var(--gecis);
+}
+.surec-ad:hover {
+  transform: translateY(-5px);
+  border-color: var(--kenar-parlak);
+  box-shadow: var(--parlama);
+  background: linear-gradient(168deg, var(--yuzey), var(--zemin-2));
+}
+.surec-ikon {
+  display: grid;
+  place-items: center;
+  width: 78px;
+  height: 78px;
+  border-radius: 16px;
+  background: radial-gradient(ellipse 80% 80% at 50% 32%, rgba(168,85,247,.22), rgba(17,14,27,.7) 78%);
+  border: 1px solid var(--kenar);
+  margin: 0 auto 0.9rem;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.surec-ikon img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  transition: transform 400ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.surec-ad:hover .surec-ikon img {
+  transform: scale(1.16) rotate(-4deg);
+}
+.surec-ad .no {
+  display: inline-block;
+}
+.surec-ad h4 {
+  margin: 0.45rem 0 0.45rem;
+}
+.surec-ad p {
+  padding-right: 0;
+  text-align: center;
+}
+@media (max-width: 1080px) {
+  .surec {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+  .surec::before {
+    top: 24px;
+    bottom: 24px;
+    left: 55px;
+    right: auto;
+    width: 2px;
+    height: auto;
+    background: var(--gradyan);
+  }
+  .surec-ad {
+    display: grid;
+    grid-template-columns: 78px 1fr;
+    gap: 0.4rem 1.1rem;
+    text-align: left;
+    align-items: start;
+    padding: 1.1rem 1.2rem;
+  }
+  .surec-ad .surec-ikon {
+    grid-row: 1 / 4;
+    margin: 0;
+  }
+  .surec-ad h4,
+  .surec-ad .no {
+    grid-column: 2;
+  }
+  .surec-ad p {
+    grid-column: 2;
+    text-align: left;
+  }
+}
