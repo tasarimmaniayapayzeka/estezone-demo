@@ -200,12 +200,14 @@ function anasayfa() {
       <p class="giris">Flash lambadan fiber optiğe, güç kaynağından soğutma devresine kadar.
         Bizden almadığınız cihazlar için de.</p>
     </div>
-    <div class="izgara izgara-4">
+    <!-- 4×2 sabit ızgara: 8 kalem her genişlikte tam satır doldurur, boş hücre kalmaz.
+         Her kalemin Higgsfield ile üretilmiş 3D ikonu var (ikon3d-<slug>.webp). -->
+    <div class="servis-izgara">
       ${servisler
-        .slice(0, 8)
         .map(
-          (s) => `<div class="kart belir" style="padding:1.25rem">
-        <h4 style="font-size:.98rem">${s.ad}</h4><p style="font-size:.87rem">${s.ozet}</p></div>`
+          (s) => `<div class="servis-kart belir">
+        <span class="servis-ikon"><img src="varlik/gorsel/ikon3d-${s.slug}.webp" alt="" width="76" height="76" loading="lazy"></span>
+        <h4>${s.ad}</h4><p>${s.ozet}</p></div>`
         )
         .join('')}
     </div>
@@ -603,7 +605,10 @@ function teknikServis() {
     ${servisler
       .map(
         (s) => `<div class="kart belir">
-      <h3 style="font-size:1.12rem">${s.ad}</h3>
+      <div class="servis-baslik-satir">
+        <span class="servis-ikon servis-ikon--kucuk"><img src="varlik/gorsel/ikon3d-${s.slug}.webp" alt="" width="56" height="56" loading="lazy"></span>
+        <h3 style="font-size:1.12rem">${s.ad}</h3>
+      </div>
       <p style="margin-bottom:.75rem">${s.ozet}</p>
       <p style="color:var(--metin-3);font-size:.875rem">${s.detay}</p></div>`
       )
@@ -845,6 +850,10 @@ function kopyala() {
     if (c.kapak) gerekli.add(c.kapak);
     c.gorseller.slice(0, 6).forEach((g) => gerekli.add(g));
   });
+  // 3D servis ikonları (Higgsfield üretimi, arka planı temizlenmiş)
+  fs.readdirSync(kaynak)
+    .filter((f) => f.startsWith('ikon3d-'))
+    .forEach((f) => gerekli.add(f));
   let n = 0;
   gerekli.forEach((g) => {
     const s = path.join(kaynak, g);

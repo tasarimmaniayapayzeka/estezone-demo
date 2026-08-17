@@ -2529,3 +2529,82 @@ p {
 .sss-duzen .akordiyon {
   background: linear-gradient(168deg, var(--yuzey), var(--zemin-2));
 }
+
+/* ==========================================================================
+   TEKNİK SERVİS IZGARASI — 4×2 sabit, 3D ikonlu, hover'lı
+   (auto-fill geniş ekranda 5+3 sarıp boş hücre bırakıyordu)
+   ========================================================================== */
+.servis-izgara {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.1rem;
+}
+@media (max-width: 1080px) {
+  .servis-izgara { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .servis-izgara { grid-template-columns: 1fr; }
+}
+.servis-kart {
+  padding: 1.45rem 1.35rem 1.5rem;
+  border-radius: var(--r);
+  background: linear-gradient(168deg, var(--yuzey), var(--zemin-2));
+  border: 1px solid var(--kenar);
+  transition: var(--gecis);
+}
+.servis-kart:hover {
+  transform: translateY(-5px);
+  border-color: var(--kenar-parlak);
+  box-shadow: var(--parlama);
+}
+.servis-ikon {
+  display: grid;
+  place-items: center;
+  width: 86px;
+  height: 86px;
+  border-radius: 18px;
+  background: radial-gradient(ellipse 80% 80% at 50% 32%, rgba(168, 85, 247, 0.2), rgba(17, 14, 27, 0.6) 78%);
+  border: 1px solid var(--kenar);
+  margin-bottom: 1.05rem;
+  overflow: hidden;
+}
+.servis-ikon img {
+  width: 74px;
+  height: 74px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.5));
+  transition: transform 400ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.servis-kart:hover .servis-ikon img {
+  transform: scale(1.15) rotate(-5deg);
+}
+.servis-kart h4 {
+  font-size: 0.99rem;
+  margin-bottom: 0.42rem;
+}
+.servis-kart p {
+  font-size: 0.855rem;
+  color: var(--metin-2);
+  line-height: 1.56;
+}
+/* teknik-servis sayfası: ikon + başlık satırı */
+.servis-baslik-satir {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+.servis-ikon--kucuk {
+  width: 58px;
+  height: 58px;
+  border-radius: 14px;
+  margin-bottom: 0;
+  flex: none;
+}
+.servis-ikon--kucuk img {
+  width: 50px;
+  height: 50px;
+}
+.servis-baslik-satir h3 {
+  margin: 0;
+}

@@ -2286,3 +2286,29 @@ p {
   display: block; text-align: center; margin-top: .85rem;
   font-size: .76rem; color: var(--metin-3); line-height: 1.55;
 }
+
+/* ---------- Teknik servis ızgarası: 4×2 sabit, 3D ikonlu, hover'lı ---------- */
+.servis-izgara { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.1rem; }
+@media (max-width: 1080px) { .servis-izgara { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .servis-izgara { grid-template-columns: 1fr; } }
+.servis-kart {
+  padding: 1.45rem 1.35rem 1.5rem; border-radius: var(--r);
+  background: var(--kagit); border: 1px solid var(--cizgi); transition: var(--gecis);
+}
+.servis-kart:hover { transform: translateY(-5px); border-color: var(--y-300); box-shadow: var(--golge); }
+.servis-ikon {
+  display: grid; place-items: center; width: 86px; height: 86px;
+  border-radius: 16px; background: var(--yuzey); border: 1px solid var(--cizgi);
+  margin-bottom: 1.05rem; overflow: hidden;
+}
+.servis-ikon img {
+  width: 74px; height: 74px; object-fit: contain;
+  transition: transform 400ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.servis-kart:hover .servis-ikon img { transform: scale(1.15) rotate(-5deg); }
+.servis-kart h4 { font-size: 0.99rem; margin-bottom: 0.42rem; }
+.servis-kart p { font-size: 0.855rem; color: var(--metin-2); line-height: 1.56; }
+.servis-baslik-satir { display: flex; align-items: center; gap: 0.9rem; margin-bottom: 0.75rem; }
+.servis-ikon--kucuk { width: 58px; height: 58px; border-radius: 13px; margin-bottom: 0; flex: none; }
+.servis-ikon--kucuk img { width: 50px; height: 50px; }
+.servis-baslik-satir h3 { margin: 0; }
