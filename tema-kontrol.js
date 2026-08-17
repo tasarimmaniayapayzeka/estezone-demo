@@ -11,6 +11,9 @@ const ORNEK = [
   ['site/v3/index.html', 'v3 kök'],
   ['site/v3/cihaz/t-shape-2.html', 'v3 alt klasör'],
   ['site/v3/kategori/lazer-epilasyon.html', 'v3 kategori'],
+  ['site/v4/index.html', 'v4 kök'],
+  ['site/v4/cihaz/t-shape-2.html', 'v4 alt klasör'],
+  ['site/v4/kategori/lazer-epilasyon.html', 'v4 kategori'],
 ];
 
 let hata = 0;

@@ -38,6 +38,16 @@ const TEMALAR = {
     favR: '3',
     font: 'family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;450;500;550;600&family=JetBrains+Mono:wght@400;500',
   },
+  v4: {
+    etiket: 'v4',
+    ad: 'Spektrum',
+    yol: 'v4/',
+    temaRengi: '#0b0910',
+    favZemin: 'a855f7',
+    favCizgi: '0b0910',
+    favR: '9',
+    font: 'family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;450;500;550;600&family=JetBrains+Mono:wght@400;500;600',
+  },
 };
 
 const T = { tema: 'koyu' };

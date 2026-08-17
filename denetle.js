@@ -4,7 +4,7 @@ const path = require('path');
 
 // node denetle.js        -> site/ (koyu, v2 hariç)
 // node denetle.js v2     -> site/v2/ (açık)
-const ALT = { v2: 'v2', v3: 'v3' }[process.argv[2]];
+const ALT = { v2: 'v2', v3: 'v3', v4: 'v4' }[process.argv[2]];
 const HEDEF = ALT ? path.join('site', ALT) : 'site';
 const KOK = path.join(__dirname, HEDEF);
 const KOK_MU = !ALT;
@@ -13,7 +13,7 @@ const sayfalar = [];
   fs.readdirSync(path.join(KOK, d), { withFileTypes: true }).forEach((e) => {
     const g = d ? `${d}/${e.name}` : e.name;
     if (e.isDirectory()) {
-      if (!['varlik','kiyas'].includes(e.name) && !(KOK_MU && ['v2','v3'].includes(e.name))) gez(g);
+      if (!['varlik','kiyas'].includes(e.name) && !(KOK_MU && ['v2','v3','v4'].includes(e.name))) gez(g);
     } else if (e.name.endsWith('.html')) sayfalar.push(g);
   });
 })();
@@ -76,7 +76,7 @@ let bayt = 0;
   fs.readdirSync(path.join(KOK, d), { withFileTypes: true }).forEach((e) => {
     const g = d ? `${d}/${e.name}` : e.name;
     if (e.isDirectory()) {
-      if (!(KOK_MU && ['v2','v3'].includes(e.name))) say(g);
+      if (!(KOK_MU && ['v2','v3','v4'].includes(e.name))) say(g);
     }
     else bayt += fs.statSync(path.join(KOK, g)).size;
   });
