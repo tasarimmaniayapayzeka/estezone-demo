@@ -2586,3 +2586,9 @@ p {
     text-align: left;
   }
 }
+
+/* ---------- gerçek marka logosu (estezone.com.tr varlıkları) ---------- */
+.logo-gorsel{height:38px;width:auto;display:block}
+.cekmece-bas .logo-gorsel{height:30px}
+.alt .logo-gorsel{height:32px}
+@media (max-width:640px){.ust-ic .logo-gorsel{height:31px}}
