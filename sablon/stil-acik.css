@@ -2761,3 +2761,7 @@ html, body { overflow-x: clip; }
   .yuzen a, .yuzen button { width: 46px; height: 46px; }
   .yuzen svg { width: 20px; height: 20px; }
 }
+
+/* v2 ikon kutuları: koyu kutular mor-krom set içindi; lacivert-gümüş kurumsal
+   sette kutu açık gri zemine döner, lacivert kenarlıkla çerçevelenir. */
+.guven-ikon, .edinim-ikon, .servis-ikon, .surec-ikon { background: #eef1f5; border: 1px solid rgba(13, 84, 144, 0.2); }
