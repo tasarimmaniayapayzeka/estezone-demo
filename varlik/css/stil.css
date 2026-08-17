@@ -2766,3 +2766,14 @@ html, body { overflow-x: clip; }
   .cd-kucuk { flex-wrap: wrap; }
   .alt-izgara { gap: 2.1rem; }
 }
+
+/* Cihaz detay anlatımı: kısa giriş + anlamlı başlıklı akordiyon.
+   İlk küme açık gelir; +/× işareti CSS ile döner. */
+.cd-akordiyon { display: grid; gap: 0.7rem; margin-top: 1.4rem; }
+.cd-akordiyon details { border: 1px solid var(--kenar); border-radius: 14px; }
+.cd-akordiyon details[open] { background: rgba(127, 127, 127, 0.05); border-color: var(--kenar-guclu); }
+.cd-akordiyon summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.95rem 1.15rem; font-weight: 600; font-size: 0.98rem; color: var(--metin); }
+.cd-akordiyon summary::-webkit-details-marker { display: none; }
+.cd-akordiyon summary::after { content: '+'; font-family: var(--f-mono); font-size: 1.1rem; line-height: 1; color: var(--vurgu); transition: transform 0.25s ease; }
+.cd-akordiyon details[open] summary::after { transform: rotate(45deg); }
+.cd-akordiyon details p { padding: 0 1.15rem 1rem; color: var(--metin-2); line-height: 1.7; font-size: 0.95rem; }
