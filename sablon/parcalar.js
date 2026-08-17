@@ -9,6 +9,7 @@ const { marka, iletisim, yasal } = icerik;
 const SAHNE_VAR = new Set(
   fs.readdirSync(path.join(__dirname, '../kaynak/gorsel')).filter((f) => f.startsWith('showroom-'))
 );
+const sahneGorseli = (slug) => (SAHNE_VAR.has(`showroom-${slug}.webp`) ? `showroom-${slug}.webp` : '');
 
 const SITE = 'https://estezone.com.tr';
 
@@ -425,4 +426,4 @@ function kirinti(yol, parcalar) {
     .join('')}</nav>`;
 }
 
-module.exports = { SITE, kacis, aramaNorm, ikon, kafa, ust, alt, sayfa, cihazKart, cta, kirinti, KATEGORI_MENU, ANA_MENU, icerik, temaAyarla, T };
+module.exports = { SITE, kacis, aramaNorm, ikon, kafa, ust, alt, sayfa, cihazKart, cta, kirinti, KATEGORI_MENU, ANA_MENU, icerik, temaAyarla, T, sahneGorseli };

@@ -3,7 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const P = require('./sablon/parcalar.js');
-const { kacis, ikon, sayfa, cihazKart, cta, kirinti, KATEGORI_MENU, SITE } = P;
+const { kacis, ikon, sayfa, cihazKart, cta, kirinti, KATEGORI_MENU, SITE, sahneGorseli } = P;
 const icerik = require('./veri/icerik.js');
 
 // cihaz-meta.js veya ham veri değiştiyse cihazlar.json'u tazele
@@ -454,20 +454,23 @@ function cihazSayfalari() {
 
 <section><div class="kap cd-ust">
   <div class="cd-galeri" data-galeri>
-    <div class="cd-ana-gor">
-      <img src="../varlik/gorsel/${c.kapak}" alt="${kacis(c.ad)}" data-ana-gorsel width="620" height="620" fetchpriority="high">
+    <div class="cd-ana-gor${sahneGorseli(c.slug) ? ' cd-ana-gor--sahne' : ''}">
+      <img src="../varlik/gorsel/${sahneGorseli(c.slug) || c.kapak}" alt="${kacis(c.ad)}" data-ana-gorsel width="620" height="620" fetchpriority="high">
     </div>
-    ${
-      c.gorseller.length > 1
-        ? `<div class="cd-kucuk">${c.gorseller
-            .slice(0, 6)
+    ${(() => {
+      /* showroom varsa ilk küçük o olur; katalog çekimleri arkasından gelir */
+      const kucukler = sahneGorseli(c.slug)
+        ? [sahneGorseli(c.slug), ...c.gorseller.slice(0, 5)]
+        : c.gorseller.slice(0, 6);
+      return kucukler.length > 1
+        ? `<div class="cd-kucuk">${kucukler
             .map(
               (g, i) =>
                 `<button data-kucuk="../varlik/gorsel/${g}" aria-current="${i === 0}" aria-label="Görsel ${i + 1}"><img src="../varlik/gorsel/${g}" alt="" loading="lazy" width="60" height="60"></button>`
             )
             .join('')}</div>`
-        : ''
-    }
+        : '';
+    })()}
   </div>
 
   <div class="cd-bilgi">
