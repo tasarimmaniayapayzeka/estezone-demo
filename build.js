@@ -230,7 +230,7 @@ function anasayfa() {
         .join('')}
     </div>
     <p class="sss-kapanis belir">Cevabını bulamadığınız bir konu mu var?
-      <a href="iletisim.html">Doğrudan sorun ${ikon.ok}</a></p>
+      <a href="iletisim.html">Doğrudan sorun</a></p>
   </div>
 </section>
 

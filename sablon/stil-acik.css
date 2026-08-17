@@ -2299,3 +2299,14 @@ p {
 .akordiyon summary { padding-block: 1.24rem; }
 .akordiyon details[open] { background: var(--m-50); box-shadow: inset 2px 0 0 var(--m-600); }
 .akordiyon details[open] .cevap { padding-bottom: 1.45rem; }
+
+/* güven şeridi: auto-fit 3+1 sarıp boş hücre bırakıyordu → 2×2 dolu ızgara */
+.guven { grid-template-columns: repeat(2, 1fr); }
+.guven div {
+  display: flex; flex-direction: column; justify-content: center;
+  gap: .3rem; padding: 1.15rem 1.3rem; min-height: 88px;
+  border-right: 1px solid var(--cizgi);
+}
+.guven div:nth-child(even) { border-right: none; }
+.guven div:nth-child(-n+2) { border-bottom: 1px solid var(--cizgi); }
+.guven .e { margin-top: 0; }

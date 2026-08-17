@@ -4,6 +4,10 @@ const { marka, iletisim, yasal } = icerik;
 
 const SITE = 'https://estezone.com.tr';
 
+/* Önbellek kırıcı: her build'de değişir. Bayat CSS/JS'in yeni HTML ile
+   karışmasını engeller (dev ok hatasının kök nedeni buydu). */
+const SURUM = Date.now().toString(36);
+
 /* Üç tasarım sürümü. build.js hangisinin kurulacağını belirler.
    Her tema aynı içeriği ve aynı işlevleri kullanır; yalnızca stil dosyası,
    çıktı klasörü ve marka renkleri değişir. */
@@ -146,7 +150,7 @@ function kafa({ baslik, aciklama, yol = '', kanonik, sema, gorsel }) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?${TEMALAR[T.tema].font}&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="${k}varlik/css/stil.css">
+<link rel="stylesheet" href="${k}varlik/css/stil.css?v=${SURUM}">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='${
     TEMALAR[T.tema].favR
   }' fill='%23${TEMALAR[T.tema].favZemin}'/%3E%3Cpath d='M5 16h4l3-9 6 18 3-9h6' fill='none' stroke='%23${
@@ -334,8 +338,8 @@ function alt(yol = '') {
     </div>
   </div>
 </div>
-<script src="${k}varlik/js/cihazlar.js" defer></script>
-<script src="${k}varlik/js/site.js" defer></script>`;
+<script src="${k}varlik/js/cihazlar.js?v=${SURUM}" defer></script>
+<script src="${k}varlik/js/site.js?v=${SURUM}" defer></script>`;
 }
 
 /* ---------- tam sayfa ---------- */
