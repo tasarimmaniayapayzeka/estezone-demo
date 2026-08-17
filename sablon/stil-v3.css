@@ -2312,3 +2312,37 @@ p {
 .servis-ikon--kucuk { width: 58px; height: 58px; border-radius: 13px; margin-bottom: 0; flex: none; }
 .servis-ikon--kucuk img { width: 50px; height: 50px; }
 .servis-baslik-satir h3 { margin: 0; }
+
+/* ---------- SSS kolon dengesi ----------
+   Sağdaki akordiyon kapalı sorularla kısa kalıp sağ altta boşluk bırakıyordu.
+   Izgara stretch + akordiyon flex: sorular dikeyde eşit dağılır, iki kolon
+   her zaman aynı hizada biter. Mobilde devre dışı. */
+@media (min-width: 941px) {
+  .sss-duzen {
+    align-items: stretch;
+  }
+  .sss-duzen .sss-sol {
+    align-self: start;
+  }
+  .sss-duzen .akordiyon {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .sss-duzen .akordiyon details {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .sss-duzen .akordiyon details[open] {
+    flex-grow: 2.6;
+    justify-content: center;
+  }
+}
+
+/* son bölüm ile alt bilgi arasındaki çift boşluğu kıs
+   (bölüm alt boşluğu + footer üst marjı üst üste biniyordu) */
+.bolum-son {
+  padding-bottom: clamp(2rem, 3.5vw, 3.2rem);
+}

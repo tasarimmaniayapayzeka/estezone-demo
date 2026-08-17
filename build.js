@@ -221,7 +221,7 @@ function anasayfa() {
      Eskiden dar akordiyon + ayrı CTA kutusu alt alta yüzüyor, geniş ekranda
      koca boşlukta iki küçük kutu gibi kalıyordu. Şimdi: solda sabit çağrı
      kartı, sağda akordiyon — tam genişlik, tek tasarlanmış kapanış. -->
-<section class="bolum dokulu">
+<section class="bolum dokulu bolum-son">
   <div class="kap">
     <div class="sss-duzen">
       <div class="sss-sol belir">
