@@ -87,7 +87,7 @@ module.exports = function ({ yaz, cihazlar, kategoriler }) {
 </div></section>
 
 <section class="bolum dokulu"><div class="kap">
-  <div class="bolum-basi"><span class="ust-etiket">Çalışma ilkelerimiz</span><h2>Dört taahhüt</h2></div>
+  <div class="bolum-basi"><span class="ust-etiket">Çalışma ilkelerimiz</span><h2>Altı taahhüt</h2></div>
   <div class="izgara izgara-2">
     ${farklar
       .map(

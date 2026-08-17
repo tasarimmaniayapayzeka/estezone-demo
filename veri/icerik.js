@@ -169,6 +169,18 @@ module.exports = {
         'Portföyümüzde FDA 510(k) ve CE sınıflandırması belgeli platformlar yer alır. Belge numarası sorulduğunda gösterilir.',
       ikon: 'belge',
     },
+    {
+      baslik: 'İki şehirden yerinde destek',
+      metin:
+        'Ankara Beysukent’te showroom ve servis atölyesi, İstanbul Ataşehir’de bölge ofisi. Demo randevusu ve yerinde keşif iki şehirden de planlanır.',
+      ikon: 'konum',
+    },
+    {
+      baslik: 'Esnek edinim seçenekleri',
+      metin:
+        'Her yatırım peşin satın alma olmak zorunda değil: kiralama, takas ve atölyemizden geçen kontrollü ikinci el seçenekleri birlikte fiyatlanır.',
+      ikon: 'takas',
+    },
   ],
 
   sss: [
