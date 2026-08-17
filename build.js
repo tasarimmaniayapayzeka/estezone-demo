@@ -43,12 +43,13 @@ function yaz(gorece, html) {
 /* ======================= 1. ANASAYFA ======================= */
 function anasayfa() {
   const kahraman = cihazlar.find((c) => c.slug === 't-shape-2');
-  /* Bento vitrini: kahraman (T-Shape 2) 2×2 + dört kategoriyi de temsil eden 5 kart.
-     3×3 ızgaraya 6 kart tam oturur — boş hücre matematiksel olarak imkânsız. */
+  /* Bento vitrini: kahraman (T-Shape 2) YATAY geniş kart (2 kolon × 1 satır,
+     görsel solda / metin sağda) + dört kategoriyi temsil eden 4 kart.
+     3×2 ızgaraya 5 kart tam oturur — boş hücre imkânsız.
+     Not: 2×2 dikey kahraman denendi; görsel dev boşlukta yüzdü, geri alındı. */
   const bentoVitrin = [
     'arion-alexandrite-lazer', // epilasyon
     'cotra-plus-co2', // cilt
-    'lucid-q-ptp', // cilt (dövme/leke hattı)
     'estesculpt-pro', // vücut
     'zimmer-cryo-6-cilt-sogutma-sistemi', // destek
   ].map((s) => cihazlar.find((c) => c.slug === s));

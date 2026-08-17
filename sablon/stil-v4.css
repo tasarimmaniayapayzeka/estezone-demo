@@ -2694,3 +2694,49 @@ p {
     grid-column: auto;
   }
 }
+
+/* ---------- Bento v2: kahraman YATAY karta çevrildi ----------
+   2×2 dikey kahraman, görseli dev boşlukta yüzdürüyordu (denendi, kötüydü).
+   Yeni: 2 kolon × 1 satır, görsel solda / metin sağda; yükseklik komşu
+   kartlarla aynı. 3×2 ızgara, 5 kart, tam dolu. */
+.c-kart--kahraman {
+  grid-column: span 2;
+  grid-row: auto;
+  display: grid;
+  grid-template-columns: 45% 1fr;
+  grid-template-rows: 1fr auto;
+}
+.c-kart--kahraman .c-kart-gor {
+  grid-row: 1 / 3;
+  aspect-ratio: auto;
+  min-height: 0;
+  height: 100%;
+  border-bottom: none;
+  border-right: 1px solid var(--kenar);
+}
+.c-kart--kahraman .c-kart-gor img {
+  padding: 1.8rem;
+}
+.c-kart--kahraman .c-kart-govde {
+  grid-column: 2;
+}
+.c-kart--kahraman .c-kart-alt {
+  grid-column: 2;
+}
+@media (max-width: 1080px) {
+  /* tablet: kahraman tam genişlik dikey karta döner; 4 tekli kart 2×2 tam dolu */
+  .c-kart--kahraman {
+    display: flex;
+    flex-direction: column;
+    grid-column: span 2;
+  }
+  .c-kart--kahraman .c-kart-gor {
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--kenar);
+  }
+  .bento > .c-kart:last-child:not(.c-kart--kahraman) {
+    grid-column: auto;
+  }
+}
