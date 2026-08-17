@@ -2319,3 +2319,87 @@ p {
 .logo-im {
   color: #12071e;
 }
+
+/* ==========================================================================
+   SAYFA SONU RİTMİ — SSS → CTA geçişi
+   Sorun: iki .bolum arka arkaya gelince alt+üst boşluk üst üste biniyor
+   ve ~240px ölü alan oluşuyordu; CTA kutusu da sert bir çizgiyle başlıyordu.
+   ========================================================================== */
+
+.bolum-cta {
+  padding-top: clamp(1.2rem, 2.4vw, 2.4rem);
+}
+
+/* akordiyon aniden bitmesin — kapanış cümlesi */
+.sss-kapanis {
+  text-align: center;
+  margin-top: 1.7rem;
+  font-size: 0.92rem;
+  color: var(--metin-3);
+}
+.sss-kapanis a {
+  color: var(--mor);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: var(--gecis);
+}
+.sss-kapanis a svg {
+  width: 15px;
+  height: 15px;
+}
+.sss-kapanis a:hover {
+  gap: 0.62rem;
+  color: var(--pembe);
+}
+
+/* CTA girişi: tam genişlikte sert çizgi yerine ortada parlayıp sönen gradyan */
+.cta::after {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--mor) 24%,
+    var(--pembe) 50%,
+    var(--mint) 76%,
+    transparent 100%
+  );
+}
+/* kutunun üstüne sızan ışık — "yapıştırılmış" hissini kaldırır */
+.bolum-cta .kap {
+  position: relative;
+}
+.bolum-cta .kap::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: -56px;
+  translate: -50% 0;
+  width: min(72%, 640px);
+  height: 150px;
+  background: radial-gradient(ellipse at 50% 100%, rgba(168, 85, 247, 0.26), transparent 70%);
+  filter: blur(34px);
+  pointer-events: none;
+  z-index: 0;
+}
+.bolum-cta .cta {
+  position: relative;
+  z-index: 1;
+}
+
+/* akordiyon — açık satır belirginleşsin, satırlar nefes alsın */
+.akordiyon summary {
+  padding-block: 1.32rem;
+}
+.akordiyon details[open] {
+  background: rgba(168, 85, 247, 0.055);
+}
+.akordiyon details[open] summary {
+  color: var(--metin);
+}
+.akordiyon details[open] .cevap {
+  padding-bottom: 1.5rem;
+}
+.akordiyon details[open] {
+  box-shadow: inset 2px 0 0 var(--mor);
+}
