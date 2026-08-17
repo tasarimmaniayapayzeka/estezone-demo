@@ -2811,3 +2811,6 @@ html, body { overflow-x: clip; }
   .yuzen a, .yuzen button { width: 46px; height: 46px; }
   .yuzen svg { width: 20px; height: 20px; }
 }
+
+/* v1 ikon kutuları: nötr #101014 yerine tema mavisi koyu kutu + camgöbeği kenar. */
+.guven-ikon, .edinim-ikon, .servis-ikon, .surec-ikon { background: #0a141b; border: 1px solid rgba(45, 212, 245, 0.18); }
