@@ -16,6 +16,8 @@
 
   --kenar: rgba(178, 150, 255, 0.13);
   --kenar-guclu: rgba(178, 150, 255, 0.26);
+  /* Türkçe yazım için takma ad — ortak bileşenler iki yazımı da çağırabiliyor. */
+  --kenar-güçlü: var(--kenar-guclu);
   --kenar-parlak: rgba(168, 85, 247, 0.5);
 
   --metin: #f3effb;
