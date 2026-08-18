@@ -382,7 +382,7 @@ module.exports = {
           dalga: '266 nm · 355 nm',
           norm: 'CE EN207',
           govde: 'Plastik',
-          gorsel: '202103-lazer-koruyucu-gozluk-02.jpg',
+          gorsel: 'showroom-gozluk-1.webp',
           nerede: 'Excimer ve UV bandında çalışan sistemler',
         },
         {
@@ -392,7 +392,7 @@ module.exports = {
           dalga: '635 nm · 808 nm · 980 nm',
           norm: 'CE EN207',
           govde: 'Plastik',
-          gorsel: '202103-lazer-koruyucu-gozluk-03.jpg',
+          gorsel: 'showroom-gozluk-2.webp',
           nerede: 'Diyot epilasyon platformları',
         },
         {
@@ -402,7 +402,7 @@ module.exports = {
           dalga: '755 nm · 808 nm',
           norm: 'CE EN207',
           govde: 'Plastik',
-          gorsel: '202103-ATD-Laser-Safety-Goggle-for-755nm-808nm.jpg',
+          gorsel: 'showroom-gozluk-3.webp',
           nerede: 'Alexandrite platformlar ve 808 nm diyot',
         },
         {
@@ -412,7 +412,7 @@ module.exports = {
           dalga: '755 nm · 808 nm · 980 nm · 1064 nm',
           norm: 'CE EN207',
           govde: 'Plastik',
-          gorsel: '202103-ADY-Laser-Safety-Goggle-for-740-1100nm.jpg',
+          gorsel: 'showroom-gozluk-4.webp',
           nerede: 'Üç dalga boyunu tek gözlükle kapatmak isteyen karma envanter',
         },
         {
@@ -422,7 +422,7 @@ module.exports = {
           dalga: '2780 nm · 2940 nm',
           norm: 'CE EN207',
           govde: 'Plastik',
-          gorsel: '202103-lazer-koruyucu-gozluk-014.jpg',
+          gorsel: 'showroom-gozluk-5.webp',
           nerede: 'Er:YAG cilt yenileme sistemleri',
         },
         {
@@ -432,7 +432,7 @@ module.exports = {
           dalga: '10 600 nm',
           norm: 'CE EN207',
           govde: 'Plastik',
-          gorsel: '202103-CHP-Laser-Safety-Goggle-for-10600nm.jpg',
+          gorsel: 'showroom-gozluk-6.webp',
           nerede: 'Fraksiyonel CO₂ platformlar',
         },
         {
@@ -442,7 +442,7 @@ module.exports = {
           dalga: '532 nm · 1064 nm',
           norm: 'CE EN207',
           govde: 'Plastik',
-          gorsel: '202103-GTY-Laser-Safety-Goggle-for-532nm1064nm.jpg',
+          gorsel: 'showroom-gozluk-7.webp',
           nerede: 'Q-switch Nd:YAG ve KTP sistemleri (dövme/leke)',
         },
         {
@@ -452,7 +452,7 @@ module.exports = {
           dalga: 'Geniş bant',
           norm: 'CE EN169',
           govde: 'Plastik',
-          gorsel: '202103-IPL-Safety-Goggle-200-1400nm.jpg',
+          gorsel: 'showroom-gozluk-8.webp',
           nerede: 'IPL ve BBL sistemleri',
         },
         {
@@ -462,7 +462,7 @@ module.exports = {
           dalga: 'Geniş bant',
           norm: 'CE EN169',
           govde: 'Plastik',
-          gorsel: '202103-lazer-koruyucu-gozluk-05.jpg',
+          gorsel: 'showroom-gozluk-9.webp',
           nerede: 'Uygulama sırasında hasta koruması',
         },
       ],
