@@ -3077,3 +3077,88 @@ html, body { overflow-x: clip; }
 @media (prefers-reduced-motion: reduce) {
   .model-kart, .model-kart:hover { transition: none; transform: none; }
 }
+
+/* ==========================================================================
+   BAYİ GİRİŞİ VE ÜYELİK BAŞVURUSU
+   ========================================================================== */
+/* Üst şeritteki bayi girişi. Dar ekranda telefon düşer, bayi girişi kalır. */
+.ust-bayi { gap: .45rem; }
+.ust-bayi svg { width: 15px; height: 15px; }
+@media (max-width: 1180px) { .ust-tel span { display: none; } }
+@media (max-width: 1080px) { .ust-bayi span { display: none; } }
+@media (max-width: 900px) { .ust-bayi, .ust-tel { display: none; } }
+
+/* Sağ sütun uzun formu takip eder. Önce son kartı flex:1 ile uzatmıştım
+   ama başvuru formu 2300px olunca kart 1520px'e çıkıp içi bomboş kalıyordu.
+   Yapışkan sütun hem boşluğu bitiriyor hem yardım kartlarını hep görünür tutuyor.
+   align-self:start şart — grid'in stretch hizası sticky'yi etkisiz bırakıyor. */
+@media (min-width: 901px) {
+  .bayi-izgara > div:last-child { position: sticky; top: 88px; align-self: start; }
+}
+
+/* Panelde ne var listesi */
+.bayi-fayda { display: grid; gap: 1rem; }
+.bayi-fayda-satir { display: flex; gap: .9rem; align-items: flex-start; }
+.bayi-fayda-satir .im {
+  flex: none; width: 34px; height: 34px; border-radius: 9px; display: grid; place-items: center;
+  background: var(--vurgu-sis); color: var(--vurgu);
+}
+.bayi-fayda-satir .im svg { width: 17px; height: 17px; }
+.bayi-fayda-satir b { display: block; font-size: .93rem; color: var(--metin); }
+.bayi-fayda-satir small { display: block; font-size: .83rem; color: var(--metin-2); line-height: 1.5; margin-top: .12rem; }
+
+/* Başvuru adımları */
+.bayi-adim { list-style: none; margin: 1.2rem 0 0; padding: 0; display: grid; gap: .95rem; counter-reset: ba; }
+.bayi-adim li { counter-increment: ba; padding-left: 2.1rem; position: relative; }
+.bayi-adim li::before {
+  content: counter(ba, decimal-leading-zero); position: absolute; left: 0; top: .05rem;
+  font-family: var(--f-mono); font-size: .74rem; color: var(--vurgu);
+}
+.bayi-adim b { display: block; font-size: .92rem; color: var(--metin); }
+.bayi-adim span { display: block; font-size: .84rem; color: var(--metin-2); line-height: 1.5; margin-top: .1rem; }
+
+/* İşletme türü açıklamaları */
+.yetki-liste { display: grid; gap: .8rem; }
+.yetki-satir { display: flex; gap: .7rem; align-items: flex-start; }
+.yetki-satir .d { flex: none; width: 9px; height: 9px; border-radius: 50%; margin-top: .38rem; }
+.yetki-satir b { display: block; font-size: .89rem; color: var(--metin); }
+.yetki-satir small { display: block; font-size: .81rem; color: var(--metin-2); line-height: 1.5; margin-top: .1rem; }
+
+/* Belge kutusu — tür seçilince dolar */
+.belge-kutu {
+  border: 1px solid var(--kenar); border-radius: 12px;
+  padding: 1.05rem 1.15rem 1.15rem; margin-bottom: 1.3rem; background: var(--yuzey-2);
+}
+.belge-not { font-size: .85rem; color: var(--metin-2); line-height: 1.55; margin: .7rem 0 1rem; }
+.belge-grup { margin-bottom: 1rem; }
+.belge-grup:last-of-type { margin-bottom: 0; }
+.belge-baslik {
+  display: block; font-size: .74rem; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--metin-3); margin-bottom: .55rem;
+}
+.belge-satir {
+  display: flex; align-items: center; justify-content: space-between; gap: .8rem;
+  padding: .6rem .75rem; border: 1px solid var(--kenar); border-radius: 9px;
+  margin-bottom: .45rem; cursor: pointer; transition: border-color .2s ease;
+}
+.belge-satir:hover { border-color: var(--vurgu); }
+.belge-satir.secili { border-color: var(--vurgu); background: var(--vurgu-sis); }
+.belge-ad { font-size: .87rem; color: var(--metin-2); line-height: 1.4; }
+.belge-ad i { color: var(--vurgu); font-style: normal; }
+.belge-dug {
+  flex: none; font-size: .78rem; color: var(--vurgu);
+  border: 1px solid var(--kenar); border-radius: 7px; padding: .28rem .6rem;
+  max-width: 11rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+
+/* Onay kutuları */
+.onay {
+  display: flex; gap: .65rem; align-items: flex-start;
+  font-size: .845rem; color: var(--metin-2); line-height: 1.55; margin-bottom: 1rem;
+}
+.onay input { width: auto; margin-top: .25rem; flex: none; }
+
+@media (max-width: 700px) {
+  .belge-satir { flex-direction: column; align-items: stretch; gap: .5rem; }
+  .belge-dug { max-width: none; text-align: center; }
+}
