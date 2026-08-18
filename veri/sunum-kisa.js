@@ -13,6 +13,7 @@ module.exports = [
     ozet:
       'estezone.com.tr 16 Ağustos 2026’da baştan sona ölçüldü. Sunucu hızlı, teknik taban sağlam. Eksik olan, ilgiyi talebe çeviren katman.',
     medya: { tip: 'video', ad: 'sahne-1' },
+    ikon: 'ik-durum',
     olcumler: [
       { deger: '1', etiket: 'Tüm sitede satış formu', alt: '122 URL’nin tamamında tek form', durum: 'kayip' },
       { deger: '0/29', etiket: 'Teklif yolu olan cihaz sayfası', alt: 'Form, föy, teklif butonu — hiçbiri yok', durum: 'kayip' },
@@ -29,6 +30,7 @@ module.exports = [
     ozet:
       '86 blog yazısının 61’i aynı anlam kümesinde. Aynı sorgu için birbirleriyle yarışıyorlar; öne çıkan da satış yolu olmayan yazı oluyor.',
     medya: { tip: 'video', ad: 'sahne-2' },
+    ikon: 'ik-gorunmez',
     olcumler: [
       { deger: '61/86', etiket: 'Aynı kümedeki yazı', alt: 'Kosinüs benzerliği %70–90', durum: 'kayip' },
       { deger: '2.223 ↔ 184', etiket: 'Noblex: yazı ↔ ürün sayfası', alt: 'Kelime sayısı. Sıralanan uzun olan.', durum: 'kayip' },
@@ -164,6 +166,7 @@ module.exports = [
     ozet:
       'Her aşamanın teslimi ve ölçütü belli. Kanallar sırayla değil, üst üste binerek çalışıyor — biri diğerinin verisini besliyor.',
     medya: { tip: 'gorsel', ad: 'konu-yol' },
+    ikon: 'ik-durum',
     /* Kanal şeridi: hangi ay hangi kanalın devrede olduğu görünür olsun.
        durum: 0 = kapalı, 1 = kuruluyor, 2 = tam çalışıyor */
     kanallar: [

@@ -146,7 +146,7 @@ const cizKanalSerit = (kanallar) => `<div class="kanal-serit">
   ${kanallar
     .map(
       (k) => `<div class="kanal">
-    <span class="kanal-ad"><img src="varlik/${k.ikon}.webp" alt="" width="34" height="34" loading="lazy">${kacis(k.ad)}</span>
+    <span class="kanal-ad"><img src="varlik/${k.ikon}.png" alt="" width="34" height="34" loading="lazy">${kacis(k.ad)}</span>
     ${k.aylar
       .map(
         (d, i) =>
@@ -173,7 +173,7 @@ const cizPerde = (p) => `<section class="perde" id="${kacis(p.id)}">
   <div class="kap perde-ic">
     <div class="perde-ust">
       <span class="no">${kacis(p.no)}</span>
-      ${p.ikon ? `<img class="perde-ikon" src="varlik/${p.ikon}.webp" alt="" width="96" height="96" loading="lazy">` : ''}
+      ${p.ikon ? `<img class="perde-ikon" src="varlik/${p.ikon}.png" alt="" width="96" height="96" loading="lazy">` : ''}
     </div>
     <span class="etiket">${kacis(p.etiket)}</span>
     <h2>${satir(p.baslik)}</h2>
@@ -206,8 +206,12 @@ const html = `<meta charset="utf-8">
     <span class="perde-golge"></span>
   </div>
   <div class="kap kapak-ic">
-    <img src="../varlik/gorsel/logo-estezone-beyaz.webp" alt="Estezone Medikal" width="164" height="40">
-    <span class="etiket">TasarımMania · Dijital Pazarlama Önerisi</span>
+    <div class="kapak-logolar">
+      <img class="logo-tm" src="varlik/tm-logo.png" alt="TasarımMania Creative Agency" width="150" height="44">
+      <span class="logo-ayrac"></span>
+      <img class="logo-musteri" src="../varlik/gorsel/logo-estezone-beyaz.webp" alt="Estezone Medikal" width="148" height="36">
+    </div>
+    <span class="etiket">Dijital Pazarlama Önerisi</span>
     <h1>Cihaz hazır.<br>Alıcı sizi bulamıyor.</h1>
     <p class="ozet">Dokuz perdede: bugün nerede olduğunuz, ne yapılacağı, altı ayda nereye gideceğiniz.</p>
     <div class="kapak-alt">
@@ -232,7 +236,7 @@ ${PERDELER.map(cizPerde).join('\n')}
         (p) => `<article class="paket${p.one ? ' paket--one' : ''}">
         <div class="paket-bas">
           <span class="paket-no">${kacis(p.no)}</span>
-          ${p.ikon ? `<img src="varlik/${p.ikon}.webp" alt="" width="64" height="64" loading="lazy">` : ''}
+          ${p.ikon ? `<img src="varlik/${p.ikon}.png" alt="" width="64" height="64" loading="lazy">` : ''}
         </div>
         <h3>${kacis(p.ad)}</h3>
         <p class="paket-ozet">${kacis(p.ozet)}</p>
@@ -249,6 +253,28 @@ ${PERDELER.map(cizPerde).join('\n')}
       <a href="../sunum/">Ayrıntılı sürüm →</a></p>
   </div>
 </section>
+
+<footer class="kapanis">
+  <div class="kap kapanis-ic">
+    <img class="kapanis-logo" src="varlik/tm-logo.png" alt="TasarımMania Creative Agency" width="218" height="64">
+    <h2>Başlayalım mı?</h2>
+    <p class="ozet">Paket seçimini ve takvimi birlikte netleştirelim. Sorularınız için
+      doğrudan arayabilir ya da WhatsApp’tan yazabilirsiniz.</p>
+    <div class="kapanis-eylem">
+      <a class="btn btn-tel" href="tel:+905547916545">
+        <img src="varlik/ik-tel.png" alt="" width="34" height="34" loading="lazy">
+        <span><small>Telefon</small><b>0554 791 65 45</b></span>
+      </a>
+      <a class="btn btn-wa" href="https://wa.me/905547916545?text=${encodeURIComponent(
+        'Merhaba, Estezone dijital pazarlama sunumunu inceledim. Görüşmek istiyorum.'
+      )}" target="_blank" rel="noopener">
+        <img src="varlik/ik-whatsapp.png" alt="" width="34" height="34" loading="lazy">
+        <span><small>WhatsApp</small><b>Hemen yazın</b></span>
+      </a>
+    </div>
+    <p class="kapanis-alt">TasarımMania · Estezone Medikal için hazırlanmıştır · Ağustos 2026</p>
+  </div>
+</footer>
 </main>
 
 <script src="varlik/ozet.js" defer></script>
@@ -257,19 +283,23 @@ ${PERDELER.map(cizPerde).join('\n')}
 fs.mkdirSync(VARLIK, { recursive: true });
 fs.writeFileSync(path.join(CIKTI, 'index.html'), html, 'utf8');
 
-/* yalnızca bu sunumun kullandığı varlıkları kopyala */
+/* yalnızca bu sunumun kullandığı varlıkları kopyala.
+   İkonlar PNG: sitedeki ikon3d ailesi gibi ALFA KANALLI olmalı. Opak webp
+   kullanınca koyu kartın üstünde siyah kare olarak görünüyorlardı. */
 const gerekli = new Set();
 PERDELER.forEach((p) => {
   if (p.medya) {
     gerekli.add(p.medya.ad + '.webp');
     if (p.medya.tip === 'video') gerekli.add(p.medya.ad + '.mp4');
   }
-  if (p.ikon) gerekli.add(p.ikon + '.webp');
-  (p.kanallar || []).forEach((k) => gerekli.add(k.ikon + '.webp'));
+  if (p.ikon) gerekli.add(p.ikon + '.png');
+  (p.kanallar || []).forEach((k) => gerekli.add(k.ikon + '.png'));
 });
-PAKETLER.forEach((p) => p.ikon && gerekli.add(p.ikon + '.webp'));
-gerekli.add('sahne-1.mp4');
-gerekli.add('sahne-1.webp');
+PAKETLER.forEach((p) => p.ikon && gerekli.add(p.ikon + '.png'));
+/* kapak videosu + logo + kapanıştaki iletişim ikonları */
+['sahne-1.mp4', 'sahne-1.webp', 'tm-logo.png', 'ik-tel.png', 'ik-whatsapp.png'].forEach((f) =>
+  gerekli.add(f)
+);
 
 let n = 0;
 gerekli.forEach((f) => {

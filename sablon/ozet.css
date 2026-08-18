@@ -313,3 +313,54 @@ h4 { font-size: 1.02rem; margin: 0; }
   .kanal-ad img { width: 22px; height: 22px; }
   .kanal-bas b { font-size: .66rem; }
 }
+
+/* ==========================================================================
+   LOGO ŞERİDİ VE KAPANIŞ
+   ========================================================================== */
+.kapak-logolar { display: flex; align-items: center; gap: 1.1rem; margin-bottom: 2rem; flex-wrap: wrap; }
+.logo-tm { height: 44px; width: auto; }
+.logo-musteri { height: 36px; width: auto; opacity: .9; }
+.logo-ayrac { width: 1px; height: 26px; background: var(--kenar); flex: none; }
+
+.kapanis {
+  padding: 5.5rem 0 4rem; border-top: 1px solid var(--kenar);
+  background:
+    radial-gradient(900px 480px at 50% 0%, rgba(45, 212, 245, .1), transparent 62%),
+    var(--zemin);
+  text-align: center;
+}
+.kapanis-logo { height: 64px; width: auto; margin: 0 auto 2rem; }
+.kapanis h2 { margin-bottom: .9rem; }
+.kapanis .ozet { margin-inline: auto; margin-bottom: 2.2rem; }
+
+.kapanis-eylem { display: flex; gap: .9rem; justify-content: center; flex-wrap: wrap; }
+/* İletişim düğmeleri: 3D ikon + iki satır (etiket + numara) */
+.kapanis-eylem .btn {
+  display: inline-flex; align-items: center; gap: .75rem;
+  padding: .85rem 1.5rem .85rem 1.1rem; border-radius: 14px;
+  background: var(--yuzey); border: 1px solid var(--kenar); color: var(--metin);
+  text-align: left; transition: border-color .2s ease, transform .2s ease;
+}
+.kapanis-eylem .btn:hover { border-color: var(--vurgu); transform: translateY(-2px); }
+.kapanis-eylem .btn img { width: 34px; height: 34px; flex: none; }
+.kapanis-eylem small {
+  display: block; font-family: var(--m); font-size: .68rem;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--metin-3);
+}
+.kapanis-eylem b { display: block; font-size: 1.02rem; font-weight: 650; margin-top: .12rem; }
+.btn-wa:hover { border-color: #25d366; }
+.kapanis-alt { margin-top: 2.4rem; font-size: .8rem; color: var(--metin-3); }
+
+@media (max-width: 860px) {
+  .kapak-logolar { gap: .8rem; margin-bottom: 1.5rem; }
+  .logo-tm { height: 34px; }
+  .logo-musteri { height: 28px; }
+  .kapanis { padding: 3.6rem 0 3rem; }
+  .kapanis-logo { height: 48px; margin-bottom: 1.5rem; }
+  .kapanis-eylem { flex-direction: column; align-items: stretch; }
+  .kapanis-eylem .btn { justify-content: flex-start; }
+}
+@media (max-width: 400px) {
+  .logo-ayrac { display: none; }
+  .kapak-logolar { gap: .6rem; }
+}
