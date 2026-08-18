@@ -631,6 +631,75 @@
       setTimeout(() => girdi.focus(), 80);
     };
 
+    /* ---- Sesli sor ----
+       Tarayıcının kendi konuşma tanıması (Web Speech API) — dış kütüphane yok.
+       Desteklemeyen tarayıcıda düğmeler gizli kalır, yazarak sorma bozulmaz. */
+    const SesTanima = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (SesTanima) {
+      const mikDugmeler = [$('[data-asistan-ses]', asistan), $('[data-asistan-mik]', asistan)].filter(Boolean);
+      mikDugmeler.forEach((d) => (d.hidden = false));
+      let tanima = null;
+      let dinliyor = false;
+      const dinlemeyiBitir = () => {
+        dinliyor = false;
+        mikDugmeler.forEach((d) => d.classList.remove('dinliyor'));
+        girdi.placeholder = 'Cihaz, teknoloji veya soru yazın…';
+      };
+      const dinle = () => {
+        if (dinliyor) {
+          tanima?.stop();
+          return;
+        }
+        tanima = new SesTanima();
+        tanima.lang = 'tr-TR';
+        tanima.interimResults = true;
+        tanima.continuous = false;
+        dinliyor = true;
+        mikDugmeler.forEach((d) => d.classList.add('dinliyor'));
+        girdi.placeholder = 'Dinliyorum… konuşun';
+        tanima.onresult = (e) => {
+          const metin = Array.from(e.results)
+            .map((r) => r[0].transcript)
+            .join('');
+          girdi.value = metin;
+          // Cümle tamamlandıysa doğrudan sor
+          if (e.results[e.results.length - 1].isFinal && metin.trim()) {
+            dinlemeyiBitir();
+            balon(guvenliMetin(metin.trim()), 'ben');
+            girdi.value = '';
+            sor(metin.trim());
+          }
+        };
+        tanima.onerror = () => {
+          dinlemeyiBitir();
+          girdi.placeholder = 'Ses alınamadı — yazarak sorabilirsiniz';
+        };
+        tanima.onend = dinlemeyiBitir;
+        try {
+          tanima.start();
+        } catch (e) {
+          dinlemeyiBitir();
+        }
+      };
+      mikDugmeler.forEach((d) => d.addEventListener('click', dinle));
+    }
+
+    /* ---- WhatsApp'a devret ----
+       Konuşma geçmişi varsa WhatsApp mesajına özetlenir; temsilci sohbeti
+       baştan sormak zorunda kalmaz. Mesaj KULLANICIYA gönderilmeden önce
+       WhatsApp'ın kendi ekranında görünür (gizli gönderim yok). */
+    $('[data-kanal-wa]', asistan)?.addEventListener('click', (e) => {
+      const sorular = gecmis.filter((g) => g.rol === 'ben').map((g) => g.metin);
+      if (!sorular.length) return; // geçmiş yoksa normal WhatsApp bağlantısı
+      e.preventDefault();
+      const ozet =
+        'Merhaba, siteden yazıyorum. Cihaz asistanına şunları sordum:\n' +
+        sorular.slice(-3).map((s, i) => `${i + 1}. ${s}`).join('\n') +
+        '\n\nBir yetkiliyle görüşebilir miyim?';
+      const adres = e.currentTarget.getAttribute('href') + '?text=' + encodeURIComponent(ozet);
+      window.open(adres, '_blank', 'noopener');
+    });
+
     $('[data-asistan-ac]')?.addEventListener('click', () => (asistan.hidden ? ac() : (asistan.hidden = true)));
     $('[data-asistan-kapat]', asistan)?.addEventListener('click', () => (asistan.hidden = true));
     form.addEventListener('submit', (e) => {
