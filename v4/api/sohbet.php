@@ -168,7 +168,21 @@ if ($yanit === false || $curlHata !== '') {
 $veri = json_decode($yanit, true);
 if ($http !== 200 || !isset($veri['choices'][0]['message']['content'])) {
     $detay = $veri['error']['message'] ?? 'bilinmeyen';
-    error_log('estezone-sohbet: HTTP ' . $http . ' — ' . $detay);
+    $kod = $veri['error']['code'] ?? '';
+    error_log('estezone-sohbet: HTTP ' . $http . ' — model=' . $model . ' — ' . $detay);
+    /* Model adı yanlışsa bunu ayırt et: en sık yapılan kurulum hatası bu.
+       (gpt-5-mini denendi, hesapta çalışmadı — gpt-5.5 kullanılıyor.)
+       Anahtar veya iç detay SIZDIRILMAZ, yalnız hangi ayarın hatalı
+       olduğu söylenir ki kurulum yapan kişi doğru yere baksın. */
+    $modelHatasi = $kod === 'model_not_found' || $http === 404
+        || stripos($detay, 'model') !== false;
+    if ($modelHatasi) {
+        cik(502, [
+            'hata' => 'model',
+            'mesaj' => 'Model ayarı geçersiz: "' . $model . '". estezone-gizli.php içindeki '
+                . 'ESTEZONE_MODEL değerini kontrol edin (çalıştığı doğrulanan: gpt-5.5).',
+        ]);
+    }
     cik(502, ['hata' => 'servis', 'mesaj' => 'Yanıt alınamadı.']);
 }
 
