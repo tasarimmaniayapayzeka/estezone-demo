@@ -1235,8 +1235,9 @@ function sitemap() {
   const url = [];
   const gez = (dizin, on = '') => {
     fs.readdirSync(path.join(CIKTI, dizin), { withFileTypes: true }).forEach((e) => {
-      // diğer tema sürümleri ve kıyas sunumu bu sitemap'e girmez
-      if (e.isDirectory() && !['varlik','v2','v3','v4','kiyas'].includes(e.name))
+      // diğer tema sürümleri, kıyas ve pazarlama sunumu bu sitemap'e girmez —
+      // ikisi de müşteriye sunulan satış belgesi, sitenin içeriği değil
+      if (e.isDirectory() && !['varlik','v2','v3','v4','kiyas','sunum'].includes(e.name))
         gez(path.join(dizin, e.name), `${on}${e.name}/`);
       else if (e.name.endsWith('.html') && e.name !== '404.html')
         url.push(`${on}${e.name === 'index.html' && !on ? '' : e.name}`);

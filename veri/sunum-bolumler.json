@@ -1,0 +1,1905 @@
+[
+  {
+    "id": "neredesiniz",
+    "ustEtiket": "Durum Tespiti · 01",
+    "baslik": "Neredesiniz",
+    "giris": "estezone.com.tr, 16 Ağustos 2026'da 8 paralel denetçi ve curl ile baştan sona ölçüldü; sitemap üzerinden 40 sayfa ve 82 yazı, toplam 122 URL tarandı. Aşağıdaki her rakam bu ölçümden geliyor. Tek cümlelik teşhis şu: site teknik olarak ayakta, ticari olarak ölü.",
+    "govde": [
+      {
+        "tip": "paragraf",
+        "metin": "Önce iyi haber. Sunucu tarafında yanlış bir şey yok. Önbellek isabet veriyor (cache HIT) ve ilk bayt 38–77 ms'de geliyor; önbelleğe girmemiş soğuk istekte bile 425 ms. HTTP/2 ve HTTP/3 açık, TLS 1.3 ve brotli devrede. Yani sorun barındırma değil. Sorun, bu hızın ne taşıdığı."
+      },
+      {
+        "tip": "olcum",
+        "baslik": "16 Ağustos 2026 ölçümü",
+        "olcumler": [
+          {
+            "deger": "41 KB",
+            "etiket": "Ziyaretçiye ulaşan gerçek içerik",
+            "aciklama": "Ön yüz yükü: HTML 159.180 B + CSS 525.243 B + ham JS 841.545 B + jQuery 3.6.4 89.815 B — toplam yaklaşık 1,6 MB. Bu 1,6 MB'ın taşıdığı okunabilir içerik 41 KB. Sunumun tamamında ön yüz toplamı bu tek değerle, 1,6 MB olarak kullanılıyor.",
+            "durum": "kayip"
+          },
+          {
+            "deger": "0",
+            "etiket": "Yüklenen marka fontu",
+            "aciklama": "Temada Montserrat tanımlı görünüyor, ama birleşik CSS'te \"Montserrat\" 0 kez geçiyor. Site herkeste sistem fontuyla açılıyor; yazı karakteri düzeyinde marka kimliği yok.",
+            "durum": "kayip"
+          },
+          {
+            "deger": "2",
+            "etiket": "6 sayfada sayılan toplam CTA etiketi",
+            "aciklama": "\"Bizi Arayın\" ve \"İletişim\". 20 yıllık bir tedarikçinin incelenen sayfalardaki tüm eylem çağrısı repertuvarı bu iki ifadeden ibaret.",
+            "durum": "kayip"
+          },
+          {
+            "deger": "0 / 6",
+            "etiket": "Mevcut güvenlik başlığı",
+            "aciklama": "HSTS, CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy: altısının altısı da yok.",
+            "durum": "risk"
+          },
+          {
+            "deger": "PHP 8.0.30",
+            "etiket": "Sunucuda çalışan sürüm",
+            "aciklama": "Kasım 2023'te destek sonu. Üstelik X-Powered-By başlığıyla sürüm numarası dışarıya açıkça sızıyor.",
+            "durum": "risk"
+          }
+        ]
+      },
+      {
+        "tip": "kutu",
+        "baslik": "Tezin özeti",
+        "metin": "Altyapıya para harcanmış, vitrine harcanmamış. Hızlı bir sunucu, kimliği olmayan bir siteyi hızlı servis ediyor. Alıcı tarafta bunun karşılığı yok."
+      },
+      {
+        "tip": "tablo",
+        "baslik": "Taban sağlam, üst kat boş (16 Ağu 2026 ölçümü)",
+        "sutunlar": [
+          "Katman",
+          "Ölçüm",
+          "Değerlendirme"
+        ],
+        "satirlar": [
+          [
+            "Sunucu / ağ",
+            "TTFB 38–77 ms (cache HIT), soğukta 425 ms · HTTP/2+3 · TLS 1.3 · brotli",
+            "Sağlam"
+          ],
+          [
+            "Yükleme ekonomisi",
+            "~1,6 MB ön yüz yükü → 41 KB içerik",
+            "Orantısız"
+          ],
+          [
+            "Güvenlik",
+            "6 temel başlığın 6'sı eksik · PHP 8.0.30 (destek sonu) · sürüm dışarı sızıyor",
+            "Açık risk"
+          ],
+          [
+            "Görsel kimlik",
+            "0 marka fontu · 5 farklı mavi + konu dışı magenta #e95095",
+            "Kimlik yok"
+          ],
+          [
+            "Erişilebilirlik",
+            "Ana link rengi #1b98e0 kontrast 3,17:1 — WCAG AA eşiğinin altında",
+            "Standart altı"
+          ],
+          [
+            "Ön yüz kalitesi",
+            "814 !important (satır içi 238 + CSS 576) · clamp() 0 · @container 0 · prefers-reduced-motion 0 · display:grid 1",
+            "Bakımı zor"
+          ],
+          [
+            "Ticari yüzey",
+            "6 sayfada 2 CTA etiketi",
+            "Ölü"
+          ]
+        ]
+      },
+      {
+        "tip": "paragraf",
+        "metin": "Sayfanın ilk ekranı da bu tabloyu doğruluyor. Hero alanında 5 slayt dönüyor ve metin katmanı sıfır: hiçbir slaytta başlık, vaat ya da buton yok. Beş slaytın dördünde alt metni boş. İlk slayt tek başına 858.446 B — yani hero'nun ilk karesi, ziyaretçiye ulaşan tüm metnin yaklaşık yirmi katı ağırlığında. Ana sayfada h1 bir tane, h2 on sekiz tane, h3 hiç yok; ara başlık düzeyi kullanılmadığı için sayfa taranabilir bir yapı sunmuyor."
+      },
+      {
+        "tip": "liste",
+        "baslik": "Ziyaretçinin ekranından çalınan alan",
+        "maddeler": [
+          "120–140 px sabit header artı yaklaşık 45 px alt çubuk: 1080p bir ekranın yüzde 17'si daha içerik başlamadan doluyor.",
+          "Üç medya sorgusu var; 1280 px üstü için tek bir kural yok. 4K ekranda başlık hâlâ 37 px.",
+          "Her sayfanın altında 2020 tarihli, 500 px yüksekliğinde bir Google Maps iframe'i yükleniyor.",
+          "Alt bilgide telif satırı \"© 2023\" diyor. Ziyaretçinin okuduğu ilk tarih bu."
+        ]
+      },
+      {
+        "tip": "kutu",
+        "baslik": "Sayım notu — hangi sayı neyi anlatıyor",
+        "metin": "Sunum boyunca üç ayrı cihaz sayısı geçiyor ve üçü birbirini açıklıyor. Mevcut sitede 29 cihaz sayfası URL'si var. Bu 29 URL'nin ikisi (endoterapylazer ve medart-smartsculpt-endolazer) birebir aynı içeriği taşıyor; yani ayrı cihaz karşılığı 28. Hazırladığımız demoda da 28 cihaz sayfası bulunuyor. Kısacası: 29 = mevcut URL sayısı, 28 = ayrı cihaz sayısı."
+      },
+      {
+        "tip": "paragraf",
+        "metin": "Bir alıcı bu siteye geldiğinde teknik bir sorunla karşılaşmıyor. Güncelliğini yitirmiş, kimliksiz ve kendisinden hiçbir şey istemeyen bir sayfayla karşılaşıyor. Sonraki iki bölüm, bunun ticari faturasını aynı ölçüm setiyle gösteriyor."
+      }
+    ]
+  },
+  {
+    "id": "donusum-yolu-yok",
+    "ustEtiket": "Durum Tespiti · 02",
+    "baslik": "Dönüşüm yolu yok",
+    "giris": "16 Ağustos 2026 ölçümünde sitede 122 URL sayıldı: 40 sayfa + 82 yazı. Bunların tamamında satış formu bir tane. Portföydeki 28 cihaz sitede 29 cihaz URL'siyle yayında ve bir alıcı bunlardan birine ilgi duyduğunda, o ilgiyi taşıyabileceği cihaza bağlı hiçbir kanal bulamıyor.",
+    "govde": [
+      {
+        "tip": "olcum",
+        "baslik": "Talep toplama yüzeyi (16 Ağu 2026 ölçümü)",
+        "olcumler": [
+          {
+            "deger": "1",
+            "etiket": "Tüm sitedeki satış formu",
+            "aciklama": "40 sayfa ve 82 yazının tamamında tek form var: /iletisim/. Dört alan; nitelendirme sorusu yok, ayrı bir açık rıza kutusu yok.",
+            "durum": "kayip"
+          },
+          {
+            "deger": "0 / 29",
+            "etiket": "Teklif yolu olan cihaz sayfası",
+            "aciklama": "29 cihaz sayfasının hiçbirinde form, PDF föy, teklif butonu ya da cihaza özel WhatsApp bağlantısı yok. Tek tek kontrol edildi.",
+            "durum": "kayip"
+          },
+          {
+            "deger": "2",
+            "etiket": "Denetlenen 6 sayfadaki toplam CTA etiketi",
+            "aciklama": "\"Bizi Arayın\" ve \"İletişim\". 20 yıllık bir tedarikçinin eylem çağrısı repertuvarı, ölçülen sayfalarda bu iki etiketten ibaret.",
+            "durum": "kayip"
+          },
+          {
+            "deger": "122 : 1",
+            "etiket": "URL başına form oranı",
+            "aciklama": "Ziyaretçinin ilgisini eyleme çevirebileceği tek nokta var; ona da kendi başına, menüden gezinerek ulaşması gerekiyor.",
+            "durum": "kayip"
+          }
+        ]
+      },
+      {
+        "tip": "paragraf",
+        "metin": "Tek eylem çağrısı \"Bizi Arayın\". Bu buton da kalıcı değil: sayfa kaydırıldığında ve mobilde tamamen kayboluyor. Yani ziyaretçi ürün açıklamasını okuyup karar verdiği anda ekranda tıklayacağı bir şey kalmıyor. Sayfanın ilgi ürettiği yer ile talebi toplayabileceği yer, sitenin iki ayrı ucunda duruyor."
+      },
+      {
+        "tip": "tablo",
+        "baslik": "Sayfa türüne göre teklif yolu — 40 sayfa + 82 yazı = 122 URL",
+        "sutunlar": [
+          "Sayfa türü",
+          "Adet",
+          "Form",
+          "PDF föy",
+          "Cihaza özel WhatsApp"
+        ],
+        "satirlar": [
+          [
+            "Cihaz sayfası",
+            "29",
+            "Yok",
+            "Yok",
+            "Yok"
+          ],
+          [
+            "Diğer sayfalar",
+            "10",
+            "Yok",
+            "Yok",
+            "Yok"
+          ],
+          [
+            "İletişim sayfası",
+            "1",
+            "4 alan, ayrı açık rıza kutusu yok",
+            "Yok",
+            "Yok"
+          ],
+          [
+            "Blog yazısı",
+            "82",
+            "Yok",
+            "Yok",
+            "Yok"
+          ]
+        ]
+      },
+      {
+        "tip": "paragraf",
+        "metin": "Bunun iki doğrudan sonucu var. Birincisi: mesai saatleri dışında oluşan ilgi tek bir genel iletişim formuna bağlı; o form da hangi cihaz için yazıldığını taşımadığı için gelen talep bağlamsız düşüyor. İkincisi: bu ölçekte bir yatırımı ilk temasta telefonla konuşmak istemeyen, önce yazılı bilgi ve teknik künye isteyen alıcı profili siteden hiç geçmiyor — çünkü kendisine sunulan tek yol arama. Bu profilin payı bugün ölçülmüyor; yeni sitede kurulacak lead kaydıyla ilk aydan itibaren raporlanabilir hale gelir."
+      },
+      {
+        "tip": "kutu",
+        "baslik": "Ölçülemeyen reklam bütçesi",
+        "metin": "Mevcut formda ads_keyword ve Kampanya_Bilgisi adlı iki gizli alan tanımlı. Yani birileri arama reklamı harcamasını ölçmeyi planlamış. Ama ölçümde bu alanlar boş geliyor. Hangi arama kelimesinin talep getirdiği bu kurulumla izlenemiyor; harcamanın hangi cihaza karşılık geldiği de bilinmiyor."
+      },
+      {
+        "tip": "olcum",
+        "baslik": "Ölçüm ve uyum boşlukları",
+        "olcumler": [
+          {
+            "deger": "Boş",
+            "etiket": "ads_keyword ve Kampanya_Bilgisi",
+            "aciklama": "Alanlar formda mevcut, veri gelmiyor. Reklam harcamasının hangi kelimeden talep ürettiği izlenemiyor.",
+            "durum": "kayip"
+          },
+          {
+            "deger": "0",
+            "etiket": "Formdaki ayrı rıza kutusu",
+            "aciklama": "Tek formda ayrı bir onay kutusu yok. Ayrıca çerez rızası alınmadan GTM yükleniyor. Uyum tarafında ayrıca ele alınması gereken bir başlık.",
+            "durum": "risk"
+          },
+          {
+            "deger": "404",
+            "etiket": "Mesafeli satış ve iade sayfaları",
+            "aciklama": "Menüde bağlantısı var, sayfalar açılmıyor. 16 Ağustos 2026'da curl ile teyit edildi.",
+            "durum": "risk"
+          }
+        ]
+      },
+      {
+        "tip": "kutu",
+        "baslik": "Hedef sepet değil, teklif akışı",
+        "metin": "Estezone bir sağlık kuruluşu değil, ticari cihaz tedarikçisi. Bu cihazlarda internetten satış (sepet/ödeme) yolu zaten kapalı; çalışma biçimi teklif usulü. Dolayısıyla kurulacak yapı bir e-ticaret akışı değil: her cihaz sayfasında nitelendirici sorular içeren bir teklif formu, cihaz bağlamını taşıyan bir WhatsApp bağlantısı ve indirilebilir teknik künye. Hedefleme de halka değil, sağlık meslek mensuplarına kurulur."
+      },
+      {
+        "tip": "liste",
+        "baslik": "Kapatmayı hedeflediğimiz döngü",
+        "maddeler": [
+          "Her cihaz sayfası kendi teklif yolunu taşır; ilgi, oluştuğu sayfada toplanır.",
+          "Eylem çağrısı kaydırmada ve mobilde ekranda kalır; ziyaretçi karar anında tıklayacak bir şey bulur.",
+          "Her talep kaydında hangi cihaz, hangi sayfa ve hangi kaynak bilgisi tutulur; bugün boş gelen alanların yerini gerçek veri alır.",
+          "Mesafeli satış ve iade sayfalarının 404 durumu ile çerez rızası öncesi etiket yüklenmesi yayın öncesi kapatılır."
+        ]
+      },
+      {
+        "tip": "paragraf",
+        "metin": "Özetle: ilgi üreten sayfalarda talep toplayacak yüzey yok, gelen talebin nereden geldiği ölçülmüyor, ölçülmeyen bütçe de optimize edilemiyor. Bu bir tasarım tercihi değil, kapatılmamış bir döngü. Yeni sitede hedefimiz bu döngüyü kapatmak; değişimin büyüklüğünü ilk ay kurulacak ölçümle raporlarız, önceden rakam taahhüt etmeyiz."
+      }
+    ]
+  },
+  {
+    "id": "para-sayfasi-kaybediyor",
+    "ustEtiket": "Durum Tespiti · 03",
+    "baslik": "Para sayfası kendi bloguna kaybediyor",
+    "giris": "Bu bölüm tek bir soruyu ölçüyor: sitenin içerik ağırlığı nerede duruyor? 16 Ağustos 2026 taramasının cevabı net — ağırlık blogda, teklif alınabilecek sayfada değil. 86 yazının 61'i tek bir anlam kümesinde toplanmış durumda; teklif yolu olan cihaz sayfası sayısı ise 29'da sıfır.",
+    "govde": [
+      {
+        "tip": "paragraf",
+        "metin": "Sitede 86 blog yazısı var. Bunların 61'i tek bir anlam kümesinde toplanıyor; kümedeki metinlerin birbirine kosinüs benzerliği yüzde 70 ile 90 arasında ölçüldü. Yani aynı konuyu anlatan 61 sayfa, aynı arama sorgusu için birbiriyle yarışıyor. Bu yapıda arama motorunun hangi sayfayı öne çıkaracağı belirsizleşir; sinyal 61 adaya bölünür. Sıralamanın bugün fiilen nasıl dağıldığını Search Console erişimi olmadan söyleyemeyiz — o veri devralındığında ilk ay raporlanır. Ölçebildiğimiz ve şu an elimizde olan şey, ağırlığın nereye yığıldığı."
+      },
+      {
+        "tip": "olcum",
+        "baslik": "İçerik kanibalizasyonu (16 Ağu 2026 ölçümü)",
+        "olcumler": [
+          {
+            "deger": "61 / 86",
+            "etiket": "Tek anlam kümesindeki yazı",
+            "aciklama": "Kosinüs benzerliği %70–90. Aynı arama niyeti için sitenin içinde birbirine rakip 61 aday sayfa duruyor.",
+            "durum": "kayip"
+          },
+          {
+            "deger": "22 ay",
+            "etiket": "Bloğun donmuş süresi",
+            "aciklama": "Son yazı güncellemesi 2024-10-04. O tarihten bu yana içerik tarafında hareket yok.",
+            "durum": "kayip"
+          },
+          {
+            "deger": "6–12 kat",
+            "etiket": "Yazının ürün sayfasına uzunluk oranı",
+            "aciklama": "Markalı blog yazıları, karşılık geldikleri cihaz sayfalarının 6 ila 12 katı uzunlukta.",
+            "durum": "risk"
+          },
+          {
+            "deger": "0 / 29",
+            "etiket": "Teklif yolu olan cihaz sayfası",
+            "aciklama": "29 cihaz sayfasının hiçbirinde form, PDF föy, teklif butonu ya da cihaza özel WhatsApp bağlantısı yok. Yani ağırlığın taşınacağı hedef sayfa da bugün boş.",
+            "durum": "kayip"
+          }
+        ]
+      },
+      {
+        "tip": "paragraf",
+        "metin": "Noblex örneği bu dengesizliği tek başına anlatıyor. Marka adını taşıyan blog yazısı 2.223 kelime. Satın alma kararının verileceği asıl sayfa, yani /noblex/ ürün sayfası, 184 kelime. Aradaki fark yaklaşık 12 kat. Ölçümde doğrulanmış tek çift bu; markalı yazıların ürün sayfalarını 6–12 kat aşması ise site genelinde geçerli örüntü."
+      },
+      {
+        "tip": "tablo",
+        "baslik": "Noblex örneği — ağırlık nerede, teklif yolu nerede",
+        "sutunlar": [
+          "Sayfa",
+          "Kelime",
+          "Sayfadaki teklif yolu"
+        ],
+        "satirlar": [
+          [
+            "Blog yazısı (Noblex)",
+            "2.223",
+            "Yok — sitedeki tek satış formu /iletisim/ altında"
+          ],
+          [
+            "Ürün sayfası /noblex/",
+            "184",
+            "Yok — 29 cihaz sayfasının hiçbirinde form, PDF föy, teklif butonu ya da cihaza özel WhatsApp bulunmuyor"
+          ]
+        ]
+      },
+      {
+        "tip": "paragraf",
+        "metin": "Sonuç şu: marka adıyla arama yapan, yani satın almaya en yakın nitelikli B2B ziyaretçi, teknik künyesi ve teklif formu olmayan bir yazıya iniyor. O yazıda okuyacağını okuyup çıkıyor. Ürün sayfasına geçse bile durum değişmiyor, çünkü 29 cihaz sayfasının hiçbirinde bırakabileceği bir talep yok. Kısacası içerik yatırımı yapılmış, ama o yatırımın ucu hiçbir yere bağlanmamış."
+      },
+      {
+        "tip": "liste",
+        "baslik": "Aynı örüntünün diğer görünümleri (16 Ağu 2026 taraması)",
+        "maddeler": [
+          "Bir cihaz sayfasının içeriği başka bir cihaz sayfasıyla birebir aynı: endoterapylazer ile medart-smartsculpt-endolazer aynı metni taşıyor.",
+          "Cihaz sayıları da buradan açıklanıyor: mevcut sitede 29 cihaz URL'si var, ama iki URL aynı içeriği taşıdığı için benzersiz cihaz sayısı 28. Firma portföyü ve hazırladığımız demo da 28 cihaz üzerinden ilerliyor — 29 / 28 farkı bu kopya çiftinden ibaret.",
+          "Noblex yazısında, karşılık geldiği /noblex/ ürün sayfasına yönlendiren bir bağlantıya rastlanmadı. Blogdan ürüne iç bağlantı sayımı site genelinde tekrarlanıp raporlanacak; şu an tek doğrulanmış örnek bu.",
+          "Blog 22 aydır donmuş olmasına rağmen sitenin içerik hacminin ezici kısmı hâlâ orada duruyor; güncel olmayan içerik, güncel satış yüzeyinden daha ağır basıyor."
+        ]
+      },
+      {
+        "tip": "kutu",
+        "baslik": "Bunun iyi tarafı",
+        "metin": "61 yazılık küme çöp değil, hammadde. İçinde gerçek konu bilgisi ve markalı anlatım var — üstelik ürün sayfalarının 6–12 katı hacimde. Bu metin dağıtılıp derin rehberlere damıtılabilir, markalı bölümler de ince ürün sayfalarının gövdesi olarak kullanılabilir. Yani sıfırdan içerik üretmek gerekmiyor; var olan içeriği doğru sayfaya taşımayı hedefliyoruz."
+      },
+      {
+        "tip": "olcum",
+        "baslik": "Üç bölümün toplamı",
+        "olcumler": [
+          {
+            "deger": "Ayakta",
+            "etiket": "Teknik durum",
+            "aciklama": "Sunucu, protokol ve önbellek tarafı sorunsuz: TTFB 38–77 ms, HTTP/2+3, TLS 1.3, brotli. Yeniden yapılanma için sağlam bir zemin.",
+            "durum": "firsat"
+          },
+          {
+            "deger": "Ölü",
+            "etiket": "Ticari durum",
+            "aciklama": "6 sayfada toplam 2 CTA etiketi, 29 cihaz sayfasında 0 teklif yolu, tek satış formu, 0 yüklenen marka fontu. İçerik ise kendi kendiyle yarışıyor.",
+            "durum": "kayip"
+          },
+          {
+            "deger": "3 kapı",
+            "etiket": "Kapatılacak boşluk",
+            "aciklama": "Vitrin, dönüşüm yolu ve içerik mimarisi. Üçünü de aynı yeniden yapımda kapatmayı hedefliyoruz; kazanımlar yayın sonrası kurulacak ölçümle raporlanır.",
+            "durum": "firsat"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "baslik": "Yenilersen ne değişir",
+    "giris": "16 Ağustos 2026'da estezone.com.tr'nin ön yüzü, başlıkları ve sayfa envanteri curl ve 8 paralel denetçiyle ölçüldü. Aşağıdaki karşılaştırmada solda o ölçümün sonucu var. Sağ taraf iki başlığa ayrıldı: \"demoda ölçülen\" satırlar tasarimmaniayapayzeka.github.io/estezone-demo adresinde bugün açılıp doğrulanabilir; \"yayın kurulumunda planlanan\" satırlar ise statik demonun kanıtlayamayacağı, barındırma tarafında kurulacak işlerdir. İkisini bilerek ayırdık.",
+    "govde": [
+      {
+        "tip": "paragraf",
+        "metin": "Site teknik olarak ayakta. Önbellek isabet ettiğinde ilk bayt 38–77 ms'de geliyor, HTTP/2 ve HTTP/3 açık, TLS 1.3 ve brotli devrede. Sorun hızda değil, o hızın ne taşıdığında. Bugün yaklaşık 1,6 MB'lık bir ön yüz yükü (159.180 B HTML + 525.243 B CSS + 841.545 B ham JS + 89.815 B jQuery), ziyaretçiye yalnızca 41 KB'lık içerik servis ediyor."
+      },
+      {
+        "tip": "olcum",
+        "baslik": "Dört rakam, dört karar",
+        "olcumler": [
+          {
+            "deger": "931 → 37 KB",
+            "etiket": "Sayfa başına JavaScript",
+            "aciklama": "Bugün 841.545 B ham JS üzerine 89.815 B jQuery 3.6.4. Demoda ölçülen toplam JS 37 KB; jQuery, page builder ve slider eklentisi yok.",
+            "durum": "kazanc"
+          },
+          {
+            "deger": "525 → 45 KB",
+            "etiket": "CSS",
+            "aciklama": "Bugün 525.243 B, içinde 814 adet !important (satır içi 238 + CSS 576). Demoda ölçülen CSS 45 KB.",
+            "durum": "kazanc"
+          },
+          {
+            "deger": "1 → 28",
+            "etiket": "Teklif yolu olan cihaz sayfası",
+            "aciklama": "Bugün tüm sitede tek satış formu var, o da /iletisim/ altında; 29 cihaz URL'sinin hiçbirinde form, PDF föy, teklif butonu ya da cihaza özel WhatsApp yok. Demoda 28 cihaz sayfasının hepsinde teklif formu, cihaza özel WhatsApp ve teknik künye var.",
+            "durum": "kazanc"
+          },
+          {
+            "deger": "0 → 4",
+            "etiket": "Karar aracı",
+            "aciklama": "Cihaz seçim danışmanı, yatırım geri dönüş hesaplayıcı, cihaz karşılaştırma, dalga boyu/teknik matris. Dördü de demoda çalışır durumda.",
+            "durum": "firsat"
+          }
+        ]
+      },
+      {
+        "tip": "kutu",
+        "baslik": "Cihaz sayılarını okuma anahtarı",
+        "metin": "Sunum boyunca üç sayı geçiyor, üçü de aynı portföyü anlatıyor: mevcut sitede 29 cihaz URL'si taranmıştır; bunların ikisi birebir aynı içeriği taşıdığı için (endoterapylazer ile medart-smartsculpt-endolazer) portföy 28 ayrı cihaz olarak sayılmıştır; demoda da 28 cihaz sayfası vardır. Yani hiçbir cihaz elenmiyor, yalnızca kopya URL tekilleşiyor."
+      },
+      {
+        "tip": "tablo",
+        "baslik": "Demoda bugün ölçülebilen fark",
+        "sutunlar": [
+          "Ölçüm",
+          "Bugün estezone.com.tr (16 Ağu 2026)",
+          "Demoda ölçülen"
+        ],
+        "satirlar": [
+          [
+            "HTML / CSS / JS",
+            "159.180 B / 525.243 B / 841.545 B (+ 89.815 B jQuery) ≈ 1,6 MB ön yüz yükü",
+            "47 KB / 45 KB / 37 KB"
+          ],
+          [
+            "Cihaz sayfasında form, PDF föy, teklif butonu, cihaza özel WhatsApp",
+            "29 cihaz URL'sinin hiçbirinde yok",
+            "28 cihaz sayfasının hepsinde teklif formu + cihaza özel WhatsApp + teknik künye"
+          ],
+          [
+            "Toplam satış formu",
+            "1 — /iletisim/, 4 alan, KVKK onay kutusu yok",
+            "Cihaz başına teklif formu; üyelik başvurusunda işletme türüne göre belge matrisi (salon 6, merkez 7, tıbbi 8, bayi adayı 8 belge)"
+          ],
+          [
+            "6 sayfada sayılan toplam CTA etiketi",
+            "2 — \"Bizi Arayın\" ve \"İletişim\"",
+            "Her cihaz sayfasında teklif ve WhatsApp eylem çağrısı ayrı ayrı var"
+          ],
+          [
+            "Karar aracı",
+            "Yok",
+            "4 araç; 28 cihaz tek teknik matriste"
+          ],
+          [
+            "İşletme türü ayrımı",
+            "Sayfalarda karşılığı yok",
+            "Salon / merkez / tıbbi uygunluk rozeti ve filtresi"
+          ],
+          [
+            "Blog",
+            "Son yazı güncellemesi 2024-10-04 — 22 aydır hareket yok",
+            "6 B2B yazısı hazır (1.160–1.419 kelime), her birinde tablo, SSS ve ilgili cihaz kartları"
+          ],
+          [
+            "Riskli ifade denetimi",
+            "Firma çapında \"FDA Onaylı\" iddiası canlıda duruyor",
+            "Build sırasında çalışan mevzuat süzgeci var; riskli ifade yayına çıkmadan yakalanır"
+          ]
+        ]
+      },
+      {
+        "tip": "kutu",
+        "baslik": "Bir cümlede özet",
+        "metin": "Bugünkü site, 20 yıllık bir tedarikçinin vitrini gibi değil, hızlı yüklenen boş bir raf gibi çalışıyor. Ziyaretçi geliyor, tutunacak bir yer bulamıyor, çıkıyor."
+      },
+      {
+        "tip": "tablo",
+        "baslik": "Yayın kurulumunda kapatılacak katman (statik demonun kanıtlayamadığı, tasarım ve kurulum kararları)",
+        "sutunlar": [
+          "Konu",
+          "Bugün ölçülen",
+          "Yeni sitede hedeflenen"
+        ],
+        "satirlar": [
+          [
+            "Marka fontu",
+            "0 — birleşik CSS'te \"Montserrat\" 0 kez geçiyor; site herkeste sistem fontuyla açılıyor",
+            "Kendi sunucumuzda barındırılan, önceden yüklenen tek marka fontu"
+          ],
+          [
+            "Marka rengi ve kontrast",
+            "5 farklı mavi + konu dışı magenta #e95095; ana link rengi #1b98e0 kontrastı 3,17:1 ile WCAG AA'nın altında",
+            "Logodan türetilen tek renk ölçeği; yayın öncesi her metin/zemin çifti AA eşiğine karşı test edilir"
+          ],
+          [
+            "Akışkan tipografi ve modern düzen",
+            "clamp() 0, @container 0, prefers-reduced-motion 0, display:grid 1",
+            "Akışkan tipografi ölçeği, grid düzen ve hareket azaltma tercihine saygı"
+          ],
+          [
+            "Kırılım noktası",
+            "3 medya sorgusu; 1280px üstü için tek kural yok — 4K ekranda başlık hâlâ 37px",
+            "Masaüstü üstü genişlikler dahil, büyük ekranı da kapsayan kırılım seti"
+          ],
+          [
+            "Ekranda sabit duran alan",
+            "120–140px header + ~45px alt çubuk ≈ 1080p ekranın %17'si",
+            "İnce ve kaydırınca daralan header; ekranın içeriğe ayrılan payı belirgin şekilde artırılır"
+          ],
+          [
+            "Hero",
+            "5 slaytlık otomatik slider, metin katmanı 0, 4/5 slaytta alt metni boş, ilk slayt 858.446 B",
+            "Gerçek HTML başlık + değer önermesi + iki eylem çağrısı; otomatik oynayan karusel yok"
+          ],
+          [
+            "Güvenlik başlıkları",
+            "HSTS, CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy: 6'sının 6'sı yok",
+            "Altısı da sunucu kurulumunda tanımlanır"
+          ],
+          [
+            "Çalışma zamanı",
+            "X-Powered-By: PHP/8.0.30 — Kasım 2023'te desteği bitmiş sürüm, üstelik başlıkla dışarı sızıyor",
+            "Destekli PHP sürümü; sürüm bilgisi başlıktan kaldırılır"
+          ],
+          [
+            "Reklam ölçümü",
+            "Formda ads_keyword ve Kampanya_Bilgisi gizli alanları var, boş geliyor",
+            "Her talepte kampanya ve iniş bilgisi kaydedilir; hangi aramanın talep getirdiği ilk aydan itibaren raporlanır"
+          ],
+          [
+            "Ayak izi",
+            "Her sayfada 500px yüksekliğinde 2020 tarihli Google Maps iframe'i; alt bilgide \"© 2023\"",
+            "Güncel künye ve son güncelleme tarihi; adres, ofis ve servis bilgileri firmadan teyit alınarak yayınlanır"
+          ]
+        ]
+      },
+      {
+        "tip": "liste",
+        "baslik": "Yenilemenin aynı anda kapattığı açıklar",
+        "maddeler": [
+          "Mesafeli satış ve iade sayfaları bugün 404 dönüyor — curl ile teyit edildi.",
+          "Çerez rızası alınmadan GTM yükleniyor.",
+          "Firma çapında \"FDA Onaylı\" iddiası var; ispat külfeti reklam verende. Demodaki mevzuat süzgeci bu tür ifadeleri build sırasında yakalıyor.",
+          "İki sayfa birebir aynı içeriği taşıyor: endoterapylazer ile medart-smartsculpt-endolazer.",
+          "86 yazının 61'i tek anlam kümesinde (kosinüs benzerliği %70–90); markalı yazılar ürün sayfalarının 6–12 katı uzunlukta. Doğrulanmış örnek: Noblex yazısı 2.223 kelime, Noblex ürün sayfası 184 kelime.",
+          "Formda KVKK açık rıza kutusu yok; yeni formların tamamında ayrı rıza alanı kurulur."
+        ]
+      },
+      {
+        "tip": "paragraf",
+        "metin": "Bu tablo yalnızca bir vaat değil. tasarimmaniayapayzeka.github.io/estezone-demo adresinde 55 sayfalık, 4 tasarım sürümlü çalışan bir demo duruyor; \"demoda ölçülen\" başlıklı her satır orada açılıp denenebilir. \"Yayın kurulumunda hedeflenen\" satırlar ise iş kalemidir, sonuç garantisi değildir: trafik, sıralama ve talep değişimi yayın sonrası kurulacak ölçümle raporlanır. Sıradaki soru şu: bu yenileme sizi taradığımız rakiplerin neresine koyuyor?"
+      }
+    ],
+    "id": "yenilersen-ne-degisir",
+    "ustEtiket": "Web Yenileme 1/3"
+  },
+  {
+    "id": "rakiplerin-onune-gecis",
+    "ustEtiket": "Web Yenileme 2/3",
+    "baslik": "Rakiplerin önüne nasıl geçersin",
+    "giris": "16 Ağustos 2026'da 7 rakip sitesi tarandı: Medsatek, Glory Majestic, Asel, Newmed, E-Medikal, MedLaser, STS Lazer. Taramada ölçtüğümüz tek şey sitelerin kendisi oldu. Buradan çıkan sonuç şu: rakip cephesinde konuşulan konu fiyat; alıcının kararını hızlandıran araçlar taradığımız sitelerin hiçbirinde bulunmadı. Biz o boşluğa oynuyoruz.",
+    "govde": [
+      {
+        "tip": "paragraf",
+        "metin": "Taramada iki somut gözlem var. Medsatek, 7 site içinde TL fiyat bandı yayınlayan tek firma; Falcon 4 Pro için 700.000–950.000 TL aralığı sitesinde duruyor. Asel finansman vaadi yayınlıyor, ancak alıcının kendi rakamlarını girip sonuç alabileceği bir simülasyon taradığımız sitelerde görülmedi. Glory Majestic, Newmed, E-Medikal, MedLaser ve STS Lazer'de ise cihaz sayfası düzeyinde teklif formu ya da karar aracı bulunmadı. Burada ölçtüğümüz şey yalnızca sitelerin herkese açık hâli: rakiplerin reklam hesapları, hedeflemeleri ve trafik kompozisyonu ölçülmedi, bu yüzden onlar hakkında hiçbir şey söylemiyoruz."
+      },
+      {
+        "tip": "kutu",
+        "baslik": "Bizim cevabımız fiyat yarışı değil",
+        "metin": "Rakamla rakama karşılık vermek, kıyası tek boyuta indirir. Estezone'un konumu farklı olmalı: fiyatın yanına \"bu bedele ne dahil\" bilgisini koymak — kurulum, eğitim saati, ilk yıl bakım, garanti kapsamı, yedek parça taahhüdü. Böylece alıcı iki rakamı değil iki paketi karşılaştırır. Hedefimiz kıyası fiyat rakamından paket kapsamına taşımak; bu kıyas, servis ve garanti kapasitesini görünür kılan tarafın lehine çalışır. Fiyat bandının herkese açık sayfada mı yoksa bayi/profesyonel girişi arkasında mı yayınlanacağı ayrıca değerlendirilmelidir — tanıtımın profesyonele yönelik kurgulanması stratejimizin ekseni olduğu için önerimiz bandın giriş arkasında sunulmasıdır. Nihai karar, firmanın hukuk/mevzuat sorumlusunun onayıyla verilir."
+      },
+      {
+        "tip": "tablo",
+        "baslik": "Demoda çalışan bileşenler — ve tarama sonucu",
+        "sutunlar": [
+          "Bileşen",
+          "Taradığımız 7 rakip sitesinde (tarama: 16 Ağu 2026)",
+          "Estezone demosunda ne yapıyor"
+        ],
+        "satirlar": [
+          [
+            "İşletme türü uygunluk rozeti ve filtresi",
+            "Rastlanmadı",
+            "Salon / merkez / tıbbi ayrımı her cihazda rozet olarak görünür; uygun olmayan seçenek gerekçesiyle gri kalır. Aynı anda uyum kalkanı ve lead niteliği filtresi."
+          ],
+          [
+            "Yatırım geri dönüş hesaplayıcı",
+            "Asel finansman vaadi yayınlıyor; alıcının girdi verip sonuç aldığı bir simülasyona rastlanmadı",
+            "Girdileri alıcı dolduruyor; amorti süresi ve nakit akışı ekranda çıkıyor, sonunda teklif formuna bağlanıyor"
+          ],
+          [
+            "Cihaz seçim danışmanı",
+            "Rastlanmadı",
+            "Birkaç soruyla cihaz önerisi ve mevzuat uyarısı; 28 cihazlık portföyde karar felcini azaltmayı hedefler"
+          ],
+          [
+            "Cihaz karşılaştırma",
+            "Rastlanmadı",
+            "Cihazlar yan yana, normalize edilmiş teknik alanlarla"
+          ],
+          [
+            "Dalga boyu / teknik matris",
+            "Rastlanmadı",
+            "28 cihazın tamamı tek tabloda; yapılandırılmış, alıntılanabilir teknik veri üretir"
+          ],
+          [
+            "7/24 AI cihaz asistanı",
+            "Rastlanmadı",
+            "28 cihazı bilir, ilgili sayfaya yönlendirir; fiyat vermez, teşhis koymaz"
+          ],
+          [
+            "Bayi girişi ve üyelik başvurusu",
+            "Rastlanmadı",
+            "İşletme türüne göre canlı belge matrisi: salon 6, merkez 7, tıbbi 8, bayi adayı 8 belge — hangisinin gerektiği başvuru anında görünür"
+          ],
+          [
+            "Mevzuat süzgeci",
+            "Rastlanmadı",
+            "Build sırasında çalışır; riskli ifade canlıya çıkamaz"
+          ]
+        ]
+      },
+      {
+        "tip": "olcum",
+        "baslik": "Demoda ölçülen kapasite",
+        "olcumler": [
+          {
+            "deger": "55",
+            "etiket": "Yayına hazır sayfa",
+            "aciklama": "4 farklı tasarım sürümüyle birlikte, canlı olarak gezilebilir durumda",
+            "durum": "kazanc"
+          },
+          {
+            "deger": "0 / 29 → 28 / 28",
+            "etiket": "Cihaz sayfasında teklif yolu",
+            "aciklama": "Mevcut sitedeki 29 cihaz sayfasının hiçbirinde form, PDF föy, teklif butonu ya da cihaza özel WhatsApp yok. Demodaki 28 cihaz sayfasının tamamında teklif formu, cihaza özel WhatsApp ve teknik künye var.",
+            "durum": "kazanc"
+          },
+          {
+            "deger": "2 → 4",
+            "etiket": "CTA etiketinden karar aracına",
+            "aciklama": "Mevcut sitede 6 sayfada sayılan toplam CTA etiketi 2. Demoda seçim danışmanı, yatırım geri dönüş hesaplayıcı, karşılaştırma ve teknik matris çalışıyor.",
+            "durum": "firsat"
+          },
+          {
+            "deger": "6",
+            "etiket": "B2B rehber yazısı",
+            "aciklama": "1.160–1.419 kelime; tablo, SSS ve ilgili cihaz kartlarıyla. Mevcut blogda son yazı güncellemesi 2024-10-04.",
+            "durum": "firsat"
+          },
+          {
+            "deger": "1,6 MB → 129 KB",
+            "etiket": "Ön yüz yükü",
+            "aciklama": "Mevcut sitede HTML 159.180 B + CSS 525.243 B + ham JS 841.545 B ≈ 1,6 MB ön yüz, servis edilen içerik 41 KB. Demoda HTML 47 KB + CSS 45 KB + JS 37 KB.",
+            "durum": "kazanc"
+          }
+        ]
+      },
+      {
+        "tip": "paragraf",
+        "metin": "Buradaki ayrım tasarım zevki değil, mevzuat okumasıdır. Estezone bir sağlık kuruluşu değil, ticari cihaz tedarikçisidir. Tıbbi cihazların halka yönelik reklamı yasaktır; sağlık meslek mensuplarına yönelik tanıtım ise serbesttir. Ayrıca internetten satış — sepet ve ödeme — yapılamaz, teklif usulü çalışılır. Demodaki yapı bu iki kuralın üzerine kurgulandı: her cihaz sayfası satışa değil teklife bağlanıyor, işletme türü rozeti ve bayi girişi ile hedefleme profesyonele çevriliyor. Taradığımız rakip sitelerinde profesyonel/tüketici ayrımını yapılandıran bir kurgu görülmedi; bu ayrımı kuran taraf hem uyum tarafında korunaklı olur hem daha nitelikli talep hedefleyebilir. Nitelik değişimi ilk ay kurulacak ölçümle raporlanır, önceden taahhüt edilmez."
+      },
+      {
+        "tip": "kutu",
+        "baslik": "Cihaz sayıları neden farklı görünüyor",
+        "metin": "Sunum boyunca üç ayrı sayı geçiyor ve üçü de doğru: mevcut estezone.com.tr'de 29 cihaz URL'si var, firmanın portföyünde 28 cihaz bulunuyor, demoda da 28 cihaz sayfası kurulu. Aradaki fark, mevcut sitede aynı içeriği taşıyan bir çift sayfadan geliyor — endoterapylazer ile medart-smartsculpt-endolazer birebir aynı metni yayınlıyor. Yeni yapıda bu iki URL tek otorite sayfasında birleşir, eski adres 404'e düşmez."
+      },
+      {
+        "tip": "kutu",
+        "baslik": "Ölçülü konuşma notu",
+        "metin": "Rakip taraması 7 firmayla ve yalnızca herkese açık site içerikleri üzerinden yapıldı (16 Ağu 2026). \"Türkiye'de tek\" ya da \"hiçbir rakipte yok\" gibi mutlak iddialar sunumda ve sitede kullanılmayacak. Söylediğimiz tek şey şu: taradığımız 7 sitede bu araçlara rastlanmadı, bizim demomuzda ise çalışır hâlde ve açılıp denenebilir durumda. Rakiplerin reklam bütçesi, hedeflemesi ve trafik kalitesi hakkında ölçümümüz olmadığı için bu konularda hiçbir değerlendirme yapmıyoruz."
+      },
+      {
+        "tip": "paragraf",
+        "metin": "Özetle sahayı değiştirmeyi öneriyoruz. Fiyat bandıyla açılan bir yarışa girmek yerine, alıcının kararını hızlandıran araçları — seçim danışmanı, geri dönüş hesaplayıcı, karşılaştırma, teknik matris, belge matrisli bayi girişi — ön plana çıkarmayı hedefliyoruz. Bu bileşenlerin tamamı tasarimmaniayapayzeka.github.io/estezone-demo adresinde çalışıyor; her satır açılıp denenebilir. Sıradaki bölüm, satın alma komitesinin gerçekten baktığı kanıt katmanını ele alıyor."
+      }
+    ]
+  },
+  {
+    "id": "kanit-katmani",
+    "ustEtiket": "Web Yenileme 3/3",
+    "baslik": "Kanıt katmanı",
+    "giris": "Bu sınıfta konuşulan tutarların ölçeği ortada: rakip Medsatek tek bir cihaz için 700.000–950.000 TL bandını sitesinde yayınlıyor. Bu ölçekte karar veren bir klinik tasarıma bakarak imza atmaz; belgeye, garantiye ve servis taahhüdüne bakar. Bugün estezone.com.tr'de bu üçünün karşılığı yok.",
+    "govde": [
+      {
+        "tip": "paragraf",
+        "metin": "16 Ağustos 2026 taramasında doğrulanan tablo şu: 29 cihaz sayfasının hiçbirinde indirilebilir PDF föy, teklif formu, teklif butonu ya da cihaza özel WhatsApp bağlantısı yok. Yani alıcının teknik ekibine iletebileceği tek bir belge dahi siteden çıkmıyor. Buna karşılık sitede firma çapında \"FDA Onaylı\" ifadesi kullanılıyor — cihaz düzeyinde belge künyesi olmadan yapılan, ispat külfeti reklam verende olan bir iddia. Kısacası sitede kanıt eksik, iddia fazla. 20 yıllık bir firma dijitalde yeni kurulmuş gibi görünüyor."
+      },
+      {
+        "tip": "olcum",
+        "baslik": "Bugün ölçülen güven yüzeyi (16 Ağu 2026)",
+        "olcumler": [
+          {
+            "deger": "0 / 29",
+            "etiket": "Belge indirme yolu olan cihaz sayfası",
+            "aciklama": "29 cihaz sayfasının hiçbirinde PDF föy, form, teklif butonu ya da cihaza özel WhatsApp yok. Satın alma komitesine iletilecek dosya üretilemiyor.",
+            "durum": "kayip"
+          },
+          {
+            "deger": "404",
+            "etiket": "Mesafeli satış ve iade sayfaları",
+            "aciklama": "Menüde bağlantısı duruyor, sayfalar açılmıyor. Curl ile teyit edildi. Kurumsal alıcı için bu, ilk bakılan güven sinyallerinden biri.",
+            "durum": "risk"
+          },
+          {
+            "deger": "© 2023",
+            "etiket": "Alt bilgideki telif yılı",
+            "aciklama": "Her sayfanın altında görünüyor. Son içerik güncellemesi 2024-10-04, yani blog 22 aydır donmuş durumda. Ziyaretçinin okuduğu ilk tarih, firmanın güncel olmadığını söylüyor.",
+            "durum": "kayip"
+          },
+          {
+            "deger": "2",
+            "etiket": "6 sayfada sayılan toplam CTA etiketi",
+            "aciklama": "\"Bizi Arayın\" ve \"İletişim\". Belgeyi isteyecek, föyü indirecek, servis taahhüdünü soracak hiçbir eylem yolu tanımlı değil.",
+            "durum": "kayip"
+          }
+        ]
+      },
+      {
+        "tip": "tablo",
+        "baslik": "Kanıt katmanı — kalem kalem",
+        "sutunlar": [
+          "Kanıt kalemi",
+          "Bugün (16 Ağu 2026 taraması)",
+          "Yeni sitede hedeflenen",
+          "Veri kaynağı / durum"
+        ],
+        "satirlar": [
+          [
+            "Cihaz belge künyesi",
+            "Cihaz sayfalarında yayımlanmış belge künyesine rastlanmadı; buna karşılık firma çapında \"FDA Onaylı\" ifadesi kullanılıyor",
+            "Cihaz başına belge künyesi alanı: numara, sınıf ve kayıt bilgisi — alan yalnızca teyitli veriyle dolar",
+            "Üretici belgesi ve resmî kayıtlardan teyit alınacak; teyit gelmeyen alan sayfada boş kalır"
+          ],
+          [
+            "İndirilebilir belge",
+            "29 cihaz sayfasının hiçbirinde PDF föy yok (doğrulandı)",
+            "Teknik föy ve kılavuz indirme; belge indirme formuyla talebe bağlanır",
+            "Firma arşivi + üretici dosyaları"
+          ],
+          [
+            "Garanti bloğu",
+            "Cihaz sayfalarında garanti bilgisine rastlanmadı",
+            "Her cihaz sayfasında sabit garanti bloğu: süre, yetkili servis unvanı ve iletişimi, yedek parça ve eğitim başlıkları",
+            "Metin ve süreler firmanın mevzuat/hukuk sorumlusundan teyitli gelecek; biz rakam üretmiyoruz"
+          ],
+          [
+            "Teknik servis taahhüdü",
+            "Sayısal karşılığı olmayan nitel ifadeler",
+            "İlk yanıt süresi, yerinde müdahale, ortalama onarım süresi ve ikame cihaz politikasının yazılı tablosu",
+            "Rakamların tamamı firmadan alınır ve olduğu gibi yayınlanır"
+          ],
+          [
+            "Referans ve vaka",
+            "Yayımlanmış vaka ya da referans künyesine rastlanmadı",
+            "İl bazlı kurulum haritası + anonim künyeli vakalar (örn. \"medikal estetik merkezi, 2 cihaz\")",
+            "Firma kaydı + her referans için yazılı izin"
+          ],
+          [
+            "Distribütörlük ve yetkili servis",
+            "Sitede görünmüyor",
+            "Üstünlük sloganı yerine belgenin kendisi: tarihli künye ve doğrulama bilgisi",
+            "Sözleşme kopyaları"
+          ],
+          [
+            "Kurumsal derinlik",
+            "Ankara merkezli, 20 yıllık, 28 cihazlık bir portföy var; dijitalde bu birikimi gösteren yapı yok",
+            "Zaman çizelgesi, ekip, servis kapasitesi ve lokasyon künyesi (NAP)",
+            "Lokasyon, showroom ve atölye bilgisi firmadan teyit alınmadan yazılmayacak"
+          ]
+        ]
+      },
+      {
+        "tip": "kutu",
+        "baslik": "Bu sunumda tek bir belge numarası yazmadık",
+        "metin": "Kanıt katmanının kuralı şu: numara uydurulmaz. Bu kuralı önce kendi sunumumuza uyguladık — elimizde üreticiden ya da resmî kayıttan teyitli belge numarası olmadığı için bu sayfada hiçbir CE, ÜTS ya da 510(k) numarası yer almıyor. Numaralar toplandıkça sayfaya girer; toplanmadıkça o alan boş kalır. Yanlış bir belge numarası, boş bir alandan çok daha pahalıya patlar."
+      },
+      {
+        "tip": "liste",
+        "baslik": "Firmadan teyit bekleyen alanlar (kanıt katmanının girdisi)",
+        "maddeler": [
+          "Cihaz başına belge bilgileri: numara, sınıf ve kayıt kaydı — üretici dosyasından ya da resmî kayıttan doğrulanacak.",
+          "Garanti süreleri, yetkili teknik servis unvanı ve yedek parça taahhüdü — mevzuatın asgarisi firmanın mevzuat sorumlusundan teyitli alınacak.",
+          "Servis taahhüt rakamları: ilk yanıt, yerinde müdahale ve ortalama onarım süreleri.",
+          "Onarım kapasitesi: hangi işlem yerinde, hangisi atölyede yapılıyor — envanter çıkarılacak.",
+          "Lokasyon künyesi: merkez dışında ofis, showroom ya da atölye var mı, kaç adet. Doğrulanmadan sunumda ve sitede rakam olarak geçmeyecek.",
+          "Referans ve vaka izinleri: hangi kurulum, hangi kapsamda anonim olarak yayınlanabilir."
+        ]
+      },
+      {
+        "tip": "olcum",
+        "baslik": "Demoda çalışan kanıt yüzeyi (tasarimmaniayapayzeka.github.io/estezone-demo)",
+        "olcumler": [
+          {
+            "deger": "28",
+            "etiket": "Teknik künyeli cihaz sayfası",
+            "aciklama": "Demodaki 28 cihaz sayfasının her birinde teknik künye, teklif formu ve cihaza özel WhatsApp bağlantısı çalışıyor. Belge künyesi alanı da bu şablonun içinde duruyor; içi teyitli veriyle dolacak.",
+            "durum": "kazanc"
+          },
+          {
+            "deger": "6 · 7 · 8",
+            "etiket": "İşletme türüne göre istenen belge sayısı",
+            "aciklama": "Bayi girişi ve üyelik başvurusunda salon 6, merkez 7, tıbbi 8 belge; bayi adayı için 8 belge. Hangi belgenin gerektiği başvuru anında ekranda görünüyor.",
+            "durum": "kazanc"
+          },
+          {
+            "deger": "Build",
+            "etiket": "Mevzuat süzgecinin çalıştığı an",
+            "aciklama": "Süzgeç yayın öncesi build sırasında çalışıyor; riskli ifade canlıya çıkmadan yakalanıyor. \"FDA Onaylı\", \"kalıcı epilasyon\", \"kesin sonuç\" gibi kullanılmaması gereken ifadeler bu kapıdan geçemiyor.",
+            "durum": "firsat"
+          }
+        ]
+      },
+      {
+        "tip": "kutu",
+        "baslik": "Üç rakam, tek portföy — karışmasın diye",
+        "metin": "Sunumda üç farklı cihaz sayısı geçiyor ve üçü birbirini açıklıyor: mevcut estezone.com.tr'de 29 cihaz URL'si tarandı (bunların ikisi birebir aynı içeriği taşıyor: endoterapylazer ile medart-smartsculpt-endolazer). Portföyde 28 cihaz var. Demoda da 28 cihaz sayfası kurulu. Yani fark cihaz kaybı değil, kopya URL'nin tek sayfada birleşmesi."
+      },
+      {
+        "tip": "kutu",
+        "baslik": "Mevzuat çerçevesi — sadece bilinen sınırlar",
+        "metin": "Estezone bir sağlık kuruluşu değil, ticari cihaz tedarikçisi. Tıbbi cihazların halka yönelik reklamı yasak; sağlık meslek mensuplarına yönelik tanıtım serbest. Bu yüzden kanıt katmanı da hedeflemesi profesyonele kurulu bir yüzey olarak tasarlanıyor. İnternetten satış (sepet/ödeme) yolu açılmıyor, teklif usulü çalışılıyor. \"FDA Onaylı\", \"kalıcı epilasyon\", \"kesin sonuç\" ve üstünlük iddiası içeren ifadeler kullanılmıyor. Garanti ve satış sonrası hizmete ilişkin asgari şartlar ise sayfada yazılı olarak yer alacak; süreler ve iş günü taahhütleri firmanın mevzuat sorumlusundan teyitli geldikten sonra yazılacak — bu sunumda rakam olarak verilmiyor."
+      },
+      {
+        "tip": "kutu",
+        "baslik": "İki ölçülü uyarı",
+        "metin": "Birincisi: yayınlanan servis taahhüdü aynı zamanda hukuki bir taahhüttür. Tutulamayan bir \"şu kadar saatte yerinde müdahale\" vaadi, hiç vaat vermemekten daha pahalıya patlar. Bu yüzden rakamları biz yazmıyoruz; firmadan alıp olduğu gibi yayınlıyoruz. İkincisi: \"tek yetkili\" gibi üstünlük ifadeleri yerine belgenin kendisi konur — tarihli künye, numara ve doğrulama bilgisi. Slogan denetlenir, belge denetlenmez."
+      },
+      {
+        "tip": "paragraf",
+        "metin": "Özet: yenilemeyi üç katmanda ilerletmeyi hedefliyoruz. Önce ön yüz yükünü hafifletip her cihaz sayfasına bir teklif yolu açıyoruz — bugün bu yol 29 cihaz sayfasının hiçbirinde yok, demoda 28'inin hepsinde var. Sonra karar araçları ve işletme türü kapısıyla, taradığımız 7 rakip sitesinde (Medsatek, Glory Majestic, Asel, Newmed, E-Medikal, MedLaser, STS Lazer — tarama: 16 Ağustos 2026) rastlamadığımız bir yüzey kuruyoruz. En sonda da satın alma komitesinin gerçekten baktığı kanıt katmanını, firmadan gelen teyitli veriyle dolduruyoruz. Amaç açık: siteyi katalog olmaktan çıkarıp teklif üreten bir kanala dönüştürmek. Bunun ne kadarının talebe döndüğü, ilk ay kurulacak ölçüm altyapısıyla raporlanacak — önceden sayı taahhüt etmiyoruz."
+      }
+    ]
+  },
+  {
+    "id": "neden-seo",
+    "ustEtiket": "SEO · Teşhis",
+    "baslik": "Sitede içerik var, satış yolu yok",
+    "giris": "Estezone'un arama motorunda görünmeme sorunu yok; yanlış sayfanın görünmesi sorunu var. 16 Ağustos 2026'da site 8 paralel denetçi ve curl ile baştan sona tarandı. Aşağıdaki her rakam o taramadan gelir; taramada ölçülmemiş olan kalemler ayrıca işaretlenmiştir.",
+    "govde": [
+      {
+        "tip": "paragraf",
+        "metin": "20 yıllık birikim siteye yazı olarak girmiş. Sitemap'te 40 sayfa ve 82 yazı listeli; içerik sayımında 86 yazıya ulaşılıyor — aradaki fark, sitemap'e girmemiş yazılardan kaynaklanıyor ve ayrıca teyit edilecek. Yani içerik üretilmiş, emek harcanmış. Sorun üretimde değil, mimaride: bu içerik teklif alınabilecek sayfayı beslemek yerine onunla yarışıyor."
+      },
+      {
+        "tip": "olcum",
+        "baslik": "Bugünün tablosu (16 Ağu 2026 ölçümü)",
+        "olcumler": [
+          {
+            "deger": "122",
+            "etiket": "taranan toplam URL",
+            "aciklama": "Sitemap'teki 40 sayfa + 82 yazı; tamamı taranıp yanıt kodlarıyla arşivlendi.",
+            "durum": "risk"
+          },
+          {
+            "deger": "61 / 86",
+            "etiket": "yazı tek anlam kümesinde",
+            "aciklama": "Kümedeki metinlerin kosinüs benzerliği %70-90. Aynı arama niyeti için sitenin içinde onlarca aday sayfa var.",
+            "durum": "kayip"
+          },
+          {
+            "deger": "0 / 29",
+            "etiket": "teklif yolu olan cihaz sayfası",
+            "aciklama": "29 cihaz URL'sinin hiçbirinde form, PDF föy, teklif butonu ya da cihaza özel WhatsApp bağlantısı yok.",
+            "durum": "kayip"
+          },
+          {
+            "deger": "22 ay",
+            "etiket": "blog dondurulmuş",
+            "aciklama": "Son yazı güncellemesi 2024-10-04. O tarihten bu yana içerik tarafında hareket yok.",
+            "durum": "risk"
+          }
+        ]
+      },
+      {
+        "tip": "paragraf",
+        "metin": "Kanibalizasyon şu demek: aynı arama niyeti için sitenin içinde birbirinin yerine geçebilecek onlarca sayfa var. Google hangisini öne çıkaracağına karar veremez, sinyal bölünür. Bölünen sinyalin nereye gittiği de kritik. Marka adıyla arama yapan nitelikli alıcı, teknik künyesi ve teklif formu olan ürün sayfasına değil, satış yolu bulunmayan blog yazısına düşüyor."
+      },
+      {
+        "tip": "tablo",
+        "baslik": "Doğrulanmış örnek: marka yazısı, kendi ürün sayfasını gölgeliyor",
+        "sutunlar": [
+          "Ölçüm",
+          "Blog yazısı (Noblex)",
+          "Ürün sayfası /noblex/"
+        ],
+        "satirlar": [
+          [
+            "Kelime sayısı",
+            "2.223",
+            "184"
+          ],
+          [
+            "Teklif formu",
+            "Yok",
+            "Yok"
+          ],
+          [
+            "Teknik künye",
+            "Göç taramasında çıkarılacak",
+            "Göç taramasında çıkarılacak"
+          ],
+          [
+            "Ürün sayfasına iç link",
+            "Göç taramasında çıkarılacak",
+            "—"
+          ]
+        ]
+      },
+      {
+        "tip": "paragraf",
+        "metin": "Bu tek doğrulanmış çiftte fark yaklaşık 12 kat. Örüntü tekil de değil: markalı blog yazıları, karşılık geldikleri cihaz sayfalarının 6 ila 12 katı uzunlukta ölçüldü. Yani satın almaya en yakın ziyaretçi, sitenin en uzun ama satış yolu olmayan sayfasına iniyor; okuyacağını okuyup çıkıyor."
+      },
+      {
+        "tip": "kutu",
+        "baslik": "Tek cümlelik teşhis",
+        "metin": "Google'da sıralanan sayfa ile teklif alınabilecek sayfa aynı sayfa değil. Trafik geliyor, satış yoluna bağlanmıyor."
+      },
+      {
+        "tip": "paragraf",
+        "metin": "Bu tablo sayfa yapısındaki boşluklarla birleşince etki katlanıyor. Ana sayfada h1 bir tane, h2 on sekiz tane, h3 hiç yok — ürün adları başlık hiyerarşisinin içine değil, düz bir H2 dizisine serilmiş. Arama motoru için sayfada bir konu ağacı yok, bir liste var. Ön yüzün bakım maliyeti de aynı hikâyeyi anlatıyor: satır içi 238, CSS'te 576 olmak üzere toplam 814 adet !important tanımlı."
+      },
+      {
+        "tip": "liste",
+        "baslik": "Ölçülen ve teyit edilmiş boşluklar",
+        "maddeler": [
+          "İki cihaz sayfası birebir aynı içeriği taşıyor: endoterapylazer ile medart-smartsculpt-endolazer.",
+          "29 cihaz URL'sinin hiçbirinde form, PDF föy, teklif butonu veya cihaza özel WhatsApp yok; tüm sitede tek satış formu var (/iletisim/, 4 alan, KVKK onay kutusu yok).",
+          "6 sayfada sayılan toplam eylem çağrısı etiketi 2: \"Bizi Arayın\" ve \"İletişim\". Bu tek buton da kaydırınca ve mobilde tamamen kayboluyor.",
+          "Hero alanında 5 slayt dönüyor, metin katmanı 0; 5 slaytın 4'ünde alt metni boş, ilk slayt tek başına 858.446 B.",
+          "Yüklenen marka fontu 0 — tema Montserrat tanımlamış, birleşik CSS'te \"Montserrat\" 0 kez geçiyor.",
+          "Mesafeli satış ve iade sayfaları 404 dönüyor (curl ile teyit edildi).",
+          "Çerez rızası alınmadan GTM yükleniyor.",
+          "Firma çapında \"FDA Onaylı\" iddiası kullanılıyor; ispat külfeti reklam verendedir."
+        ]
+      },
+      {
+        "tip": "kutu",
+        "baslik": "Cihaz sayıları neden farklı görünüyor",
+        "metin": "Üç ayrı sayı var ve üçü birbirini açıklıyor: mevcut sitede 29 cihaz URL'si tarandı; bunların ikisi (endoterapylazer ve medart-smartsculpt-endolazer) birebir aynı içeriği taşıyor. Portföyde 28 cihaz var ve hazırladığımız demoda da 28 cihaz sayfası bulunuyor. Yani yeni yapıda cihaz kaybı yok, tekrar eden URL tekilleşiyor."
+      },
+      {
+        "tip": "paragraf",
+        "metin": "Bu bir cihaz tedarikçisinin SEO'su; tüketici SEO'su değil. B2B alıcı fiyat yazarak aramaya başlamaz. Önce karar sorusu sorar: hangi teknoloji benim işletmeme uygun, alexandrite mi diyot mu, salonda kullanılabilir mi yoksa tıbbi merkez mi gerekir, geri dönüş süresi ne olur, ikinci el ve kiralama mantıklı mı. Ancak bunlar netleştikten sonra marka adı ve teknik özellik aramasına geçer. Bugünkü site bu yolculuğun ilk yarısını blogla karşılıyor; ikinci yarısında ise Noblex örneğindeki gibi 184 kelimelik, formsuz ve teknik künyesiz bir ürün sayfasıyla alıcıyı yalnız bırakıyor."
+      },
+      {
+        "tip": "paragraf",
+        "metin": "Hedefleme tarafında da yön kayması var. Estezone bir sağlık kuruluşu değil, ticari cihaz tedarikçisidir. Tıbbi cihazların halka yönelik reklamı yasaktır; sağlık meslek mensuplarına yönelik tanıtım ise serbesttir. İnternetten satış da mümkün değildir, teklif usulü çalışılır. Bu üç kural bir kısıt değil, bir hedefleme haritasıdır: yeni yapıda arama ve içerik ekseni profesyonel alıcıya kurulur — hem uyum tarafı korunur hem talep nitelikli gelir."
+      },
+      {
+        "tip": "paragraf",
+        "metin": "Ölçümün de bir boşluğu var. İletişim formunda ads_keyword ve Kampanya_Bilgisi gizli alanları tanımlı, ancak gelen kayıtlarda ikisi de boş. Yani hangi aramanın talep getirdiği bugün bilinmiyor. Bu, SEO ve reklam bütçesinin körlemesine yönetilmesi demek; bu boşluk kapanmadan iyileşme de ölçülemez."
+      },
+      {
+        "tip": "kutu",
+        "baslik": "Henüz ölçülmedi — teklif kapsamında ölçülecek",
+        "metin": "Dürüst olmak için ayırıyoruz: yapılandırılmış veri (Product / Article / Organization işaretlemesi), meta açıklama ve başlık uzunluklarının sayfa sayfa dökümü, taksonomi ve etiket yapısı, çok dilliliğin hreflang tarafı ve Search Console verisi 16 Ağustos taramasının kapsamında değildi. Bunlar iş başlangıcında ölçülüp tarih ve yöntemiyle raporlanır. Sunumda yer alan hiçbir rakam bu kalemlerden türetilmemiştir."
+      },
+      {
+        "tip": "kutu",
+        "baslik": "İyi haber: taban sağlam",
+        "metin": "Sunucu tarafında engel yok. Önbellek isabetliyken ilk bayt 38-77 ms'de geliyor, soğuk istekte 425 ms; HTTP/2 ve HTTP/3 açık, TLS 1.3 ve brotli devrede. Buna karşılık taşınan yük ile servis edilen içerik arasındaki oran ters: yaklaşık 1,6 MB'lık ön yüz yükü (159.180 B HTML + 525.243 B CSS + 841.545 B ham JS + 89.815 B jQuery) ziyaretçiye 41 KB içerik ulaştırıyor. Yani sorun altyapı değil, o altyapının ne taşıdığı. Düzeltilecek kısım tam olarak bizim kontrolümüzdeki kısım."
+      },
+      {
+        "tip": "paragraf",
+        "metin": "Bu bölüm bir sıralama sözü vermiyor. Verdiği şey teşhis: güç dağılmış, dağılan güç satış yolu olmayan sayfalarda birikmiş, ölçüm hattı da kapalı. Sonraki bölümde bu gücün nasıl toplanacağını, hangi sayfaya yönlendirileceğini ve mevcut SEO mirasının 301 göçüyle nasıl korunacağını adım adım anlatıyoruz. İyileşme, ilk ay kurulacak ölçüm hattı üzerinden raporlanır."
+      }
+    ]
+  },
+  {
+    "id": "seo-ne-yapilacak",
+    "ustEtiket": "SEO · Plan",
+    "baslik": "122 URL'yi ~55 güçlü URL'ye indirme planı",
+    "giris": "İşin özü basit: dağılmış gücü toplamak, toplanan gücü teklif alan sayfaya yönlendirmek ve bunu mevcut SEO mirasını kaybetmeden yapmak. Sıralama garantisi verilmez; taahhüt edilen şey iş kalemleri, yayın koşulları ve ölçüm yöntemidir. Aşağıdaki mevcut durum rakamları 16 Ağustos 2026 taramasının sonucudur; hedefler hedef olarak yazılmıştır.",
+    "govde": [
+      {
+        "tip": "olcum",
+        "baslik": "Hedeflenen yapı",
+        "olcumler": [
+          {
+            "deger": "122 → ~55",
+            "etiket": "URL konsolidasyonu",
+            "aciklama": "Bugün 40 sayfa + 82 yazı = 122 URL. Hedef iskelet, demoda hâlihazırda çalışan 55 sayfalık yapıyla aynı ölçekte. Hiçbir eski URL'nin 404'e düşmemesi bizim yayın koşulumuzdur: adres ya korunur ya doğrudan 301'lenir.",
+            "durum": "firsat"
+          },
+          {
+            "deger": "%100",
+            "etiket": "301 kapsama eşiği",
+            "aciklama": "Kapsama tam olmadan yayına çıkılmaz. Yayın öncesi otomatik denetim her eski adresi tek tek kontrol eder.",
+            "durum": "kazanc"
+          },
+          {
+            "deger": "29 → 28",
+            "etiket": "Cihaz sayfası sayısı netleşiyor",
+            "aciklama": "Mevcut sitede 29 cihaz URL'si var; bunlardan ikisi — endoterapylazer ile medart-smartsculpt-endolazer — birebir aynı içeriği taşıyor (curl ile teyit edildi). Kopya birleşince portföyün gerçek karşılığı olan 28 cihaz sayfası kalıyor. Demodaki 28 cihaz sayfası da tam olarak bu sayıya oturuyor.",
+            "durum": "kazanc"
+          },
+          {
+            "deger": "0 → 28",
+            "etiket": "Teklif yolu olan cihaz sayfası",
+            "aciklama": "Bugün 29 cihaz sayfasının hiçbirinde form, PDF föy, teklif butonu ya da cihaza özel WhatsApp yok. Demoda 28 cihaz sayfasının hepsinde teklif formu, cihaza özel WhatsApp ve teknik künye çalışır durumda.",
+            "durum": "firsat"
+          },
+          {
+            "deger": "61 / 86",
+            "etiket": "Damıtılacak yazı",
+            "aciklama": "86 yazının 61'i tek anlam kümesinde toplanıyor; kümedeki metinlerin kosinüs benzerliği %70-90. Bu küme silinmez, rehber ve ürün sayfalarının gövdesine damıtılır. Kaç rehbere ayrılacağı Search Console dışa aktarımından sonra netleşir.",
+            "durum": "firsat"
+          }
+        ]
+      },
+      {
+        "tip": "kutu",
+        "baslik": "301 göçü neden pazarlık edilemez",
+        "metin": "Bugünkü 122 URL, yıllar içinde birikmiş dış bağlantıları, indeks geçmişini ve marka aramalarındaki tanınırlığı taşıyor. Bu birikim yeni siteye kendiliğinden geçmez; yalnızca eski adresten yeni adrese kurulan doğrudan 301 yönlendirmesiyle taşınır. Yönlendirme kurulmazsa eski adres 404 döner ve o URL'nin birikimi taşınamaz. Tamamen önlenebilir bir kayıp olduğu için 301 haritası bizde opsiyonel bir kalem değil, yayın koşuludur."
+      },
+      {
+        "tip": "liste",
+        "baslik": "Göç kuralları (istisnasız uygulanır)",
+        "maddeler": [
+          "İçerik önce, 301 sonra: hedef sayfa dolu olmadan yönlendirme açılmaz — boş sayfaya 301 soft 404 üretir",
+          "Zincir yok: eski adres doğrudan nihai hedefe gider; taramada bulunan çapraz canonical'lar kaldırılıp 301'e çevrilir",
+          "Canonical yalnızca kendini gösterir; birleştirme canonical ile değil 301 ile yapılır",
+          "Kanonik alan adı değişmez: https://estezone.com.tr (apex). Değiştirilirse tüm sinyaller yeniden kurulmak zorunda kalır",
+          "301 haritası elle değil koddan üretilir: her ürün ve rehber kaydındaki eskiUrl alanı .htaccess bloğuna dönüşür",
+          "Reklam iniş sayfaları /lp/ altına taşınır; tamamı noindex,follow, canonical asıl ürün sayfasına, sitemap dışı",
+          "Yayın öncesi denetim: her canonical hedefi 200 dönmeli, 301 kapsaması %100 olmalı"
+        ]
+      },
+      {
+        "tip": "tablo",
+        "baslik": "Birleştirme blokları — kalem dağılımı Search Console verisiyle kesinleşir",
+        "sutunlar": [
+          "Konu bloğu",
+          "Hedef",
+          "Öncelik",
+          "Dayanak"
+        ],
+        "satirlar": [
+          [
+            "Marka yazısı ↔ ürün birleşmesi",
+            "/cihazlar/<slug>/ tek otorite sayfası",
+            "1 — en yüksek ticari getiri",
+            "Doğrulanmış Noblex çifti: 2.223 kelimelik yazı sıralanıyor, 184 kelimelik ürün sayfası satıyor"
+          ],
+          [
+            "Birebir kopya sayfa temizliği",
+            "İki adres tek sayfada birleşir, biri 301'lenir",
+            "1",
+            "endoterapylazer = medart-smartsculpt-endolazer, curl ile teyit (16 Ağu 2026)"
+          ],
+          [
+            "Lazer epilasyon geneli",
+            "Kategori hub'ı + seçim rehberi + maliyet analizi",
+            "2",
+            "Kanibalizasyon kümesinin ana ekseni; kalem sayısı SC dışa aktarımıyla kesinleşir"
+          ],
+          [
+            "Diyot / buz lazer",
+            "Diyot lazer hub'ı, maliyet, kiralama, teknik servis",
+            "2",
+            "Aynı küme; kalem sayısı SC dışa aktarımıyla kesinleşir"
+          ],
+          [
+            "Vücut şekillendirme",
+            "Kategori hub'ı + maliyet analizi + ürünler",
+            "3",
+            "Aynı küme; kalem sayısı SC dışa aktarımıyla kesinleşir"
+          ],
+          [
+            "Alexandrite",
+            "Alexandrite hub'ı + marka rehberi + ikinci el ve kiralama",
+            "3",
+            "Aynı küme; kalem sayısı SC dışa aktarımıyla kesinleşir"
+          ],
+          [
+            "Cilt bakım / analiz",
+            "Cilt yenileme ve cilt analizi hub'ları + ürünler",
+            "3",
+            "Aynı küme; kalem sayısı SC dışa aktarımıyla kesinleşir"
+          ],
+          [
+            "Satış sonrası",
+            "Teknik servis, yedek parça ve sarf, yardımcı ekipman",
+            "4",
+            "Portföyün satış sonrası ekseni; kalem sayısı SC dışa aktarımıyla kesinleşir"
+          ],
+          [
+            "Nd:YAG / IPL",
+            "Teknoloji alt hub'ları",
+            "4",
+            "Aynı küme; kalem sayısı SC dışa aktarımıyla kesinleşir"
+          ],
+          [
+            "İkinci el ve kiralama",
+            "Edinim başlığı altında",
+            "4",
+            "Bugün yalnızca blog içinde geçen edinim modelleri, menüde karşılığı yok"
+          ]
+        ]
+      },
+      {
+        "tip": "paragraf",
+        "metin": "Tablodaki blok adları ve öncelik sırası bugünkü içerik taramasından çıktı; hangi bloğa kaç yazının düştüğü ise Search Console dışa aktarımı alınmadan kesinleştirilmeyecek. Bunu bilerek yazıyoruz: kaynak/hedef kararını gerçek tıklama verisini görmeden vermek, kazanan sayfayı yanlışlıkla 301'in kaynak tarafına koymak demektir."
+      },
+      {
+        "tip": "paragraf",
+        "metin": "Birleştirmenin mantığı şu: 61 yazı çöp değil, hammadde. Noblex yazısındaki 2.223 kelimelik teknik anlatım silinmez, 184 kelimelik ürün sayfasının gövdesi haline gelir. Eski adres yeni ürün sayfasına 301'lenir. Böylece içerik korunur, birikimin de yeni adrese taşınmasını hedefleriz; iki sayfa birbiriyle yarışmak yerine tek bir güçlü sayfada toplanır — ve o sayfada teklif formu vardır."
+      },
+      {
+        "tip": "paragraf",
+        "metin": "Ürün sayfası şablonu tek ve sabittir: teknik künye tablosu, cihazın belge bilgisi alanı, işletme türü uygunluk rozeti, SSS bloğu, ilgili cihaz kartları ve teklif formu. Şablon 28 cihazın tamamına uygulanır ve tek bir ürün veri kaynağından beslenir; katalog kartları, filtre, karşılaştırma tablosu, şema kodu, meta açıklama ve 301 haritası aynı kaynaktan otomatik üretilir. Elle liste yönetimi kalkar, yetim sayfa yapısal olarak engellenir. Belge alanı, üreticiden teyitli numara gelene kadar boş kalır — uydurulmaz."
+      },
+      {
+        "tip": "liste",
+        "baslik": "Teknik şema ve sayfa hijyeni",
+        "maddeler": [
+          "Product + Offer (teklif üzerine — internetten satış yapılmadığı için fiyat değil teklif akışı işaretlenir) + Brand + AdditionalProperty: cihaz sayfalarının arama motoruna kendini tanıtması",
+          "Organization + LocalBusiness: kurum kimliğinin doğru işaretlenmesi. Şube/lokasyon kayıtları yalnızca firmadan teyit alınan adreslerle kurulur; bugün elimizde doğrulanmış tek bilgi Ankara merkezidir",
+          "BreadcrumbList: kategori hiyerarşisinin arama sonucunda görünmesi",
+          "FAQPage: her ürün ve rehber sayfasındaki SSS bloğu için",
+          "Article: rehber sayfaları için",
+          "Her sayfada elle yazılmış meta açıklama — CMS'te boşsa sayfa yayınlanamaz",
+          "Başlık etiketi 60 karakter sınırı, yayın öncesi otomatik denetlenir",
+          "Çok dillilik ayrı URL, karşılıklı hreflang ve x-default ile kurulur; otomatik çeviri katmanı bu yapının yerini tutmaz. /en/ bölümünün kapsamı, Search Console'daki yurt dışı sorgu verisine göre belirlenir",
+          "Şema durumu, meta açıklama doluluğu ve başlık uzunlukları yayın öncesi tek tek yeniden ölçülüp rapora işlenir"
+        ]
+      },
+      {
+        "tip": "liste",
+        "baslik": "İç bağlantı mimarisi",
+        "maddeler": [
+          "Kategori hub'ları: lazer epilasyon, vücut şekillendirme, cilt yenileme, medikal lazer, yardımcı ekipman — her hub kendi ürünlerine bağlanır",
+          "Teknoloji alt hub'ları: alexandrite, diyot lazer, Nd:YAG, IPL — teknoloji karşılaştırması yapan alıcının girişi",
+          "Uygulama ekseni: epilasyon, dövme silme, leke, damar lezyon, bölgesel incelme ve diğerleri. Sorunla arama yapan alıcıyı karşılar; taradığımız 7 rakip sitesinde (Medsatek, Glory Majestic, Asel, Newmed, E-Medikal, MedLaser, STS Lazer — tarama: 16 Ağu 2026) bu eksende kurulmuş bir yapıya rastlamadık",
+          "Rehberden ürüne bağlantı şablon düzeyinde zorunlu hale getirilir. Doğrulanan örnek şu: Noblex yazısı 2.223 kelime, karşılık geldiği ürün sayfası 184 kelime. Yazıdan ürüne bağlantı kurulup kurulmadığı göç öncesi taramada kalem kalem çıkarılır",
+          "Ürün sayfalarında ilgili cihaz kartları ve karşılaştırma bağlantıları",
+          "Karar araçları (cihaz seçim danışmanı, yatırım geri dönüş hesaplayıcı, karşılaştırma, teknik matris) rehberlerden ve hub'lardan beslenir — dördü de demoda çalışır durumda"
+        ]
+      },
+      {
+        "tip": "kutu",
+        "baslik": "Yayın öncesi zorunlu adım",
+        "metin": "Search Console'dan son 16 aylık sorgu ve sayfa verisi dışa aktarılır. Buraya kadarki tüm denetimler site içi verilerle yapıldı; hangi URL'nin gerçekte tıklama aldığı ölçülmedi. 301 haritasındaki 'hangi sayfa hedef, hangisi kaynak' kararı bu veriyle son kez doğrulanır. Kural nettir: tıklama alan URL kaynak değil hedef olur. Aynı adımda dış bağlantı profili çıkarılır, dış link almış sayfalar hedef olarak önceliklendirilir. Birleştirme tablosundaki kalem dağılımı da bu adımda kesinleşir."
+      },
+      {
+        "tip": "liste",
+        "baslik": "Ölçüm ve risk yönetimi",
+        "maddeler": [
+          "Search Console ve Analytics kurulumu, yeni sitemap gönderimi, robots.txt güncellemesi",
+          "Formdaki ads_keyword ve Kampanya_Bilgisi alanları çalışır hale getirilir — bugün ikisi de boş geliyor; hangi aramanın talep getirdiği ilk kez ölçülebilir hale gelir",
+          "KVKK açık rıza kutusu forma eklenir ve çerez rızası alınmadan GTM yüklenmesi düzeltilir; ölçüm rıza sonrası başlar",
+          "Kademeli göç: marka yazısı ↔ ürün birleşmeleri önce, geniş konu blokları sonra",
+          "Belirlenen trafik eşiğinin üstündeki sayfalara Search Console verisi doğrulanmadan dokunulmaz",
+          "Geri dönüş planı: yönlendirme haritası sürümlenir, sorun halinde önceki hâle dönülebilir",
+          "Bugün 404 dönen mesafeli satış ve iade sayfaları göçle birlikte ya yayına alınır ya menüden kaldırılır",
+          "Yayın günü kontrol listesi: /kategori/blog/ → /rehber/ yönlendirmesi, ölçüm kodlarının taşınması, varsa ÜTS firma kaydındaki site adresinin güncellenmesi",
+          "Yayın sonrası 90 gün: haftalık 404 taraması, kapsam raporu, 'eski URL indeksten çıktı mı, hedef yerine geçti mi' kontrolü"
+        ]
+      },
+      {
+        "tip": "kutu",
+        "baslik": "Beklenti yönetimi",
+        "metin": "Hiçbir ajans Google sıralaması garanti edemez; garanti eden yanlış söyler. Taahhüt ettiğimiz şey iş kalemleri, yayın koşulları ve ölçümdür. Göç sonrası ilk haftalarda indeksleme dalgalanması normaldir ve izlenir. Konsolidasyonun etkisi tek seferde değil, ilk aydan itibaren hafta hafta ölçülerek raporlanır. Bu bölümdeki mevcut durum rakamlarının tamamı 16 Ağustos 2026 ölçümüdür; hedef sayılar hedef olarak yazılmıştır, taahhüt olarak değil. Henüz ölçmediğimiz kalemleri de açıkça 'Search Console verisiyle kesinleşir' diye işaretledik."
+      }
+    ]
+  },
+  {
+    "id": "google-ads",
+    "ustEtiket": "REKLAM 1",
+    "baslik": "Google Ads: Bütçe Akıyor, Ölçüm Yok",
+    "giris": "Sitedeki formun kodunda ads_keyword ve Kampanya_Bilgisi adlı iki alan tanımlı — yani arama reklamı ölçümü bir noktada planlanmış. Ölçümde bu alanların ikisi de boş geliyor. Reklam yayını varsa hangi aramanın teklif getirdiği kayıt altına alınmıyor demektir; yoksa da ölçüm altyapısı bugün çalışmıyor. Önce bu delik kapanır, sonra bütçe büyütülür.",
+    "govde": [
+      {
+        "tip": "paragraf",
+        "metin": "16 Ağustos 2026 denetiminde iletişim formunun kodunda iki gizli alan bulduk: ads_keyword ve Kampanya_Bilgisi. Alanlar tanımlanmış, ama içleri boş geliyor. Bu tek bulgu her şeyi özetliyor: reklam altyapısı kurulmuş, bağlanmamış. Bunun pratik sonucu şu — bugün hangi kelimenin teklif getirdiğine dair elimizde ölçülmüş bir başlangıç verisi yok. İlk işimiz o başlangıç çizgisini koymak."
+      },
+      {
+        "tip": "olcum",
+        "olcumler": [
+          {
+            "deger": "BOŞ",
+            "etiket": "ads_keyword alanı",
+            "aciklama": "Form kodunda tanımlı, veri gelmiyor. Hangi arama kelimesinin teklif getirdiği bilinmiyor.",
+            "durum": "kayip"
+          },
+          {
+            "deger": "BOŞ",
+            "etiket": "Kampanya_Bilgisi alanı",
+            "aciklama": "Kampanya kırılımı kaydedilmiyor. Bütçe dağıtımı ölçüme değil tahmine dayanıyor.",
+            "durum": "kayip"
+          },
+          {
+            "deger": "1",
+            "etiket": "Sitedeki toplam satış formu",
+            "aciklama": "40 sayfa ve 82 yazı içinde tek form: /iletisim/, 4 alan. Reklam trafiğinin tamamı aynı jenerik forma iniyor.",
+            "durum": "kayip"
+          },
+          {
+            "deger": "0",
+            "etiket": "Cihaz sayfasında dönüşüm noktası",
+            "aciklama": "29 cihaz sayfası URL'sinin hiçbirinde form, PDF föy, teklif butonu veya cihaza özel WhatsApp linki yok.",
+            "durum": "kayip"
+          },
+          {
+            "deger": "2",
+            "etiket": "6 sayfada toplam CTA etiketi",
+            "aciklama": "İncelenen 6 sayfada yalnızca 'Bizi Arayın' ve 'İletişim'. Üstelik 'Bizi Arayın' butonu kaydırınca ve mobilde kayboluyor.",
+            "durum": "kayip"
+          },
+          {
+            "deger": "858 KB",
+            "etiket": "Hero'nun ilk slaytı",
+            "aciklama": "Reklamın indiği ana sayfada tek görsel 858.446 B. Ön yüz toplamı ~1,6 MB; servis edilen içerik 41 KB. İniş sayfası deneyimi bu yükle başlıyor.",
+            "durum": "risk"
+          }
+        ]
+      },
+      {
+        "tip": "kutu",
+        "baslik": "Sonuç ne demek",
+        "metin": "Reklam tıklaması bir cihaz sayfasına indiğinde yapacak bir şey bulamıyor: o sayfada form da, teklif butonu da, PDF föy de, cihaza özel WhatsApp da yok. Kullanıcı ya geri döner ya /iletisim/ sayfasını arar. İki durumda da hangi cihaz için geldiği kaybolur — hem satış temsilcisi için hem ölçüm için."
+      },
+      {
+        "tip": "tablo",
+        "baslik": "Bütçenin bugün cevaplayamadığı sorular",
+        "sutunlar": [
+          "Soru",
+          "Bugünkü durum (16 Ağu 2026 ölçümü)",
+          "Ölçüm kurulduktan sonra"
+        ],
+        "satirlar": [
+          [
+            "Hangi arama kelimesi teklif getirdi?",
+            "ads_keyword alanı tanımlı, boş geliyor",
+            "Her form gönderiminde kelime, kampanya ve reklam grubu kayda geçer"
+          ],
+          [
+            "Teklif hangi cihaz için geldi?",
+            "Tüm reklam trafiği tek forma (/iletisim/) iniyor",
+            "Portföydeki 28 cihazın her biri kendi formunu gönderir; raporlama cihaz kırılımıyla yapılır"
+          ],
+          [
+            "Arayan / WhatsApp yazan kaç kişi vardı?",
+            "Telefon ve WhatsApp tıklamalarının dönüşüm olarak tanımlı olup olmadığı, hesap erişimi verildiğinde ilk gün kontrol edilir",
+            "Telefon, WhatsApp ve PDF föy indirmesi ayrı dönüşüm olarak işaretlenir"
+          ],
+          [
+            "Ziyaretçinin niyet seviyesi ne?",
+            "Ölçülebilir etkileşim noktası yok; 6 sayfada toplam 2 CTA etiketi",
+            "Demodaki 4 karar aracının tamamlanması ayrı olay olarak ölçülür"
+          ],
+          [
+            "Ölçüm hukuken temiz mi?",
+            "Çerez rızası alınmadan GTM yükleniyor",
+            "Rıza kapısı kurulur, ölçüm rıza alındıktan sonra başlar"
+          ]
+        ]
+      },
+      {
+        "tip": "paragraf",
+        "metin": "Kurulacak yapı dört katmanda ilerler. Sırası önemli: ölçüm oturmadan optimizasyon yapılmaz, bütçe büyütülmez."
+      },
+      {
+        "tip": "liste",
+        "baslik": "1. Adım — Dönüşüm izleme",
+        "maddeler": [
+          "Teklif formu gönderimi dönüşüm olarak tanımlanır; her gönderimde ads_keyword ve Kampanya_Bilgisi dolu gelir. Bugün boş gelen bu iki alan, ilk ayın başarı ölçütüdür.",
+          "WhatsApp tıklaması, telefon tıklaması ve PDF föy indirmesi ayrı dönüşüm olarak işaretlenir.",
+          "Demoda portföydeki 28 cihazın her birinin kendi sayfası ve kendi teklif formu var; dönüşüm cihaz kırılımıyla raporlanır. (Mevcut sitedeki 29 cihaz URL'sinin ikisi birebir aynı içeriği taşıyor: endoterapylazer ve medart-smartsculpt-endolazer. 28 sayı, portföyün ve demonun ortak sayısıdır.)",
+          "Karar araçları — cihaz seçim danışmanı, yatırım geri dönüş hesaplayıcı, cihaz karşılaştırma, dalga boyu/teknik matris — tamamlanma olayı olarak ölçülür. Bunlar niyeti en yüksek kullanıcılardır.",
+          "Çerez rızası alınmadan GTM yüklenmesi düzeltilir; ölçüm rıza sonrası başlar."
+        ]
+      },
+      {
+        "tip": "liste",
+        "baslik": "2. Adım — Cihaz bazlı kampanya yapısı",
+        "maddeler": [
+          "Tek genel kampanya yerine cihaz ailesi bazlı kırılım: lazer epilasyon, cilt yenileme, vücut şekillendirme, dövme silme gibi.",
+          "Her reklam grubu kendi cihaz sayfasına iner. Jenerik ana sayfaya iniş kaldırılır — 858 KB'lık hero slaytıyla açılan ana sayfa reklam iniş sayfası olmaktan çıkar.",
+          "Reklam metni ile iniş sayfasının başlığı aynı cihazı söyler; eşleşme kopukluğu ortadan kalkar.",
+          "Marka aramaları ayrı kampanyada tutulur; marka dışı performans marka trafiğiyle karışmaz.",
+          "Rakip marka aramaları varsayılan olarak kapalı başlar. Bu kalem marka hakkı ve haksız rekabet riski taşıdığı için ancak firmanın hukuk onayıyla ve rakip marka adı reklam metninde geçmemek koşuluyla değerlendirilir; onay gelmezse açılmaz."
+        ]
+      },
+      {
+        "tip": "liste",
+        "baslik": "3. Adım — Arama terimi hijyeni ve negatif kelime",
+        "maddeler": [
+          "Arama terimleri raporu haftalık okunur; ilk aylarda daha sık.",
+          "Tüketici niyeti taşıyan terimler negatiflenir: 'lazer epilasyon fiyat', 'epilasyon yaptırmak', 'seans fiyatı', 'randevu'. Bunlar Estezone'un müşterisinin müşterisidir, alıcı değildir.",
+          "İş ilanı, ikinci el, tamir, yedek parça, ödev/tez, ücretsiz gibi kalıplar negatif listeye alınır.",
+          "Negatif liste hesap seviyesinde tutulur; her yeni kampanya aynı korumayla doğar.",
+          "Geniş eşleşme kontrollü kullanılır; ölçüm oturmadan geniş eşleşmeye bütçe açılmaz."
+        ]
+      },
+      {
+        "tip": "liste",
+        "baslik": "4. Adım — Form ile eşleşme",
+        "maddeler": [
+          "Reklamdan gelen ziyaretçinin gördüğü form, o cihazın formudur; alanlar işletme türünü ve kullanım amacını sorar.",
+          "Form gönderimiyle birlikte kampanya, reklam grubu ve arama terimi kayda geçer.",
+          "KVKK aydınlatma ve açık rıza kutusu forma eklenir — mevcut 4 alanlı formda rıza kutusu yok.",
+          "Böylece 'hangi kelime kaç teklif getirdi' sorusu ilk ay biriken veriyle cevaplanabilir hale gelir."
+        ]
+      },
+      {
+        "tip": "kutu",
+        "baslik": "Mevzuat sınırı — ve neden avantaj",
+        "metin": "Tıbbi cihazların halka yönelik reklamı yasaktır; sağlık meslek mensuplarına ve profesyonel alıcılara yönelik tanıtım serbesttir. Estezone bir sağlık kuruluşu değil, ticari cihaz tedarikçisidir; sağlık kuruluşlarına yönelik tanıtım kısıtlarıyla cihaz tedarikçisinin tabi olduğu kurallar aynı değildir. Kampanya metinleri yayına çıkmadan önce bu ayrım hukuk onayıyla netleştirilir. Bu ayrım kampanyanın merkezidir: hedefleme tüketiciye değil, işletme sahibine kurulur. Tüketici aramalarını negatiflemek bir kayıp değil, mevzuatın çizdiği sınırın içinde kalmaktır. Hedefimiz aynı bütçeyi daha dar ve profesyonel bir kitleye yönlendirmek. Nitelik değişimi ilk ay kurulacak ölçümle raporlanır, önceden taahhüt edilmez — çünkü ads_keyword bugün boş geldiği için mevcut nitelik seviyesi bile ölçülmüş değil. İlk raporun görevi bu başlangıç çizgisini koymaktır."
+      },
+      {
+        "tip": "kutu",
+        "baslik": "Rakipler hakkında ne söylüyoruz, ne söylemiyoruz",
+        "metin": "Hiçbir rakibin reklam hesabını, hedeflemesini veya bütçesini göremeyiz; bu yüzden rakip kampanyaları hakkında bu sunumda tek bir cümle kurmuyoruz. Söyleyebildiğimiz yalnızca sayılabilir gözlemler: 16 Ağustos 2026 taramasında 7 firmaya baktık (Medsatek, Glory Majestic, Asel, Newmed, E-Medikal, MedLaser, STS Lazer). Bu sitelerde cihaz sayfasına bağlı teklif formu veya karar aracı görülmedi. Medsatek TL fiyat bandı yayınlıyor, Asel finansman vaadi veriyor; bu ikisi doğrudan gözlemdir. Rakiplerin trafik kompozisyonu ve reklam nitelikleri ölçülmedi, dolayısıyla kıyaslanmadı."
+      },
+      {
+        "tip": "liste",
+        "baslik": "Kırmızı çizgiler",
+        "maddeler": [
+          "İnternetten satış yasak: reklam 'sepete ekle' değil 'teklif al' der.",
+          "'FDA Onaylı', 'kalıcı epilasyon', 'kesin sonuç' ve üstünlük iddiası reklam metninde kullanılmaz. Mevcut sitede firma çapında bir 'FDA Onaylı' iddiası bulunuyor; yeni sitedeki mevzuat süzgeci bu ifadeleri build sırasında yakalıyor ve aynı sözlük reklam metinlerine de uygulanır.",
+          "Hedefleme ve metin profesyonel alıcıya kurulur; halka yönelik cihaz reklamı kurgusu yapılmaz.",
+          "Rakip marka aramaları hukuk onayı olmadan açılmaz; rakip marka adı reklam metninde kullanılmaz.",
+          "Mesafeli satış ve iade sayfaları bugün 404 veriyor (curl ile teyit edildi). Teklif usulü çalışılsa da bu kırık sayfalar reklam yayınından önce düzeltilir.",
+          "Sıralama, dönüşüm sayısı veya tıklama maliyeti taahhüt edilmez. Bu sunumdaki tüm sayılar 16 Ağustos 2026 ölçümüdür; ileriye dönük her ifade hedeftir, garanti değildir."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "meta-reklamlari",
+    "ustEtiket": "REKLAM 2",
+    "baslik": "Meta Reklamları: Aramayan Alıcıya Ulaşmak",
+    "giris": "Google arayanı yakalar; Meta henüz aramayan işletme sahibini bulur. B2B'de Meta'nın işi satış kapatmak değil, tanıtmak ve geri getirmektir. Ama bu bölümün ilk cümlesi şu: Meta bütçesi bugünkü siteye trafik göndermek için değil, yeni siteye trafik göndermek için açılır. Gerekçesi aşağıdaki ölçümde.",
+    "govde": [
+      {
+        "tip": "paragraf",
+        "metin": "Bir salon veya klinik sahibi cihaz yatırımını aylarca düşünür. Google'da arattığı an, kararın son aşamasıdır. Meta o kararın başlangıcına girer: cihazı tanıtır, akılda tutar, araştırma aşamasındaki işletmeciyi geri çağırır. Bu yüzden Meta'nın başarısı tek başına ölçülemez; indiği sayfayla birlikte ölçülür."
+      },
+      {
+        "tip": "olcum",
+        "baslik": "Bugünkü siteye reklam göndersek ne olur (16 Ağustos 2026 ölçümü)",
+        "olcumler": [
+          {
+            "deger": "0 / 29",
+            "etiket": "Teklif yolu olan cihaz sayfası",
+            "aciklama": "Taranan 29 cihaz sayfasının hiçbirinde form, PDF föy, teklif butonu ya da cihaza özel WhatsApp bağlantısı yok. Reklam tıklaması buraya inerse yapacak bir şey bulamıyor.",
+            "durum": "kayip"
+          },
+          {
+            "deger": "2",
+            "etiket": "6 sayfada sayılan toplam CTA etiketi",
+            "aciklama": "\"Bizi Arayın\" ve \"İletişim\". Üstelik \"Bizi Arayın\" butonu sayfa kaydırılınca ve mobilde tamamen kayboluyor. Meta trafiğinin cihaz kırılımı, ölçüm kurulduktan sonra raporlanır.",
+            "durum": "kayip"
+          },
+          {
+            "deger": "1",
+            "etiket": "Tüm sitedeki satış formu",
+            "aciklama": "40 sayfa ve 82 yazının tamamında tek form: /iletisim/. Dört alan, KVKK onay kutusu yok. Reklamla gelen talebin tek çıkışı bu.",
+            "durum": "kayip"
+          },
+          {
+            "deger": "Boş",
+            "etiket": "ads_keyword ve Kampanya_Bilgisi",
+            "aciklama": "Alanlar formda tanımlı, veri gelmiyor. Yani bugün hangi kampanyanın talep ürettiği bilinmiyor; başlangıç seviyesi bile elimizde yok.",
+            "durum": "risk"
+          },
+          {
+            "deger": "Rızasız",
+            "etiket": "GTM yüklemesi",
+            "aciklama": "Çerez rızası alınmadan GTM yükleniyor. Piksel bu düzenin üstüne değil, rıza kapısının arkasına kurulur.",
+            "durum": "risk"
+          }
+        ]
+      },
+      {
+        "tip": "kutu",
+        "baslik": "Sıralama pazarlık konusu değil",
+        "metin": "Önce iniş sayfası ve ölçüm, sonra bütçe. Yukarıdaki beş satır, bugünkü sitede reklamın ineceği bir teklif yüzeyi olmadığını gösteriyor. Demoda ise 28 cihaz sayfasının her birinde teklif formu, cihaza özel WhatsApp bağlantısı ve teknik künye var. Meta yayını bu yapı canlıya çıktıktan sonra açılır."
+      },
+      {
+        "tip": "liste",
+        "baslik": "Meta'nın üstlendiği üç görev",
+        "maddeler": [
+          "Bilinirlik: Estezone'un 20 yıllık tedarikçi geçmişi ve 28 cihazlık portföyü, henüz aramayan işletme sahibinin karşısına çıkar.",
+          "Yeniden hedefleme: Cihaz sayfasını gezip teklif istemeden ayrılan ziyaretçi geri çağrılır. Yeni sitede 28 ayrı cihaz sayfası olduğu için yeniden hedefleme cihaz bazında kurulabilir — ziyaretçi hangi cihaza baktıysa onu görür.",
+          "Mesaj ve form: Doğrudan WhatsApp'a akan reklam. Yeni sitede her cihazın kendi WhatsApp bağlantısı var; aynı mantık reklama taşınır, gelen mesaj hangi cihaz için geldiğini baştan söyler."
+        ]
+      },
+      {
+        "tip": "kutu",
+        "baslik": "Rakamlar neden bir yerde 29, bir yerde 28",
+        "metin": "Karışıklık olmasın: mevcut estezone.com.tr'de 29 cihaz sayfası URL'si taradık, firmanın portföyü 28 cihaz, demoda da 28 cihaz sayfası var. Farkın bilinen bir kalemi kopya içerik: endoterapylazer ile medart-smartsculpt-endolazer birebir aynı metni taşıyor. Reklam yapısı 28 cihaz üzerinden kurulur; ölçüm bölümlerinde geçen 29 rakamı ise mevcut sitede taranan URL sayısıdır."
+      },
+      {
+        "tip": "liste",
+        "baslik": "Hedefleme nasıl kurulur",
+        "maddeler": [
+          "İşletme sahibi ve karar verici hedeflemesi: güzellik salonu, medikal estetik merkezi, dermatoloji kliniği işletmecileri.",
+          "Site ziyaretçisi tabanlı kitleler: piksel çerez rıza kapısının arkasına kurulduktan sonra devreye alınır; rıza vermeyen ziyaretçi kitleye girmez.",
+          "Mevcut bayi ve müşteri listesinden özel kitle, yalnızca izin durumu firmanın veri sorumlusu tarafından yazılı teyit edilen kayıtlar için oluşturulur. Teyit gelmezse liste hiç yüklenmez; o dönemde yalnızca ziyaretçi tabanlı kitleyle çalışırız.",
+          "Benzer kitle (lookalike) kaynak listenin temizliğine bağlıdır; bu yüzden sıra şudur: önce dönüşüm izleme, sonra kitle, sonra benzer kitle.",
+          "İşletme türü kırılımı kreatife yansır: salon, medikal merkez ve tıbbi kuruluş için ayrı mesaj. Yeni sitedeki işletme türü uygunluk rozeti ve filtresi bu ayrımın altyapısını zaten kuruyor; taradığımız 7 rakip sitesinde (Medsatek, Glory Majestic, Asel, Newmed, E-Medikal, MedLaser, STS Lazer) bu ayrımı kuran bir yapıya rastlanmadı (tarama: 16 Ağustos 2026)."
+        ]
+      },
+      {
+        "tip": "paragraf",
+        "metin": "Kreatif hattı dört formatta ilerler. Her format huninin farklı bir aşamasını besler; tek formatla kampanya kurulmaz. Aşağıdaki dağılım, rakip reklam hesaplarına bakılarak değil, huninin kendi mantığına göre kurgulanmıştır — rakiplerin reklam hesabını, hedeflemesini ve trafik kompozisyonunu ölçmedik ve bu sunumda onlar hakkında reklam tarafında bir iddia kurmuyoruz."
+      },
+      {
+        "tip": "tablo",
+        "baslik": "Kreatif hattı",
+        "sutunlar": [
+          "Format",
+          "Görevi",
+          "İçerik"
+        ],
+        "satirlar": [
+          [
+            "Video (15-30 sn)",
+            "Bilinirlik, ilk temas",
+            "Cihaz çalışırken; sessiz izlenebilir altyazılı, kapanışta teklif çağrısı"
+          ],
+          [
+            "Karusel",
+            "Portföy genişliğini göstermek",
+            "Cihaz ailesi kartları; her kart kendi cihaz sayfasına gider"
+          ],
+          [
+            "Tek görsel",
+            "Yeniden hedefleme, tekil mesaj",
+            "Tek cihaz, tek teknik özellik, tek çağrı"
+          ],
+          [
+            "Mesaj reklamı",
+            "Sıcak teması kapatmak",
+            "Doğrudan WhatsApp'a; ön mesaj cihaz adını taşır"
+          ]
+        ]
+      },
+      {
+        "tip": "liste",
+        "baslik": "Kreatif üretim disiplini",
+        "maddeler": [
+          "Kreatif sıfırdan kurulur, mevcut siteden devşirilmez: hero alanındaki 5 slaytın metin katmanı sıfır ve beş slaytın dördünde alt metni boş. Ortada yeniden kullanılabilecek bir görsel anlatım yok.",
+          "Ağırlık bütçesi baştan konur. Mevcut sitede tek bir hero slaydı 858 KB; reklam varlıklarında bu tür bir boyut kabul edilmez.",
+          "Marka dili tek yerden kurulur: bugün sitede beş farklı mavi ve konu dışı bir magenta (#e95095) birlikte kullanılıyor, yüklenen marka fontu ise sıfır. Reklam kreatifi tek palet ve tek tipografiyle çıkar.",
+          "Kontrast kuralı kreatife de uygulanır. Sitedeki ana link rengi #1b98e0 kontrastı 3,17:1 ile WCAG AA'yı geçemiyor; reklam görsellerindeki metin/zemin çiftleri AA doğrulanmadan yayına girmez.",
+          "Her cihaz ailesi için en az üç kreatif varyantı üretilir; yorulan kreatif düzenli değiştirilir.",
+          "Videolar sessiz izlenecek şekilde kurgulanır; altyazı zorunludur."
+        ]
+      },
+      {
+        "tip": "kutu",
+        "baslik": "Mevzuat sınırı — ve neden işimize yarıyor",
+        "metin": "Estezone bir sağlık kuruluşu değil, ticari cihaz tedarikçisidir. Tıbbi cihazların halka yönelik reklamı yasak, sağlık meslek mensuplarına yönelik tanıtım ise serbesttir. Bu yüzden Meta hedeflemesi geniş tüketici kitlesine değil, profesyonele kurulur. İnternetten satış yapılmaz; akış teklif usulüne bağlanır. Kreatifte hasta öncesi-sonrası görüntüsü, sonuç vaadi, \"kalıcı\" ve \"kesin sonuç\" ifadeleri ile üstünlük iddiası kullanılmaz. Bugün firma çapında kullanılan \"FDA Onaylı\" ifadesi de reklama taşınmaz. Anlatım cihazın teknik özelliği, işletmeye getirisi ve servis güvencesi üzerine kurulur."
+      },
+      {
+        "tip": "tablo",
+        "baslik": "Ne hedefliyoruz, nasıl raporlanır",
+        "sutunlar": [
+          "Hedef",
+          "Nasıl raporlanır",
+          "Bugünkü başlangıç değeri"
+        ],
+        "satirlar": [
+          [
+            "Profesyonel kitleye erişim",
+            "Erişim, frekans ve kitle kırılımı aylık raporda",
+            "Ölçülmedi — ilk ay taban ay olarak kurulur"
+          ],
+          [
+            "Cihaz bazlı yeniden hedefleme",
+            "Hangi cihaz sayfasından dönüş geldiği, cihaz kırılımlı",
+            "Bugün kurulamıyor: cihaz sayfalarında teklif yolu yok"
+          ],
+          [
+            "Mesaj reklamından gelen temas",
+            "WhatsApp'a düşen ve cihaz adı taşıyan mesaj sayısı",
+            "0 — bugün cihaza özel WhatsApp bağlantısı yok"
+          ],
+          [
+            "Talebin niteliği",
+            "Her lead kaydında kaynak, kampanya, iniş sayfası ve hangi cihaz",
+            "Ölçülemiyor: ads_keyword ve Kampanya_Bilgisi boş geliyor"
+          ]
+        ]
+      },
+      {
+        "tip": "paragraf",
+        "metin": "Hedefimiz, aynı bütçeyi daha dar ve profesyonel bir kitleye yönlendirmek. Niteliğin nasıl değiştiği önceden taahhüt edilemez, çünkü bugün ölçülmüş bir başlangıç seviyesi yok — ads_keyword ve Kampanya_Bilgisi alanları boş geliyor. İlk ay, kampanya ayı olduğu kadar taban ölçüm ayıdır: kaynak, kampanya, iniş sayfası ve cihaz kırılımı kurulur ve bundan sonrası bu tabana göre raporlanır."
+      },
+      {
+        "tip": "kutu",
+        "baslik": "Kırmızı çizgiler",
+        "metin": "Bu bölümde tıklama maliyeti, dönüşüm oranı veya lead sayısı sözü verilmiyor. Rakiplerin reklam hedeflemesi hakkında da bir şey söylenmiyor; onların reklam hesapları ölçülemez ve ölçmedik. Söylenen üç şey var: hedefleme profesyonele kurulur, ölçüm ilk ay kurulur, sonuç her ay olduğu gibi raporlanır."
+      }
+    ]
+  },
+  {
+    "id": "youtube-kanali",
+    "ustEtiket": "REKLAM 3",
+    "baslik": "YouTube Kanalı: Alıcı Cihazı Çalışırken Görmek İster",
+    "giris": "Yüz binlerce liralık bir cihaz tek başına metin okunarak değerlendirilmez. Alıcı cihazı çalışırken, kurulurken ve servis edilirken görmek ister. Bugünkü sitede bu görüntünün hiçbir karşılığı yok — 16 Ağustos 2026 ölçümünde tek tek bakıldı.",
+    "govde": [
+      {
+        "tip": "paragraf",
+        "metin": "YouTube bu pakette ayrı bir kalem olarak duruyor, çünkü iki işi birden yapar. Birincisi: satın alma kararı öncesinde güven kurar — alıcı cihazın gerçekte nasıl çalıştığını görür. İkincisi: video içerikleri hem YouTube araması hem de Google sonuç sayfası üzerinden bulunabilir hale gelir. İndekslenme hiçbir platformda garanti edilemez; taahhüt ettiğimiz şey videonun kendisi, başlık/açıklama/şema kurgusu ve cihaz sayfasına bağlanması. Görünürlük tarafı ise ilk aydan itibaren Search Console ve YouTube Analytics ile raporlanır."
+      },
+      {
+        "tip": "olcum",
+        "baslik": "Neden şimdi — 16 Ağustos 2026 ölçümünden",
+        "olcumler": [
+          {
+            "deger": "22 ay",
+            "etiket": "Bloğun durduğu süre",
+            "aciklama": "Son yazı güncellemesi 04.10.2024. İçerik üretimi durmuş durumda; yeniden başlamak için video, metin üretiminden daha az yazılı emek isteyen formatlardan biri.",
+            "durum": "kayip"
+          },
+          {
+            "deger": "2.223 → 184",
+            "etiket": "Noblex: blog yazısı / ürün sayfası kelime",
+            "aciklama": "Aynı cihazın blog yazısı 2.223 kelime, ürün sayfası 184 kelime. Karar verilecek sayfa ince kalmış. Video, bu sayfayı yeniden binlerce kelime yazmadan doldurabilecek bir içerik türü.",
+            "durum": "firsat"
+          },
+          {
+            "deger": "0 / 29",
+            "etiket": "Teklif yolu olan cihaz sayfası",
+            "aciklama": "Mevcut sitedeki 29 cihaz sayfasının hiçbirinde form, PDF föy, teklif butonu ya da cihaza özel WhatsApp bağlantısı yok. Video izleyicisini bugün bağlayacağımız bir yüzey yok; yeni sitede var.",
+            "durum": "kayip"
+          },
+          {
+            "deger": "858 KB",
+            "etiket": "Ana sayfa ilk hero slaytı",
+            "aciklama": "Beş slaytlık hero'da metin katmanı 0, beş slaytın dördünde alt metni boş. Görsele ağırlık verilmiş, anlatıya verilmemiş. Video tam olarak bu boşluğun formatı.",
+            "durum": "kayip"
+          },
+          {
+            "deger": "28",
+            "etiket": "Cihaz = 28 video konusu",
+            "aciklama": "Portföyün kendisi hazır bir içerik takvimi. Her cihaz en az bir tanıtım videosu demek.",
+            "durum": "firsat"
+          }
+        ]
+      },
+      {
+        "tip": "kutu",
+        "baslik": "Sayılar birbirini nasıl açıklıyor",
+        "metin": "Sunumda üç ayrı cihaz sayısı geçiyor, üçü de doğru: mevcut sitede 29 cihaz URL'si var (ikisi birebir aynı içeriği taşıyor — endoterapylazer ile medart-smartsculpt-endolazer), portföyde 28 cihaz var, demoda da 28 cihaz sayfası açtık. Video planı portföy üzerinden kuruluyor: 28 cihaz, 28 temel konu."
+      },
+      {
+        "tip": "paragraf",
+        "metin": "İçerik hattı beş seride ilerler. Seriler düzenli yayınlanır; kanal tek seferlik bir video deposu değil, yayın akışı olarak kurulur. Her serinin çıktısı hem kanalda hem ilgili cihaz sayfasında yaşar."
+      },
+      {
+        "tip": "tablo",
+        "baslik": "İçerik hattı",
+        "sutunlar": [
+          "Seri",
+          "Ne anlatır",
+          "Ne işe yarar"
+        ],
+        "satirlar": [
+          [
+            "Cihaz tanıtımı",
+            "Teknik künye, dalga boyu, güç, uygulama başlıkları",
+            "28 cihazın her biri için kalıcı bir varlık; ürün sayfasındaki 184 kelimelik boşluğu görüntüyle kapatır"
+          ],
+          [
+            "Uygulama demosu",
+            "Cihazın çalışma şekli, başlık ve mod geçişleri",
+            "Yazılı sayfanın gösteremediği tek boyut: cihaz eldeyken nasıl davranıyor"
+          ],
+          [
+            "Kurulum ve eğitim",
+            "Yerleşim, elektrik/su gereksinimi, personel eğitimi",
+            "Satın alma sonrası kaygıyı satış öncesinde giderir"
+          ],
+          [
+            "Teknik servis",
+            "Bakım aralıkları, sarf değişimi, servis süreci",
+            "20 yıllık tedarikçi olmanın somut görüntüsü; bugün sitede karşılığı yok"
+          ],
+          [
+            "İşletmeci röportajı",
+            "İşletme deneyimi, operasyon akışı",
+            "Referans katmanı; klinik sonuç vaadi içermez"
+          ]
+        ]
+      },
+      {
+        "tip": "kutu",
+        "baslik": "Mevzuat sınırı — ve neden bu sınır işimize yarıyor",
+        "metin": "Tıbbi cihazların halka yönelik reklamı yasak; sağlık meslek mensuplarına yönelik tanıtım serbest. Bu yüzden kanalın dili ve hedeflemesi profesyonele kurulur. \"Kalıcı epilasyon\", \"kesin sonuç\", \"FDA onaylı\" gibi ifadeler ve üstünlük iddiaları kullanılmaz. Buna ek olarak kendi yayın kuralımız şu: kamera cihazda kalır — başlık, ekran, mod seçimi, uygulama hareketi, güvenlik adımları. Hasta görüntüsü ve öncesi-sonrası karşılaştırması kullanmıyoruz, röportajlar işletme deneyimini anlatır, klinik sonucu değil. Videonun sonu satışa değil teklif formuna bağlanır; internetten satış yapılmaz, teklif usulü çalışılır. Bu çerçeve içeriği zayıflatmaz: profesyonel alıcıya konuşan dil zaten budur."
+      },
+      {
+        "tip": "liste",
+        "baslik": "Kanal ile sitenin birlikte çalışması",
+        "maddeler": [
+          "Her video ilgili cihaz sayfasına bağlanır, her cihaz sayfası kendi videosunu gömer. Yeni sitede 28 cihaz sayfasının hepsinde teklif formu, cihaza özel WhatsApp bağlantısı ve teknik künye var — video izleyicisi tek tıkla teklif yoluna geçebilir. Bugün bu yol 29 cihaz sayfasının hiçbirinde yok.",
+          "Video açıklamalarında cihaz sayfası bağlantısı ve teklif çağrısı sabit tutulur; hangi videodan hangi cihaz sayfasına geçildiği etiketlenir ve raporlanır.",
+          "Uzun videolardan kısa kesitler üretilir; aynı çekim Meta ve YouTube kısa formatında yeniden kullanılır. Tek çekim günü birden çok mecrayı besler.",
+          "Videoyu belirli bir orandan fazla izleyenler yeniden hedefleme kitlesi olarak tanımlanır. Bu kitlenin dönüşüm davranışı, ölçüm kurulduktan sonra ayrı raporlanır.",
+          "Videolar cihaz sayfasına gömüldüğünde sayfada ortalama kalma süresi ve etkileşim ayrıca izlenir; bugün bu veri hiç toplanmıyor."
+        ]
+      },
+      {
+        "tip": "kutu",
+        "baslik": "Ölçülü konuşma notu",
+        "metin": "16 Ağustos 2026'da yedi rakip firmanın sitesi tarandı (Medsatek, Glory Majestic, Asel, Newmed, E-Medikal, MedLaser, STS Lazer). Tarama site içeriğine bakıyordu; rakiplerin video kanalları, izlenme verileri ve reklam hesapları ölçülmedi. Bu yüzden bu bölümde rakip karşılaştırması yapmıyoruz — YouTube kararı rakiplerin ne yaptığına değil, kendi ürün sayfalarımızın ölçülen inceliğine dayanıyor."
+      },
+      {
+        "tip": "paragraf",
+        "metin": "Özet: Google Ads arayanı yakalar ve ölçümü kurar. Meta aramayanı bulur ve geri getirir. YouTube ikisinin de ihtiyaç duyduğu görsel kanıtı üretir ve ürün sayfalarındaki boşluğu doldurur. Üçü birlikte çalışır, ölçüm katmanı üçünden de veri toplar. Bu bölümde yazılanların tamamı hedeftir; izlenme, sıralama ve dönüşüm sonuçları önceden taahhüt edilmez, ilk ay kurulacak ölçümle raporlanır."
+      }
+    ]
+  },
+  {
+    "id": "yol-haritasi",
+    "ustEtiket": "Yol Haritası",
+    "baslik": "1. Ay, 3. Ay, 6. Ay",
+    "giris": "Bu işin tamamı tek seferde açılan bir kapı değil. Üç aşamada ilerliyoruz: önce ölçülebilir bir zemin kuruyoruz, sonra derinleştiriyoruz, sonra bileşik etkiyi topluyoruz.",
+    "govde": [
+      {
+        "tip": "paragraf",
+        "metin": "Sıralamanın nedeni basit. 16 Ağustos 2026 ölçümünde mevcut sitede 40 sayfa ve 82 yazının tamamına karşılık tek satış formu var. 29 cihaz sayfasının hiçbirinde form, föy veya cihaza özel WhatsApp bağlantısı yok. Formdaki ads_keyword ve Kampanya_Bilgisi alanları boş geliyor; yani reklam bütçesi akarken hangi aramanın talep getirdiği görülmüyor. Bu tabloda reklam harcamasını artırmak ölçülemeyen bir gider olur. Önce talebi yakalayacak yüzeyi ve ölçümü kuruyoruz."
+      },
+      {
+        "tip": "paragraf",
+        "metin": "1. ay temel kurma ayıdır. Yeni site yayına alınır, eski adresler 301 ile taşınır, ölçüm ve dönüşüm izleme kurulur. Bu ayın çıktısı trafik değil, görünürlüktür: hangi sayfanın hangi aramadan talep getirdiğini ilk kez görürüz."
+      },
+      {
+        "tip": "tablo",
+        "baslik": "1. ay — Temel",
+        "sutunlar": [
+          "Dönem",
+          "Yapılan iş",
+          "Teslim",
+          "Ölçülecek"
+        ],
+        "satirlar": [
+          [
+            "1. ay",
+            "Yeni sitenin yayına alınması; 28 cihaz sayfasının teklif formu, teknik künye ve cihaza özel WhatsApp bağlantısıyla açılması",
+            "Canlı site + 28 cihaz sayfası",
+            "Teklif yolu bulunan cihaz sayfası sayısı (bugün 0)"
+          ],
+          [
+            "1. ay",
+            "Eski adreslerin 301 ile eşlenmesi; 404 dönen mesafeli satış/iade sayfalarının yayına alınması",
+            "301 eşleme tablosu + eksik yasal sayfalar",
+            "Taranan/indekslenen sayfa sayısı, 404 sayısı"
+          ],
+          [
+            "1. ay",
+            "Ölçüm kurulumu: GA4, Search Console, dönüşüm olayları (form, WhatsApp, telefon, föy indirme)",
+            "Ölçüm kurulum belgesi + canlı panel",
+            "Kaynağı belli olan talep oranı (bugün ölçülemiyor)"
+          ],
+          [
+            "1. ay",
+            "Reklam izlemesinin onarılması: kampanya ve anahtar kelime bilgisinin forma taşınması",
+            "Etiketleme şeması + test kayıtları",
+            "Boş gelen ads_keyword oranı (bugün tamamı boş)"
+          ],
+          [
+            "1. ay",
+            "Teknik hijyen: eksik güvenlik başlıkları, PHP sürüm sızıntısı, çerez rızası öncesi etiket yüklenmesi",
+            "Teknik düzeltme raporu",
+            "Eksik güvenlik başlığı sayısı (bugün 6/6 eksik)"
+          ],
+          [
+            "1. ay",
+            "İlk kampanya: sağlık meslek mensubuna yönelik dar hedefli marka ve model araması",
+            "Kampanya yapısı + reklam metinleri",
+            "Talep başına maliyet, arama terimi raporu"
+          ]
+        ]
+      },
+      {
+        "tip": "paragraf",
+        "metin": "3. ay derinleşme ayıdır. Elimizde artık gerçek arama terimleri ve gerçek dönüşüm verisi olur. Bu ayda içeriği ve kampanyayı bu veriye göre şekillendiririz. Mevcut sitede 86 yazının 61'i tek anlam kümesinde toplanmış durumda; yazılar birbirini yiyor. Ayrıca markalı blog yazıları ürün sayfalarının 6-12 katı uzun: Noblex yazısı 2.223 kelime iken Noblex ürün sayfası 184 kelime. Ağırlığı satın alma niyetinin olduğu sayfaya taşıyoruz."
+      },
+      {
+        "tip": "tablo",
+        "baslik": "3. ay — Derinleşme",
+        "sutunlar": [
+          "Dönem",
+          "Yapılan iş",
+          "Teslim",
+          "Ölçülecek"
+        ],
+        "satirlar": [
+          [
+            "3. ay",
+            "İçerik kümelerinin kurulması; kanibalizasyonun çözülmesi, birleştirme ve yönlendirme kararları",
+            "Küme haritası + birleştirme listesi",
+            "Anahtar kelime başına tek sayfa oranı, sıralamaya giren sayfa sayısı"
+          ],
+          [
+            "3. ay",
+            "Cihaz sayfalarının derinleştirilmesi: teknik künye, karşılaştırma, işletme türü uygunluğu",
+            "Güncellenmiş cihaz sayfaları",
+            "Cihaz sayfası başına talep sayısı"
+          ],
+          [
+            "3. ay",
+            "Kampanya optimizasyonu: arama terimi eleme, teklif ayarı, dönüşen kelimeye bütçe kaydırma",
+            "Aylık optimizasyon kaydı",
+            "Talep başına maliyet, nitelikli talep oranı"
+          ],
+          [
+            "3. ay",
+            "YouTube ilk seri: cihaz tanıtımı ve uygulama anlatımı, profesyonele yönelik dil",
+            "İlk video seti + kanal düzeni",
+            "İzlenme, izlenme süresi, siteye tıklama"
+          ],
+          [
+            "3. ay",
+            "Yeniden hedefleme: siteyi gezen ama teklif istemeyen profesyonel kitleye dönüş",
+            "Yeniden hedefleme kampanyası",
+            "Geri dönen ziyaretçi oranı, ikinci temas dönüşümü"
+          ],
+          [
+            "3. ay",
+            "Karar araçlarının reklam hunisine bağlanması (cihaz seçim danışmanı, yatırım geri dönüş hesaplayıcı)",
+            "Araç odaklı iniş sayfaları",
+            "Araç kullanımı ve araçtan gelen talep sayısı"
+          ]
+        ]
+      },
+      {
+        "tip": "paragraf",
+        "metin": "6. ay bileşik etki ayıdır. Organik trafik hattı bu noktada oturmaya başlar; reklamla gelen talep ile aramadan gelen talep birbirini besler. Blog 22 aydır durduğu için ilk hareket burada görünür hale gelir. Aynı dönemde bayi ağı ve video kütüphanesi kendi başına talep üreten kanallara dönüşür."
+      },
+      {
+        "tip": "tablo",
+        "baslik": "6. ay — Bileşik etki",
+        "sutunlar": [
+          "Dönem",
+          "Yapılan iş",
+          "Teslim",
+          "Ölçülecek"
+        ],
+        "satirlar": [
+          [
+            "6. ay",
+            "Organik hattın oturması: kümelerin tamamlanması, iç bağlantı düzeni, güncelleme ritmi",
+            "Yayın takvimi + güncellenmiş küme haritası",
+            "Organik oturum, ilk sayfada görünen sorgu sayısı"
+          ],
+          [
+            "6. ay",
+            "Bayi ağı: başvuru akışı, işletme türüne göre belge matrisi, bayi girişi",
+            "Çalışan bayi başvuru hattı",
+            "Başvuru sayısı, onaylanan bayi sayısı"
+          ],
+          [
+            "6. ay",
+            "Video kütüphanesi: seri hale gelmiş cihaz ve uygulama içerikleri, sayfalara gömme",
+            "Kategorili video kütüphanesi",
+            "Video başına siteye yönlenme, videolu sayfada kalma süresi"
+          ],
+          [
+            "6. ay",
+            "Kampanyaların kanal dağılımı: arama, yeniden hedefleme ve video bütçesinin dengelenmesi",
+            "Bütçe dağılım planı",
+            "Kanal bazında talep başına maliyet"
+          ],
+          [
+            "6. ay",
+            "Raporlama ritminin oturması: aylık tek panel, karşılaştırmalı okuma",
+            "Altı aylık toplu değerlendirme",
+            "Altı aylık talep eğilimi, kaynağı belli talep oranı"
+          ]
+        ]
+      },
+      {
+        "tip": "olcum",
+        "baslik": "Başlangıç noktası — 16 Ağustos 2026 ölçümü",
+        "olcumler": [
+          {
+            "deger": "1",
+            "etiket": "Satış formu",
+            "aciklama": "40 sayfa ve 82 yazının tamamında tek form var. KVKK onay kutusu yok.",
+            "durum": "kayip"
+          },
+          {
+            "deger": "0",
+            "etiket": "Cihaz sayfasında teklif yolu",
+            "aciklama": "29 cihaz sayfasının hiçbirinde form, PDF föy veya cihaza özel WhatsApp bağlantısı yok.",
+            "durum": "kayip"
+          },
+          {
+            "deger": "22 ay",
+            "etiket": "Blog sessizliği",
+            "aciklama": "Son yazı güncellemesi 4 Ekim 2024. Arama tarafında yeni sinyal üretilmiyor.",
+            "durum": "risk"
+          },
+          {
+            "deger": "61 / 86",
+            "etiket": "Aynı kümedeki yazı",
+            "aciklama": "Yazıların büyük kısmı tek anlam kümesinde toplanmış; sayfalar birbirini yiyor.",
+            "durum": "risk"
+          },
+          {
+            "deger": "37 KB",
+            "etiket": "Yeni sitenin JS yükü",
+            "aciklama": "Mevcut sitede ham JS 841.545 B. Aynı içerik çok daha hafif servis ediliyor.",
+            "durum": "firsat"
+          },
+          {
+            "deger": "28",
+            "etiket": "Teklif formlu cihaz sayfası hedefi",
+            "aciklama": "Yeni sitede 28 cihazın her birinde form, teknik künye ve cihaza özel WhatsApp bağlantısı var.",
+            "durum": "kazanc"
+          }
+        ]
+      },
+      {
+        "tip": "kutu",
+        "baslik": "Bu tablodaki her madde hedeftir, garanti değildir",
+        "metin": "Buradaki dönemler ve ölçütler, yapılacak işin planı ve nasıl ölçüleceğidir. Sıralama, trafik veya dönüşüm miktarı için taahhüt verilmez; arama motorlarının ve reklam platformlarının sonuçları kontrolümüz dışındadır. Ölçütler her ay aynı kaynaktan, aynı yöntemle okunur ve sapma varsa nedeniyle birlikte raporlanır."
+      }
+    ]
+  },
+  {
+    "id": "nasil-calisiriz",
+    "ustEtiket": "Çalışma Düzeni",
+    "baslik": "Nasıl Çalışırız",
+    "giris": "Yol haritasının tutması, düzenli bir ritme bağlı. Aylık döngü sabittir: üretiriz, onaya sunarız, yayınlarız, ölçeriz, bir sonraki ayı ölçüme göre kurarız.",
+    "govde": [
+      {
+        "tip": "paragraf",
+        "metin": "Tek bir sorumlu kişi ve tek bir iletişim kanalı olur. Dağınık talep yerine ayda bir kez toplanan, yazılı ve izlenebilir bir akış kurarız. Her işin bir teslim tarihi, bir sahibi ve bir ölçütü vardır."
+      },
+      {
+        "tip": "tablo",
+        "baslik": "Aylık ritim",
+        "sutunlar": [
+          "Ritim",
+          "Ne olur",
+          "Kimden",
+          "Çıktı"
+        ],
+        "satirlar": [
+          [
+            "Haftalık",
+            "Kısa durum notu: yayına giren işler, bekleyenler, engel varsa nedeni",
+            "TasarımMania",
+            "Yazılı haftalık not"
+          ],
+          [
+            "Haftalık",
+            "Kampanya bakımı: arama terimi eleme, teklif ve bütçe ayarı",
+            "TasarımMania",
+            "Optimizasyon kaydı"
+          ],
+          [
+            "Aylık",
+            "Rapor: trafik, talep sayısı, talebin kaynağı, kampanya maliyeti, ay içinde yayınlananlar",
+            "TasarımMania",
+            "Aylık rapor + canlı panel"
+          ],
+          [
+            "Aylık",
+            "Değerlendirme toplantısı: raporun okunması, sapmaların konuşulması, sonraki ay planı",
+            "İki taraf",
+            "Toplantı özeti + sonraki ay iş listesi"
+          ],
+          [
+            "Aylık",
+            "Sonraki ayın içerik ve video takvimi onaya sunulur",
+            "TasarımMania",
+            "Onaylı içerik takvimi"
+          ],
+          [
+            "Üç aylık",
+            "Genel gözden geçirme: yön doğru mu, bütçe dağılımı doğru mu",
+            "İki taraf",
+            "Üç aylık değerlendirme notu"
+          ]
+        ]
+      },
+      {
+        "tip": "paragraf",
+        "metin": "Onay akışı önden çalışır. Hiçbir içerik onaysız yayına girmez; buna karşılık onay beklerken üretim durmaz, bir sonraki ayın işi paralel ilerler."
+      },
+      {
+        "tip": "liste",
+        "baslik": "Onay akışı",
+        "maddeler": [
+          "İçerik takvimi bir sonraki ay başlamadan en az iki hafta önce iletilir; başlıklar, hedef arama niyeti ve ilgili cihazlar listelenir.",
+          "Estezone teknik doğrulamayı yapar: model adları, teknik değerler, dalga boyu, kullanım alanı. Teknik veri her zaman üreticiden gelir, tarafımızca yorumlanmaz.",
+          "Metin ve görseller mevzuat süzgecinden geçer. Süzgeç yayın öncesi otomatik çalışır: \"FDA Onaylı\" gibi ispat yükü doğuran ifadeler \"FDA 510(k) izinli\" gibi doğrulanabilir karşılıklarına çevrilir; kalıcı sonuç, kesin sonuç ve üstünlük iddiaları elenir.",
+          "Reklam hedeflemesi sağlık meslek mensuplarına kurgulanır. Tıbbi cihazın halka yönelik reklamı yapılmaz. Sitede sepet veya ödeme adımı bulunmaz; süreç teklif usulüdür.",
+          "Onay tek turda toplanır: düzeltmeler tek listede iletilir, revize edilir, yayına alınır.",
+          "Yayın sonrası kontrol yapılır: bağlantılar, formlar, ölçüm olayları ve mobil görünüm test edilir."
+        ]
+      },
+      {
+        "tip": "paragraf",
+        "metin": "Raporlamada tek kaynak ilkesi geçerlidir. Trafik GA4'ten, arama görünürlüğü Search Console'dan, reklam maliyeti platformun kendi panelinden okunur. Sunumdaki rakam ile paneldeki rakam her zaman aynı yerden gelir; ay içinde yöntem değişmez. Bir ölçüt hedefin altında kaldığında raporda gizlenmez, nedeniyle ve düzeltme planıyla birlikte yazılır."
+      },
+      {
+        "tip": "kutu",
+        "baslik": "Estezone'dan beklediğimiz",
+        "metin": "Üç şey işi hızlandırır: teknik bilgi teyidi için tek bir muhatap, cihaz görsel ve föylerinin bize açılması, ve aylık toplantı için sabit bir tarih. Bunlar sağlandığında takvim aksamaz. Ölçüm kurulumu için reklam ve analiz hesaplarına erişim de ilk ay içinde gerekir; erişim gecikirse ölçüm de o kadar gecikir."
+      }
+    ]
+  }
+]

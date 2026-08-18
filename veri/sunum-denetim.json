@@ -1,0 +1,191 @@
+[
+  {
+    "bolumId": "neden-seo",
+    "tip": "uydurma-veri",
+    "alinti": "\"Arion Alexandrite yazısı — 2.018\", \"/arion-alexandrite-lazer/ — 336\", \"6 kat\" · \"Nobleen yazısı — 1.471\", \"/nobleen/ — 205\" · \"Elazer Plus yazısı — 1.441\", \"/elazer-plus/ — 145\" · \"Aileen yazısı — 1.331\", \"/aileen/ — 175\" · \"Elazer yazısı — 627\", \"/elazer/ — 167\"",
+    "sorun": "Doğrulanmış veri listesinde SADECE Noblex çifti var (2.223 kelime <-> 184 kelime) ve genel bir '6-12 kat' aralığı var. Arion, Nobleen, Elazer Plus, Aileen ve Elazer için verilen 10 ayrı kelime sayısı ölçüm raporunda yok. Müşteri bu tabloyu tek tek kontrol ederse 5 satırın 5'i de kanıtsız kalır ve sunumun tamamının güvenilirliği düşer.",
+    "onerilenDuzeltme": "Tabloyu yalnızca doğrulanmış Noblex satırıyla bırak; diğer cihazlar için 'markalı yazılar ürün sayfalarının 6-12 katı uzunlukta (ölçüm: 16 Ağu 2026)' genel ifadesini kullan. Rakamlar gerçekten ölçülmüşse ANALIZ-RAPORU.md'de satır referansı verilerek sunuma eklenmeli, aksi halde silinmeli."
+  },
+  {
+    "bolumId": "para-sayfasi-kaybediyor",
+    "tip": "uydurma-veri",
+    "alinti": "Kosinüs benzerliği %70–90. Toplam 49.445 kelime aynı konu etrafında dönüyor.",
+    "sorun": "'49.445 kelime' rakamı doğrulanmış veri listesinde yok. Listede yalnızca '86 yazının 61'i tek anlam kümesinde (kosinüs benzerliği %70-90)' var. Bu uydurma rakam sunumda üç ayrı yerde tekrarlanıyor (para-sayfasi-kaybediyor ölçüm bloğu, 'Bunun iyi tarafı' kutusu, neden-seo ölçüm bloğu, seo-ne-yapilacak paragrafı) — yani tek bir hata dört yerde çoğalmış.",
+    "onerilenDuzeltme": "Dört geçişte de kelime toplamını kaldır; '61 yazılık küme' ifadesiyle yetin. Kelime toplamı gerçekten hesaplandıysa rapordan teyit edilip tek kaynaklı olarak yazılmalı."
+  },
+  {
+    "bolumId": "neden-seo",
+    "tip": "uydurma-veri",
+    "alinti": "Kosinüs benzerliği %70-90; benzerliği 0,70 üstünde 649 çift",
+    "sorun": "'649 çift' sayısı doğrulanmış listede yok. Benzerlik aralığı (%70-90) doğrulanmış, çift sayısı değil. Teknik görünen bu tür bir sayı, denetlenmesi en kolay ve yanlış çıkarsa en pahalı olan türden.",
+    "onerilenDuzeltme": "'649 çift' ifadesini çıkar veya rapordaki karşılığı gösterilerek doğrulat."
+  },
+  {
+    "bolumId": "neden-seo",
+    "tip": "uydurma-veri",
+    "alinti": "Sitemap'te 40 sayfa ve 82 yazı var; REST arayüzünde 45 sayfa ve 86 yazı görünüyor. · 45 sayfanın 32'sinde meta açıklama yazılmamış; açıklama alanı başlığın kopyası · 45 yazı başlığı 60 karakteri aşıyor; arama sonucunda kesiliyor",
+    "sorun": "Doğrulanmış listede '40 sayfa + 82 yazı' ve '86 yazı' var; ancak '45 sayfa', '32 sayfada meta açıklama yok' ve '45 yazı başlığı 60 karakteri aşıyor' rakamları listede YOK. Ayrıca '45' sayısı iki farklı anlamda (45 sayfa / 45 yazı başlığı) kullanıldığı için okuyucuda ölçüm karışıklığı hissi yaratıyor.",
+    "onerilenDuzeltme": "Meta açıklama ve başlık uzunluğu bulgularını rakamsız, niteliksel olarak yaz ('sayfaların büyük kısmında meta açıklama yazılmamış') veya rapordan teyit edilen kesin sayıları koy. 45 sayfa / 40 sayfa farkı ölçüm yöntemi notuyla açıklanmalı."
+  },
+  {
+    "bolumId": "neden-seo",
+    "tip": "uydurma-veri",
+    "alinti": "Product schema 0, Article schema 0, Organization schema 0 — kurum bilgisi yanlışlıkla Person olarak işaretlenmiş",
+    "sorun": "Schema sayımları ve 'Person olarak işaretlenmiş' bulgusu doğrulanmış veri listesinde yok. Bu bulgu seo-ne-yapilacak bölümünde de 'mevcut hatalı Person işaretlemesinin kaldırılması' diye tekrar ediliyor, yani kanıtsız bir bulgu plana da taşınmış.",
+    "onerilenDuzeltme": "Schema durumu yayın öncesi tekrar ölçülüp rapora işlenene kadar sunumdan çıkarılmalı; ölçüldüyse ölçüm tarihi ve yöntemiyle birlikte yazılmalı."
+  },
+  {
+    "bolumId": "neden-seo",
+    "tip": "uydurma-veri",
+    "alinti": "/cihazlarimiz/ ile /medikal-cihazlar/ sayfaları %84 aynı içerik",
+    "sorun": "'%84' benzerlik oranı doğrulanmış listede yok. Listede yalnızca 'endoterapylazer = medart-smartsculpt-endolazer BIREBIR KOPYA' bulgusu var. Yüzdeli bir benzerlik iddiası ölçüm gibi görünür, kanıtı yoksa en riskli ifade türüdür.",
+    "onerilenDuzeltme": "Ya oranı kaldırıp 'iki kategori sayfası büyük ölçüde aynı içeriği taşıyor' de, ya da ölçüm çıktısını rapora ekleyip referans ver."
+  },
+  {
+    "bolumId": "neden-seo",
+    "tip": "uydurma-veri",
+    "alinti": "Taksonomi tek kategori (blog), 0 etiket; /blog/ sayfasında H1 yok · GTranslate ile 5 dil görünüyor ama hreflang 0, ayrı URL 0, dil etiketi sabit tr · Eski ürün sayfalarındaki CTA hâlâ /demo/iletisim/ adresini gösteriyor (staging kalıntısı)",
+    "sorun": "Bu üç teknik bulgunun hiçbiri doğrulanmış veri listesinde yok (taksonomi/etiket sayısı, GTranslate ve 5 dil, hreflang 0, /demo/iletisim/ kalıntısı). Aynı bölümdeki 'robots.txt temiz, sitemap bildirilmiş, www ve http apex adrese 301 dönüyor' ifadesi de listede yer almıyor.",
+    "onerilenDuzeltme": "Her maddeyi ANALIZ-RAPORU.md'den teyit et; teyit edilemeyen maddeyi sunumdan çıkar. Özellikle '/demo/iletisim/' gibi somut bir URL iddiası yanlış çıkarsa toplantıda anında çürütülür."
+  },
+  {
+    "bolumId": "kanit-katmani",
+    "tip": "uydurma-veri",
+    "alinti": "T-Shape 2 (B&M S.R.L. / Baldan Group, İtalya): FDA 510(k) K231092, Class II, ürün kodu NUV/PBX. Sitedeki tek doğru kurgulanmış sayfa; 845 kelime ve 34 satırlık teknik tablo içeriyor. · Modula BBL (Wavemed, İtalya): Class IIb, CE 1936. · Arion Alexandrite (Almalaser, İtalya): CE MDD 93/42/EEC + FDA 510(k). · Lazer koruyucu gözlük ailesi: CE EN207 / EN169.",
+    "sorun": "Bu belge numaralarının (K231092, CE 1936, EN207/EN169), sınıf bilgilerinin, üretici künyelerinin ve '845 kelime / 34 satır' ölçümünün hiçbiri doğrulanmış veri listesinde yok. Belge numarası sunumda en yüksek risk taşıyan veri türüdür: yanlış bir K-numarası veya sınıf bilgisi hem satışı hem de mevzuat güvenilirliğini bitirir. Üstelik bölümün kendi kuralı 'toplanana kadar o alan sayfada boş kalır, uydurulmaz' diyor.",
+    "onerilenDuzeltme": "Her numarayı üretici belgesi veya FDA/ÜTS kaydından ekran görüntüsüyle teyit et; teyit edilemeyeni sunumdan çıkar. Bölümün kendi kuralını sunum metnine de uygula."
+  },
+  {
+    "bolumId": "kanit-katmani",
+    "tip": "mevzuat",
+    "alinti": "1 Ocak 2025'ten itibaren tıbbi cihaz satışında asgari 24 ay garanti, yetkili teknik servis unvanı ve iletişimi, yıllık azami tamir süresi, yedek parçada yurt içi 20 iş günü / yurt dışı 30 iş günü taahhüdü ve ilk kullanım öncesi bedelsiz temel teknik eğitim yazılı olarak verilmek durumunda.",
+    "sorun": "Bu mevzuat iddiası (tarih, 24 ay, 20/30 iş günü, bedelsiz eğitim) doğrulanmış mevzuat notlarında YOK. Sunumda hukuki bir zorunluluk olarak sunuluyor ve hemen ardından ölçüm bloğunda '24 ay' ve '20 / 30' rakam olarak tekrarlanıyor. Yanlış veya eksik aktarılmış bir mevzuat maddesi, danışman sıfatıyla verilmiş hatalı hukuki bilgi anlamına gelir ve müşteriyi yanlış taahhüde sürükler.",
+    "onerilenDuzeltme": "İlgili yönetmeliğin adı, sayısı ve Resmî Gazete tarihi ile birlikte kaynak göster; kaynak gösterilemiyorsa 'garanti ve satış sonrası hizmet mevzuatındaki asgari şartlar sayfada yazılı olarak yer alır' şeklinde rakamsız yaz. Rakamlar firmanın hukuk/mevzuat sorumlusundan teyitli gelmeli."
+  },
+  {
+    "bolumId": "seo-ne-yapilacak",
+    "tip": "uydurma-veri",
+    "alinti": "\"Lazer epilasyon geneli\", \"23\" · \"Diyot / buz lazer\", \"12\" · \"Vücut şekillendirme\", \"12\" · \"Alexandrite\", \"10\" · \"Cilt bakım / analiz\", \"9\" · \"Satış sonrası\", \"6 yazı + 2 sayfa\" · \"Nd:YAG / IPL\", \"4\" · \"İkinci el ve kiralama\", \"3\" · \"Marka yazısı ↔ ürün birleşmesi\", \"7 çift\"",
+    "sorun": "Birleştirme tablosundaki konu kümesi dağılımının hiçbir kalemi doğrulanmış veri listesinde yok. Listede yalnızca '61/86 yazı tek anlam kümesinde' bilgisi var; hangi kümeye kaç yazı düştüğü ölçülmemiş. Aynı bölümdeki 'mevcut 4 çapraz canonical' ve '8 derin rehber / 21 yeni ürün sayfası' hedefleri de aynı durumda.",
+    "onerilenDuzeltme": "Tabloyu 'örnek küme dağılımı — Search Console verisi alındıktan sonra kesinleşir' notuyla işaretle veya kalem sayılarını kaldırıp yalnızca küme adlarını ve önceliği bırak. Bölümün kendi 'Yayın öncesi zorunlu adım' kutusu zaten bu verinin henüz olmadığını söylüyor; tablo o kutuyla çelişiyor."
+  },
+  {
+    "bolumId": "para-sayfasi-kaybediyor",
+    "tip": "uydurma-veri",
+    "alinti": "Blogdan ürün sayfalarına giden iç bağlantı sayısı, kontrol edilen altı üründe de sıfır: noblex, nobleen, elazer, elazer plus, picozone, esteslim.",
+    "sorun": "İç bağlantı sayımı ve bu altı ürünün listesi doğrulanmış veri listesinde yok. Aynı iddia neden-seo bölümünde de tekrar ediyor ('blog yazılarından gelen iç bağlantı sayısı sıfır ölçüldü') ve seo-ne-yapilacak bölümünde 'bugün 0 olan blog→ürün bağlantısı' diye plana taşınıyor.",
+    "onerilenDuzeltme": "Ölçümü tekrarlayıp rapora işle veya üç geçişte de sayıyı kaldırıp 'Noblex yazısında ürün sayfasına bağlantı yok' gibi tek ve doğrulanmış örnekle sınırla."
+  },
+  {
+    "bolumId": "yenilersen-ne-degisir",
+    "tip": "uydurma-veri",
+    "alinti": "68px sticky header, kaydırınca 56px · 640 / 900 / 1200 / 1440 kırılımı · Logodan türetilmiş 9 basamaklı tek ölçek; her metin/zemin çifti AA doğrulanmış · Sticky header + mobil alt çubuk, 48px dokunma hedefi · Kendi sunucumuzda barındırılan variable woff2, preload + font-display: swap",
+    "sorun": "Bu beş teknik değerin hiçbiri demonun doğrulanmış envanterinde yok (envanterde JS 37 KB, CSS 45 KB, HTML 47 KB, 28 cihaz sayfası, 4 araç, 6 yazı var). Tablonun sütun başlığı 'demo ile kanıtlandı' dediği için bu satırlar kanıtlanmış ölçüm gibi okunuyor. Müşteri demoda 68px yerine başka bir değer ölçerse sunumun 'her satır denenebilir' iddiası çöker.",
+    "onerilenDuzeltme": "Bu satırları demoda ölç ve gerçek değerleri yaz; ölçemiyorsan sütun başlığını 'Yeni sitede (tasarım kararı)' yapıp kanıt iddiasını bu satırlardan ayır."
+  },
+  {
+    "bolumId": "yenilersen-ne-degisir",
+    "tip": "tutarsizlik",
+    "alinti": "Yeni sitede (demo ile kanıtlandı) · \"Güvenlik başlıkları\" ... \"Altısı da tanımlı; X-Powered-By kapalı\" · \"Çalışma zamanı\" ... \"Güncel PHP sürümü, sürüm bilgisi gizli\"",
+    "sorun": "Tablo başlığı tüm satırların demo ile kanıtlandığını söylüyor. Ancak demo statik bir GitHub Pages sayfası; sunucu güvenlik başlıklarını ve PHP sürümünü demo kanıtlayamaz — o katman barındırma tarafında kurulacak bir plandır. Aynı sorun 'Her lead'de utm, gclid, giriş sayfası, hangi cihaz, hangi araç kayıtlı' satırında da var: statik demoda lead kaydı yok.",
+    "onerilenDuzeltme": "Tabloyu iki bloğa ayır: 'demoda çalışıyor (ölçüldü)' ve 'yayın kurulumunda yapılacak (plan)'. Sunucu başlıkları, PHP sürümü ve lead kaydı ikinci bloğa taşınmalı."
+  },
+  {
+    "bolumId": "neredesiniz",
+    "tip": "tutarsizlik",
+    "alinti": "159 KB HTML + 525 KB CSS + ~931 KB ham JS, yani yaklaşık 1,6 MB'lık ön yüz yükü taşınıyor. · Bugün 1,5 MB'lık bir yük, yalnızca 41 KB'lık içerik servis ediyor.",
+    "sorun": "Aynı ölçüm iki bölümde iki farklı toplamla veriliyor: 'neredesiniz' bölümünde 1,6 MB, 'yenilersen-ne-degisir' bölümünde 1,5 MB. Doğru toplam 159+525+931 = ~1.615 KB, yani 1,6 MB. 1,5 MB yanlış ve okuyucu iki sayfa arasında farkı görürse tüm rakamlara güveni sarsılır.",
+    "onerilenDuzeltme": "'yenilersen-ne-degisir' bölümündeki '1,5 MB' ifadesini '1,6 MB' yap; sunum genelinde tek bir toplam kullan."
+  },
+  {
+    "bolumId": "seo-ne-yapilacak",
+    "tip": "tutarsizlik",
+    "alinti": "Bu şablon 21 ürüne uygulanır ve tek bir ürün veri kaynağından beslenir · \"21\", \"yeni ürün sayfası\"",
+    "sorun": "Sunumun her yerinde portföy 28 cihaz ve demoda 28 cihaz sayfası var; SEO planında ise 21 ürün sayfası deniyor. Mevcut sitede 29 cihaz sayfası olduğu da ayrıca söyleniyor. 29 / 28 / 21 üçlüsü hiçbir yerde açıklanmıyor; müşteri 'kaç cihazımı yayınlıyorsunuz, 7 cihaz nereye gitti' diye soracaktır.",
+    "onerilenDuzeltme": "Tek bir cihaz sayısı tanımı yap ve farkı açıkça yaz: mevcut sitede 29 URL, portföyde 28 cihaz, SEO planında X yeni + Y birleştirilen. Rakamlar aynı sunumda birbirini açıklamalı."
+  },
+  {
+    "bolumId": "kanit-katmani",
+    "tip": "tutarsizlik",
+    "alinti": "\"0\", \"Bugün sitede yayınlanmış belge numarası\", \"Sertifika görseli, ÜTS, CE ve 510(k) numarası dahil hiçbiri yayınlanmamış\" · T-Shape 2 ... FDA 510(k) K231092, Class II, ürün kodu NUV/PBX. Sitedeki tek doğru kurgulanmış sayfa",
+    "sorun": "Aynı bölüm, aynı sayfada iki zıt şey söylüyor: bir yandan sitede yayınlanmış belge numarası sayısının 0 olduğunu, diğer yandan T-Shape 2 sayfasında FDA 510(k) numarası, sınıf ve ürün kodu bulunduğunu. İkisi birden doğru olamaz.",
+    "onerilenDuzeltme": "'0' ölçümünü 'yalnızca 1 cihazda (T-Shape 2) belge künyesi var, kalan 28 cihazda yok' biçiminde düzelt. Bu hem doğru olur hem de 'model sayfa zaten sizde var' argümanını güçlendirir."
+  },
+  {
+    "bolumId": "rakiplerin-onune-gecis",
+    "tip": "tutarsizlik",
+    "alinti": "Hiçbir rakip alıcıyı işletme türüne göre eşleştirmiyor · \"Cihaz seçim danışmanı\", \"Yok\" · \"Bayi girişi ve üyelik başvurusu\", \"Yok\" · Rakip taraması sınırlı sayıda firmayla yapıldı. \"Türkiye'de tek\" gibi bir iddia sunumda ve sitede kullanılmayacak.",
+    "sorun": "Tablo 8 satırda mutlak ifadeler kullanıyor ('Hiçbir rakip', 'Yok'), ardından gelen kutu taramanın sınırlı olduğunu ve mutlak iddia kullanılmayacağını söylüyor. Tablo kendi uyarı kutusunu çürütüyor. Ayrıca doğrulanmış veride 'rakiplerde yok' ifadesi SADECE işletme türü rozeti için geçiyor; diğer 7 bileşenin rakiplerde olmadığı ölçülmemiş.",
+    "onerilenDuzeltme": "Tablo sütununu 'Taradığımız 7 rakipte (Medsatek, Glory Majestic, Asel, Newmed, E-Medikal, MedLaser, STS Lazer) rastlanmadı' olarak değiştir ve tarama tarihini yaz. 'Hiçbir rakip' ifadesini kaldır."
+  },
+  {
+    "bolumId": "rakiplerin-onune-gecis",
+    "tip": "rakip-kotuleme",
+    "alinti": "Rakipler bu ayrımı sitelerinde kurmadıkları için tüketici trafiğiyle boğuluyor.",
+    "sorun": "Rakiplerin trafik kompozisyonu ölçülmedi; elimizde hiçbir rakibin analitik verisi yok. 'Boğuluyor' ifadesi hem ölçüme dayanmıyor hem de aşağılayıcı bir ton taşıyor. Sunumun kendi üslup kuralı 'rakip kötülemesi yok — ölçüm var' diyor.",
+    "onerilenDuzeltme": "'Taradığımız rakip sitelerinde profesyonel/tüketici ayrımı yapan bir yapı görülmedi; bu ayrımı kuran taraf daha nitelikli trafik hedefleyebilir.' şeklinde ölçülebilir ve nötr yaz."
+  },
+  {
+    "bolumId": "google-ads",
+    "tip": "rakip-kotuleme",
+    "alinti": "Rakiplerin cogu bu ayrimi yapmadan genis kitleye reklam verir; ayni butceyle bizim tarafta daha az ama daha nitelikli tiklama olusur. · Rakip genis kitleye harcarken biz alici havuzuna harcariz. · Glory Majestic, Newmed, E-Medikal, MedLaser ve STS Lazer klasik katalog düzeninde kalıyor.",
+    "sorun": "Üç ayrı bölümde rakiplerin reklam hesaplarına ve site kalitesine dair, ölçülmemiş ve küçümseyici karakterizasyonlar var. Rakiplerin reklam hedeflemesini görmek teknik olarak mümkün değil; 'klasik katalog düzeninde kalıyor' da bir değer yargısı. Bunlar hem doğrulanamaz hem de sunumun ölçüm temelli tonunu bozar.",
+    "onerilenDuzeltme": "Rakip reklam hedeflemesine dair tüm cümleleri kaldır. Site tarafı için yalnızca sayılabilir gözlem bırak: 'taradığımız sitelerde cihaz sayfasında teklif formu / karar aracı görülmedi'."
+  },
+  {
+    "bolumId": "rakiplerin-onune-gecis",
+    "tip": "taahhut",
+    "alinti": "Bu kıyasta 20 yıllık servis kapasitesi olan taraf kazanır.",
+    "sorun": "Sonuç taahhüdü niteliğinde bir cümle: fiyat bandı + kapsam bilgisi yayınlanırsa Estezone'un kıyası kazanacağı söyleniyor. Bunun ölçülmüş hiçbir dayanağı yok ve satış sonucunu garanti eder gibi okunuyor. Sunumun genel kuralı 'hedefler hedef olarak yazılır, taahhüt olarak değil'.",
+    "onerilenDuzeltme": "'Bu kıyas, servis ve garanti kapasitesini görünür kılan tarafın lehine çalışır; amacımız kıyası fiyat rakamından paket kapsamına taşımak.' şeklinde hedef diliyle yaz."
+  },
+  {
+    "bolumId": "google-ads",
+    "tip": "taahhut",
+    "alinti": "ayni butceyle bizim tarafta daha az ama daha nitelikli tiklama olusur. · Bu daralma isabet oranini yukseltir: reklam, cihazi satin alabilecek kisiye gider.",
+    "sorun": "İki cümle de performans sonucu vaat ediyor (nitelik artışı, isabet oranı yükselmesi) ve rakip karşılaştırmasıyla birlikte veriliyor. Ölçülmüş bir başlangıç verisi yok — ads_keyword alanları bugün boş geldiği için mevcut nitelik seviyesi bile bilinmiyor. Bu haliyle 'hedef' değil 'söz' gibi okunuyor.",
+    "onerilenDuzeltme": "'Hedefimiz aynı bütçeyi daha dar ve profesyonel bir kitleye yönlendirmek; nitelik değişimi ilk ay kurulacak ölçümle raporlanır, önceden taahhüt edilmez.' de. Bölümün 'Kirmizi cizgiler' kutusundaki taahhüt uyarısını bu paragrafa da uygula."
+  },
+  {
+    "bolumId": "youtube-kanali",
+    "tip": "taahhut",
+    "alinti": "Videolar Google arama sonuclarinda gorunur — bu, blogun 22 aydir durdugu bir sitede en hizli goruunurluk kazanimidir. · Urun tarafi ic bos; video bu boslugu en hizli dolduran format. · Alicinin en cok istedigi icerik; mevzuata uygun cekilir",
+    "sorun": "Üç ayrı 'en hızlı / en çok' üstünlük ve sonuç iddiası var; hiçbiri ölçüme dayanmıyor. 'Videolar Google arama sonuçlarında görünür' ifadesi de koşulsuz bir sonuç sözü — video indekslenmesi garanti edilemez. Ayrıca 'goruunurluk' yazım hatası aynı cümlede duruyor.",
+    "onerilenDuzeltme": "'Video içerikleri arama sonuçlarında yer alabilir' gibi koşullu dil kullan; 'en hızlı' ve 'en çok istenen' ifadelerini kaldır, yerine 'alıcıların sık talep ettiği içerik türü' de. Yazım hatasını düzelt."
+  },
+  {
+    "bolumId": "rakiplerin-onune-gecis",
+    "tip": "mevzuat",
+    "alinti": "Bant vermek yasak değil — yasak olan internetten satış. Ama sadece bandı vermek Medsatek'i taklit etmek olur. Estezone bandın yanına \"banda ne dahil\" bilgisini koyar",
+    "sorun": "'Bant vermek yasak değil' bir hukuki değerlendirme ve doğrulanmış mevzuat notlarında karşılığı yok. Tıbbi cihazın halka yönelik tanıtımı yasak olduğuna ve sunumun tüm stratejisi 'hedefleme profesyonele olmalı' üzerine kurulduğuna göre, herkese açık bir sayfada TL fiyat bandı yayınlamak bu stratejiyle de çelişir. Ayrıca 'Medsatek'i taklit etmek olur' ifadesi gereksiz rakip göndermesi.",
+    "onerilenDuzeltme": "Fiyat bandını herkese açık sayfa yerine bayi/profesyonel girişi arkasına koymayı öner; hukuki iddiayı ('yasak değil') mevzuat kaynağı gösterilmeden yazma veya cümleyi 'fiyat bandı yayını mevzuat açısından ayrıca değerlendirilmelidir' notuyla değiştir. 'Taklit' ifadesini çıkar."
+  },
+  {
+    "bolumId": "google-ads",
+    "tip": "mevzuat",
+    "alinti": "Rakip marka aramalari ayri ve kontrollu yurutulur; rakip kotulemesi iceren metin kullanilmaz.",
+    "sorun": "Rakip marka adları üzerinden reklam verilmesi Türkiye'de marka hakkı ve haksız rekabet açısından tartışmalı bir alandır; sunum bunu rutin bir kampanya kalemi gibi sunuyor ve tek riski 'metinde kötüleme olmaması' gibi gösteriyor. Müşteriye eksik risk bilgisi verilmiş oluyor.",
+    "onerilenDuzeltme": "Maddeyi ya çıkar ya da 'rakip marka aramaları, marka hakkı ve haksız rekabet riski nedeniyle ancak firmanın hukuk onayıyla ve rakip markanın reklam metninde geçmemesi koşuluyla değerlendirilir' şeklinde risk uyarısıyla yaz."
+  },
+  {
+    "bolumId": "meta-reklamlari",
+    "tip": "mevzuat",
+    "alinti": "Mevcut bayi ve musteri listesinden ozel kitle olusturulur, ardindan benzeri hedeflenir.",
+    "sorun": "Mevcut müşteri/bayi listesinin reklam platformuna yüklenmesi KVKK kapsamında ayrı bir işleme faaliyetidir ve açık rıza / aydınlatma gerektirir. Sunum bunu koşulsuz bir teknik adım olarak yazıyor; oysa aynı sunum başka yerlerde KVKK açık rıza kutusunun eksikliğini bulgu olarak sayıyor. İç tutarsızlık ve gerçek uyum riski.",
+    "onerilenDuzeltme": "'Mevcut müşteri listesinden özel kitle, ancak KVKK aydınlatma ve açık rıza koşulları sağlanmış kayıtlar için oluşturulur' şeklinde koşula bağla; rıza yoksa yalnızca site ziyaretçisi tabanlı kitleyle çalışılacağını yaz."
+  },
+  {
+    "bolumId": "kanit-katmani",
+    "tip": "uydurma-veri",
+    "alinti": "Zaman çizelgesi, ekip, servis atölyesi, iki showroom, iki ofis NAP verisi · Ankara/İstanbul yerinde müdahale · Ankara ve İstanbul iki ofis künyesi, güncel tarih, son güncelleme bilgisi",
+    "sorun": "Estezone'un iki showroom'u, iki ofisi, servis atölyesi ve İstanbul lokasyonu olduğu bilgisi doğrulanmış veride yok — elimizde yalnızca 'Ankara merkezli, 20 yıllık, 28 cihaz' var. Firmanın kendi yapısı hakkında yanlış bilgi vermek, ilk toplantıda en hızlı fark edilen hatadır. Aynı şekilde 'Komponent seviyesinde onarım kapasitesi olan bir firma için' ifadesi de doğrulanmamış bir kapasite varsayımı.",
+    "onerilenDuzeltme": "Lokasyon, showroom, atölye ve onarım kapasitesi ifadelerini 'firmadan teyit alınacak' kutusuna taşı veya boş bırak. Doğrulanmamış firma özelliğini sunumda olgu gibi yazma."
+  },
+  {
+    "bolumId": "donusum-yolu-yok",
+    "tip": "tutarsizlik",
+    "alinti": "\"Diğer sayfalar\", \"~11\" · \"Cihaz sayfası\", \"29\" · \"İletişim sayfası\", \"1\"",
+    "sorun": "Toplam sayfa sayısı 40 olarak doğrulanmış. Tabloda 29 cihaz + 1 iletişim + ~11 diğer = 41 ediyor; doğru değer 10 olmalı. Küçük ama tablo içinde toplamı tutmayan bir aritmetik, denetleyen okuyucuya 'rakamlar kontrol edilmemiş' izlenimi verir.",
+    "onerilenDuzeltme": "'~11' yerine '10' yaz veya satırı '40 sayfanın kalanı' biçiminde rakamsız bırak."
+  }
+]

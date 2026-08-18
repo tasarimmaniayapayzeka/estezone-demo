@@ -6,5 +6,6 @@ Thumbs.db
 # ham kaynak (indirilen orijinal site) — repoya girmez
 kaynak/html/
 
-# Pazarlama sunumu kendi deposunda tutuluyor (estezone-pazarlama)
-sunum/
+# Eski pazarlama sunumu KOK klasorde kendi deposunda (estezone-pazarlama).
+# Bastaki / bunu yalniz koke baglar; site/sunum/ (yeni sunum) yayina girer.
+/sunum/
