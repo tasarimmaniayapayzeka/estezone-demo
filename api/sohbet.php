@@ -13,7 +13,7 @@
       İçeriği:
         <?php
         define('ESTEZONE_OPENAI_KEY', 'sk-...');
-        define('ESTEZONE_MODEL', 'gpt-5.5');       // istenirse değiştirilir
+        define('ESTEZONE_MODEL', 'gpt-5');         // istenirse değiştirilir
         define('ESTEZONE_AYLIK_LIMIT_USD', 20);    // kaba koruma
    3. Aşağıdaki $ANAHTAR_YOLLARI listesine kendi yolunuz uyuyorsa dokunmayın.
    4. api/bilgi-tabani.txt build ile birlikte gelir — sistem promptu odur.
@@ -95,7 +95,7 @@ if ($kayit['adet'] > 12) {
 if (!defined('ESTEZONE_OPENAI_KEY') || ESTEZONE_OPENAI_KEY === '' || ESTEZONE_OPENAI_KEY === 'sk-...') {
     cik(503, ['hata' => 'anahtar_yok', 'mesaj' => 'AI asistanı henüz etkin değil.']);
 }
-$model = defined('ESTEZONE_MODEL') ? ESTEZONE_MODEL : 'gpt-5.5';
+$model = defined('ESTEZONE_MODEL') ? ESTEZONE_MODEL : 'gpt-5';
 
 /* ---------- 5) Sistem promptu (build tarafından üretilir) ---------- */
 $promptDosya = __DIR__ . '/bilgi-tabani.txt';
@@ -171,7 +171,7 @@ if ($http !== 200 || !isset($veri['choices'][0]['message']['content'])) {
     $kod = $veri['error']['code'] ?? '';
     error_log('estezone-sohbet: HTTP ' . $http . ' — model=' . $model . ' — ' . $detay);
     /* Model adı yanlışsa bunu ayırt et: en sık yapılan kurulum hatası bu.
-       (gpt-5-mini denendi, hesapta çalışmadı — gpt-5.5 kullanılıyor.)
+       (gpt-5-mini denendi, hesapta çalışmadı — gpt-5 kullanılıyor.)
        Anahtar veya iç detay SIZDIRILMAZ, yalnız hangi ayarın hatalı
        olduğu söylenir ki kurulum yapan kişi doğru yere baksın. */
     $modelHatasi = $kod === 'model_not_found' || $http === 404
@@ -180,7 +180,7 @@ if ($http !== 200 || !isset($veri['choices'][0]['message']['content'])) {
         cik(502, [
             'hata' => 'model',
             'mesaj' => 'Model ayarı geçersiz: "' . $model . '". estezone-gizli.php içindeki '
-                . 'ESTEZONE_MODEL değerini kontrol edin (çalıştığı doğrulanan: gpt-5.5).',
+                . 'ESTEZONE_MODEL değerini kontrol edin (önerilen: gpt-5).',
         ]);
     }
     cik(502, ['hata' => 'servis', 'mesaj' => 'Yanıt alınamadı.']);

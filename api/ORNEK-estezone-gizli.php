@@ -15,8 +15,7 @@ define('ESTEZONE_OPENAI_KEY', 'sk-BURAYA-GERCEK-ANAHTAR');
 // kullanır ve temperature göndermez (bu modeller özel temperature reddediyor).
 //
 // ⚠ gpt-5-mini DENENDİ, HATA VERDİ — kullanmayın.
-// Çalıştığı doğrulanmış model: gpt-5.5 (EsteTouch'ta canlıda çalışıyor).
-define('ESTEZONE_MODEL', 'gpt-5.5');
+define('ESTEZONE_MODEL', 'gpt-5');
 
 // Kaba maliyet koruması (şu an bilgi amaçlı; sıkı limit OpenAI panelinden konur)
 define('ESTEZONE_AYLIK_LIMIT_USD', 20);

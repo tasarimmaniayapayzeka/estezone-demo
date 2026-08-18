@@ -23,11 +23,10 @@ cPanel Dosya Yöneticisi'nde şuraya yükleyin:
 ```php
 <?php
 define('ESTEZONE_OPENAI_KEY', 'sk-...');   // platform.openai.com/api-keys
-define('ESTEZONE_MODEL', 'gpt-5.5');       // çalıştığı doğrulanmış model
+define('ESTEZONE_MODEL', 'gpt-5');
 ```
 
-> ⚠ **`gpt-5-mini` KULLANMAYIN** — denendi, hata verdi. Bu hesapta çalıştığı
-> doğrulanan model `gpt-5.5` (EsteTouch sitesinde canlıda çalışıyor).
+> ⚠ **`gpt-5-mini` KULLANMAYIN** — denendi, hata verdi.
 > Model adı yanlış olursa sohbet `"Model ayarı geçersiz"` uyarısı döndürür,
 > sessizce bozulmaz.
 
