@@ -451,12 +451,12 @@
     })();
 
 
+    /* Dört öneri yeter: alıcının en sık sorduğu dört başlık. Fazlası cevap
+       alanını daraltıyordu; kalan konular zaten yazarak sorulabiliyor. */
     const ONERILER = [
-      'Alexandrite cihazlarınız neler?',
       'Salonuma hangi cihazı alabilirim?',
-      'Dövme silme için ne önerirsiniz?',
+      'Alexandrite cihazlarınız neler?',
       'Teknik servis veriyor musunuz?',
-      'Fiyat öğrenebilir miyim?',
       'Kiralama var mı?',
     ];
 

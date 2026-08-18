@@ -2901,3 +2901,9 @@ html, body { overflow-x: clip; }
   .asistan-panel { max-height: 86vh; }
   .asistan-govde { min-height: 260px; }
 }
+
+/* Panel SABİT yükseklikte olmalı: yalnız max-height varken içerik azken panel
+   de küçülüyor, açılışta cevap alanı dar kalıyordu. Yükseklik sabitlenince
+   mesaj alanı (flex:1) baştan itibaren tüm boşluğu alır. */
+.asistan-panel { height: min(82vh, 660px); }
+@media (max-width: 640px) { .asistan-panel { height: 84vh; } }
