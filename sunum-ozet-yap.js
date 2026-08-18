@@ -146,7 +146,7 @@ const cizKanalSerit = (kanallar) => `<div class="kanal-serit">
   ${kanallar
     .map(
       (k) => `<div class="kanal">
-    <span class="kanal-ad"><img src="varlik/${k.ikon}.webp" alt="" width="26" height="26" loading="lazy">${kacis(k.ad)}</span>
+    <span class="kanal-ad"><img src="varlik/${k.ikon}.webp" alt="" width="34" height="34" loading="lazy">${kacis(k.ad)}</span>
     ${k.aylar
       .map(
         (d, i) =>
@@ -173,7 +173,7 @@ const cizPerde = (p) => `<section class="perde" id="${kacis(p.id)}">
   <div class="kap perde-ic">
     <div class="perde-ust">
       <span class="no">${kacis(p.no)}</span>
-      ${p.ikon ? `<img class="perde-ikon" src="varlik/${p.ikon}.webp" alt="" width="64" height="64" loading="lazy">` : ''}
+      ${p.ikon ? `<img class="perde-ikon" src="varlik/${p.ikon}.webp" alt="" width="96" height="96" loading="lazy">` : ''}
     </div>
     <span class="etiket">${kacis(p.etiket)}</span>
     <h2>${satir(p.baslik)}</h2>
@@ -232,7 +232,7 @@ ${PERDELER.map(cizPerde).join('\n')}
         (p) => `<article class="paket${p.one ? ' paket--one' : ''}">
         <div class="paket-bas">
           <span class="paket-no">${kacis(p.no)}</span>
-          ${p.ikon ? `<img src="varlik/${p.ikon}.webp" alt="" width="46" height="46" loading="lazy">` : ''}
+          ${p.ikon ? `<img src="varlik/${p.ikon}.webp" alt="" width="64" height="64" loading="lazy">` : ''}
         </div>
         <h3>${kacis(p.ad)}</h3>
         <p class="paket-ozet">${kacis(p.ozet)}</p>

@@ -171,7 +171,7 @@ module.exports = [
       { ad: 'Chatbot', ikon: 'ik-chatbot', aylar: [1, 2, 2] },
       { ad: 'SEO', ikon: 'ik-seo', aylar: [1, 2, 2] },
       { ad: 'Google Ads', ikon: 'ik-ads', aylar: [1, 2, 2] },
-      { ad: 'Meta', ikon: 'ik-ads', aylar: [0, 1, 2] },
+      { ad: 'Meta', ikon: 'ik-meta', aylar: [0, 1, 2] },
       { ad: 'YouTube', ikon: 'ik-video', aylar: [0, 1, 2] },
       { ad: 'Prodüksiyon', ikon: 'ik-kamera', aylar: [0, 1, 2] },
     ],
