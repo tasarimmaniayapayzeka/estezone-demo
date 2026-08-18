@@ -80,6 +80,10 @@ for (const [slug, m] of Object.entries(meta.cihazlar)) {
     hedef: m.hedef,
     neden: m.neden,
     birlesmeAdayi: m.birlesme_adayi || null,
+    // Çok modelli kalemler (ör. koruyucu gözlük serisi) için model listesi.
+    // Ham veride model adı ile teknik değer birbirinden kopuk geliyor; eşleme
+    // küratörlü metada yapılır, burada olduğu gibi taşınır.
+    modeller: m.modeller || null,
     ozet: paragraflar[0] || h.desc || '',
     aciklama: paragraflar.slice(0, 6),
     bolumler: h.h2.filter((x) => !CTA_GURULTU.test(x)),

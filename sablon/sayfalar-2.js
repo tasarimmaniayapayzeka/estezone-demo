@@ -645,13 +645,8 @@ ${cta('', 'Bütçenizi söyleyin, seçenekleri çıkaralım', 'Peşin, taksitli,
       )
       .join('')}
   </div>
-  <div class="kart" style="margin-top:2rem;border-style:dashed;text-align:center;padding:2rem">
-    <h4>İçerik planı hazır</h4>
-    <p style="max-width:66ch;margin:.6rem auto 0">Mevcut sitedeki 82 blog yazısının büyük bölümü birbirinin
-      varyasyonu (“lazer epilasyon cihazı”, “lazer epilasyon cihazı fiyatları”, “en iyi lazer epilasyon cihazı”…).
-      Yeni yapıda bunlar konu kümelerinde birleştirilip 301 ile yönlendirilecek; SEO değeri korunurken
-      içerik gerçekten okunabilir hale gelecek.</p>
-  </div>
+${/* "İçerik planı hazır" kartı kaldırıldı: müşteriye dönük sayfada bizim iç
+      SEO planımızın anlatılacak yeri yok, ziyaretçiye hiçbir şey söylemiyordu. */ ''}
 </div></section>
 
 ${cta('', 'Yazıda cevabını bulamadığınız bir soru mu var?', 'Cihaz seçimi, servis ya da yatırım hesabı — doğrudan sorun, deneyimimizle cevaplayalım.')}`

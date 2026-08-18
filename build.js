@@ -638,8 +638,12 @@ function cihazSayfalari() {
 <section class="bolum-dar"><div class="kap">
   <div class="sekme-bar" data-sekme-bar>
     <button data-hedef="genel" aria-selected="true">Genel bakış</button>
+    ${c.modeller ? `<button data-hedef="model" aria-selected="false">Modeller (${c.modeller.length})</button>` : ''}
     ${c.spec.length ? '<button data-hedef="teknik" aria-selected="false">Teknik künye</button>' : ''}
-    ${c.ozellikler.length ? '<button data-hedef="ozellik" aria-selected="false">Özellikler</button>' : ''}
+    ${/* Çok modelli kalemlerde "Özellikler" sekmesi ham veriden gelen ve model
+          adlarından kopmuş düz listeyi gösteriyordu — aynı bilgi Modeller
+          sekmesinde doğru gruplanmış halde var, ikincisi kafa karıştırıyor. */ ''}
+    ${c.ozellikler.length && !c.modeller ? '<button data-hedef="ozellik" aria-selected="false">Özellikler</button>' : ''}
     <button data-hedef="servis" aria-selected="false">Servis &amp; garanti</button>
   </div>
 
@@ -670,6 +674,40 @@ function cihazSayfalari() {
     </div>
 
     ${
+      c.modeller
+        ? `<div data-sekme="model" class="gizli">
+      <h3 style="margin-bottom:.7rem">Seride ${c.modeller.length} ayrı model var</h3>
+      <p class="giris" style="margin-bottom:1.8rem">Koruyucu gözlük tek bir ürün değildir:
+        her model belirli bir dalga boyu aralığını filtreler. Cihazınızın dalga boyunu
+        karşılamayan bir gözlük koruma sağlamaz. Aşağıdaki tabloda hangi modelin hangi
+        sistemle kullanıldığı yazılıdır.</p>
+      <div class="izgara izgara-3 model-izgara">
+        ${c.modeller
+          .map(
+            (m) => `<div class="model-kart belir">
+          <div class="model-gor"><img src="../varlik/gorsel/${m.gorsel}" alt="${kacis(m.ad)}" loading="lazy" width="400" height="300"></div>
+          <div class="model-govde">
+            <h4>${kacis(m.ad)}</h4>
+            <div class="model-aralik">${kacis(m.aralik)}${m.od !== '—' ? `<span class="model-od">${kacis(m.od)}</span>` : ''}</div>
+            <dl class="model-kunye">
+              <div><dt>Dalga boyu</dt><dd>${kacis(m.dalga)}</dd></div>
+              <div><dt>Norm</dt><dd>${kacis(m.norm)}</dd></div>
+              <div><dt>Gövde</dt><dd>${kacis(m.govde)}</dd></div>
+            </dl>
+            <p class="model-nerede">${kacis(m.nerede)}</p>
+          </div>
+        </div>`
+          )
+          .join('')}
+      </div>
+      <p class="sonuk" style="font-size:.82rem;margin-top:1.6rem">Dalga boyu aralıkları ve
+        OD (optik yoğunluk) değerleri üretici beyanına dayanır. Doğru modelin seçimi
+        kullandığınız cihazın dalga boyuna bağlıdır — envanterinizi bildirin, eşleştirelim.</p>
+    </div>`
+        : ''
+    }
+
+    ${
       c.spec.length
         ? `<div data-sekme="teknik" class="gizli">
       <h3 style="margin-bottom:1.2rem">Teknik özellikler</h3>
@@ -682,7 +720,7 @@ function cihazSayfalari() {
     }
 
     ${
-      c.ozellikler.length
+      c.ozellikler.length && !c.modeller
         ? `<div data-sekme="ozellik" class="gizli">
       <h3 style="margin-bottom:1.2rem">Özellikler ve uygulama alanları</h3>
       <ul class="madde">${c.ozellikler.map((o) => `<li>${kacis(o)}</li>`).join('')}</ul>
@@ -1012,6 +1050,9 @@ function kopyala() {
   cihazlar.forEach((c) => {
     if (c.kapak) gerekli.add(c.kapak);
     c.gorseller.slice(0, 6).forEach((g) => gerekli.add(g));
+    // Çok modelli kalemlerde her modelin kendi görseli var; galeri sınırı olan
+    // ilk 6'nın dışında kalanlar da kopyalanmalı, yoksa model kartları boş çıkar.
+    (c.modeller || []).forEach((m) => m.gorsel && gerekli.add(m.gorsel));
   });
   // 3D ikonlar + gerçek marka logoları + showroom sahne fotoğrafları + blog konu
   // görselleri (hepsi Higgsfield üretimi). blog-*: büyük yazı kapağı ve -kucuk
