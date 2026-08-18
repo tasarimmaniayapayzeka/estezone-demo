@@ -15,6 +15,10 @@
   /* çizgi ve ayraç */
   --kenar: rgba(148, 176, 214, 0.14);
   --kenar-güçlü: rgba(148, 176, 214, 0.26);
+  /* Dosyada iki yazım da çağrılıyor (var(--kenar-güçlü) ve var(--kenar-guclu)).
+     ASCII yazım tanımsızdı; onu çağıran kurallarda kenar rengi currentColor'a
+     düşüyordu. Takma ad ikisini eşitler. */
+  --kenar-guclu: var(--kenar-güçlü);
   --kenar-parlak: rgba(45, 212, 245, 0.4);
 
   /* metin */

@@ -34,6 +34,17 @@
   --cizgi: #dfe5ec;
   --cizgi-2: #c9d4e0;
 
+  /* Kenar takma adları. Koyu temalar --kenar / --kenar-güçlü, açık temalar
+     --cizgi / --cizgi-2 kullanıyor; ortak bileşenler ise --kenar çağırıyor.
+     Tanımsız değişken "hesaplanan değerde geçersiz" sayılır ve border-color
+     başlangıç değerine (currentColor) düşer — açık zeminde metin rengiyle
+     aynı, kapkara bir çerçeve çıkıyordu. Takma ad ikisini de doğru bağlar.
+     "güçlü" hem Türkçe hem ASCII yazımıyla tanımlı: dosyalarda iki yazım da
+     çağrılıyor, biri eksik kalırsa aynı hata geri gelir. */
+  --kenar: var(--cizgi);
+  --kenar-guclu: var(--cizgi-2);
+  --kenar-güçlü: var(--cizgi-2);
+
   /* aksan */
   --vurgu: var(--m-600);
   --vurgu-sis: #eef5fb;
