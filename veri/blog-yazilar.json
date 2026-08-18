@@ -1,0 +1,772 @@
+[
+  {
+    "bolumler": [
+      {
+        "baslik": "Cihaz kararı, aslında bir kapasite kararıdır",
+        "paragraflar": [
+          "Cihaz alırken masaya iki soru gelir: bu platformla hangi müşteri profiline hizmet verebilirim ve günde kaç seans çıkarabilirim. Teknik özelliklerin neredeyse tamamı bu iki soruya bağlanır. Dalga boyu ve soğutma yöntemi birinci soruyu, spot boyutu, fluens ve tekrarlama frekansı ikinci soruyu şekillendirir. Başlık ömrü ile servis erişimi ise cihazın yılda kaç gün çalışmadan duracağını belirler.",
+          "Broşürlerdeki tepe değerler tek başına yanıltıcı olabilir. Bir katalogda yazan en yüksek fluens ile en yüksek frekans çoğu zaman aynı anda erişilebilen ayarlar değildir; biri en küçük spotta, diğeri en düşük enerjide geçerli olabilir. Bu yüzden karşılaştırmayı tepe değerler üzerinden değil, gerçekçi bir klinik ayarda sürdürülebilir performans üzerinden yapmak daha sağlıklıdır."
+        ]
+      },
+      {
+        "baslik": "1. Dalga boyu: kime hizmet vereceğinizi belirler",
+        "paragraflar": [
+          "Lazer epilasyonun fiziği, ışığın kıl folikülündeki melanin tarafından soğurulmasına dayanır. Melaninin soğurma katsayısı dalga boyu uzadıkça azalır. 755 nm (Aleksandrit) melanin tarafından güçlü biçimde soğurulur; ince ve açık renkli kılda enerji aktarımı belirgindir. 1064 nm (Nd:YAG) melanin tarafından daha az soğurulur, dokuda daha derine ilerler ve epidermisteki melanin daha az enerji tutar. 808 nm (diyot) bu iki davranışın arasında dengeli bir profil sunar.",
+          "İşletme açısından anlamı şudur: Fitzpatrick ölçeğinde geniş bir aralığa (açık tenden koyu tene) hizmet vermeyi planlıyorsanız tek dalga boylu bir cihaz müşteri kabul aralığınızı daraltabilir. Çift dalga boylu veya karma diyot platformlar, aynı cihazdan farklı cilt ve kıl profillerine yönelme esnekliği sağlar. Estezone portföyünde arion-alexandrite-lazer 755 nm tek dalga boyu, light-age-epicare-duo 755 + 1064 nm kombinasyonu, epizone-mix-diode-lazer ise karma diyot yapısıyla farklı yaklaşımları temsil eder.",
+          "Hangi fototipte hangi parametrenin seçileceği uygulayıcı hekimin veya yetkili uygulayıcının kararıdır. Burada anlatılan yalnızca dalga boyunun fiziksel soğurma davranışıdır; satın alma görüşmesinde de bu davranışın cihazda nasıl karşılandığını sormak yeterlidir."
+        ]
+      },
+      {
+        "baslik": "2, 3 ve 4. Spot boyutu, fluens ve atım süresi",
+        "liste": [
+          "Spot seçenekleri neler ve spot değişimi ayrı başlık mı gerektiriyor, yoksa aynı başlık üzerinden mi yapılıyor?",
+          "En büyük spot boyutunda ulaşılabilen maksimum fluens kaç J/cm²?",
+          "Atım süresi sabit mi, seçilebilir mi; aralık ve ayar adımı nedir?",
+          "Katalogdaki tepe fluens hangi spot ve hangi atım süresinde ölçülmüş?"
+        ],
+        "paragraflar": [
+          "Spot boyutu çoğu zaman hafife alınan kalemdir. Işık deri içinde saçılır; küçük bir spotta fotonların önemli kısmı yanlardan kaçar, büyük spotta ise merkez eksende daha fazla foton derine ulaşır. Yani aynı fluens değerinde bile büyük spot, efektif derinlik açısından farklı davranır. Buna bir de kaplama hızı eklenir: tek atımda taranan alan büyüdükçe aynı bölge daha az atımla bitirilir. Bacak veya sırt gibi geniş bölgelerde bu, doğrudan seans süresi ve günlük randevu sayısı demektir.",
+          "Fluens, birim alana düşen enerjidir ve J/cm² ile ifade edilir. Kritik nokta, cihazın hangi spot boyutunda hangi fluensı üretebildiğidir; büyük spotta yüksek fluens üretmek daha yüksek güç ve daha iyi ısı yönetimi ister. Broşürdeki maksimum değer en küçük spota aitse, pratikte çalıştığınız ayarda o değere hiç ulaşamayabilirsiniz.",
+          "Atım süresi (milisaniye) ise enerjinin ne kadar sürede aktarıldığını anlatır ve folikülün termal davranışıyla ilişkilidir. Kısa atım enerjiyi daha ani verir, uzun atım daha yayılı bir ısı profili oluşturur. Ayarlanabilir atım süresi, farklı kıl kalınlığı ve farklı cilt tipleri için protokol esnekliği anlamına gelir; sabit atımlı bir cihaz, uygulayıcının elini bağlar."
+        ]
+      },
+      {
+        "baslik": "5 ve 6. Tekrarlama frekansı ve soğutma yöntemi",
+        "liste": [
+          "Temas soğutma (safir/kristal başlık): sarf tüketmez, başlık temizliği ve yüzey bakımı gerektirir.",
+          "Kriyojen sprey: kartuş bağımlılığı ve düzenli tedarik planlaması gerektirir.",
+          "Soğuk hava soğutması: ayrı bir ünite ister; zimmer-cryo-6-cilt-sogutma-sistemi veya epicool gibi harici çözümler bu amaçla konumlanır.",
+          "Kombine yaklaşımlar: hem başlık soğutması hem harici hava desteğiyle kullanılabilir."
+        ],
+        "paragraflar": [
+          "Tekrarlama frekansı (Hz), cihazın saniyede kaç atım üretebildiğidir. Hareketli (in-motion) teknikte düşük enerji yüksek frekansla, statik teknikte daha yüksek enerji düşük frekansla çalışılır. Kapasiteyi kabaca kendiniz hesaplayabilirsiniz: spot alanı çarpı frekans, teorik kaplama hızını verir. Bu hesabı iki cihaz için yan yana yapmak, katalog cümlelerinden daha açıklayıcıdır.",
+          "Asıl soru ise sürdürülebilirliktir: cihaz o frekansı kaç dakika kesintisiz verebiliyor? Isı yönetimi yetersiz bir platform kendini korumaya alır, atım hızı düşer ve seans uzar. Yoğun bir salonda bu, günün sonunda kaybedilen randevu demektir. Demo sırasında cihazı birkaç dakika kesintisiz çalıştırıp davranışını izlemek en pratik testtir.",
+          "Soğutma, hem konfor hem işletme gideri kalemidir. Konforu yönetemeyen bir uygulamada seans tamamlanma oranı düşer; sarf tüketen bir soğutma çözümü ise aylık gidere sabit bir kalem ekler. Aşağıdaki ayrım, hangi modelin sizin akışınıza uyduğunu görmenizi kolaylaştırır."
+        ]
+      },
+      {
+        "baslik": "7. Başlık ömrü, sarf ve servis erişimi",
+        "paragraflar": [
+          "Her cihazın bir atış sayacı vardır. Lamba tabanlı sistemlerde lamba ömrü, diyot sistemlerde bar ömrü belirleyicidir. Sorulması gereken şudur: ömür sonunda yalnızca lamba mı, yoksa başlığın tamamı mı değişiyor? Sayaç kim tarafından ve nasıl güncelleniyor? Bu iki cevap, cihazın orta vadeli işletme profilini büyük ölçüde açıklar.",
+          "Servis tarafında ise yedek parça stoğunun yurt içinde bulunup bulunmadığı, arıza bildiriminden sonraki müdahale süresi, ödünç cihaz veya yedek başlık politikası, garanti kapsamı ile garanti dışı kalemlerin listesi ve kalibrasyon periyodu netleştirilmelidir. Uygulayıcı eğitiminin kapsamı, personel değişikliğinde eğitimin tekrarlanıp tekrarlanmayacağı da aynı başlık altındadır. Ayrıca cihazın üretici belgeleri ve ülkedeki tıbbi cihaz kayıt durumu, koruyucu ekipmanla (örneğin lazer-epilasyon-gozlugu) birlikte baştan sorulmalıdır.",
+          "Toplam sahip olma maliyeti yalnızca donanım bedelinden ibaret değildir; sarf malzeme, kalibrasyon, olası duruş süresi ve eğitim de tabloya girer. Rakamlar konfigürasyona göre değişir ve teklif aşamasında netleşir; bu yüzden karşılaştırmayı tek bir sayı üzerinden değil, kalem kalem yapmak daha doğru sonuç verir."
+        ]
+      },
+      {
+        "baslik": "Yedi kalem, tek tabloda",
+        "paragraflar": [
+          "Aşağıdaki tablo, görüşme sırasında elinizin altında tutabileceğiniz kısa bir kontrol listesidir. Sağ sütundaki soruları olduğu gibi sorup cevapları yazılı olarak istemek, iki farklı teklifi aynı zeminde karşılaştırmanızı sağlar.",
+          "Son adım demodur. Cihazı mümkünse kendi işletmenizde, kendi müşteri profilinize yakın koşullarda ve birkaç dakika kesintisiz çalışacak şekilde deneyin; uygulayıcınızın da elini alıştırmasına fırsat verin. Kâğıt üzerinde benzer görünen iki platform arasındaki fark çoğunlukla bu denemede ortaya çıkar."
+        ],
+        "tablo": {
+          "basliklar": [
+            "Teknik kalem",
+            "İşletme için ne anlama gelir",
+            "Satın alırken sorulacak soru"
+          ],
+          "satirlar": [
+            [
+              "Dalga boyu (nm)",
+              "Hizmet verebileceğiniz cilt fototipi ve kıl profili aralığını belirler",
+              "Cihaz hangi dalga boylarını sunuyor; çoklu dalga boyu tek başlıktan mı, ayrı başlıklardan mı geliyor?"
+            ],
+            [
+              "Spot boyutu (mm / cm²)",
+              "Efektif derinlik ve tek atımda kaplanan alan; doğrudan seans süresi",
+              "Hangi spot seçenekleri var; spot değişimi ek başlık gerektiriyor mu?"
+            ],
+            [
+              "Fluens (J/cm²)",
+              "Ayar aralığının genişliği ve farklı protokollere uyum",
+              "En büyük spot boyutunda ulaşılabilen maksimum fluens nedir?"
+            ],
+            [
+              "Atım süresi (ms)",
+              "Farklı kıl kalınlığı ve cilt tipi için ayar esnekliği",
+              "Atım süresi seçilebiliyor mu; aralık ve ayar adımı nedir?"
+            ],
+            [
+              "Tekrarlama frekansı (Hz)",
+              "Günlük seans kapasitesi ve hareketli teknik uygulanabilirliği",
+              "Maksimum frekans hangi fluens ve spotta geçerli; kaç dakika kesintisiz sürdürülüyor?"
+            ],
+            [
+              "Soğutma yöntemi",
+              "Konfor, seans tamamlama oranı, sarf gideri ve ek ünite ihtiyacı",
+              "Soğutma tipi nedir; sarf malzeme veya ayrı bir soğutucu ünite gerekiyor mu?"
+            ],
+            [
+              "Başlık/lamba ömrü ve servis",
+              "Duruş süresi kaybedilen randevu demektir; bakım planlamasını belirler",
+              "Atış ömrü kaç; ömür sonunda hangi parça değişiyor, yedek parça ve teknik servis erişimi nasıl?"
+            ]
+          ]
+        }
+      }
+    ],
+    "giris": "Lazer epilasyon cihazı almak, katalogdaki başlık sayısına bakıp karar vermekten ibaret değil. Benzer vaatler veren iki cihaz, günlük seans kapasiteniz ve işletme gideriniz açısından oldukça farklı sonuçlar üretebilir. Aşağıda, teklif masasına oturmadan önce netleştirmeniz gereken yedi teknik kalemi ve her birinin işletmeniz için ne anlama geldiğini sıraladık. Amaç, satın alma görüşmesini pazarlama dilinden çıkarıp teknik zemine çekmek.",
+    "ilgiliCihazlar": [
+      "arion-alexandrite-lazer",
+      "light-age-epicare-duo",
+      "epizone-mix-diode-lazer"
+    ],
+    "kapanis": "Özetle: dalga boyu hangi müşteri profiline hizmet vereceğinizi, spot boyutu ile fluens ve atım süresi ayar esnekliğinizi, frekans ile soğutma günlük kapasitenizi, başlık ömrü ile servis erişimi de cihazın çalışmadan geçireceği günleri belirler. Bu yedi kalemi yazılı olarak sormak, iki teklifi aynı zeminde karşılaştırmanın en pratik yolu. Estezone olarak cihaz seçiminde işletmenizin bölge dağılımını, günlük randevu hedefini ve mevcut personel yapınızı birlikte değerlendirip uygun konfigürasyonu çıkarıyoruz. Demo ve teknik görüşme talebi için bize ulaşabilirsiniz.",
+    "slug": "lazer-epilasyon-cihazi-secerken",
+    "sss": [
+      {
+        "s": "Tek dalga boylu bir cihaz mı, çoklu dalga boylu platform mu tercih edilmeli?",
+        "c": "Bu, hizmet vermeyi planladığınız müşteri profiline bağlı bir konudur. Tek dalga boylu cihazlar belirli bir cilt ve kıl profilinde odaklı çalışır; çift veya karma dalga boylu platformlar ise Fitzpatrick ölçeğinde daha geniş bir aralığa yönelme esnekliği verir. Karar verirken mevcut müşteri kayıtlarınızdaki cilt tipi dağılımına bakmak, katalog karşılaştırmasından daha yol göstericidir."
+      },
+      {
+        "s": "Yüksek fluens değeri tek başına belirleyici midir?",
+        "c": "Hayır. Fluens (J/cm²), spot boyutu ve atım süresiyle birlikte anlam kazanır. Küçük bir spotta ölçülmüş yüksek bir tepe değeri, günlük çalışma ayarınızda karşılığı olmayabilir. Bu nedenle üreticiden, gerçekte kullanacağınız spot boyutunda ulaşılabilen fluens aralığını ve o ayarda desteklenen atım sürelerini isteyin."
+      },
+      {
+        "s": "Cihazın atış ömrü dolduğunda ne oluyor?",
+        "c": "Sistem tipine göre değişir. Lamba tabanlı platformlarda lamba, diyot sistemlerde bar veya başlık modülü gündeme gelir. Bazı cihazlarda yalnızca ilgili parça değişirken bazılarında başlığın tamamı yenilenir. Satın alma öncesinde atış sayacının nasıl işlediğini, ömür sonunda hangi parçanın değiştiğini ve bu işlemin yetkili servis tarafından ne kadar sürede yapıldığını yazılı olarak öğrenin."
+      },
+      {
+        "s": "Cihaz fiyatları neye göre değişiyor?",
+        "c": "Fiyat; dalga boyu yapısı, başlık sayısı ve tipi, soğutma çözümü, garanti süresi, eğitim kapsamı ve servis paketi gibi konfigürasyon kalemlerine göre farklılaşır. Bu nedenle sabit bir rakam vermek doğru olmaz; ihtiyaç analizinden sonra hazırlanan teklif aşamasında netleşir."
+      }
+    ]
+  },
+  {
+    "bolumler": [
+      {
+        "baslik": "Dalga boyu bir tercih değil, fizik parametresidir",
+        "paragraflar": [
+          "Lazer epilasyon cihazlarında hedef kromofor melanindir. Seçici fototermoliz ilkesi, hedef yapının çevre dokuya kıyasla ışığı daha fazla soğurmasına ve açığa çıkan ısının hedefte sınırlı kalmasına dayanır. Bu denklemin üç ana değişkeni vardır: dalga boyu, atım süresi ve enerji yoğunluğu. Dalga boyu, ışığın hangi kromofor tarafından ne oranda soğurulacağını ve dokuda ne kadar derine ineceğini belirler.",
+          "Melaninin soğurma eğrisi geniş bantlıdır ve görünür bölgeden yakın kızılötesine doğru ilerledikçe düşer. Yani 755 nm'de melanin soğurması 808 nm'ye göre daha yüksek, 1064 nm'ye göre ise belirgin biçimde daha yüksektir. Aynı yönde ikinci bir etki daha vardır: dalga boyu uzadıkça dokudaki saçılma azalır ve ışık daha derine ulaşır. Kısa dalga boyu güçlü soğurma ve sınırlı derinlik, uzun dalga boyu ise görece zayıf soğurma ve daha fazla derinlik anlamına gelir.",
+          "Buradaki asıl mesele rekabettir. Kıl folikülündeki melanin hedeflenirken epidermisteki melanin de aynı ışığı soğurur. Epidermal pigment ne kadar yoğunsa, kısa dalga boylarında yüzeyde tutulan enerjinin oranı o kadar artar. Cilt tipi ile dalga boyu arasındaki ilişkiyi kuran temel fizik budur; bir marka tercihi ya da pazarlama argümanı değildir."
+        ]
+      },
+      {
+        "baslik": "Fitzpatrick ölçeği: cihaz seçiminde teknik bir girdi",
+        "paragraflar": [
+          "Fitzpatrick I–VI ölçeği, cildin ultraviyoleye verdiği yanıta ve yapısal pigment düzeyine göre yapılan bir sınıflandırmadır. Klinikte hasta değerlendirmesinin bir parçasıdır; cihaz alan bir işletme içinse farklı bir işlev taşır. Ölçek, gelen hasta profilinin hangi parametre aralığına ihtiyaç duyacağını gösterir. Yani satın alma kararının girdi verisidir.",
+          "Ölçeğin alt basamaklarında epidermal melanin görece düşüktür; kısa dalga boylarında folikül ile epidermis arasındaki soğurma kontrastı yüksektir. Üst basamaklara doğru epidermal melanin arttıkça bu kontrast azalır. Daha uzun dalga boyu, epidermal soğurmayı görece azaltır; ancak hedefteki soğurma da düştüğü için daha yüksek enerji yoğunluğu ve etkin bir soğutma katmanı gerekir. Bu nedenle koyu cilt tipleri ağırlıklı bir profilde, cihazın soğutma başlığı ve enerji rezervi dalga boyu kadar belirleyici hale gelir.",
+          "Bronzlaşmanın da geçici olarak epidermal melanini artırdığını hatırlamak gerekir. Türkiye'de yaz aylarında aynı hastanın uygun parametre penceresi kış dönemine göre değişebilir. Tek dalga boylu bir hattın yıl boyunca aynı randevu hacmini aynı esneklikle karşılaması bu nedenle zorlaşabilir."
+        ]
+      },
+      {
+        "baslik": "Üç dalga boyu, üç farklı davranış",
+        "paragraflar": [
+          "Aşağıdaki tablo, 755 nm, 808 nm ve 1064 nm'nin soğurma davranışını, hangi cilt tipi profillerinde tercih edilme eğiliminde olduklarını ve satın alma sırasında sorulması gereken teknik başlıkları özetler. Tablo genel teknik eğilimleri gösterir; uygulamadaki nihai parametre kararı uygulayıcının değerlendirmesine ve üretici kullanım kılavuzuna bağlıdır."
+        ],
+        "tablo": {
+          "basliklar": [
+            "Dalga boyu",
+            "Soğurma özelliği",
+            "Hangi profilde tercih edilir",
+            "Dikkat edilmesi gereken"
+          ],
+          "satirlar": [
+            [
+              "755 nm (Alexandrite)",
+              "Melanin soğurması yüksek, penetrasyon yüzeyel–orta",
+              "Genellikle Fitzpatrick I–III ağırlıklı hasta profili",
+              "Epidermal pigment arttıkça yüzeyde tutulan enerji artar; bronz ciltte parametre penceresi daralır, soğutma kritikleşir"
+            ],
+            [
+              "808 nm (Diode)",
+              "Orta düzey soğurma, dengeli penetrasyon",
+              "Fitzpatrick I–IV aralığında geniş kullanım",
+              "Yüksek frekanslı çalışmada duty cycle ve başlık ısınması; el başlığı ömrü veya atım garantisi mutlaka sorulmalı"
+            ],
+            [
+              "1064 nm (Nd:YAG)",
+              "Melanin soğurması düşük, penetrasyon en derin",
+              "Koyu cilt tipleri ve bronz cilt ağırlıklı profil",
+              "Hedefteki soğurma da düşük olduğu için daha yüksek akıcılık gerekir; hasta konforu ve soğutma yönetimi öne çıkar"
+            ],
+            [
+              "Çoklu / mix (örn. 755+1064)",
+              "Tek platformda birden fazla soğurma profili",
+              "Karma hasta profili olan işletmeler",
+              "Her dalga boyunun kendi gücü, spot boyu ve soğutması ayrı ayrı incelenmeli; 'mix' etiketi tek başına yeterli bilgi değildir"
+            ],
+            [
+              "Geniş bant ışık (BBL/IPL)",
+              "Filtrelenmiş geniş spektrum, tek dalga boylu değil",
+              "Filtre seçimine göre değişir; cilt tonu uygulamalarında da kullanılır",
+              "Spektrum genişliği nedeniyle parametre ve filtre bakım yönetimi ayrı bir disiplindir"
+            ]
+          ]
+        }
+      },
+      {
+        "baslik": "Türkiye'de hasta profili çeşitliliği ve mix sistemlerin işletmeye kattığı esneklik",
+        "paragraflar": [
+          "Türkiye'de tek bir tipik hasta profili yoktur. Aynı ilçedeki bir merkezde Fitzpatrick II ile V arasında geniş bir dağılım görülebilir; buna mevsimsel bronzlaşma, iç göç ve bazı şehirlerde sağlık turizmi hareketliliği eklenir. Kıl rengi ve kalınlığındaki çeşitlilik de aynı yönde çalışır.",
+          "İşletme açısından sonucu şudur: tek dalga boylu bir hat, gelen profilin bir bölümünü rahat karşılarken diğer bölümünde parametre penceresi daralır. Bu, pratikte randevunun ertelenmesi ya da başka bir merkeze yönlendirilmesi demektir. Çoklu dalga boylu bir platform ise bu kararı cihaz değiştirmeden, aynı seans içinde parametre seviyesinde vermeye imkân tanır.",
+          "Operasyonel tarafta çoklu sistem tek gövde, tek kurulum alanı, tek bakım sözleşmesi ve tek eğitim seti anlamına gelir. Buna karşılık operatör eğitimi daha kritiktir: yanlış dalga boyu seçimi, tek dalga boylu bir cihazda hiç var olmayan bir hata sınıfıdır. Yazılı protokol kartları ve kullanıcı yetki seviyeleri bu noktada işleyişte fark yaratır.",
+          "Estezone portföyünde bu üç yaklaşımın karşılığı vardır: tek dalga boylu 755 nm sistemler (arion-alexandrite-lazer, light-age-epicare-lpx), 755+1064 nm çift dalga boylu yapı (light-age-epicare-duo) ve diode/mix mimarisi (epizone-mix-diode-lazer). Hangisinin uygun olduğu cihazın kendisinden çok, işletmenin hasta dağılımından çıkar."
+        ]
+      },
+      {
+        "baslik": "Satın alma öncesi teknik kontrol listesi",
+        "paragraflar": [
+          "Dalga boyu kararı verildikten sonra bile iki cihaz aynı olmaz. Aşağıdaki başlıklar, teklif karşılaştırırken aynı sorunun her tedarikçiye sorulmasını sağlar. Bu listeyi doldurulmuş hâlde masaya koymak, karşılaştırmayı marka tartışmasından teknik zemine taşır."
+        ],
+        "liste": [
+          "Hasta profili dağılımı: son 12 ayın kayıtlarından cilt tipi dağılımını çıkarın; karar bu tablodan başlamalı.",
+          "Dalga boyu başına güç ve spot boyu: çoklu sistemlerde her dalga boyunun ayrı teknik sayfası istenmeli.",
+          "Atım süresi aralığı: cihazın sunduğu milisaniye penceresi, farklı cilt tipi ve kıl yapılarında parametre esnekliğini belirler.",
+          "Tekrarlama frekansı (Hz) ve duty cycle: seans süresini ve yoğun günlerde oluşan bekleme ihtiyacını doğrudan etkiler.",
+          "Soğutma yöntemi: temaslı safir, hava veya kriyojen; ayrıca harici soğutma üniteleri (epicool, zimmer-cryo-6-cilt-sogutma-sistemi) ek bir konfor katmanı sağlar.",
+          "Sarf ve bakım kalemleri: filtre, kriyojen, el başlığı ömrü veya atım garantisi — toplam sahip olma maliyetinin gerçek kalemleri buradadır.",
+          "Servis erişimi: yedek parça tedarik süresi, arıza hâlinde müdahale biçimi ve garanti kapsamının yazılı hâli.",
+          "Eğitim ve devir: kurulum sonrası operatör eğitimi, yazılı protokol dokümanı ve yeni personel geldiğinde tekrar eğitim koşulları.",
+          "Altyapı: elektrik hattı kapasitesi, oda havalandırması, uyarı levhası ve dalga boyuna uygun koruyucu gözlük (lazer-epilasyon-gozlugu) — gözlüğün koruma değeri cihazın dalga boyunu kapsamalıdır.",
+          "Belgeler: cihazın üretici ve uygunluk belgeleri ile kayıt yükümlülüklerinin, işletme ruhsatınızın kapsamıyla uyumlu olması.",
+          "Demo koşulu: mümkünse cihazı kendi hasta profilinizden örneklerle, kendi elektrik ve oda koşullarınızda gözlemleyin."
+        ]
+      }
+    ],
+    "giris": "Cihaz seçimi çoğu zaman marka tartışmasıyla başlar; oysa belirleyici olan çok daha temel bir parametredir: dalga boyu. 755 nm, 808 nm ve 1064 nm aynı işi farklı biçimde yapar, çünkü ışığın dokudaki davranışı dalga boyuna göre değişir. Bu yazıda üç dalga boyunun melanin soğurma davranışını, Fitzpatrick ölçeğiyle ilişkisini ve çoklu dalga boylu sistemlerin işletmeye ne kattığını teknik düzeyde ele alıyoruz.",
+    "ilgiliCihazlar": [
+      "arion-alexandrite-lazer",
+      "light-age-epicare-duo",
+      "epizone-mix-diode-lazer"
+    ],
+    "kapanis": "\"Alexandrite mi, diode mu, mix mi?\" sorusunun tek bir teknik cevabı yoktur; çünkü soru eksiktir. Doğru soru şudur: benim hasta profilim hangi dalga boyu penceresini gerektiriyor ve bu pencereyi tek platformda mı yoksa ayrı cihazlarla mı karşılamak istiyorum? Melanin soğurma fiziği bu kararın çerçevesini çizer, cilt tipi dağılımınız ise içini doldurur. Önce kendi kayıtlarınızdan dağılımı çıkarın, sonra dalga boyu başına güç, spot, soğutma, sarf ve servis başlıklarını aynı formatta karşılaştırın. Konfigürasyon ve maliyet kalemleri cihazın donanımına göre değiştiği için bu kalemler teklif aşamasında netleşir; teknik karşılaştırma tablonuzu önceden hazırlamak o görüşmeyi çok daha verimli hâle getirir.",
+    "slug": "alexandrite-mi-diode-mu",
+    "sss": [
+      {
+        "s": "Koyu cilt tiplerinde 755 nm hiç kullanılamaz mı?",
+        "c": "Fizik olarak 755 nm'de melanin soğurması yüksektir; epidermal pigment arttıkça yüzeyde tutulan enerji oranı da artar ve güvenli parametre penceresi daralır. Bu, kullanımın mutlak olarak imkânsız olduğu anlamına gelmez; uygulama kararı ve parametre seçimi uygulayıcının değerlendirmesine ve üretici kılavuzuna bağlıdır. Cihaz seçimi açısından anlamı şudur: koyu cilt tipleri ağırlıklı bir profilde daha uzun dalga boyu seçeneğine sahip olmak esneklik sağlar."
+      },
+      {
+        "s": "Mix bir cihaz, tek dalga boylu cihazın yerini tutar mı?",
+        "c": "Bu tamamen platformun mimarisine bağlıdır. \"Mix\" etiketi yalnızca birden fazla dalga boyunun aynı gövdede bulunduğunu söyler; her dalga boyunun kendi çıkış gücü, spot boyu, atım süresi aralığı ve soğutması ayrı ayrı değerlendirilmelidir. Teklif alırken dalga boyu başına teknik sayfa isteyin ve karşılaştırmayı bu sayfalar üzerinden yapın."
+      },
+      {
+        "s": "Alexandrite ile diode arasındaki fark yalnızca dalga boyu mu?",
+        "c": "Hayır. Işık kaynağı mimarisi (kristal tabanlı yayıcı ile diyot bar dizisi), atım süresi aralığı, spot geometrisi, tekrarlama frekansı, soğutma yöntemi ve sarf yapısı da farklıdır. Bu farklar seans süresini, yoğun günlerdeki cihaz davranışını ve uzun vadeli bakım kalemlerini etkiler. Karar verirken dalga boyu tek başına yeterli bir kriter değildir."
+      },
+      {
+        "s": "Bu cihazlar arasındaki fiyat farkı nedir?",
+        "c": "Fiyat; dalga boyu sayısı, güç sınıfı, el başlığı seti, soğutma çözümü, garanti kapsamı ve eğitim/servis paketi gibi kalemlere göre değişir. Bu nedenle sabit bir rakam vermek doğru olmaz; konfigürasyon netleştikçe teklif aşamasında kalem kalem ortaya çıkar. Karşılaştırma yaparken teklifleri yalnızca cihaz bedeli üzerinden değil, sarf ve servis kalemleriyle birlikte değerlendirmenizi öneririz."
+      }
+    ]
+  },
+  {
+    "slug": "ikinci-el-lazer-cihazi-riskleri",
+    "giris": "İkinci el lazer cihazı, bir işletme için makul bir başlangıç olabilir. Ancak bu pazarda cihazın dış görünüşü gerçek durumu hakkında çok az şey söyler. Kabin yenilenmiş, ekran temiz, yazılım güncel görünebilir; buna karşılık tüketim parçası ömrünün sonuna gelmiş olabilir. Kararı sağlıklı vermek için beş teknik başlığı sözlü değil yazılı olarak sorgulamak gerekir. Aşağıda bu başlıklar ve her biri için istenmesi gereken belge yer alıyor.",
+    "bolumler": [
+      {
+        "baslik": "Soru 1: Cihaz kaç atış yapmış ve bu sayı doğrulanabilir mi?",
+        "paragraflar": [
+          "Lazer platformlarında yaş, üretim yılından çok atış sayısıyla ölçülür. İki yaşında ama yoğun kullanılmış bir cihaz, beş yaşında ama az çalışmış bir cihazdan daha yorgun olabilir. Bu nedenle ilk soru \"kaç model yılı\" değil, \"toplam kaç atış\" olmalıdır.",
+          "Sayaç ekranı tek başına kanıt değildir. Bazı platformlarda sayaç servis düzeyinde sıfırlanabilir; kart veya yazılım değişiminde geçmiş kayıtlar kaybolabilir. Bu yüzden sayaç görüntüsünün yanında servis kayıtları, hata logları ve varsa yetkili servis raporu istenmelidir. Cihaz çalışır hâldeyken sayaç ekranının seri numarasıyla aynı karede fotoğraflanması basit ama işe yarar bir kayıt yöntemidir.",
+          "Yazılı beyan burada iki iş görür. Birincisi, satıcıyı söylediği rakama bağlar; teslimden sonra sayaç çok farklı çıkarsa elinizde somut bir dayanak olur. İkincisi, beyan vermekten kaçınan satıcı, cihazın geçmişini ya bilmediğini ya da paylaşmak istemediğini daha ilk görüşmede göstermiş olur."
+        ]
+      },
+      {
+        "baslik": "Soru 2: Lamba veya diyot bar ömrünün neresindesiniz?",
+        "paragraflar": [
+          "Katı hâl platformlarda (örneğin 755 nm Aleksandrit ya da 1064 nm Nd:YAG mimarilerinde) pompalama flaş lambası bir tüketim parçasıdır. Belirli bir atış sayısından sonra verimi düşer; cihaz aynı ayarda daha az enerji üretmeye başlar. Diyot platformlarda aynı rolü diyot bar ve onu soğutan sistem üstlenir. Bar yaşlandıkça optik çıkış azalır, soğutma yükü artar.",
+          "Doğru soru \"lamba değişti mi\" değil, \"en son hangi tarihte ve kaçıncı atışta değişti\" olmalıdır. Değişim tarihi tek başına anlam taşımaz; ancak o tarihteki sayaç değeriyle birlikte anlamlıdır. Diyot bir platformda bar ya da el aleti yenilenmişse, değişen parçanın seri numarası ve takıldığı tarihteki atış sayısı da kayda geçmelidir.",
+          "Bu kalemin yazılı olması gerekir, çünkü tüketim parçası devralma sonrasındaki ilk büyük teknik kalemdir. Ne zaman geleceğini bilmeden yapılan işletme planı eksik kalır. Fatura ya da servis formu, \"yakında değişmesi gerekiyor\" ile \"yeni değişti\" arasındaki farkı belgeleyen tek şeydir."
+        ]
+      },
+      {
+        "baslik": "Soru 3: Etiketteki enerji gerçekten cihazdan çıkıyor mu?",
+        "paragraflar": [
+          "Panelde yazan akıcılık (J/cm²) değeri hedeflenen ayardır; uygulama ucundan çıkan gerçek enerji değildir. Aradaki fark lamba veya bar yorgunluğundan, optik yoldaki kirlenmeden, güç kaynağından ve soğutma performansından kaynaklanabilir. Cihaz açılır, uyarı vermez, atış yapar; buna rağmen beyan edilen değerin altında çalışıyor olabilir.",
+          "Bu nedenle satın alma öncesinde bağımsız bir enerji ölçerle ölçüm yapılmasını isteyin. Ölçüm tek bir ayarda değil, farklı spot boyutlarında ve darbe sürelerinde tekrarlanmalıdır; düşüş çoğu zaman belirli bir ayar aralığında belirginleşir. Kullanılan ölçerin kalibrasyon durumu da tutanağa yazılmalıdır, çünkü kalibrasyonu belgelenmemiş bir ölçerin verdiği sayı doğrulanmış sayılmaz.",
+          "Yazılı ölçüm tutanağı aynı zamanda sonraki servis ilişkisinin başlangıç noktasıdır. Cihaz devralındıktan aylar sonra çıkışta düşüş fark ederseniz, elinizde bir referans ölçüm yoksa bu düşüşün ne zaman başladığı tartışmalı kalır."
+        ]
+      },
+      {
+        "baslik": "Soru 4: Optik yol ve spot homojenliği ne durumda?",
+        "paragraflar": [
+          "Performans yalnızca ışık kaynağına bağlı değildir. Işın, rezonatörden uygulama ucuna kadar bir dizi lens, ayna, fiber ve pencereden geçer. Bu bileşenlerdeki kaplama bozulması, çizik veya termal hasar hem toplam enerjiyi düşürür hem de ışın profilini bozar. Dışarıdan bakınca fark edilmez; etkisi ancak ölçümde ve uygulama tekrarlanabilirliğinde görünür.",
+          "Spot içindeki dağılımın bozulması, aynı ayarda alan içinde noktasal olarak farklı enerji yoğunlukları anlamına gelir. Basit bir ön kontrol, termal test kâğıdına farklı ayarlarda atış yapıp izin biçimini incelemektir: kenarları düzensiz, ortası boş veya belirgin biçimde asimetrik izler dikkat gerektirir. Safir pencere yüzeyi ve fiber uçları çıplak gözle de değerlendirilebilir.",
+          "Yazılı olarak istenmesi gereken şey, cihazla birlikte gelen el aletlerinin seri numaraları ve varsa optik değişim geçmişidir. İkinci el pazarında gövde ile el aleti çoğu zaman farklı geçmişlere sahiptir. Hangi el aletinin satışa dâhil olduğu, sözleşmede seri numarasıyla yer almalıdır."
+        ]
+      },
+      {
+        "baslik": "Soru 5: Platform hâlâ üretimde mi, yedek parça ne kadar süre bulunur?",
+        "paragraflar": [
+          "Cihaz bugün sorunsuz çalışıyor olabilir. Asıl soru, ilerideki bir arızada kartın, el aletinin veya soğutma bileşeninin bulunup bulunmayacağıdır. Üretimden kalkmış platformlarda parça temini ikinci el stoklara ya da sökülen cihazlara bağlı kalabilir; bu da bekleme süresini öngörülemez hâle getirir. Bir cihazın haftalarca durması, teknik bir sorundan çok işletme sorunudur.",
+          "Ayrı bir başlık da evraktır. Tıbbi cihaz mevzuatı kapsamında cihazın kayıtlı olması, uygunluk belgelerinin bulunması ve devir sürecinin nasıl işleyeceği alım öncesinde netleştirilmelidir. Bu tarafta eksik varsa, cihaz teknik olarak sağlam olsa bile işletme tarafında sorun doğurur."
+        ],
+        "tablo": {
+          "basliklar": [
+            "Kontrol başlığı",
+            "Satıcıya sorulacak soru",
+            "İstenecek belge"
+          ],
+          "satirlar": [
+            [
+              "Atış sayısı",
+              "Toplam atış kaç, sayaç hiç sıfırlandı mı?",
+              "Sayaç ve seri numarasının aynı karedeki görüntüsü, servis kaydı"
+            ],
+            [
+              "Lamba / diyot bar",
+              "Son değişim hangi tarihte, kaçıncı atışta yapıldı?",
+              "Değişim faturası veya yetkili servis formu"
+            ],
+            [
+              "Enerji çıkışı",
+              "Farklı spot ve darbe sürelerinde ölçülen gerçek çıkış nedir?",
+              "Kalibrasyonu belgeli ölçerle alınmış ölçüm tutanağı"
+            ],
+            [
+              "Optik ve el aleti",
+              "El aleti seri numarası ne, optikler değişti mi?",
+              "El aleti seri numarası listesi, optik değişim kaydı"
+            ],
+            [
+              "Yedek parça",
+              "Platform üretimde mi, parça temin süresi nedir?",
+              "Yetkili servis veya tedarikçiden yazılı teyit"
+            ],
+            [
+              "Evrak ve devir",
+              "Kayıt ve devir süreci nasıl işleyecek?",
+              "Uygunluk/kayıt belgeleri, devir yazışması"
+            ]
+          ]
+        }
+      },
+      {
+        "baslik": "Servisten geçmiş cihaz ile geçmemiş cihaz arasındaki fark",
+        "paragraflar": [
+          "İkinci el pazarında aslında iki ayrı ürün vardır ve ikisi de aynı adla anılır. Biri yetkili bir teknik servisin elinden geçmiş, kontrol listesine göre yenilenmiş ve ölçülmüş cihazdır. Diğeri önceki kullanıcıdan olduğu gibi devralınmış, hiçbir teknik kontrolden geçmemiş cihazdır. Aradaki fark kozmetik değil, belgeseldir.",
+          "Bu ayrım bütçe kıyaslamasını da değiştirir. Kontrolden geçmemiş bir cihazda devralma sonrası kalemler (tüketim parçası, optik, kart, nakliye, kurulum, kalibrasyon) baştan bilinmez; toplam sahip olma maliyeti ancak arıza çıktıkça netleşir. Servis geçmişi belgelenmiş cihazda ise bu kalemlerin çoğu satın alma anında görünür durumdadır.",
+          "Aynı sorular yeni cihaz değerlendirmesinde de geçerlidir: platformun dalga boyu yapısı, tüketim parçası rejimi ve servis kapsamı. 755 nm Aleksandrit (arion-alexandrite-lazer), 755+1064 nm çift dalga boylu (light-age-epicare-duo) ve diyot/mix (epizone-mix-diode-lazer) platformlar farklı bakım profillerine sahiptir. Hangi yapının işletmenize uyduğu, hasta profili ve kullanım yoğunluğuyla birlikte değerlendirilir; konfigürasyon ve ticari koşullar teklif aşamasında netleşir."
+        ],
+        "liste": [
+          "Servisten geçmiş cihazda arıza kaydı, yapılan işlemler ve değişen parçalar dökümlüdür; geçmemiş cihazda geçmiş yalnızca sözlü beyandan ibarettir.",
+          "Servisten geçmiş cihazda enerji çıkışı ölçülüp kayda alınır; geçmemiş cihazda ölçüm tamamen alıcının sorumluluğundadır.",
+          "Servisten geçmiş cihazda tüketim parçasının kalan ömrü bilinir; geçmemiş cihazda lamba veya bar ömrü bilinmezdir.",
+          "Servisten geçmiş cihazda çoğunlukla kapsamı tanımlı, süreli bir teknik güvence verilir; geçmemiş cihazda satış \"görüldüğü gibi\" esasına dayanır.",
+          "Servisten geçmiş cihazda el aletleri ve optikler kontrol edilmiştir; geçmemiş cihazda spot homojenliği hiç test edilmemiş olabilir.",
+          "Servisten geçmiş cihazda kurulum, kalibrasyon ve kullanıcı eğitimi süreci tanımlıdır; geçmemiş cihazda bu adımlar alıcıya kalır.",
+          "Servisten geçmiş cihazda seri numaraları belgeyle eşleşir; geçmemiş cihazda gövde ve el aleti farklı kaynaklardan gelmiş olabilir."
+        ]
+      }
+    ],
+    "sss": [
+      {
+        "s": "İkinci el cihazda atış sayacına güvenebilir miyim?",
+        "c": "Sayaç önemli bir göstergedir ama tek başına kanıt değildir. Bazı platformlarda sayaç servis düzeyinde sıfırlanabilir, kart veya yazılım değişiminde geçmiş kayıtlar kaybolabilir. Sayaç görüntüsünü seri numarasıyla birlikte kayıt altına alın, servis kayıtlarıyla karşılaştırın ve satıcıdan \"sayaç sıfırlanmamıştır\" beyanını yazılı isteyin."
+      },
+      {
+        "s": "Enerji ölçümünü satıcı mı yapmalı, bağımsız bir ekip mi?",
+        "c": "Ölçümü kim yaparsa yapsın, kullanılan ölçerin kalibrasyon durumu belgelenmelidir. Tercih edilen yöntem, alıcının belirlediği bağımsız bir teknik ekibin ölçümü tarafların huzurunda yapması ve tutanağın iki tarafça imzalanmasıdır. Ölçüm tek ayarda değil, farklı spot boyutları ve darbe sürelerinde tekrarlanmalıdır."
+      },
+      {
+        "s": "Üretimden kalkmış bir platformu almak her zaman sorunlu mudur?",
+        "c": "Her zaman değil. Belirleyici olan, yedek parça ve teknik servis desteğinin ne kadar süre ve hangi koşullarla süreceğidir. Yetkili servis veya tedarikçiden parça temin süresine ilişkin yazılı teyit alınabiliyorsa risk yönetilebilir hâle gelir. Böyle bir teyit alınamıyorsa, olası bir arızada cihazın ne kadar duracağı öngörülemez."
+      },
+      {
+        "s": "Servisten geçmiş bir cihaz için hangi belgeleri istemeliyim?",
+        "c": "Yapılan işlemlerin dökümü, değişen parçaların listesi ve seri numaraları, ölçülmüş enerji çıkış değerleri, tüketim parçalarının kalan ömrü ve verilen teknik güvencenin kapsamı ile süresi. Bu beş kalem dağınık belgeler hâlinde değil, tek bir teslim dosyasında toplanmalıdır."
+      }
+    ],
+    "kapanis": "İkinci el alım kendi başına yanlış bir karar değildir. Yanlış olan, cihazın geçmişini yalnızca sözlü beyana dayanarak kabul etmektir. Bu beş başlık — atış sayısı, tüketim parçası ömrü, ölçülmüş enerji çıkışı, optik durumu ve yedek parça sürekliliği — sorulup cevaplar yazıya döküldüğünde risk büyük ölçüde görünür hâle gelir. Görünen risk yönetilebilir; görünmeyen risk devralma sonrasında maliyete dönüşür. Değerlendirme yaparken ikinci el ve yeni platform seçeneklerini aynı kontrol listesiyle karşılaştırın; konfigürasyon ve ticari koşullar teklif aşamasında netleşir.",
+    "ilgiliCihazlar": [
+      "arion-alexandrite-lazer",
+      "light-age-epicare-duo",
+      "epizone-mix-diode-lazer"
+    ]
+  },
+  {
+    "slug": "cihaz-yatirimi-geri-donus",
+    "giris": "Cihaz alma kararının önündeki en somut soru genellikle tek cümleliktir: bu yatırım kaç ayda kendini öder? Bu sorunun cevabını size kimse dışarıdan veremez, çünkü cevabı belirleyen rakamlar sizin randevu defterinizde. Verebileceğimiz şey hesabın kurgusudur: hangi değişkenler var, her biri nasıl ölçülür, nerede yanlış varsayım yapılır. Çerçeveyi kendi verilerinizle doldurduğunuzda ortaya tahmin değil, savunulabilir bir sayı çıkar.",
+    "bolumler": [
+      {
+        "baslik": "Hesabın iskeleti: üç satırlık bir formül",
+        "paragraflar": [
+          "Geri dönüş hesabı özünde üç satırdan ibarettir. Önce cihazın ürettiği aylık brüt ciroyu bulursunuz: günlük seans sayısı × ortalama seans ücreti × ayda çalışılan gün. Ardından bu cironun içinden cihaza ait giderleri düşer, aylık net katkıyı elde edersiniz. Son adımda cihaz bedelini aylık net katkıya bölersiniz; çıkan sayı kaç ayda başa baş noktasına ulaşacağınızı gösterir.",
+          "Bu yönteme finansta basit geri ödeme süresi denir. Basit olmasının bir bedeli var: paranın zaman değerini, enflasyonu ve finansman maliyetini yok sayar. Cihazı vadeli ya da kiralama yoluyla alıyorsanız ödeme planının aylık yükünü ayrı bir satır olarak eklemeniz gerekir. Buna rağmen karar öncesi ilk elemede işe yarar, çünkü hangi varsayımın sonucu ne kadar oynattığını açıkça gösterir.",
+          "Kritik nokta şu: formül sabittir, değişkenler size aittir. Bir polikliniğin doluluk profili ile ilçe merkezindeki bir güzellik salonununki aynı değildir. Bu yüzden hazır bir \"şu kadar ayda döner\" cümlesine değil, kendi kayıtlarınızdan çıkan rakamlara güvenin."
+        ]
+      },
+      {
+        "baslik": "Formülün değişkenleri ve ölçüm kaynakları",
+        "paragraflar": [
+          "Her değişkenin bir ölçüm kaynağı olmalı. Kaynağı olmayan, yalnızca tahmin edilen her kalem sonucu belirsizleştirir. Aşağıdaki beş girdi hesabın omurgasını oluşturur; bunları sırayla kendi verinizle doldurun.",
+          "Bu girdileri doldururken en çok zorlanılan kalem günlük seans sayısıdır. Cihazın teknik kapasitesi bir üst sınırdır; hesaba girmesi gereken ise gerçekleşen randevu sayısıdır. İkisi arasındaki farkı kapatan şey cihaz değil, talep ve planlamadır."
+        ],
+        "liste": [
+          "Günlük seans sayısı — cihazın teorik kapasitesi değil, gerçekleşen ortalama randevu sayınız. Kaynak: son üç ayın randevu kaydı.",
+          "Ortalama seans ücreti — paket satıyorsanız paket bedelini içerdiği seans sayısına bölün. Kaynak: toplam tahsilat / gerçekleşen seans.",
+          "Ayda çalışılan gün — resmî tatil, personel izni ve düşük sezon çıkarılmış net gün sayısı.",
+          "İşletme gideri payı — cihazın kullandığı alan, personel zamanı ve enerji için ciro üzerinden ayırdığınız yüzde.",
+          "Sarf ve bakım karşılığı — uç, kartuş, jel, soğutma gibi seans başına tüketilen kalemler artı periyodik bakım için aylık ayrılan karşılık."
+        ]
+      },
+      {
+        "baslik": "Değişken, ölçüm ve en sık yapılan hata",
+        "paragraflar": [
+          "Geri dönüş hesaplarının çoğu formül yanlış olduğu için değil, girdiler iyimser olduğu için tutmaz. Aşağıdaki tablo her değişkeni, ölçüm yöntemini ve sahada en sık karşılaşılan hatayı yan yana koyuyor.",
+          "Tablodaki hataların ortak paydası aynı: cihazın üretebileceği en iyi sonucu, işletmenin gerçekleşen sonucu sanmak. Girdileri ölçülebilir kaynaklara bağladığınızda hesap kendiliğinden daha temkinli hale gelir."
+        ],
+        "tablo": {
+          "basliklar": [
+            "Değişken",
+            "Nasıl ölçülür",
+            "Tipik hata"
+          ],
+          "satirlar": [
+            [
+              "Günlük seans sayısı",
+              "Son üç ayın randevu kaydından günlük ortalama",
+              "Cihazın teorik kapasitesini doluluk yerine koymak"
+            ],
+            [
+              "Ortalama seans ücreti",
+              "Toplam tahsilat / gerçekleşen seans sayısı",
+              "Liste fiyatını kullanıp paket indirimini yok saymak"
+            ],
+            [
+              "Ayda çalışılan gün",
+              "Takvimden tatil ve izinler düşülerek",
+              "Ay başına 30 gün üzerinden hesap yapmak"
+            ],
+            [
+              "Sezon dalgalanması",
+              "Son 12 ayın aylara göre ciro dağılımı",
+              "Yoğun sezon performansını tüm yıla yaymak"
+            ],
+            [
+              "Sarf gideri",
+              "Seans başına tüketilen kalemlerin birim maliyeti",
+              "\"Sarfı yok\" varsaymak, uç/kartuş ömrünü sormamak"
+            ],
+            [
+              "Personel payı",
+              "Cihaza ayrılan çalışma saatinin maliyeti",
+              "Personel zaten var diye bu kaleme sıfır yazmak"
+            ],
+            [
+              "Bakım ve servis",
+              "Yıllık bakım karşılığının on ikiye bölünmesi",
+              "Garanti süresi sonrasını hiç planlamamak"
+            ],
+            [
+              "Devreye alma dönemi",
+              "Kurulum, eğitim ve tanıtım süresi",
+              "İlk aydan itibaren tam doluluk varsaymak"
+            ]
+          ]
+        }
+      },
+      {
+        "baslik": "Cihaz seçimi hesabı nasıl değiştirir",
+        "paragraflar": [
+          "Aynı formüle iki farklı cihaz koyduğunuzda sonuç değişir, çünkü cihaz seçimi üç kalemi doğrudan etkiler: seans süresi, hitap edilebilecek profilin genişliği ve seans başına sarf maliyeti.",
+          "Seans süresi tarama hızı, spot boyutu ve tekrarlama frekansı ile ilgilidir. Aynı bölgeyi daha kısa sürede tarayan bir yapılandırma, günlük seans sayısı değişkenini yukarı taşıyabilir; bu da formülün ilk satırını doğrudan büyütür.",
+          "Profil genişliği ise dalga boyuyla ilgili teknik bir konudur. 755 nm melanin tarafından yüksek oranda soğurulur; 1064 nm dokuda daha derine ilerler ve melanin soğurumu daha düşüktür, bu nedenle Fitzpatrick ölçeğinin koyu uçlarında farklı bir soğurum profili sunar. Tek dalga boylu bir platform (örneğin arion-alexandrite-lazer) ile 755 ve 1064 nm'yi birlikte sunan bir platform (light-age-epicare-duo) ya da mix diyot yapılandırmalar (epizone-mix-diode-lazer), aynı işletmede farklı büyüklükte bir randevu havuzu anlamına gelir.",
+          "Sarf maliyeti cihaz ailesine göre belirgin biçimde ayrışır. Lazer epilasyon platformlarında seans başına tüketim genellikle sınırlıdır; buna karşılık fraksiyonel CO2, altın iğne RF veya HIFU gibi uç ve kartuş tabanlı sistemlerde atış ya da uygulama başına bir maliyet oluşur. Bu kalem hesaba girmezse aylık net katkı olduğundan yüksek görünür. Teklif aşamasında sarf kalemlerinin listesini ve tahmini ömrünü yazılı olarak isteyin."
+        ]
+      },
+      {
+        "baslik": "Tek sayı değil, üç senaryo üretin",
+        "paragraflar": [
+          "Geri dönüş hesabını tek bir sonuçla bitirmeyin. Aynı formülü üç kez çalıştırın: kötümser, gerçekçi ve iyimser. Kötümser senaryoda doluluk varsayımını belirgin biçimde aşağı çekin, ortalama seans ücretini paket indirimleri dahil alt banda yerleştirin, gider payını yukarı taşıyın. İyimser senaryoda tersini yapın.",
+          "Karar kriteriniz iyimser senaryo olmamalı. Doğru soru şudur: kötümser senaryodaki geri dönüş süresi bile işletmenin nakit akışı için katlanılabilir mi? Cevap evetse yatırım kararı sağlam bir zemine oturur. Cevap yalnızca iyimser senaryoda evetse, karar cihaza değil bir varsayıma dayanıyor demektir."
+        ]
+      },
+      {
+        "baslik": "Hesabı araç üzerinde kendi rakamlarınızla yapın",
+        "paragraflar": [
+          "Sitedeki Yatırım Geri Dönüş Hesabı aracı bu formülü kurulmuş halde sunar. Cihaz yatırımı, seans fiyatı, günlük seans sayısı, ayda çalışılan gün ve işletme gideri payı alanlarını kendi rakamlarınızla oynatırsınız; sonuç anında güncellenir. Araca Araçlar bölümünden veya doğrudan yatirim-hesaplayici.html sayfasından ulaşabilirsiniz.",
+          "Aracın amacı size bir rakam vermek değil, kendi rakamlarınızın sonucu nasıl değiştirdiğini göstermek. Doluluk varsayımını birkaç seans aşağı çektiğinizde geri dönüş süresinin nasıl uzadığını görmek, çoğu zaman sayfalarca yazıdan daha ikna edicidir. Cihaz yatırımı alanına, teklif aşamasında netleşen tutarı girersiniz."
+        ]
+      }
+    ],
+    "sss": [
+      {
+        "s": "Estetik cihaz yatırımı tipik olarak kaç ayda kendini öder?",
+        "c": "Herkes için geçerli tek bir süre yok. Sonuç doluluk oranınıza, ortalama seans ücretinize, çalışma gün sayınıza ve gider yapınıza bağlı olarak ciddi biçimde değişir. Doğru yaklaşım hazır bir süreye güvenmek değil, formülü kendi rakamlarınızla üç senaryoda çalıştırmak ve kötümser senaryonun sonucuna bakmaktır."
+      },
+      {
+        "s": "Elimde geçmiş veri yok, doluluk oranını nasıl tahmin ederim?",
+        "c": "Mevcut hizmetlerinizin randevu yoğunluğundan yola çıkın; benzer süreli ve benzer talep gören bir uygulamanın günlük ortalaması makul bir başlangıç noktasıdır. Kurulum, personel eğitimi ve tanıtım dönemi için ilk ayları düşük doluluklu kabul edin. Veri biriktikçe hesabı güncelleyin."
+      },
+      {
+        "s": "Sarf ve bakım giderini hesaba nasıl eklerim?",
+        "c": "İki ayrı kalem olarak ekleyin. Birincisi seans başına tüketilen malzemenin birim maliyeti; ikincisi yıllık bakım karşılığının on ikiye bölünmüş hali. Teklif aşamasında sarf kalemlerinin listesini, tahmini ömrünü ve garanti kapsamını yazılı olarak isteyin; bu bilgi olmadan aylık net katkı olduğundan yüksek çıkar."
+      },
+      {
+        "s": "Sayfada neden cihaz fiyatı yer almıyor?",
+        "c": "Cihaz bedeli konfigürasyona göre değişir: dalga boyu yapılandırması, güç ve soğutma seçenekleri, aksesuar seti, kurulum, eğitim ve garanti kapsamı toplam tutarı etkiler. Bu nedenle rakam teklif aşamasında netleşir. Hesaplayıcıdaki ilgili alana teklif tutarını girerek kendi geri dönüş sürenizi görebilirsiniz."
+      }
+    ],
+    "kapanis": "Geri dönüş süresi bir cihazın teknik özelliği değil, işletmenin cihazla kurduğu ilişkinin sonucudur. Aynı cihaz iki farklı işletmede iki farklı sayı üretir; farkı yaratan doluluk, fiyatlama ve gider disiplinidir. Bu yüzden en değerli adım, teklif istemeden önce yukarıdaki tabloyu kendi verilerinizle doldurmaktır. Hesabı yaptığınızda görüşme \"ne kadar\" sorusundan \"hangi yapılandırma benim doluluk profilime uyar\" sorusuna taşınır ve karar çok daha sağlam bir zemine oturur.",
+    "ilgiliCihazlar": [
+      "arion-alexandrite-lazer",
+      "light-age-epicare-duo",
+      "epizone-mix-diode-lazer"
+    ]
+  },
+  {
+    "bolumler": [
+      {
+        "baslik": "Bakım neden takvimle yapılır, arıza çıkınca değil",
+        "paragraflar": [
+          "Lazer ve ışık tabanlı cihazlar tek parça makine değildir. İçlerinde optik hat, soğutma devresi, güç kaynağı, kontrol yazılımı ve sarf niteliğinde parçalar bir arada çalışır. Bu bileşenlerin çoğu ani bozulmaz; performansı yavaşça düşer. Uygulayıcı bunu genelde önce 'cihaz eskisi gibi çalışmıyor' hissiyle fark eder, arıza kodu olarak değil.",
+          "Takvimli bakımın mantığı buradadır. Sorun görünür hale gelmeden önce, ölçülebilir kalemleri belirli aralıklarla kontrol edersiniz. Bu yaklaşım hem beklenmedik duruşları azaltır hem de servis çağrıldığında teknisyene geçmiş kayıt sunar. Kaydı olan cihazda teşhis süresi kısalır.",
+          "Aşağıdaki takvim, 755 nm ve 808 nm gibi diyot ve alexandrite sistemler, 1064 nm Nd:YAG hatları, pikosaniye platformlar ve fraksiyonel CO2 cihazları için ortak bir çerçeve sunar. Cihaza özel değerler için üretici kullanım kılavuzu esastır; bu yazı kılavuzun yerine geçmez."
+        ]
+      },
+      {
+        "baslik": "Günlük ve haftalık kontroller",
+        "paragraflar": [
+          "Günlük kalemler, uygulamayı yapan kişinin cihazı açtığı anda yaptığı kısa kontrollerdir. Beş dakikayı geçmez ve ayrı bir teknik bilgi gerektirmez. Amaç, o gün içinde ortaya çıkabilecek belirtileri erken görmektir.",
+          "Haftalık kontroller ise gün sonunda veya haftanın sabit bir gününde yapılır. Burada temizlik ve gözle muayene ön plandadır. Özellikle başlık camı ve soğutma girişleri, salon ortamındaki toz, saç ve aerosol nedeniyle hızlı kirlenir."
+        ],
+        "liste": [
+          "Günlük: Cihaz açılışında ekranda hata veya uyarı mesajı olup olmadığının kontrolü.",
+          "Günlük: Soğutma suyu seviyesinin gözle kontrolü ve seviye alarmının çalıştığından emin olunması.",
+          "Günlük: Başlık camının veya safir ucun her hasta arasında uygun solüsyonla silinmesi.",
+          "Günlük: Kablo ve fiber hattın gözle kontrolü; keskin kıvrım, ezilme veya sıkışma olmaması.",
+          "Günlük: Ayak pedalı, acil durdurma butonu ve anahtar kilidinin çalıştığının doğrulanması.",
+          "Haftalık: Hava filtresi ve fan ızgaralarının temizliği; cihazın arka ve yan hava boşluklarının açık tutulması.",
+          "Haftalık: Başlık ucunda çizik, yanık izi, çatlak veya kalıntı birikmesi olup olmadığının yakından incelenmesi.",
+          "Haftalık: Soğutma hortumlarında kaçak, nem veya renk değişimi kontrolü.",
+          "Haftalık: Cihaz gövdesi ve tekerlekli sehpanın temizliği; sıvı sıçramasına karşı bağlantı noktalarının kuru tutulması."
+        ]
+      },
+      {
+        "baslik": "Soğutma devresi: en sık atlanan, en pahalıya mal olan kalem",
+        "paragraflar": [
+          "Yüksek güçlü lazerlerde üretilen enerjinin önemli bir kısmı ısıya dönüşür. Bu ısıyı taşıyan devre bozulduğunda cihaz kendini korumak için gücü düşürür veya tamamen durur. Sahada karşılaşılan duruşların kayda değer bir bölümü optik veya elektronik değil, soğutma kaynaklıdır.",
+          "Devrede kullanılan su, sıradan çeşme suyu değildir. Deiyonize su gerektiren sistemlerde iletkenliği artmış su, iç yüzeylerde mineral birikmesine ve korozyona yol açar. Bu birikinti ısı transferini düşürür, akış sensörünü yanıltır ve zamanla lazer bar veya kavite tarafında kalıcı hasara giden bir zincir başlatır. Su değişim periyodu üretici tarafından belirlenir ve bu periyot uzatılarak tasarruf edilmez.",
+          "Hava akışı ikinci kritik noktadır. Cihazın arka ve alt havalandırma boşlukları duvara, dolaba veya perdeye yaslandığında sistem sıcak havayı dışarı atamaz. Oda sıcaklığının kılavuzda belirtilen aralıkta tutulması, klimanın uygulama odasında değil cihazın çektiği havayı besleyecek şekilde konumlandırılması pratikte ölçülebilir fark yaratır."
+        ]
+      },
+      {
+        "baslik": "Aylık, altı aylık ve yıllık kalemler",
+        "paragraflar": [
+          "Uzun periyotlu bakımlar genellikle yetkili teknik servis veya eğitim almış iç personel tarafından yapılır. Bu kalemlerde cihazın kapağı açılabilir, ölçüm cihazı kullanılabilir veya yazılım tarafında müdahale gerekebilir. Yetkisiz müdahale hem garantiyi hem cihaz güvenliğini etkiler.",
+          "Enerji kalibrasyonu bu grubun merkezindedir. Cihazın ekranda gösterdiği enerji yoğunluğu ile başlıktan çıkan gerçek enerji zamanla ayrışabilir. Ölçüm yapılmadığında uygulayıcı, düşen enerjiyi telafi etmek için ayarı yükseltir. Bu, sorunu gizler ve gerçek sapmayı büyütür. Kalibrasyon, ekrandaki değerle çıkışın örtüştüğünü belgelemenin tek yoludur.",
+          "Yazılım ve log kontrolü de aynı gruptadır. Modern platformlar atış sayısını, hata kodlarını, sıcaklık eğrilerini ve başlık ömrünü kaydeder. Bu kayıtların düzenli okunması, örneğin sıcaklık alarmlarının sıklaştığını arıza çıkmadan haftalar önce gösterir."
+        ],
+        "tablo": {
+          "basliklar": [
+            "Periyot",
+            "İşlem",
+            "Atlanırsa ne olur"
+          ],
+          "satirlar": [
+            [
+              "Günlük",
+              "Ekran uyarı kontrolü, başlık camı temizliği, su seviyesi bakışı",
+              "Kirli optik yüzeyde lokal ısınma ve yanık izi; başlığın erken değişimi"
+            ],
+            [
+              "Haftalık",
+              "Hava filtresi temizliği, hortum ve kablo gözle muayenesi",
+              "Isı atımı düşer, sıcaklık alarmı sıklaşır, cihaz gün içinde kendini durdurur"
+            ],
+            [
+              "Aylık",
+              "Soğutma suyu iletkenlik/seviye kontrolü, başlık temas yüzeyi detaylı inceleme",
+              "Mineral birikimi ve korozyon başlar; akış sensörü hatalı okuma verir"
+            ],
+            [
+              "3-6 aylık",
+              "Deiyonize su değişimi, iç filtre değişimi, bağlantı sıkılık kontrolü",
+              "Isı transferi kalıcı düşer; lazer kaynağı ve kavite tarafında hasar riski"
+            ],
+            [
+              "6-12 aylık",
+              "Enerji/çıkış kalibrasyonu, spot homojenlik ölçümü, güvenlik devresi testi",
+              "Ekran değeri ile gerçek çıkış ayrışır; uygulama tekrarlanabilirliği kaybolur"
+            ],
+            [
+              "Yıllık",
+              "Yetkili servis genel bakımı, log arşivi incelemesi, yazılım güncellemesi",
+              "Küçük sapmalar birikir; planlanmamış duruş ve yedek parça bekleme süresi"
+            ]
+          ]
+        }
+      },
+      {
+        "baslik": "Arıza öncesi uyarı işaretleri",
+        "paragraflar": [
+          "Cihazlar durmadan önce sinyal verir. Bu sinyaller çoğunlukla teknik ekrana değil, uygulama pratiğine yansır. Personelin ne arayacağını bilmesi, servis çağrısının doğru zamanda yapılmasını sağlar.",
+          "Aşağıdaki belirtilerden biri görüldüğünde cihazı kullanmaya devam etmek yerine kaydını alın ve teknik desteğe bildirin. Belirtiyi ayar yükselterek telafi etmek, hem cihaza hem uygulama güvenliğine yansıyan bir risktir."
+        ],
+        "liste": [
+          "Aynı ayarda uygulama süresinin uzaması veya uygulayıcının 'eskisi kadar etkili değil' geri bildirimi.",
+          "Sıcaklık alarmının önceden hiç görülmezken haftada birkaç kez ortaya çıkması.",
+          "Spot izinin ciltte homojen olmaması; kenarlarda soluk, merkezde yoğun dağılım.",
+          "Başlık camında silmekle çıkmayan leke, buğu veya nokta izi.",
+          "Soğutma ünitesinden gelen sesin değişmesi, fan gürültüsünün artması.",
+          "Cihazın soğuma için beklediği sürenin uzaması, atışlar arası gecikme.",
+          "Ayak pedalına basıldığında tepkinin gecikmesi veya atışın atlaması.",
+          "Log kayıtlarında tekrar eden, kendiliğinden silinen hata kodları."
+        ]
+      },
+      {
+        "baslik": "Duran gün maliyeti ve bakımın işletmeye getirisi",
+        "paragraflar": [
+          "Bakım kararını teknik değil, işletme tarafından da değerlendirmek gerekir. Bir cihaz durduğunda kayıp yalnızca tamir kalemi değildir. O gün için verilmiş randevular ertelenir, personel boşta kalır, bazı danışanlar seans akışı bozulduğu için geri dönmez. Kampanya döneminde ya da yoğun sezonda bu etki katlanır.",
+          "Planlı bakımın avantajı zamanlamayı sizin seçmenizdir. Servis ziyaretini düşük yoğunluklu bir güne alır, gerekli sarf parçayı önceden temin eder, randevu defterini buna göre kurarsınız. Plansız arızada bu esneklik yoktur; parça tedariği ve teknisyen müsaitliği takviminizi belirler.",
+          "Pratik bir yöntem, her cihaz için tek sayfalık bir bakım kartı tutmaktır. Kartta tarih, yapılan işlem, atış sayacı değeri ve varsa gözlenen belirti yer alır. Bu kayıt üç işi birden görür: servis teşhisini hızlandırır, garanti ve servis sözleşmesi süreçlerinde belge oluşturur, cihazı ikinci ele devrederken de değerini destekler.",
+          "Yeni cihaz alımında bakım tarafı da değerlendirme kriteri olmalıdır. Sarf parçaların tedarik süresi, yetkili servis kapsamı, kalibrasyon periyodu ve kullanıcı seviyesinde yapılabilecek işlemlerin sınırı, teklif aşamasında sorulması gereken başlıklardır."
+        ]
+      }
+    ],
+    "giris": "Lazer ve ışık tabanlı cihazlarda arızaların büyük bölümü aniden ortaya çıkmaz; haftalar süren küçük ihmallerin birikmesiyle oluşur. Soğutma devresi, optik yüzeyler ve başlık kontrolü düzenli takip edildiğinde hem beklenmedik duruşlar hem de uygulama tekrarlanabilirliğindeki kayıplar azalır. Bu yazı, salon ve klinik işletmecileri için günlük, haftalık, aylık ve yıllık bakım kalemlerini ve arıza öncesi uyarı işaretlerini derliyor.",
+    "ilgiliCihazlar": [
+      "arion-alexandrite-lazer",
+      "epizone-mix-diode-lazer",
+      "cotra-plus-co2"
+    ],
+    "kapanis": "Bakım takvimi, karmaşık bir teknik program değil; kim, ne zaman, neyi kontrol edecek sorusunun yazılı cevabıdır. Günlük beş dakikalık kontroller optik ve başlık ömrünü korur, haftalık temizlik ısı atımını sürdürür, periyodik servis ve kalibrasyon ise ekrandaki değerle gerçek çıkışın örtüşmesini güvence altına alır. Uyarı işaretlerini ayar yükselterek telafi etmemek, bu zincirin en kritik halkasıdır. Cihazınıza özel bakım periyotları ve sarf parça listesi için üretici kullanım kılavuzunu esas alın; portföyümüzdeki sistemlerin bakım kapsamı, servis koşulları ve kullanıcı seviyesinde yapılabilecek işlemlerin sınırı hakkında teknik ekibimizden ayrıntılı bilgi alabilirsiniz.",
+    "slug": "lazer-cihazi-bakim-takvimi",
+    "sss": [
+      {
+        "s": "Soğutma suyunu ne sıklıkla değiştirmeliyim?",
+        "c": "Periyot cihaz modeline, kullanım yoğunluğuna ve kullanılan su tipine göre değişir; bağlayıcı değer üretici kullanım kılavuzundadır. Genel yaklaşım, deiyonize su gerektiren sistemlerde kılavuzdaki periyodun uzatılmaması yönündedir. Su iletkenliği arttığında iç yüzeylerde birikinti ve korozyon başlar, ısı transferi düşer. Aylık seviye ve berraklık kontrolünü kayıt altına alıp, değişimi planlı servis ziyaretine denk getirmek pratikte en sorunsuz yöntemdir."
+      },
+      {
+        "s": "Enerji kalibrasyonunu kendim yapabilir miyim?",
+        "c": "Kalibrasyon ölçüm ekipmanı ve yetki gerektiren bir işlemdir; yetkili teknik servis tarafından yapılmalıdır. Kullanıcı tarafında yapılabilecek olan, sapmayı erken fark etmektir: aynı ayarda uygulama süresinin uzaması veya spot izinin homojenliğini kaybetmesi kalibrasyon ihtiyacına işaret eder. Yetkisiz müdahale garanti kapsamını ve cihaz güvenliğini etkileyebilir."
+      },
+      {
+        "s": "Cihazımda sıcaklık alarmı veriyor, kullanmaya devam edebilir miyim?",
+        "c": "Sıcaklık alarmı cihazın kendini koruma mekanizmasıdır ve göz ardı edilmemelidir. Önce basit nedenleri kontrol edin: hava filtresi tıkalı mı, cihazın arka ve alt havalandırma boşlukları duvara veya mobilyaya yaslanmış mı, oda sıcaklığı kılavuzdaki aralıkta mı. Bunlar düzeltildiği halde alarm tekrar ediyorsa cihazı kullanmayı bırakıp teknik desteğe bildirin. Alarmı ayar değiştirerek aşmaya çalışmak, sorunu gizler."
+      },
+      {
+        "s": "Bakım kaydı tutmak gerçekten gerekli mi?",
+        "c": "Evet, üç açıdan işe yarar. Servis çağrıldığında teknisyene geçmiş veri sunar ve teşhis süresini kısaltır. Garanti ve servis sözleşmesi süreçlerinde bakımın yapıldığını belgeler. Cihazı devretme durumunda da bakım geçmişi belgelenmiş bir sistem daha güçlü bir konumda olur. Tarih, yapılan işlem, atış sayacı değeri ve gözlenen belirtiyi içeren tek sayfalık bir kart yeterlidir."
+      }
+    ]
+  },
+  {
+    "slug": "soguk-lipoliz-mi-hiemt-mi",
+    "giris": "Vücut şekillendirme tek bir başlık gibi görünür, ama arkasında birbirinden bağımsız fizik prensipleri vardır. Soğuk lipoliz yağ hücresini, HI-EMT kas dokusunu hedefler; radyofrekans, vakum ve endolazer ise bambaşka katmanlarda çalışır. Cihaz seçerken doğru soru \"hangisi daha güçlü\" değil, \"işletmemin karşıladığı talep hangi dokuya ait\" sorusudur. Bu yazı mekanizmaları, seans yükünü ve kabin ekonomisini işletme gözüyle karşılaştırıyor.",
+    "bolumler": [
+      {
+        "baslik": "Soğuk lipoliz: yağ hücresine yönelen kontrollü soğutma",
+        "paragraflar": [
+          "Kriyolipoliz, adipoz dokudaki lipidlerin çevre dokulara kıyasla daha yüksek sıcaklıkta faz değiştirmesi ilkesine dayanır. Sistem, deri, damar ve sinir dokusunu koruyan bir sıcaklık penceresinde çalışacak şekilde tanımlanır. Aplikatör dokuyu vakumla kavrar; ısı transferi temas plakaları üzerinden gerçekleşir ve termistör verisi ile sürekli izlenir. Hedeflenen etki, soğutulan bölgedeki yağ hücrelerinin apoptoz yolağına girmesi ve içeriğin zaman içinde vücudun kendi metabolik yollarıyla uzaklaştırılmasıdır.",
+          "Bu mekanizmanın işletme açısından en kritik özelliği zaman gecikmesidir. Seans biter bitmez gözle görülür bir değişim beklenmez; süreç haftalar boyunca ilerler. Dolayısıyla müşteri beklentisinin ilk görüşmede doğru kurulması ve takip randevusunun protokole baştan yazılması gerekir.",
+          "Aplikatör geometrisi de en az cihaz gövdesi kadar belirleyicidir. Karın, flank, iç bacak, kol ve submental bölge farklı kavis ve vakum hacimleri ister. Satın alma değerlendirmesinde aplikatör setinin kapsamı, tek kullanımlık membran/jel pedin tedarik sürekliliği ve eş zamanlı çalışabilen aplikatör sayısı sorulmalıdır. Estezone portföyünde esteslim-zayiflama-cihazi ve esteslim-mix bu ailede konumlanır."
+        ]
+      },
+      {
+        "baslik": "HI-EMT: kas dokusunu hedefleyen elektromanyetik uyarım",
+        "paragraflar": [
+          "HI-EMT (yüksek yoğunluklu odaklanmış elektromanyetik alan) teknolojisi tamamen farklı bir fizik üzerine kuruludur. Hızla değişen manyetik alan, indüksiyon yoluyla doku içinde akım oluşturur; bu akım motor nöronu depolarize ederek iradi kasılma eşiğinin üzerinde, sürekli bir kas kasılması meydana getirir. Isı ya da soğuk temelli bir etki değildir; hedef doku yağ değil, çizgili kastır.",
+          "Uygulama biçimi de bu yüzden farklıdır. Aplikatör kayışla sabitlenir, çoğu sistemde giysi üzerinden temassız çalışır ve seans boyunca operatörün cihaz başında el hareketi yapması gerekmez. Bu, kabin planlamasında ciddi bir fark yaratır — aşağıdaki operatör dakikası bölümünde bunu ayrıştırıyoruz.",
+          "Cihazın frekans ve yoğunluk protokolleri, aplikatörün gövde ya da uzuv için tasarlanmış olmasına göre değişir. Üreticinin kullanım kılavuzundaki kontrendikasyon listesi (implant, metal, ritim düzenleyici vb.) personel eğitim dosyasına birebir aktarılmalı ve ön değerlendirme formuna işlenmelidir. Estezone portföyünde estesculpt-pro bu kategoridedir."
+        ]
+      },
+      {
+        "baslik": "Radyofrekans, vakum ve endolazer: aynı başlık, farklı katmanlar",
+        "paragraflar": [
+          "Radyofrekans, dokunun elektriksel direnci nedeniyle ortaya çıkan dielektrik ısınmayı kullanır. Monopolar, bipolar veya çok kutuplu düzenlerde enerjinin yayıldığı derinlik ve alan değişir. Vakum eklendiğinde doku başlığa çekilerek enerji dağılımı ve mekanik etki birlikte yönetilir; LLLT (düşük seviyeli lazer) ise foto-biyomodülasyon ekseninde ayrı bir bileşen olarak konumlanır. Estezone portföyünde t-shape-2 ve rfyne bu grupta yer alır.",
+          "Endolazer ise kategorik olarak diğerlerinden ayrılır. Fiber optik kanülün cilt altına yerleştirilmesiyle enerji doğrudan subdermal katmana iletilir; kullanılan dalga boyları su ve yağ kromoforları tarafından farklı oranlarda soğurulur. Bu bir girişimsel işlemdir ve hekim yetkisi gerektirir.",
+          "Bu ayrım, cihaz seçiminin ilk filtresi olmalıdır. Güzellik salonu ve güzellik merkezi ruhsatıyla çalışan bir işletme ile poliklinik veya hastane bünyesindeki bir birimin kullanabileceği cihaz kümesi aynı değildir. Yetki sınırınızı netleştirmeden teknoloji karşılaştırmasına girmek, kullanılamayacak bir yatırımla sonuçlanabilir."
+        ]
+      },
+      {
+        "baslik": "Karşılaştırma: teknoloji, hedef doku ve işletme yükü",
+        "paragraflar": [
+          "Aşağıdaki tablo, dört ana yaklaşımı hedef doku ve operasyonel yük ekseninde özetliyor. Seans süreleri cihaz modeline, aplikatör sayısına ve üreticinin tanımladığı protokole göre değiştiği için tablo yalnızca yük tipini gösterir; kesin süre için cihazın kendi kullanım kılavuzu esastır."
+        ],
+        "tablo": {
+          "basliklar": [
+            "Teknoloji",
+            "Hedef doku ve mekanizma",
+            "Seans yükü / operatör",
+            "İşletme notu"
+          ],
+          "satirlar": [
+            [
+              "Soğuk lipoliz (kriyolipoliz)",
+              "Adipoz doku; kontrollü soğutma ile hücresel apoptoz yolağı",
+              "Uzun seans, aplikatör sabit; operatör kurulum ve sonlandırmada devrede",
+              "Sarf malzemesi (membran/jel ped) süreklilik ister; sonuç zamana yayılır, takip randevusu şart"
+            ],
+            [
+              "HI-EMT",
+              "Çizgili kas; indüklenen akımla supramaksimal kasılma",
+              "Orta uzunlukta seans, temassız; operatör kurulumdan sonra serbest",
+              "Kabin döngüsü hızlı kurulur, sarf yükü düşük; ön değerlendirme formu kritik"
+            ],
+            [
+              "Radyofrekans (+vakum / LLLT)",
+              "Dermis ve subkutan katman; dielektrik ısınma, mekanik doku yönetimi",
+              "El başlığı manuel hareket ister; operatör seans boyunca 1:1 bağlı",
+              "Operatör becerisine en duyarlı grup; eğitim ve standart protokol olmadan sonuç tutarsızlaşır"
+            ],
+            [
+              "Endolazer",
+              "Subdermal katman; fiber ile iletilen lazer enerjisinin kromoforlarca soğurulması",
+              "Girişimsel işlem; hekim ve steril kurulum gerektirir",
+              "Yalnızca yetkili sağlık kuruluşu; ruhsat ve yetki sınırı ilk filtredir"
+            ],
+            [
+              "Kombine protokol",
+              "Farklı dokular, ayrı seanslarda ya da ayrı günlerde",
+              "Randevu planlaması karmaşıklaşır",
+              "Cihazlar birbirini dışlamaz; sıralama üretici kılavuzuna göre kurulur"
+            ]
+          ]
+        }
+      },
+      {
+        "baslik": "Kabin matematiği: seans süresi değil, operatör dakikası",
+        "paragraflar": [
+          "Cihaz karşılaştırmalarında en sık atlanan kalem, seansın kaç dakika sürdüğü değil, o seansın kaç dakika operatör tükettiğidir. Radyofrekans ve vakum tabanlı başlıklar seans boyunca elde tutulur; bir personel bir müşteriye bağlanır. HI-EMT ve soğuk lipoliz aplikatörleri ise sabitlendikten sonra izleme moduna geçer.",
+          "Bu fark, aynı metrekarede kurulabilecek iş modelini değiştirir. Sabit aplikatörlü sistemlerde bir personel, cihaz sayısı ve kabin düzeni izin verdiği ölçüde paralel oturum yönetebilir; el başlığıyla çalışan sistemlerde bu mümkün değildir. Yatırım kararını verirken kabin sayısı, personel sayısı ve haftalık çalışma saatinizi tabloya yazın; cihazın kapasitesini bu üç değişkenin en dar olanı belirler.",
+          "İkinci kalem sarf ve bakımdır. Soğutma sistemlerinde tek kullanımlık membran ve jel ped, RF başlıklarında iletken jel, tüm sistemlerde periyodik kalibrasyon ve teknik servis erişimi hesaba katılmalıdır. Yedek parça tedarik süresi, cihazın devre dışı kalacağı gün sayısını doğrudan belirler."
+        ]
+      },
+      {
+        "baslik": "Kombine protokol kurmanın mantığı ve satın alma kontrol listesi",
+        "paragraflar": [
+          "Farklı dokuları hedefleyen teknolojiler birbirinin alternatifi değil, çoğu zaman birbirinin tamamlayıcısıdır. Yağ katmanına yönelik bir sistemle kas dokusuna yönelik bir sistemi aynı hizmet menüsünde konumlandırmak, aynı müşteriye ikinci bir talep başlığı açar ve tek cihaza bağımlılığı azaltır. Ancak protokol sıralaması, bölge çakışması ve seans aralıkları üreticinin kılavuzu çerçevesinde kurulmalıdır; kendi başınıza sıra uydurmak hem teknik hem hukuki risktir.",
+          "Değerlendirme görüşmesine girmeden önce şu başlıkları netleştirmek, teklif aşamasını da kısaltır."
+        ],
+        "liste": [
+          "İşletme türünüz ve ruhsat kapsamınız: hangi cihaz sınıfını kullanma yetkiniz var?",
+          "Gelen talebin dağılımı: bölgesel kontur mu, kas tonusu mu, cilt sıkılığı mı ağır basıyor?",
+          "Kabin ve personel sayısı: paralel oturum kurabilecek düzeniniz var mı?",
+          "Aplikatör kapsamı: hangi bölgeler için hangi aplikatörler standart pakette, hangileri opsiyonel?",
+          "Sarf malzemesi: tek kullanımlık parçaların tedarik süresi ve stok yükü nedir?",
+          "Teknik servis: garanti kapsamı, arıza müdahale süresi, yedek parça erişimi.",
+          "Eğitim: kurulum sonrası operatör eğitimi kaç gün, tekrar eğitimi var mı?",
+          "Belgelendirme: cihazın ÜTS kaydı ve uygunluk belgeleri dosyada mevcut mu?"
+        ]
+      }
+    ],
+    "sss": [
+      {
+        "s": "Soğuk lipoliz ile HI-EMT birbirinin alternatifi mi?",
+        "c": "Hayır. Soğuk lipoliz adipoz dokuyu, HI-EMT çizgili kas dokusunu hedefler. Fizik prensipleri, aplikatör tasarımları ve uygulama biçimleri farklıdır. İşletme açısından doğru yaklaşım, hangi talebin daha yoğun geldiğini ölçmek ve menüyü buna göre kurmaktır. İki teknoloji birbirini dışlamaz; kombine protokolde sıralama ve seans aralığı üreticinin kullanım kılavuzuna göre belirlenir."
+      },
+      {
+        "s": "Güzellik salonu olarak hangi cihazları kullanabilirim?",
+        "c": "Bu, cihazın girişimsel olup olmamasına ve işletmenizin ruhsat kapsamına bağlıdır. Endolazer gibi cilt altına kanül yerleştirilen sistemler hekim yetkisi ve uygun sağlık kuruluşu gerektirir. Yetki sınırınızı ilk adımda netleştirmek, kullanamayacağınız bir cihaza yatırım yapmanızı önler. Değerlendirme görüşmesinde işletme türünüzü baştan belirtmenizi öneririz."
+      },
+      {
+        "s": "Seans süresi ve kabin verimliliğini nasıl hesaplarım?",
+        "c": "Seans dakikası tek başına yeterli bir ölçü değildir. Asıl kalem, o seansın kaç dakika operatör tükettiğidir. Aplikatörü sabitlenip izleme moduna geçen sistemlerde personel paralel oturum yönetebilir; el başlığıyla sürekli hareket gerektiren sistemlerde personel bire bir bağlanır. Kabin sayısı, personel sayısı ve haftalık çalışma saati üçlüsünden en dar olanı gerçek kapasitenizi belirler."
+      },
+      {
+        "s": "Bu cihazların fiyatları nedir?",
+        "c": "Fiyat; seçilen model, aplikatör seti, güç konfigürasyonu, eğitim ve servis kapsamı gibi kalemlere göre değişir. Bu nedenle sabit bir rakam paylaşmıyoruz. İşletme türünüzü, kabin düzeninizi ve hedeflediğiniz hizmet menüsünü ilettiğinizde konfigürasyon çıkarılır ve netleşen tutar teklif aşamasında sunulur."
+      }
+    ],
+    "kapanis": "Vücut şekillendirmede doğru hattı bulmanın yolu, teknolojileri güç sırasına dizmekten değil, hedef dokuya göre ayrıştırmaktan geçer. Soğuk lipoliz yağ hücresine, HI-EMT kas dokusuna, radyofrekans ve vakum ise dermis ile subkutan katmana yönelir; endolazer bunlardan ayrı bir yetki sınıfındadır. Karar verirken üç şeyi yazılı hale getirin: yetki kapsamınız, gelen talebin dağılımı ve kabin başına düşen operatör dakikası. Bu üç veri elinizde olduğunda cihaz seçimi teknik bir eşleştirmeye dönüşür. Estezone teknik ekibi, işletme düzeninizi dinleyip uygun konfigürasyonu birlikte çıkarmak üzere değerlendirme görüşmesine açıktır.",
+    "ilgiliCihazlar": [
+      "esteslim-zayiflama-cihazi",
+      "estesculpt-pro",
+      "t-shape-2"
+    ]
+  }
+]

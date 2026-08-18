@@ -446,7 +446,7 @@ ${cta('', 'Bütçenizi söyleyin, seçenekleri çıkaralım', 'Peşin, taksitli,
 </div></section>
 
 <section class="bolum"><div class="kap">
-  <div class="izgara izgara-2" style="gap:2.4rem;align-items:start">
+  <div class="izgara izgara-2 iletisim-izgara" style="gap:2.4rem;align-items:stretch">
     <div class="arac">
       <span class="ust-etiket">Teklif formu</span>
       <h2 style="font-size:1.5rem;margin-top:.8rem">Size nasıl yardımcı olalım?</h2>
@@ -532,11 +532,28 @@ ${cta('', 'Bütçenizi söyleyin, seçenekleri çıkaralım', 'Peşin, taksitli,
         )
         .join('')}
 
-      <div class="kart">
+      <div class="kart" style="margin-bottom:1.1rem">
         <h4>Randevu önerisi</h4>
         <p style="margin-top:.5rem">Showroom ziyaretinden önce arayıp haber verirseniz, ilgilendiğiniz
           cihazı çalışır ve kalibre halde hazır bulundururuz. Böylece ziyaret 20 dakika yerine
           gerçek bir değerlendirmeye dönüşür.</p>
+      </div>
+
+      <!-- Merkez ofis haritası: Google'ın kendi işletme kaydı (CID) gömülür.
+           Sütun yüksekliğini form kolonuna eşitler; boş kalan alanı doldurur. -->
+      <div class="kart harita-kart">
+        <h4>Merkez ofis · Ankara</h4>
+        <p class="sonuk" style="font-size:.88rem;margin:.4rem 0 .9rem">${iletisim.ofisler[0].adres}</p>
+        <div class="harita-cerceve">
+          <iframe
+            src="${P.HARITA_GOMME.replace(/&/g, '&amp;')}"
+            title="Estezone Medikal merkez ofis konumu"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen></iframe>
+        </div>
+        <a class="btn btn-hat btn-k" style="margin-top:.9rem;width:100%"
+           href="${P.HARITA_CID}" target="_blank" rel="noopener">
+          ${ikon.konum} Yol tarifi al</a>
       </div>
     </div>
   </div>
@@ -618,9 +635,9 @@ ${cta('', 'Bütçenizi söyleyin, seçenekleri çıkaralım', 'Peşin, taksitli,
         <span class="pul">${y.etiket}</span>
         <span class="mono sonuk" style="font-size:.74rem">${y.dk} dk okuma</span>
       </div>
-      <h3 style="font-size:1.12rem;line-height:1.32">${y.baslik}</h3>
+      <h3 style="font-size:1.12rem;line-height:1.32"><a href="blog/${y.slug}.html" style="color:inherit">${y.baslik}</a></h3>
       <p style="margin-top:.65rem;flex:1">${y.ozet}</p>
-      <span class="btn btn-sade" style="margin-top:1.2rem;font-size:.87rem">Yazıyı oku ${ikon.ok}</span>
+      <a class="btn btn-sade" style="margin-top:1.2rem;font-size:.87rem" href="blog/${y.slug}.html">Yazıyı oku ${ikon.ok}</a>
     </article>`
       )
       .join('')}
@@ -637,6 +654,175 @@ ${cta('', 'Bütçenizi söyleyin, seçenekleri çıkaralım', 'Peşin, taksitli,
 ${cta('', 'Yazıda cevabını bulamadığınız bir soru mu var?', 'Cihaz seçimi, servis ya da yatırım hesabı — doğrudan sorun, deneyimimizle cevaplayalım.')}`
     )
   );
+
+  /* ================= BLOG YAZI SAYFALARI =================
+     Gövde metni veri/blog-yazilar.json'dan gelir (slug ile eşleşir).
+     Metin JSON'da; biçim burada. Böylece tema değişince yazılar aynen kalır. */
+  const blogGovde = require('../veri/blog-yazilar.json');
+
+  /* Yazı içinde geçen cihaz slug'ını gerçek bağlantıya çevirir.
+     Slug yoksa metin olduğu gibi bırakılır — uydurma link üretilmez. */
+  const cihazAd = new Map(cihazlar.map((c) => [c.slug, c.ad]));
+  const slugDeseni = new RegExp(
+    `\\b(${cihazlar
+      .map((c) => c.slug)
+      .sort((a, b) => b.length - a.length)
+      .join('|')})\\b`,
+    'g'
+  );
+  const metin = (s) =>
+    kacis(s).replace(
+      slugDeseni,
+      (m) => `<a href="../cihaz/${m}.html" class="ic-bag">${kacis(cihazAd.get(m))}</a>`
+    );
+
+  const blogTablo = (t) => `<div class="tablo-sar"><table class="veri-tablo">
+    <thead><tr>${t.basliklar.map((b) => `<th>${kacis(b)}</th>`).join('')}</tr></thead>
+    <tbody>${t.satirlar
+      .map((r) => `<tr>${r.map((h) => `<td>${metin(h)}</td>`).join('')}</tr>`)
+      .join('')}</tbody></table></div>`;
+
+  blogYazilar.forEach((y, i) => {
+    const g = blogGovde.find((b) => b.slug === y.slug);
+    if (!g) return; // gövdesi olmayan başlık sayfa üretmez
+    const onceki = blogYazilar[i - 1];
+    const sonraki = blogYazilar[i + 1];
+
+    const bolumHtml = g.bolumler
+      .map(
+        (b, bi) => `<section class="yazi-bolum" id="b${bi + 1}">
+      <h2>${kacis(b.baslik)}</h2>
+      ${(b.paragraflar || []).map((p) => `<p>${metin(p)}</p>`).join('')}
+      ${
+        b.liste && b.liste.length
+          ? `<ul class="madde">${b.liste.map((l) => `<li>${metin(l)}</li>`).join('')}</ul>`
+          : ''
+      }
+      ${b.tablo ? blogTablo(b.tablo) : ''}
+    </section>`
+      )
+      .join('');
+
+    const ilgili = (g.ilgiliCihazlar || [])
+      .map((s) => cihazlar.find((c) => c.slug === s))
+      .filter(Boolean);
+
+    const sema = {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'Article',
+          headline: y.baslik,
+          description: y.ozet,
+          articleSection: y.etiket,
+          inLanguage: 'tr-TR',
+          author: { '@type': 'Organization', name: marka.ad },
+          publisher: { '@type': 'Organization', name: marka.ad },
+          mainEntityOfPage: `${P.SITE}/blog/${y.slug}.html`,
+        },
+        {
+          '@type': 'FAQPage',
+          mainEntity: (g.sss || []).map((f) => ({
+            '@type': 'Question',
+            name: f.s,
+            acceptedAnswer: { '@type': 'Answer', text: f.c },
+          })),
+        },
+        {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Anasayfa', item: `${P.SITE}/` },
+            { '@type': 'ListItem', position: 2, name: 'Blog', item: `${P.SITE}/blog.html` },
+            { '@type': 'ListItem', position: 3, name: y.baslik },
+          ],
+        },
+      ],
+    };
+
+    yaz(
+      `blog/${y.slug}.html`,
+      sayfa(
+        {
+          baslik: `${y.baslik} | Estezone Medikal`,
+          aciklama: y.ozet.slice(0, 158),
+          yol: 'blog',
+          aktif: 'blog.html',
+          kanonik: `blog/${y.slug}.html`,
+          sema,
+        },
+        `
+<article class="yazi">
+<section class="sayfa-bas"><div class="kap kap-dar">
+  ${kirinti('blog', [{ ad: 'Blog', url: 'blog.html' }, { ad: y.etiket }])}
+  <div style="display:flex;gap:.6rem;align-items:center;margin-top:1.1rem;flex-wrap:wrap">
+    <span class="pul">${kacis(y.etiket)}</span>
+    <span class="mono sonuk" style="font-size:.76rem">${y.dk} dk okuma</span>
+  </div>
+  <h1 style="margin-top:.9rem">${kacis(y.baslik)}</h1>
+  <p class="giris">${metin(g.giris)}</p>
+</div></section>
+
+<section class="bolum bolum-ust-kisa"><div class="kap kap-dar">
+  <nav class="yazi-icindekiler" aria-label="Yazı içindekiler">
+    <span class="ust-etiket">İçindekiler</span>
+    <ol>${g.bolumler.map((b, bi) => `<li><a href="#b${bi + 1}">${kacis(b.baslik)}</a></li>`).join('')}</ol>
+  </nav>
+
+  <div class="yazi-govde">
+    ${bolumHtml}
+  </div>
+
+  <div class="kart yazi-kapanis">
+    <h4>Özetle</h4>
+    <p style="margin-top:.5rem">${metin(g.kapanis)}</p>
+  </div>
+
+  ${
+    (g.sss || []).length
+      ? `<div class="yazi-sss">
+    <h2 style="font-size:1.35rem;margin-bottom:1.1rem">Sık sorulanlar</h2>
+    <div class="akordiyon">${(g.sss || [])
+      .map(
+        (f) => `<details><summary>${kacis(f.s)}</summary>
+      <div class="cevap">${metin(f.c)}</div></details>`
+      )
+      .join('')}</div>
+  </div>`
+      : ''
+  }
+
+  <div class="yazi-gezinme">
+    ${
+      onceki
+        ? `<a class="yazi-gez" href="${onceki.slug}.html"><span class="sonuk mono" style="font-size:.72rem">← Önceki yazı</span><b>${kacis(onceki.baslik)}</b></a>`
+        : '<span></span>'
+    }
+    ${
+      sonraki
+        ? `<a class="yazi-gez yazi-gez--sag" href="${sonraki.slug}.html"><span class="sonuk mono" style="font-size:.72rem">Sonraki yazı →</span><b>${kacis(sonraki.baslik)}</b></a>`
+        : '<span></span>'
+    }
+  </div>
+</div></section>
+
+${
+  ilgili.length
+    ? `<section class="bolum"><div class="kap">
+  <span class="ust-etiket">Yazıda geçen cihazlar</span>
+  <h2 style="margin-top:.8rem;font-size:1.5rem">İlgili platformlar</h2>
+  <p class="giris">Yazıda anlatılan teknik kalemleri gerçek cihazlar üzerinde görün.</p>
+  <div class="izgara izgara-3" style="margin-top:1.8rem">
+    ${ilgili.map((c) => cihazKart(c, 'blog')).join('')}
+  </div>
+</div></section>`
+    : ''
+}
+
+${cta('blog', 'Bu yazıdaki hesabı kendi işletmeniz için yapalım', 'Cihaz seçimi, servis kapsamı ve yatırım geri dönüşü — kendi rakamlarınızla oturup konuşalım.')}
+</article>`
+      )
+    );
+  });
 
   /* ================= YASAL SAYFALAR ================= */
   const yasalIcerik = {

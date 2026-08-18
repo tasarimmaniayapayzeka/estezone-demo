@@ -127,23 +127,54 @@ const KATEGORI_MENU = [
   ['sogutma-aksesuar', 'destek', 'Soğutma & Aksesuar', 'Soğutma sistemleri ve koruyucu ekipman'],
 ];
 
+/* Menü, orijinal estezone.com.tr bilgi mimarisiyle hizalıdır:
+   Hakkımızda · Ürünler (kategorize) · Hizmetler · Blog · İletişim.
+   Araçlar bizim eklediğimiz altıncı başlıktır — orijinalde karşılığı yok. */
 const ANA_MENU = [
+  { ad: 'Hakkımızda', url: 'hakkimizda.html' },
   { ad: 'Cihazlar', url: 'cihazlar.html', alt: KATEGORI_MENU },
-  { ad: 'Teknik Servis', url: 'teknik-servis.html' },
+  {
+    ad: 'Hizmetler',
+    url: 'teknik-servis.html',
+    alt: [
+      ['teknik-servis.html', 'destek', 'Teknik Servis & Yedek Parça', 'Platform bağımsız onarım, kalibrasyon, bakım'],
+      ['kiralama-ikinci-el.html', 'vucut', 'Kiralama & 2. El', 'Aylık kiralama ve kontrolden geçmiş cihazlar'],
+    ],
+  },
   {
     ad: 'Araçlar',
     url: 'cihaz-secim-danismani.html',
     alt: [
-      ['cihaz-secim-danismani', 'epilasyon', 'Cihaz Seçim Danışmanı', '3 soruda size uygun platform'],
-      ['yatirim-hesaplayici', 'vucut', 'Yatırım Geri Dönüş Hesabı', 'Cihaz kaç ayda kendini öder'],
-      ['karsilastir', 'cilt', 'Cihaz Karşılaştırma', 'Üç cihazı yan yana koyun'],
-      ['teknik-matris', 'destek', 'Dalga Boyu & Teknik Matris', '28 cihaz tek tabloda, sıralanabilir'],
+      ['cihaz-secim-danismani.html', 'epilasyon', 'Cihaz Seçim Danışmanı', '3 soruda size uygun platform'],
+      ['yatirim-hesaplayici.html', 'vucut', 'Yatırım Geri Dönüş Hesabı', 'Cihaz kaç ayda kendini öder'],
+      ['karsilastir.html', 'cilt', 'Cihaz Karşılaştırma', 'Üç cihazı yan yana koyun'],
+      ['teknik-matris.html', 'destek', 'Dalga Boyu & Teknik Matris', '28 cihaz tek tabloda, sıralanabilir'],
     ],
   },
-  { ad: 'Kiralama & 2. El', url: 'kiralama-ikinci-el.html' },
-  { ad: 'Kurumsal', url: 'hakkimizda.html' },
+  { ad: 'Blog', url: 'blog.html' },
   { ad: 'İletişim', url: 'iletisim.html' },
 ];
+
+/* Alt menü hedefi: ".html" ile bitiyorsa doğrudan sayfa, değilse kategori sayfası. */
+const altUrl = (sl) => (sl.endsWith('.html') ? sl : `kategori/${sl}.html`);
+
+/* Google'ın kendi işletme kaydı (CID). Adres araması yerine bunu kullanıyoruz:
+   arama sonucu adrese göre kayabilir, CID her zaman doğru kaydı açar.
+   Gömülü harita da aynı CID'yi kullanır (bkz. iletişim sayfası). */
+const HARITA_CID = 'https://maps.google.com/?cid=3451263058096516050';
+/* Gömme için CID (`4s…`) biçimi haritayı doğru yere getiriyor ama işaretçi ve
+   işletme kartı çizmiyor. Anahtarsız çalışan tek sağlıklı biçim, adresin
+   base64url'ünü `1z` ile veren arama modu — pin + işletme adı + puan gelir.
+   Uç nokta HEAD isteğine daima 404 döner; testi GET veya gerçek iframe ile yap. */
+const HARITA_GOMME = (() => {
+  const adres = 'Estezone Medikal, Mutlukent Mah. Angora Bulvarı No:42 Beysukent, 06810 Çankaya Ankara';
+  const b64 = Buffer.from(adres, 'utf8')
+    .toString('base64')
+    .replace(/\+/g, '-')
+    .replace(/\//g, '_')
+    .replace(/=+$/, '');
+  return `https://www.google.com/maps/embed?origin=mfe&pb=!1m3!2m1!1z${b64}!6i17!3m1!1str!5m1!1str`;
+})();
 
 /* ---------- head ---------- */
 function kafa({ baslik, aciklama, yol = '', kanonik, sema, gorsel }) {
@@ -182,7 +213,7 @@ function ust(yol = '', aktif = '') {
       <div class="alt-menu">${m.alt
         .map(
           ([sl, kat, ad, ac]) =>
-            `<a href="${k}${/danismani|hesaplayici|karsilastir|teknik-matris/.test(sl) ? sl + '.html' : 'kategori/' + sl + '.html'}">
+            `<a href="${k}${altUrl(sl)}">
           <span class="nokta" style="background:var(--k-${kat})"></span>
           <span><strong>${ad}</strong><small>${ac}</small></span></a>`
         )
@@ -196,11 +227,7 @@ function ust(yol = '', aktif = '') {
         ? m.alt
             .map(
               ([sl, , ad]) =>
-                `<a href="${k}${
-                  /danismani|hesaplayici|karsilastir|teknik-matris/.test(sl)
-                    ? sl + '.html'
-                    : 'kategori/' + sl + '.html'
-                }" style="padding-left:1.6rem;font-size:.92rem;color:var(--metin-2)">${ad}</a>`
+                `<a href="${k}${altUrl(sl)}" style="padding-left:1.6rem;font-size:.92rem;color:var(--metin-2)">${ad}</a>`
             )
             .join('')
         : '')
@@ -326,9 +353,7 @@ function alt(yol = '') {
   <div class="asistan-bas">
     <span class="im">${ikon.asistan}</span>
     <span><b>Estezone Cihaz Asistanı</b><small>28 cihazı bilir · teşhis koymaz</small></span>
-    <a class="asistan-harita" href="https://www.google.com/maps/search/?api=1&amp;query=${encodeURIComponent(
-      iletisim.ofisler.find((o) => o.birincil)?.adres || iletisim.ofisler[0].adres
-    )}" target="_blank" rel="noopener" title="Merkez ofisimizi haritada görün" aria-label="Merkez ofis konumu — Google Haritalar">${ikon.konum}</a>
+    <a class="asistan-harita" href="${HARITA_CID}" target="_blank" rel="noopener" title="Merkez ofisimizi haritada görün" aria-label="Merkez ofis konumu — Google Haritalar">${ikon.konum}</a>
     <button data-asistan-kapat aria-label="Kapat">${ikon.kapat}</button>
   </div>
   <div class="asistan-kanal">
@@ -439,4 +464,4 @@ function kirinti(yol, parcalar) {
     .join('')}</nav>`;
 }
 
-module.exports = { SITE, kacis, aramaNorm, ikon, kafa, ust, alt, sayfa, cihazKart, cta, kirinti, KATEGORI_MENU, ANA_MENU, icerik, temaAyarla, T, sahneGorseli };
+module.exports = { SITE, kacis, aramaNorm, ikon, kafa, ust, alt, sayfa, cihazKart, cta, kirinti, KATEGORI_MENU, ANA_MENU, icerik, temaAyarla, T, sahneGorseli, HARITA_CID, HARITA_GOMME };
