@@ -2938,3 +2938,94 @@ html, body { overflow-x: clip; }
   .yazi-gez--sag { text-align: left; align-items: flex-start; }
   .yazi-icindekiler { padding: 1rem 1.1rem; }
 }
+
+/* ==========================================================================
+   YÜZEN ŞERİT — GİRİŞ KARŞILAMASI
+   Şeritte artık yalnız asistan düğmesi var; WhatsApp ve telefon panelin
+   kanal şeridinde duruyor. Karşılama balonu düğmenin üstüne oturur.
+   DİKKAT: mevcut '.yuzen button' kuralı (52x52, yuvarlak, grid) tüm düğmeleri
+   yakalıyor ve özgüllüğü tek sınıftan yüksek. Bu yüzden karşılama düğmeleri
+   '.yuzen' ile öneklenip o kuralın getirdiği her şey açıkça geri alınıyor.
+   ========================================================================== */
+.yuzen { align-items: flex-end; }
+
+.yuzen-selam {
+  display: flex; align-items: flex-start; gap: .35rem;
+  opacity: 0; transform: translateY(6px) scale(.96); transform-origin: 100% 100%;
+  transition: opacity .28s ease, transform .28s cubic-bezier(.2, .8, .3, 1);
+  width: max-content; max-width: min(19rem, calc(100vw - 2.5rem));
+}
+.yuzen-selam.gorundu { opacity: 1; transform: none; }
+
+.yuzen .yuzen-selam-ic {
+  /* .yuzen button sıfırlaması */
+  width: auto; height: auto; border-radius: 14px 14px 4px 14px;
+  display: flex; flex-direction: column; place-items: initial;
+  /* kendi biçimi */
+  flex: 1 1 auto; min-width: 0; font: inherit; text-align: left; cursor: pointer;
+  gap: .12rem; padding: .68rem .9rem;
+  background: var(--yuzey-2); border: 1px solid var(--kenar);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, .28);
+  transition: border-color .2s ease, transform .2s ease;
+}
+.yuzen .yuzen-selam-ic:hover { border-color: var(--vurgu); transform: translateY(-1px); }
+.yuzen .yuzen-selam-ic b { color: var(--metin); font-size: .88rem; font-weight: 650; white-space: nowrap; }
+.yuzen .yuzen-selam-ic span { color: var(--metin-2); font-size: .84rem; line-height: 1.35; }
+
+.yuzen .yuzen-selam-kapat {
+  width: 26px; height: 26px; flex: none; align-self: flex-start;
+  display: grid; place-items: center; cursor: pointer;
+  border-radius: 50%; border: 1px solid var(--kenar);
+  background: var(--yuzey-2); color: var(--metin-3); box-shadow: none;
+  transition: color .2s ease, border-color .2s ease;
+}
+.yuzen .yuzen-selam-kapat:hover { color: var(--metin); border-color: var(--vurgu); transform: none; }
+.yuzen .yuzen-selam-kapat svg { width: 13px; height: 13px; }
+
+@media (max-width: 480px) {
+  .yuzen-selam { max-width: calc(100vw - 2.5rem); }
+  .yuzen .yuzen-selam-ic { padding: .6rem .8rem; }
+  .yuzen .yuzen-selam-ic span { font-size: .8rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .yuzen-selam { transition: none; }
+}
+
+/* ---- Blog görselleri ---- */
+/* Liste kartı önizlemesi: kart iç boşluğunu taşarak tam genişlik oturur. */
+.blog-kart { overflow: hidden; padding-top: 0; }
+.blog-kart-gor {
+  display: block; margin: calc(var(--kart-bosluk, 1.5rem) * -1) calc(var(--kart-bosluk, 1.5rem) * -1) 1.2rem;
+  aspect-ratio: 16 / 9; overflow: hidden; background: var(--yuzey-2);
+}
+.blog-kart-gor img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform .5s cubic-bezier(.2, .8, .3, 1);
+}
+.blog-kart:hover .blog-kart-gor img { transform: scale(1.045); }
+
+/* Yazı sayfası kapağı: giriş paragrafından sonra, okuma kolonu genişliğinde. */
+.yazi-kapak {
+  margin: 2rem 0 0; border-radius: 16px; overflow: hidden;
+  border: 1px solid var(--kenar); background: var(--yuzey-2); line-height: 0;
+}
+.yazi-kapak img { width: 100%; height: auto; display: block; aspect-ratio: 16 / 9; object-fit: cover; }
+
+@media (max-width: 700px) {
+  .yazi-kapak { margin-top: 1.5rem; border-radius: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .blog-kart-gor img { transition: none; }
+  .blog-kart:hover .blog-kart-gor img { transform: none; }
+}
+
+/* Kart iç boşluğu temaya göre değişiyor; görselin tam genişlik oturması için
+   negatif marj bu değerden türetilir. */
+.blog-kart { --kart-bosluk: 1.6rem; }
+
+/* Blog listesi 6 yazı içeriyor. .izgara-3'ün auto-fill'i geniş ekranda
+   4 sütun açıyor ve 4+2 dizilip 2 hücre boş kalıyordu. Bilinen kart sayısı
+   olan ızgaralarda auto-fill KULLANMA — sabit sütun say. 6 = 3+3. */
+@media (min-width: 1080px) {
+  .blog-izgara { grid-template-columns: repeat(3, 1fr); }
+}
