@@ -1013,9 +1013,17 @@ function kopyala() {
     if (c.kapak) gerekli.add(c.kapak);
     c.gorseller.slice(0, 6).forEach((g) => gerekli.add(g));
   });
-  // 3D ikonlar + gerçek marka logoları + showroom sahne fotoğrafları (Higgsfield kompozit)
+  // 3D ikonlar + gerçek marka logoları + showroom sahne fotoğrafları + blog konu
+  // görselleri (hepsi Higgsfield üretimi). blog-*: büyük yazı kapağı ve -kucuk
+  // liste önizlemesi aynı desenle geçer.
   fs.readdirSync(kaynak)
-    .filter((f) => f.startsWith('ikon3d-') || f.startsWith('logo-') || f.startsWith('showroom-'))
+    .filter(
+      (f) =>
+        f.startsWith('ikon3d-') ||
+        f.startsWith('logo-') ||
+        f.startsWith('showroom-') ||
+        f.startsWith('blog-')
+    )
     .forEach((f) => gerekli.add(f));
   /* Tema ikon seti: kaynak/gorsel/ikon-<tema>/ altında aynı adla varyant varsa
      varsayılanın (v4 mor-krom ailesi) ÜZERİNE yazılır — markup dosya adları

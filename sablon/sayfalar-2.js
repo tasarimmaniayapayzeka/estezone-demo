@@ -627,10 +627,13 @@ ${cta('', 'Bütçenizi söyleyin, seçenekleri çıkaralım', 'Peşin, taksitli,
 </div></section>
 
 <section class="bolum"><div class="kap">
-  <div class="izgara izgara-3">
+  <div class="izgara izgara-3 blog-izgara">
     ${blogYazilar
       .map(
-        (y) => `<article class="kart belir" style="display:flex;flex-direction:column">
+        (y) => `<article class="kart belir blog-kart" style="display:flex;flex-direction:column">
+      <a class="blog-kart-gor" href="blog/${y.slug}.html" tabindex="-1" aria-hidden="true">
+        <img src="varlik/gorsel/blog-${y.slug}-kucuk.webp" alt="" loading="lazy" width="640" height="360">
+      </a>
       <div style="display:flex;gap:.6rem;align-items:center;margin-bottom:.9rem">
         <span class="pul">${y.etiket}</span>
         <span class="mono sonuk" style="font-size:.74rem">${y.dk} dk okuma</span>
@@ -715,6 +718,7 @@ ${cta('', 'Yazıda cevabını bulamadığınız bir soru mu var?', 'Cihaz seçim
           headline: y.baslik,
           description: y.ozet,
           articleSection: y.etiket,
+          image: `${P.SITE}/varlik/gorsel/blog-${y.slug}.webp`,
           inLanguage: 'tr-TR',
           author: { '@type': 'Organization', name: marka.ad },
           publisher: { '@type': 'Organization', name: marka.ad },
@@ -748,6 +752,7 @@ ${cta('', 'Yazıda cevabını bulamadığınız bir soru mu var?', 'Cihaz seçim
           yol: 'blog',
           aktif: 'blog.html',
           kanonik: `blog/${y.slug}.html`,
+          gorsel: `varlik/gorsel/blog-${y.slug}.webp`,
           sema,
         },
         `
@@ -760,6 +765,10 @@ ${cta('', 'Yazıda cevabını bulamadığınız bir soru mu var?', 'Cihaz seçim
   </div>
   <h1 style="margin-top:.9rem">${kacis(y.baslik)}</h1>
   <p class="giris">${metin(g.giris)}</p>
+  <figure class="yazi-kapak">
+    <img src="../varlik/gorsel/blog-${y.slug}.webp" alt="${kacis(y.baslik)} — konu görseli"
+         width="1200" height="675" fetchpriority="high">
+  </figure>
 </div></section>
 
 <section class="bolum bolum-ust-kisa"><div class="kap kap-dar">

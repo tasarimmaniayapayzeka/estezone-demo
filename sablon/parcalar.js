@@ -344,9 +344,20 @@ function alt(yol = '') {
   </div>
 </footer>
 <div class="yuzen">
-  <button class="asistan" data-asistan-ac aria-label="Cihaz asistanını aç">${ikon.asistan}</button>
-  <a class="wa" href="https://wa.me/${iletisim.whatsappHam}" aria-label="WhatsApp ile yazın" target="_blank" rel="noopener">${ikon.wa}</a>
-  <a class="tel" href="tel:${iletisim.telefonHam}" aria-label="Telefonla arayın">${ikon.tel}</a>
+  <!-- Yalnız asistan düğmesi. WhatsApp ve telefon kısayolları buradan kaldırıldı;
+       ikisi de asistan panelinin kanal şeridinde zaten duruyor. Üç yüzen düğme
+       hem mobilde ekranı yiyordu hem de tek bir çağrı yerine üç seçenek sunup
+       kararı zayıflatıyordu. -->
+  <!-- Siteye girildikten birkaç saniye sonra beliren karşılama. Tıklanınca
+       paneli açar. Oturumda bir kez gösterilir (sessionStorage). -->
+  <div class="yuzen-selam" data-selam hidden>
+    <button type="button" class="yuzen-selam-ic" data-selam-ac>
+      <b>Estezone Asistan</b>
+      <span>Nasıl yardımcı olabilirim?</span>
+    </button>
+    <button type="button" class="yuzen-selam-kapat" data-selam-kapat aria-label="Karşılamayı kapat">${ikon.kapat}</button>
+  </div>
+  <button class="asistan" data-asistan-ac aria-label="Estezone Asistan'ı aç">${ikon.asistan}</button>
 </div>
 
 <div class="asistan-panel" data-asistan hidden role="dialog" aria-label="Estezone cihaz asistanı">

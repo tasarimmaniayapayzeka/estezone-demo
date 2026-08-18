@@ -72,9 +72,40 @@ function bilgiTabani() {
     referanslar.vakalar.forEach((v) => b.push(`- ${v.tip} / ${v.sehir}: ${v.baslik} — ${v.olcut}`));
   }
   b.push('');
-  b.push('SİTE SAYFALARI: index.html, cihazlar.html, kategori/lazer-epilasyon.html, kategori/cilt-medikal-estetik.html, kategori/vucut-sekillendirme.html, kategori/sogutma-aksesuar.html, teknik-servis.html, kiralama-ikinci-el.html, cihaz-secim-danismani.html, yatirim-hesaplayici.html, karsilastir.html, teknik-matris.html, hakkimizda.html, iletisim.html');
+  b.push('SİTE HARİTASI — her satır: yol | sayfada ne var | kullanıcı ne sorunca buraya yönlendir');
+  SITE_HARITASI.forEach((s) => b.push(`- ${s[0]} | ${s[1]} | ${s[2]}`));
   return b.join('\n');
 }
+
+/* Botun sayfa bilgisi. Yalnız ad listesi vermek yetmiyordu — model hangi
+   sayfanın ne işe yaradığını bilmeden yönlendiremiyor. Üç sütun: yol,
+   içerik, hangi soruda kullanılacağı. Yeni sayfa eklenince BURAYA da eklenir. */
+const SITE_HARITASI = [
+  ['index.html', 'Ana sayfa: vitrin, kategoriler, süreç, sık sorulanlar', 'genel tanıtım, "neler yapıyorsunuz"'],
+  ['hakkimizda.html', 'Firma, ekip, yetki belgeleri, çalışma ilkeleri, ofisler', '"kimsiniz", "kaç yıldır", "belgeleriniz"'],
+  ['cihazlar.html', '28 cihazın tamamı; arama, kategori ve işletme türü filtresi', '"tüm cihazlar", "listeyi göreyim"'],
+  ['kategori/lazer-epilasyon.html', 'Alexandrite, diyot ve Nd:YAG epilasyon platformları', 'epilasyon cihazı soruları'],
+  ['kategori/cilt-medikal-estetik.html', 'CO2, pikosaniye, BBL, HIFU, altın iğne cihazları', 'cilt yenileme, leke, iz, dövme silme'],
+  ['kategori/vucut-sekillendirme.html', 'Soğuk lipoliz, HI-EMT, endolazer, RF platformları', 'zayıflama, vücut şekillendirme, selülit'],
+  ['kategori/sogutma-aksesuar.html', 'Soğutma sistemleri ve koruyucu ekipman', 'soğutucu, gözlük, aksesuar'],
+  ['teknik-servis.html', 'Sekiz servis kalemi, önleyici bakım, yedek parça, servis formu', '"cihazım bozuldu", arıza, bakım, parça, kalibrasyon'],
+  ['kiralama-ikinci-el.html', 'Aylık kiralama ve kontrolden geçmiş ikinci el cihazlar', '"kiralık var mı", "ikinci el", düşük bütçe'],
+  ['cihaz-secim-danismani.html', '3 soruda uygun platformu öneren araç', '"hangi cihazı almalıyım", kararsızlık'],
+  ['yatirim-hesaplayici.html', 'Cihazın kaç ayda kendini ödediğini hesaplayan araç', 'geri dönüş, amortisman, "kâr eder mi", fiyat sorusu'],
+  ['karsilastir.html', 'Üç cihazı yan yana koyan karşılaştırma aracı', '"X ile Y arasındaki fark"'],
+  ['teknik-matris.html', '28 cihaz tek tabloda; dalga boyu ve teknik değerler, sıralanabilir', 'dalga boyu, spot, fluens, teknik değer karşılaştırma'],
+  ['blog.html', 'Cihaz seçimi, teknoloji, servis ve işletme ekonomisi yazıları', '"yazılarınız", derinlemesine bilgi isteği'],
+  ['blog/lazer-epilasyon-cihazi-secerken.html', 'Epilasyon cihazında bakılacak 7 teknik kalem, kontrol tablosu', 'satın alma kriterleri, nelere dikkat etmeliyim'],
+  ['blog/alexandrite-mi-diode-mu.html', 'Cilt fototipine göre dalga boyu seçimi', '"alexandrite mi diyot mu", cilt tipi/dalga boyu'],
+  ['blog/ikinci-el-lazer-cihazi-riskleri.html', 'İkinci el alırken sorulacak 5 soru', 'ikinci el riski, atış sayısı, lamba ömrü'],
+  ['blog/cihaz-yatirimi-geri-donus.html', 'Geri dönüş modeli nasıl kurulur', 'yatırım hesabı, doluluk, gider payı'],
+  ['blog/lazer-cihazi-bakim-takvimi.html', 'Arızayı önleyen periyodik bakım takvimi', 'bakım sıklığı, önleyici bakım'],
+  ['blog/soguk-lipoliz-mi-hiemt-mi.html', 'Yağ hücresi mi kas mı hedeflenir; iki yaklaşımın farkı', 'soğuk lipoliz, HI-EMT, vücut şekillendirme seçimi'],
+  ['iletisim.html', 'Teklif/demo/servis formu, ofis adresleri, harita, WhatsApp', 'teklif, randevu, adres, "nasıl ulaşırım"'],
+  ['kvkk.html', 'KVKK aydınlatma metni', 'veri işleme, kişisel veri soruları'],
+  ['gizlilik.html', 'Gizlilik politikası', 'gizlilik soruları'],
+  ['cerez.html', 'Çerez politikası', 'çerez soruları'],
+];
 
 /* Sistem promptu — mevzuat kalkanı burada. Sağlık tanıtım mevzuatı (12.11.2025
    tarihli Tanıtım Yönetmeliği) ve Tıbbi Cihaz Satış Yönetmeliği gereği:
@@ -89,7 +120,9 @@ MUTLAK KURALLAR — istisnası yoktur:
 4. ÜSTÜNLÜK İDDİASI KURMA. "En iyi", "rakipsiz", "kesin sonuç" gibi ifadeler kullanma. Rakip firma/marka karşılaştırması yapma.
 5. YETKİ UYARISI. Bir cihaz önerirken o cihazın hangi işletme türünde bulundurulabileceğini mutlaka belirt ve bunun ön bilgilendirme olduğunu, kesin durumun ÜTS kaydı ve ruhsat tipiyle teyit edileceğini ekle.
 
-ÜSLUP: Türkçe, kısa ve net. En fazla 4-5 cümle. Samimi ama profesyonel; abartılı satış dili yok. Cihaz önerirken adını ve markasını yaz. İlgili site sayfası varsa yolunu ver (ör. cihazlar.html).
+ÜSLUP: Türkçe, kısa ve net. En fazla 4-5 cümle. Samimi ama profesyonel; abartılı satış dili yok. Cihaz önerirken adını ve markasını yaz.
+
+YÖNLENDİRME: Aşağıdaki SİTE HARİTASI'nı ezbere bil. Her cevabın sonunda, sorunun karşılığı olan sayfanın yolunu ver (ör. teknik-servis.html, blog/alexandrite-mi-diode-mu.html). Yalnızca haritada YAZAN yolları kullan — sayfa adı UYDURMA. Kullanıcı "hangi sayfaya bakayım", "nerede yazıyor" gibi bir şey sorarsa doğrudan yolu söyle. Cihaz sayfaları için yol biçimi: cihaz/<slug>.html (slug'lar aşağıdaki cihaz listesinde).
 
 BİLGİ TABANI:
 ${bilgiTabani()}`;

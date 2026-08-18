@@ -639,10 +639,14 @@
 
     const ac = () => {
       asistan.hidden = false;
+      selamiGizle();
       if (!acildi) {
         acildi = true;
         balon(
-          'Merhaba. Estezone <b>cihaz asistanıyım</b>. Portföydeki 28 platformu, hangi işletme türünün hangi cihazı bulundurabileceğini ve servis kapsamımızı biliyorum.<br><br>Tıbbi teşhis veya tedavi önerisi vermem — cihaz sorularınız için buradayım.'
+          '<b>Estezone Asistan</b> — nasıl yardımcı olabilirim?<br><br>' +
+            'Portföydeki 28 platformu, hangi işletme türünün hangi cihazı bulundurabileceğini, ' +
+            'servis kapsamımızı ve sitedeki sayfaları biliyorum — aradığınız sayfaya da yönlendirebilirim.<br><br>' +
+            'Tıbbi teşhis veya tedavi önerisi vermem.'
         );
         oneriKap.innerHTML = ONERILER.map((o) => `<button type="button">${o}</button>`).join('');
         $$('button', oneriKap).forEach((b) =>
@@ -654,6 +658,46 @@
       }
       setTimeout(() => girdi.focus(), 80);
     };
+
+    /* ---- Giriş karşılaması ----
+       Yüzen şeritte artık tek düğme var; siteye giren kullanıcı botun ne
+       olduğunu anlamadan geçebiliyor. Birkaç saniye sonra beliren küçük bir
+       balon "Estezone Asistan — nasıl yardımcı olabilirim?" diye sorar.
+       Oturumda BİR KEZ gösterilir; kapatılırsa bir daha çıkmaz. */
+    const selam = $('[data-selam]');
+    const SELAM_ANAHTAR = 'estezone-selam-gorundu';
+    const selamiGizle = (kalici) => {
+      if (!selam) return;
+      selam.classList.remove('gorundu');
+      selam.hidden = true;
+      if (kalici) {
+        try {
+          sessionStorage.setItem(SELAM_ANAHTAR, '1');
+        } catch (e) {
+          /* gizli sekmede sessionStorage kapalı olabilir — sessizce geç */
+        }
+      }
+    };
+    if (selam) {
+      let gosterildi = false;
+      try {
+        gosterildi = sessionStorage.getItem(SELAM_ANAHTAR) === '1';
+      } catch (e) {
+        /* erişilemiyorsa her oturumda bir kez göster */
+      }
+      if (!gosterildi) {
+        setTimeout(() => {
+          if (!asistan.hidden) return; // panel zaten açıksa karşılama gereksiz
+          selam.hidden = false;
+          requestAnimationFrame(() => selam.classList.add('gorundu'));
+        }, 3200);
+      }
+      $('[data-selam-ac]', selam)?.addEventListener('click', () => {
+        selamiGizle(true);
+        ac();
+      });
+      $('[data-selam-kapat]', selam)?.addEventListener('click', () => selamiGizle(true));
+    }
 
     /* ---- Sesli sor ----
        Tarayıcının kendi konuşma tanıması (Web Speech API) — dış kütüphane yok.
