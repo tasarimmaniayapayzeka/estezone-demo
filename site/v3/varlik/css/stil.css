@@ -2845,3 +2845,14 @@ html, body { overflow-x: clip; }
    mesaj alanı (flex:1) baştan itibaren tüm boşluğu alır. */
 .asistan-panel { height: min(82vh, 660px); }
 @media (max-width: 640px) { .asistan-panel { height: 84vh; } }
+
+/* Asistan başlığında konum kısayolu — kapat (X) düğmesinin solunda.
+   Merkez ofisin adresiyle Google Haritalar'ı yeni sekmede açar. */
+.asistan-harita {
+  display: grid; place-items: center; width: 30px; height: 30px; flex: none;
+  border-radius: 8px; color: var(--metin-2); margin-left: auto;
+  transition: background .2s ease, color .2s ease;
+}
+.asistan-harita svg { width: 17px; height: 17px; }
+.asistan-harita:hover { background: var(--yuzey); color: var(--vurgu); }
+.asistan-bas [data-asistan-kapat] { margin-left: 0; }

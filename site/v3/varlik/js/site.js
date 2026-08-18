@@ -560,14 +560,36 @@
 
     const guvenliMetin = (s) =>
       String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-    /* Modelden gelen düz metni sınırlı biçimlendirmeyle HTML'e çevirir:
-       **kalın**, satır sonu ve site içi bağlantılar (sayfa.html). */
+    /* Modelden gelen düz metni HTML'e çevirir.
+       ÖNEMLİ: model bir cihaz önerdiğinde metinde "cihaz/<slug>.html" geçer.
+       Bunları çıplak bağlantı olarak bırakmak yerine GÖRSELLİ KARTA çeviriyoruz
+       — kural tabanlı motor zaten öyle yapıyordu, AI cevabında eksikti. */
     const aiBicimle = (metin) => {
-      let h = guvenliMetin(metin)
+      // 1) Metinde adı geçen cihazları topla (sıra korunur, tekrar edilmez)
+      const bulunan = [];
+      const desen = /cihaz\/([a-z0-9-]+)\.html/g;
+      let e;
+      while ((e = desen.exec(metin)) !== null) {
+        const c = C.find((x) => x.slug === e[1]);
+        if (c && !bulunan.includes(c)) bulunan.push(c);
+      }
+
+      // 2) Cihaz URL'lerini metinden çıkar — kart zaten aşağıda görünecek
+      let ham = metin
+        .replace(/\s*[（(]\s*cihaz\/[a-z0-9-]+\.html\s*[）)]/g, '')
+        .replace(/\s*[-–—:]?\s*cihaz\/[a-z0-9-]+\.html/g, '');
+
+      let h = guvenliMetin(ham)
         .replace(/\*\*(.+?)\*\*/g, '<b>$1</b>')
         .replace(/\n{2,}/g, '<br><br>')
         .replace(/\n/g, '<br>');
-      h = h.replace(/\b((?:cihaz\/|kategori\/)?[a-z0-9-]+\.html)\b/g, (t) => `<a href="${kok}${t}">${t}</a>`);
+      // 3) Kalan site sayfaları (iletisim.html vb.) bağlantı olur
+      h = h.replace(/\b((?:kategori\/)?[a-z0-9-]+\.html)\b/g, (t) => `<a href="${kok}${t}">${t}</a>`);
+
+      // 4) Cihaz kartları
+      if (bulunan.length) h += bulunan.slice(0, 3).map(cihazKarti).join('');
+      if (bulunan.length > 3)
+        h += `<p style="margin-top:.5rem;font-size:.82rem">…ve ${bulunan.length - 3} cihaz daha. <a href="${kok}cihazlar.html">Tümünü görün</a></p>`;
       return h;
     };
 

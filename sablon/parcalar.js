@@ -326,6 +326,9 @@ function alt(yol = '') {
   <div class="asistan-bas">
     <span class="im">${ikon.asistan}</span>
     <span><b>Estezone Cihaz Asistanı</b><small>28 cihazı bilir · teşhis koymaz</small></span>
+    <a class="asistan-harita" href="https://www.google.com/maps/search/?api=1&amp;query=${encodeURIComponent(
+      iletisim.ofisler.find((o) => o.birincil)?.adres || iletisim.ofisler[0].adres
+    )}" target="_blank" rel="noopener" title="Merkez ofisimizi haritada görün" aria-label="Merkez ofis konumu — Google Haritalar">${ikon.konum}</a>
     <button data-asistan-kapat aria-label="Kapat">${ikon.kapat}</button>
   </div>
   <div class="asistan-kanal">
