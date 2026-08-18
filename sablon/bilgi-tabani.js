@@ -101,6 +101,8 @@ const SITE_HARITASI = [
   ['blog/cihaz-yatirimi-geri-donus.html', 'Geri dönüş modeli nasıl kurulur', 'yatırım hesabı, doluluk, gider payı'],
   ['blog/lazer-cihazi-bakim-takvimi.html', 'Arızayı önleyen periyodik bakım takvimi', 'bakım sıklığı, önleyici bakım'],
   ['blog/soguk-lipoliz-mi-hiemt-mi.html', 'Yağ hücresi mi kas mı hedeflenir; iki yaklaşımın farkı', 'soğuk lipoliz, HI-EMT, vücut şekillendirme seçimi'],
+  ['bayi-giris.html', 'Yetkili satıcı / kurumsal müşteri paneli girişi', '"bayi girişi", "panele nasıl girerim", mevcut müşteri hesabı'],
+  ['bayi-basvuru.html', 'Bayi üyelik başvuru formu; işletme türüne göre istenen belgeler listelenir', '"bayi olmak istiyorum", "hangi belgeler gerekli", yetkili satıcılık, üyelik'],
   ['iletisim.html', 'Teklif/demo/servis formu, ofis adresleri, harita, WhatsApp', 'teklif, randevu, adres, "nasıl ulaşırım"'],
   ['kvkk.html', 'KVKK aydınlatma metni', 'veri işleme, kişisel veri soruları'],
   ['gizlilik.html', 'Gizlilik politikası', 'gizlilik soruları'],

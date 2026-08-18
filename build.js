@@ -1020,6 +1020,9 @@ teknikServis();
 /* kurumsal, araç ve yasal sayfalar ayrı modülde */
 require('./sablon/sayfalar-2.js')({ yaz, cihazlar, kategoriler });
 
+/* bayi girişi + üyelik başvurusu */
+require('./sablon/sayfalar-bayi.js')({ yaz });
+
 /* ---- varlıkları kopyala ---- */
 function kopyala() {
   fs.mkdirSync(path.join(CIKTI, 'varlik/css'), { recursive: true });

@@ -424,6 +424,49 @@
     })
   );
 
+  /* ---- bayi başvurusu: işletme türüne göre belge listesi ----
+     Hangi belgenin isteneceği işletme türüne bağlı. Kullanıcı türü seçince
+     liste anında kurulur; böylece "hangi evrakı hazırlayacağım" sorusu
+     forma girmeden cevaplanır. Matris build sırasında yazılır. */
+  const belgeSecim = $('[data-bayi-tur]');
+  const belgeKap = $('[data-belge-liste]');
+  if (belgeSecim && belgeKap && window.ESTEZONE_BELGE) {
+    const B = window.ESTEZONE_BELGE;
+    const satir = (ad, zorunlu) =>
+      `<label class="belge-satir">
+        <input type="file" hidden>
+        <span class="belge-ad">${ad}${zorunlu ? ' <i>*</i>' : ''}</span>
+        <span class="belge-dug">Dosya seç</span>
+      </label>`;
+    belgeSecim.addEventListener('change', () => {
+      const t = B.turler[belgeSecim.value];
+      if (!t) {
+        belgeKap.innerHTML =
+          '<p class="sonuk" style="font-size:.88rem;margin-top:.7rem">Önce işletme türünü seçin — gereken belgeler burada listelenir.</p>';
+        return;
+      }
+      belgeKap.innerHTML =
+        `<p class="belge-not">${t.not}</p>` +
+        `<div class="belge-grup"><span class="belge-baslik">Her işletmeden istenen</span>${B.ortak
+          .map((a) => satir(a, true))
+          .join('')}</div>` +
+        `<div class="belge-grup"><span class="belge-baslik">${t.ad} için ek belgeler</span>${t.belgeler
+          .map((a) => satir(a, true))
+          .join('')}</div>` +
+        `<p class="sonuk" style="font-size:.8rem;margin-top:.9rem">Belge listesi ön bilgilendirmedir;
+          kesin liste ruhsat tipinize göre değişebilir. <strong>Eksik belgeyle de başvurabilirsiniz</strong> —
+          süreçte birlikte tamamlanır.</p>`;
+      /* Seçilen dosyanın adını göster — demo, yükleme yapılmaz. */
+      $$('input[type=file]', belgeKap).forEach((g) =>
+        g.addEventListener('change', () => {
+          const d = g.closest('.belge-satir');
+          d.classList.toggle('secili', !!g.files.length);
+          $('.belge-dug', d).textContent = g.files.length ? g.files[0].name.slice(0, 26) : 'Dosya seç';
+        })
+      );
+    });
+  }
+
   /* ---- yıl ---- */
   $$('[data-yil]').forEach((e) => (e.textContent = new Date().getFullYear()));
 

@@ -262,7 +262,11 @@ function ust(yol = '', aktif = '') {
     <a class="logo" href="${k}index.html"><img class="logo-gorsel" src="${k}varlik/gorsel/${TEMALAR[T.tema].logoDosya}" alt="Estezone Medikal" width="157" height="38"></a>
     <ul class="nav">${nav}</ul>
     <div class="ust-eylem">
-      <a class="btn btn-hat btn-k" href="tel:${iletisim.telefonHam}">${ikon.tel}<span>${iletisim.telefon}</span></a>
+      <!-- Bayi girişi menüde değil eylem şeridinde: navigasyon başlığı değil,
+           mevcut müşteriye ait bir kapı. Telefon numarası dar ekranda gizlenir,
+           bayi girişi kalır. -->
+      <a class="btn btn-sade btn-k ust-bayi" href="${k}bayi-giris.html">${ikon.kisi}<span>Bayi Girişi</span></a>
+      <a class="btn btn-hat btn-k ust-tel" href="tel:${iletisim.telefonHam}">${ikon.tel}<span>${iletisim.telefon}</span></a>
       <a class="btn btn-ana btn-k" href="${k}iletisim.html">Teklif Alın</a>
       <button class="menu-dug" aria-label="Menüyü aç">${ikon.menu}</button>
     </div>
@@ -277,6 +281,7 @@ function ust(yol = '', aktif = '') {
     <nav>${mobil}</nav>
     <div class="btn-grup" style="margin-top:1.6rem;flex-direction:column;align-items:stretch">
       <a class="btn btn-ana" href="${k}iletisim.html">Teklif Alın</a>
+      <a class="btn btn-hat" href="${k}bayi-giris.html">${ikon.kisi}Bayi Girişi</a>
       <a class="btn btn-hat" href="tel:${iletisim.telefonHam}">${ikon.tel}${iletisim.telefon}</a>
     </div>
   </div>
