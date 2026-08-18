@@ -565,7 +565,9 @@ function cihazSayfalari() {
       brand: { '@type': 'Brand', name: c.marka },
       category: c.kategoriAd,
       description: c.ozet,
-      image: `${SITE}/varlik/gorsel/${c.kapak}`,
+      // Paylaşım önizlemesi ve yapısal veri de showroom kompozitini kullanır;
+      // ham katalog kapağı (beyaz zemin) sosyal medyada kötü görünüyordu.
+      image: `${SITE}/varlik/gorsel/${sahneGorseli(c.slug) || c.kapak}`,
       additionalProperty: c.spec.slice(0, 12).map((s) => ({
         '@type': 'PropertyValue',
         name: s.ad,
@@ -592,10 +594,15 @@ function cihazSayfalari() {
       <img src="../varlik/gorsel/${sahneGorseli(c.slug) || c.kapak}" alt="${kacis(c.ad)}" data-ana-gorsel width="620" height="620" fetchpriority="high">
     </div>
     ${(() => {
-      /* showroom varsa ilk küçük o olur; katalog çekimleri arkasından gelir */
-      const kucukler = sahneGorseli(c.slug)
-        ? [sahneGorseli(c.slug), ...c.gorseller.slice(0, 5)]
-        : c.gorseller.slice(0, 6);
+      /* showroom varsa ilk küçük o olur; katalog çekimleri arkasından gelir.
+         Çok modelli kalemlerde galeri de model showroom kompozitlerinden
+         kurulur — ham katalog kontakt sayfaları (beyaz zemin, "#33 #36"
+         etiketli dörtlü ızgara) sayfanın diline hiç uymuyordu. */
+      const kucukler = c.modeller
+        ? [sahneGorseli(c.slug) || c.kapak, ...c.modeller.map((m) => m.gorsel).slice(0, 5)]
+        : sahneGorseli(c.slug)
+          ? [sahneGorseli(c.slug), ...c.gorseller.slice(0, 5)]
+          : c.gorseller.slice(0, 6);
       return kucukler.length > 1
         ? `<div class="cd-kucuk">${kucukler
             .map(
@@ -775,7 +782,7 @@ ${cta('cihaz', `${c.ad} için net bir teklif alın`, 'Başlık konfigürasyonu, 
           yol: 'cihaz',
           aktif: 'cihazlar.html',
           kanonik: `cihaz/${c.slug}.html`,
-          gorsel: `varlik/gorsel/${c.kapak}`,
+          gorsel: `varlik/gorsel/${sahneGorseli(c.slug) || c.kapak}`,
           sema,
         },
         govde
