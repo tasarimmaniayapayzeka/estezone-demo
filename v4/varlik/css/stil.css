@@ -3146,3 +3146,74 @@ html, body { overflow-x: clip; }
 .asistan-harita svg { width: 17px; height: 17px; }
 .asistan-harita:hover { background: var(--yuzey); color: var(--vurgu); }
 .asistan-bas [data-asistan-kapat] { margin-left: 0; }
+
+/* İletişim sayfası haritası — sağ sütunu form kolonuyla aynı boya getirir.
+   Harita kartı kalan boşluğu doldurur; iframe kart içinde esner. */
+.iletisim-izgara > div:last-child { display: flex; flex-direction: column; }
+.harita-kart { display: flex; flex-direction: column; flex: 1; min-height: 320px; }
+.harita-cerceve {
+  flex: 1; min-height: 300px; border-radius: 12px; overflow: hidden;
+  border: 1px solid var(--kenar); background: var(--yuzey-2);
+}
+.harita-cerceve iframe { width: 100%; height: 100%; min-height: 220px; border: 0; display: block; }
+.harita-kart .btn svg { width: 15px; height: 15px; margin-right: .35rem; }
+@media (max-width: 900px) { .harita-kart { min-height: 0; } .harita-cerceve { min-height: 260px; } }
+
+/* ==========================================================================
+   BLOG YAZI SAYFASI
+   Okuma kolonu daraltılır (≈68ch); gövde metni ölçülü satır uzunluğunda kalır.
+   ========================================================================== */
+.kap-dar { max-width: 860px; }
+.bolum-ust-kisa { padding-top: 2.2rem; }
+
+.yazi-icindekiler {
+  border: 1px solid var(--kenar); border-radius: 14px;
+  padding: 1.15rem 1.35rem 1.25rem; margin-bottom: 2.4rem; background: var(--yuzey-2);
+}
+.yazi-icindekiler ol { margin: .9rem 0 0; padding-left: 0; list-style: none; display: grid; gap: .45rem; }
+.yazi-icindekiler li { color: var(--metin-2); font-size: .93rem; line-height: 1.45; padding-left: 1.05rem; position: relative; }
+/* Bölüm başlıkları kendi numarasını taşıyor ("1. Dalga boyu", "2, 3 ve 4. …"),
+   bu yüzden listeye ikinci bir numara verilmiyor — sade bir işaret yeterli. */
+.yazi-icindekiler li::before { content: ''; position: absolute; left: 0; top: .62em; width: 5px; height: 1px; background: var(--vurgu); }
+.yazi-icindekiler a { color: var(--metin-2); text-decoration: none; }
+.yazi-icindekiler a:hover { color: var(--vurgu); }
+
+.yazi-bolum { margin-bottom: 2.6rem; scroll-margin-top: 90px; }
+.yazi-bolum h2 { font-size: 1.42rem; line-height: 1.28; margin-bottom: 1rem; }
+.yazi-bolum p { color: var(--metin-2); line-height: 1.78; margin-bottom: 1.05rem; font-size: 1.005rem; }
+.yazi-bolum p:last-child { margin-bottom: 0; }
+.yazi-bolum .madde { margin: 1.3rem 0 1.5rem; }
+
+/* Cihaz adları gövde metni içinde iç bağlantıya dönüşür. */
+.ic-bag { color: var(--vurgu); text-decoration: none; border-bottom: 1px solid transparent; }
+.ic-bag:hover { border-bottom-color: currentColor; }
+
+/* Tablolar dar ekranda kendi içinde yatay kayar — sayfa gövdesi kaymaz. */
+.tablo-sar { overflow-x: auto; margin: 1.5rem 0 1.6rem; border: 1px solid var(--kenar); border-radius: 12px; }
+.veri-tablo { width: 100%; min-width: 560px; border-collapse: collapse; font-size: .9rem; }
+.veri-tablo th, .veri-tablo td { padding: .78rem .95rem; text-align: left; vertical-align: top; line-height: 1.6; }
+.veri-tablo thead th { background: var(--yuzey-2); color: var(--metin); font-weight: 650; font-size: .84rem; letter-spacing: .01em; }
+.veri-tablo tbody tr + tr { border-top: 1px solid var(--kenar); }
+.veri-tablo td { color: var(--metin-2); }
+.veri-tablo td:first-child { color: var(--metin); font-weight: 560; }
+
+.yazi-kapanis { margin: 2.4rem 0; border-left: 3px solid var(--vurgu); }
+.yazi-kapanis p { color: var(--metin-2); line-height: 1.75; }
+.yazi-sss { margin: 2.8rem 0 2.2rem; }
+
+.yazi-gezinme { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2.4rem; }
+.yazi-gez {
+  display: flex; flex-direction: column; gap: .35rem; text-decoration: none;
+  border: 1px solid var(--kenar); border-radius: 12px; padding: 1rem 1.15rem;
+  transition: border-color .2s ease, transform .2s ease;
+}
+.yazi-gez:hover { border-color: var(--vurgu); transform: translateY(-2px); }
+.yazi-gez b { color: var(--metin); font-size: .93rem; line-height: 1.4; font-weight: 600; }
+.yazi-gez--sag { text-align: right; align-items: flex-end; }
+
+@media (max-width: 700px) {
+  .yazi-bolum h2 { font-size: 1.24rem; }
+  .yazi-gezinme { grid-template-columns: 1fr; }
+  .yazi-gez--sag { text-align: left; align-items: flex-start; }
+  .yazi-icindekiler { padding: 1rem 1.1rem; }
+}
