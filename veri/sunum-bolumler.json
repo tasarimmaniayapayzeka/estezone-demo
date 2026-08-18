@@ -3,7 +3,7 @@
     "id": "neredesiniz",
     "ustEtiket": "Durum Tespiti · 01",
     "baslik": "Neredesiniz",
-    "giris": "estezone.com.tr, 16 Ağustos 2026'da 8 paralel denetçi ve curl ile baştan sona ölçüldü; sitemap üzerinden 40 sayfa ve 82 yazı, toplam 122 URL tarandı. Aşağıdaki her rakam bu ölçümden geliyor. Tek cümlelik teşhis şu: site teknik olarak ayakta, ticari olarak ölü.",
+    "giris": "estezone.com.tr, 16 Ağustos 2026'da 8 paralel denetçi ve curl ile baştan sona ölçüldü; sitemap üzerinden 40 sayfa ve 82 yazı, toplam 122 URL tarandı. Aşağıdaki her rakam bu ölçümden geliyor. Tek cümlelik teşhis şu: teknik taban sağlam, ticari katman henüz kurulmamış.",
     "govde": [
       {
         "tip": "paragraf",
@@ -48,11 +48,11 @@
       {
         "tip": "kutu",
         "baslik": "Tezin özeti",
-        "metin": "Altyapıya para harcanmış, vitrine harcanmamış. Hızlı bir sunucu, kimliği olmayan bir siteyi hızlı servis ediyor. Alıcı tarafta bunun karşılığı yok."
+        "metin": "Yatırım altyapıya yapılmış; sıra vitrine gelmemiş. Hızlı bir sunucu, henüz marka kimliği giydirilmemiş bir siteyi hızlı servis ediyor. Kazanç alıcı tarafına henüz yansımıyor."
       },
       {
         "tip": "tablo",
-        "baslik": "Taban sağlam, üst kat boş (16 Ağu 2026 ölçümü)",
+        "baslik": "Taban sağlam, üst kat bekliyor (16 Ağu 2026 ölçümü)",
         "sutunlar": [
           "Katman",
           "Ölçüm",
@@ -62,37 +62,37 @@
           [
             "Sunucu / ağ",
             "TTFB 38–77 ms (cache HIT), soğukta 425 ms · HTTP/2+3 · TLS 1.3 · brotli",
-            "Sağlam"
+            "Korunacak"
           ],
           [
             "Yükleme ekonomisi",
             "~1,6 MB ön yüz yükü → 41 KB içerik",
-            "Orantısız"
+            "Dengelenecek"
           ],
           [
             "Güvenlik",
             "6 temel başlığın 6'sı eksik · PHP 8.0.30 (destek sonu) · sürüm dışarı sızıyor",
-            "Açık risk"
+            "Öncelikli"
           ],
           [
             "Görsel kimlik",
             "0 marka fontu · 5 farklı mavi + konu dışı magenta #e95095",
-            "Kimlik yok"
+            "Kimlik giydirilecek"
           ],
           [
             "Erişilebilirlik",
             "Ana link rengi #1b98e0 kontrast 3,17:1 — WCAG AA eşiğinin altında",
-            "Standart altı"
+            "Standarda çekilecek"
           ],
           [
             "Ön yüz kalitesi",
             "814 !important (satır içi 238 + CSS 576) · clamp() 0 · @container 0 · prefers-reduced-motion 0 · display:grid 1",
-            "Bakımı zor"
+            "Sadeleştirilecek"
           ],
           [
             "Ticari yüzey",
             "6 sayfada 2 CTA etiketi",
-            "Ölü"
+            "Kurulacak"
           ]
         ]
       },
@@ -117,7 +117,7 @@
       },
       {
         "tip": "paragraf",
-        "metin": "Bir alıcı bu siteye geldiğinde teknik bir sorunla karşılaşmıyor. Güncelliğini yitirmiş, kimliksiz ve kendisinden hiçbir şey istemeyen bir sayfayla karşılaşıyor. Sonraki iki bölüm, bunun ticari faturasını aynı ölçüm setiyle gösteriyor."
+        "metin": "Bir alıcı bu siteye geldiğinde teknik bir sorunla karşılaşmıyor. Güncellenmeyi bekleyen, marka kimliği taşımayan ve ziyaretçiden bir adım istemeyen bir sayfayla karşılaşıyor. Sonraki iki bölüm, bunun ticari faturasını aynı ölçüm setiyle gösteriyor."
       }
     ]
   },
@@ -338,7 +338,7 @@
       {
         "tip": "kutu",
         "baslik": "Bunun iyi tarafı",
-        "metin": "61 yazılık küme çöp değil, hammadde. İçinde gerçek konu bilgisi ve markalı anlatım var — üstelik ürün sayfalarının 6–12 katı hacimde. Bu metin dağıtılıp derin rehberlere damıtılabilir, markalı bölümler de ince ürün sayfalarının gövdesi olarak kullanılabilir. Yani sıfırdan içerik üretmek gerekmiyor; var olan içeriği doğru sayfaya taşımayı hedefliyoruz."
+        "metin": "61 yazılık küme değersiz değil; tam tersine hammadde. İçinde gerçek konu bilgisi ve markalı anlatım var — üstelik ürün sayfalarının 6–12 katı hacimde. Bu metin dağıtılıp derin rehberlere damıtılabilir, markalı bölümler de ince ürün sayfalarının gövdesi olarak kullanılabilir. Yani sıfırdan içerik üretmek gerekmiyor; var olan içeriği doğru sayfaya taşımayı hedefliyoruz."
       },
       {
         "tip": "olcum",
@@ -676,7 +676,7 @@
     "govde": [
       {
         "tip": "paragraf",
-        "metin": "16 Ağustos 2026 taramasında doğrulanan tablo şu: 29 cihaz sayfasının hiçbirinde indirilebilir PDF föy, teklif formu, teklif butonu ya da cihaza özel WhatsApp bağlantısı yok. Yani alıcının teknik ekibine iletebileceği tek bir belge dahi siteden çıkmıyor. Buna karşılık sitede firma çapında \"FDA Onaylı\" ifadesi kullanılıyor — cihaz düzeyinde belge künyesi olmadan yapılan, ispat külfeti reklam verende olan bir iddia. Kısacası sitede kanıt eksik, iddia fazla. 20 yıllık bir firma dijitalde yeni kurulmuş gibi görünüyor."
+        "metin": "16 Ağustos 2026 taramasında doğrulanan tablo şu: 29 cihaz sayfasının hiçbirinde indirilebilir PDF föy, teklif formu, teklif butonu ya da cihaza özel WhatsApp bağlantısı yok. Yani alıcının teknik ekibine iletebileceği tek bir belge dahi siteden çıkmıyor. Buna karşılık sitede firma çapında \"FDA Onaylı\" ifadesi kullanılıyor — cihaz düzeyinde belge künyesi olmadan yapılan, ispat külfeti reklam verende olan bir iddia. Kısacası sahadaki birikim siteye yansımamış. 20 yıllık deneyim yerinde duruyor; onu görünür kılan belge katmanı henüz kurulmamış."
       },
       {
         "tip": "olcum",
@@ -1097,7 +1097,7 @@
       },
       {
         "tip": "paragraf",
-        "metin": "Birleştirmenin mantığı şu: 61 yazı çöp değil, hammadde. Noblex yazısındaki 2.223 kelimelik teknik anlatım silinmez, 184 kelimelik ürün sayfasının gövdesi haline gelir. Eski adres yeni ürün sayfasına 301'lenir. Böylece içerik korunur, birikimin de yeni adrese taşınmasını hedefleriz; iki sayfa birbiriyle yarışmak yerine tek bir güçlü sayfada toplanır — ve o sayfada teklif formu vardır."
+        "metin": "Birleştirmenin mantığı şu: 61 yazı harcanmış emek değil, hammadde. Noblex yazısındaki 2.223 kelimelik teknik anlatım silinmez, 184 kelimelik ürün sayfasının gövdesi haline gelir. Eski adres yeni ürün sayfasına 301'lenir. Böylece içerik korunur, birikimin de yeni adrese taşınmasını hedefleriz; iki sayfa birbiriyle yarışmak yerine tek bir güçlü sayfada toplanır — ve o sayfada teklif formu vardır."
       },
       {
         "tip": "paragraf",
@@ -1160,7 +1160,7 @@
   {
     "id": "google-ads",
     "ustEtiket": "REKLAM 1",
-    "baslik": "Google Ads: Bütçe Akıyor, Ölçüm Yok",
+    "baslik": "Google Ads: Ölçüm Hattı Henüz Kapalı",
     "giris": "Sitedeki formun kodunda ads_keyword ve Kampanya_Bilgisi adlı iki alan tanımlı — yani arama reklamı ölçümü bir noktada planlanmış. Ölçümde bu alanların ikisi de boş geliyor. Reklam yayını varsa hangi aramanın teklif getirdiği kayıt altına alınmıyor demektir; yoksa da ölçüm altyapısı bugün çalışmıyor. Önce bu delik kapanır, sonra bütçe büyütülür.",
     "govde": [
       {

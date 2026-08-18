@@ -155,3 +155,80 @@ h4 { font-size: 1.02rem; margin: 0; }
   .btn:hover { transform: none; }
   .ilerleme { transition: none; }
 }
+
+/* ==========================================================================
+   3D İKONLAR, ÖZELLİK LİSTESİ, KANAL ŞERİDİ
+   ========================================================================== */
+.perde-ust { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.perde-ikon {
+  width: 64px; height: 64px; flex: none; opacity: .95;
+  filter: drop-shadow(0 8px 22px rgba(45, 212, 245, .22));
+}
+
+/* Chatbot ve prodüksiyon perdelerindeki özellik listesi */
+.ozellik-liste {
+  list-style: none; margin: 1.6rem 0 0; padding: 0;
+  display: grid; gap: .6rem; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  max-width: 820px;
+}
+.ozellik-liste li {
+  position: relative; padding: .65rem .9rem .65rem 2rem;
+  background: var(--yuzey); backdrop-filter: blur(8px);
+  border: 1px solid var(--kenar); border-radius: 10px;
+  font-size: .87rem; color: var(--metin-2); line-height: 1.5;
+}
+.ozellik-liste li::before {
+  content: ''; position: absolute; left: .85rem; top: 1.15em;
+  width: 6px; height: 6px; border-radius: 50%; background: var(--vurgu);
+}
+
+/* ---- kanal şeridi (yol haritası diyagramı) ---- */
+.kanal-serit {
+  margin: 2rem 0 2.2rem; max-width: 700px;
+  background: var(--yuzey); backdrop-filter: blur(10px);
+  border: 1px solid var(--kenar); border-radius: 14px; padding: 1.2rem 1.3rem;
+}
+.kanal-bas, .kanal {
+  display: grid; grid-template-columns: 1.5fr repeat(3, 1fr); gap: .6rem; align-items: center;
+}
+.kanal-bas { padding-bottom: .7rem; border-bottom: 1px solid var(--kenar); margin-bottom: .7rem; }
+.kanal-bas b {
+  font-family: var(--m); font-size: .72rem; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--metin-3); font-weight: 500; text-align: center;
+}
+.kanal + .kanal { margin-top: .5rem; }
+.kanal-ad {
+  display: flex; align-items: center; gap: .55rem;
+  font-size: .87rem; color: var(--metin); font-weight: 550;
+}
+.kanal-ad img { width: 26px; height: 26px; flex: none; }
+
+/* Hücre: dolu daire = tam çalışıyor, halka = kuruluyor, sönük = başlamadı */
+.hucre { display: grid; place-items: center; height: 26px; }
+.hucre i { display: block; width: 13px; height: 13px; border-radius: 50%; }
+.h2 i, i.h2 { background: var(--vurgu); box-shadow: 0 0 12px rgba(45, 212, 245, .55); }
+.h1 i, i.h1 { background: transparent; border: 2px solid var(--vurgu); opacity: .85; }
+.h0 i, i.h0 { background: rgba(148, 176, 214, .18); }
+
+.kanal-anahtar {
+  display: flex; flex-wrap: wrap; gap: 1rem;
+  margin-top: 1.1rem; padding-top: .9rem; border-top: 1px solid var(--kenar);
+}
+.kanal-anahtar span { display: flex; align-items: center; gap: .45rem; font-size: .78rem; color: var(--metin-3); }
+.kanal-anahtar i { width: 11px; height: 11px; border-radius: 50%; flex: none; }
+
+/* ---- paket kartı: ikon + iki satırlı kalem ---- */
+.paket-bas { display: flex; align-items: center; justify-content: space-between; gap: .8rem; margin-bottom: .5rem; }
+.paket-bas img { width: 46px; height: 46px; opacity: .95; }
+.paket li b { display: block; font-size: .87rem; color: var(--metin); font-weight: 600; }
+.paket li span { display: block; font-size: .8rem; color: var(--metin-3); line-height: 1.5; margin-top: .1rem; }
+/* Beş paket: geniş ekranda 3+2 yerine eşit üçlü sıra daha dengeli duruyor. */
+@media (min-width: 1100px) { .paket-izgara--5 { grid-template-columns: repeat(3, 1fr); } }
+
+@media (max-width: 780px) {
+  .perde-ikon { width: 48px; height: 48px; }
+  .kanal-bas, .kanal { grid-template-columns: 1.3fr repeat(3, 1fr); gap: .4rem; }
+  .kanal-ad { font-size: .8rem; gap: .4rem; }
+  .kanal-ad img { width: 22px; height: 22px; }
+  .ozellik-liste { grid-template-columns: 1fr; }
+}
