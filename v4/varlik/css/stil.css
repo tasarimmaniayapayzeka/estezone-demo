@@ -3310,3 +3310,51 @@ html, body { overflow-x: clip; }
 @media (min-width: 1080px) {
   .blog-izgara { grid-template-columns: repeat(3, 1fr); }
 }
+
+/* ==========================================================================
+   ÇOK MODELLİ KALEM (koruyucu gözlük serisi)
+   Tek ürün değil, dalga boyuna göre ayrışan 9 model. Her kart kendi
+   aralığını ve normunu taşır; kartlar aynı boyda hizalanır.
+   ========================================================================== */
+@media (min-width: 1080px) {
+  /* 9 model = 3×3, boş hücre kalmaz. auto-fill burada 4 sütun açıp bozuyordu. */
+  .model-izgara { grid-template-columns: repeat(3, 1fr); }
+}
+.model-kart {
+  display: flex; flex-direction: column; overflow: hidden;
+  border: 1px solid var(--kenar); border-radius: var(--r);
+  background: var(--yuzey); transition: border-color .25s ease, transform .25s ease;
+}
+.model-kart:hover { border-color: var(--vurgu); transform: translateY(-3px); }
+.model-gor { aspect-ratio: 4 / 3; background: var(--yuzey-2); overflow: hidden; }
+.model-gor img { width: 100%; height: 100%; object-fit: contain; display: block; padding: .6rem; }
+.model-govde { padding: 1.05rem 1.15rem 1.2rem; display: flex; flex-direction: column; flex: 1; }
+.model-govde h4 { font-size: .99rem; line-height: 1.3; }
+
+.model-aralik {
+  display: flex; align-items: center; gap: .5rem; flex-wrap: wrap;
+  margin: .6rem 0 .85rem; font-family: var(--f-mono);
+  font-size: .88rem; color: var(--vurgu); font-weight: 600;
+}
+.model-od {
+  font-size: .72rem; padding: .12rem .45rem; border-radius: 5px;
+  background: var(--vurgu-sis); color: var(--vurgu); letter-spacing: .02em;
+}
+
+.model-kunye { display: grid; gap: .38rem; margin-bottom: .85rem; }
+.model-kunye > div { display: flex; gap: .6rem; align-items: baseline; }
+.model-kunye dt { flex: none; width: 72px; font-size: .76rem; color: var(--metin-3); }
+.model-kunye dd { margin: 0; font-size: .82rem; color: var(--metin-2); line-height: 1.45; }
+
+.model-nerede {
+  margin-top: auto; padding-top: .8rem; border-top: 1px solid var(--kenar);
+  font-size: .83rem; color: var(--metin-2); line-height: 1.5;
+}
+
+@media (max-width: 700px) {
+  .model-gor { aspect-ratio: 16 / 10; }
+  .model-kunye dt { width: 66px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .model-kart, .model-kart:hover { transition: none; transform: none; }
+}

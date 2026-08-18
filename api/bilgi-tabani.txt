@@ -53,7 +53,7 @@ PORTFÖY — 28 cihaz:
 - MedArt SmartSculpt Endolazer (MedArt) | kategori=Vücut Şekillendirme & Zayıflama | yetki=Tıbbi kuruluş | öne çıkan=1470 nm · 15 W | rozet=Kontur & Lipoliz | etiket=Endolazer/Lipoliz/Kontur | teknik=Lazer Türü: Kesintisiz Diode Lazer; Max Çıkış Gücü: 15W; Dalga Boyu: 1470 nm; Kılavuz Işık: Fiber üzerinden kırmızı gösterge ışığı (635 nm) | url=cihaz/medart-smartsculpt-endolazer.html
 - Zimmer Cryo 6 (Zimmer) | kategori=Soğutma & Klinik Aksesuar | yetki=Salon | öne çıkan=-30 °C Soğuk Hava | rozet=Alman Üretimi | etiket=Soğutma/Class IIa/Almanya | teknik=Güç: 230V~/50Hz; Power Girişi: Maksimum 1 kW; Stand-By Fonksiyonu: Ø appr. 260 W; Terapi Hava Akışı: 300 – 1000 l/mn | url=cihaz/zimmer-cryo-6-cilt-sogutma-sistemi.html
 - EpiCool (Estezone) | kategori=Soğutma & Klinik Aksesuar | yetki=Salon | öne çıkan=-15 / -21 °C | rozet=Ekonomik Soğutma | etiket=Soğutma/1000 l/dk/Class I | teknik=Çalışma Gerilimi: 220V AC~/50Hz 10A; Güç Girişi: 1 kW max.; Bekleme Güç Girişi: 260 W kadar; Gürültü: 70 dBa max. | url=cihaz/epicool.html
-- Lazer Koruyucu Gözlük (Estezone) | kategori=Soğutma & Klinik Aksesuar | yetki=Salon | öne çıkan=5 Farklı Koruma | rozet=Dalga Boyuna Özel | etiket=755/808 nm/1064 nm/10600 nm/IPL | url=cihaz/lazer-epilasyon-gozlugu.html
+- Lazer Koruyucu Gözlük (Estezone) | kategori=Soğutma & Klinik Aksesuar | yetki=Salon | öne çıkan=9 Dalga Boyu Sınıfı | rozet=9 Ayrı Model | etiket=755/808 nm/1064 nm/10600 nm/IPL | url=cihaz/lazer-epilasyon-gozlugu.html
 
 TEKNİK SERVİS (kendi atölyemiz, bizden alınmayan cihazlar dahil):
 - Pompa ve Hazne Değişimi: Lazer kavitesinin kalbi olan pompa haznesinin değişimi ve sonrasında enerji kalibrasyonu.
