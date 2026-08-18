@@ -588,6 +588,8 @@
 
     /* Tek giriş noktası: önce AI dener, olmazsa kural tabanlı motor. */
     async function sor(soru) {
+      // İlk soruyla birlikte öneri şeridi kapanır; panelin tamamı sohbete kalır.
+      asistan.classList.add('sohbet-basladi');
       const b = balon('<span class="yaziyor"><i></i><i></i><i></i></span>');
       const bitir = (html, kaynak) => {
         b.innerHTML = html;
