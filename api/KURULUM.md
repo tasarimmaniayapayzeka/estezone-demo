@@ -23,8 +23,13 @@ cPanel Dosya Yöneticisi'nde şuraya yükleyin:
 ```php
 <?php
 define('ESTEZONE_OPENAI_KEY', 'sk-...');   // platform.openai.com/api-keys
-define('ESTEZONE_MODEL', 'gpt-5-mini');    // maliyet/kalite dengesi için önerilen
+define('ESTEZONE_MODEL', 'gpt-5.5');       // çalıştığı doğrulanmış model
 ```
+
+> ⚠ **`gpt-5-mini` KULLANMAYIN** — denendi, hata verdi. Bu hesapta çalıştığı
+> doğrulanan model `gpt-5.5` (EsteTouch sitesinde canlıda çalışıyor).
+> Model adı yanlış olursa sohbet `"Model ayarı geçersiz"` uyarısı döndürür,
+> sessizce bozulmaz.
 
 Dosya izni: **600** (yalnız sahibi okusun).
 
@@ -75,6 +80,10 @@ Sorun varsa cPanel → **Errors** günlüğünde `estezone-sohbet:` satırların
 
 ## Maliyet
 
-Her mesajda sistem promptu (~5k token) gönderilir. `gpt-5-mini` ile mesaj başına
-kabaca 1 kuruşun altı; yoğun kullanımda OpenAI panelinden **aylık limit** koyun
-(Billing → Limits). Sıkı kontrol isterseniz model `gpt-5-nano` yapılabilir.
+Her mesajda sistem promptu (~5k token) gönderilir. Yoğun kullanımda OpenAI
+panelinden **aylık limit** koyun (Billing → Limits) — bu, maliyeti kontrol
+altında tutmanın en kesin yolu.
+
+Daha ucuz bir model denemek isterseniz önce **kısa bir testle çalıştığını
+doğrulayın**: bu hesapta `gpt-5-mini` hata verdi. Model geçersizse sohbet
+"Model ayarı geçersiz" der ve kural tabanlı yedeğe düşer, site bozulmaz.
